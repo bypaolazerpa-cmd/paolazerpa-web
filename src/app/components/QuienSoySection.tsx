@@ -1,7 +1,4 @@
 import image_92a090bf23d02cde3e07b38a242a9cf87315ffb1 from "../../assets/paola-portrait.jpg"
-import image_684063a89a11901c664da0cd9a0d77a64ae77c45 from "../../assets/paola-full.jpg"
-import image_d2894c10fd184bee616dda3f47427d08b8926774 from "../../assets/paola-photo3.jpg"
-import image_c52ebd02d98e626bf3d502062aab6f9905fba264 from "../../assets/paola-photo2.jpg"
 import { useIsMobile } from "../hooks/useIsMobile";
 
 const B = ({ children }: { children: React.ReactNode }) => (

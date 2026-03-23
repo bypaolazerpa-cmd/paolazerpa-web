@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router";
 import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
 import { useIsMobile } from "../hooks/useIsMobile";
 
 export function ContactoPage() {
-  const navigate = useNavigate();
   const isMobile = useIsMobile();
   const px = isMobile ? "24px" : "80px";
 
