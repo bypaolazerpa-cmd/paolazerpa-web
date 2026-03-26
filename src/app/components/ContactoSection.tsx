@@ -1,153 +1,328 @@
+import { useNavigate } from "react-router";
 import { useIsMobile } from "../hooks/useIsMobile";
 
 export function ContactoSection() {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
-  /* ─── MOBILE ─── */
   if (isMobile) {
     return (
       <section
         id="contacto"
         style={{
           backgroundColor: "#FAF8F4",
-          paddingTop: "80px",
-          paddingBottom: "80px",
+          paddingTop: "84px",
+          paddingBottom: "88px",
           paddingLeft: "24px",
           paddingRight: "24px",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        <div style={{ position: "absolute", bottom: "-40px", right: "-40px", width: "200px", height: "200px", borderRadius: "50%", background: "radial-gradient(circle, #7C9E8A 0%, transparent 70%)", opacity: 0.1, pointerEvents: "none" }} />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-40px",
+            right: "-40px",
+            width: "200px",
+            height: "200px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, #7C9E8A 0%, transparent 70%)",
+            opacity: 0.1,
+            pointerEvents: "none",
+          }}
+        />
 
         <div style={{ position: "relative", zIndex: 1 }}>
-          <p style={{ fontFamily: "Space Mono, monospace", fontSize: "9px", color: "#AAAAAA", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "20px", fontWeight: 400 }}>
+          <p
+            style={{
+              fontFamily: "Space Mono, monospace",
+              fontSize: "9px",
+              color: "#AAAAAA",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              marginBottom: "18px",
+              fontWeight: 400,
+            }}
+          >
             CONECTEMOS
           </p>
-          <h2 style={{ fontFamily: "Fraunces, serif", fontStyle: "italic", fontWeight: 400, fontSize: "30px", color: "#1A1A2E", lineHeight: "1.2", marginBottom: "40px" }}>
-            ¿Por dónde empezamos?
+          <h2
+            style={{
+              fontFamily: "Fraunces, serif",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "31px",
+              color: "#1A1A2E",
+              lineHeight: "1.2",
+              marginBottom: "16px",
+            }}
+          >
+            Hablemos de lo que hoy te está pidiendo más claridad.
           </h2>
+          <p
+            style={{
+              fontFamily: "Space Grotesk, sans-serif",
+              fontWeight: 400,
+              fontSize: "15px",
+              color: "#666666",
+              lineHeight: "1.75",
+              marginBottom: "32px",
+            }}
+          >
+            Si querés ordenar una idea, un proyecto o una forma de trabajar, podemos empezar por una
+            conversación simple.
+          </p>
 
-          {/* Card: Juntas */}
-          <div style={{ backgroundColor: "#FFFFFF", borderRadius: "12px", padding: "28px 24px", border: "1px solid #E8E2DA", borderTop: "3px solid #7C9E8A", marginBottom: "16px" }}>
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "13px", color: "#888888", marginBottom: "10px" }}>
-              Servicios · Consultoría
-            </p>
-            <p style={{ fontFamily: "MuseoModerno, sans-serif", fontWeight: 700, fontSize: "20px", color: "#1A1A2E", lineHeight: "1.2", marginBottom: "10px" }}>
-              ¿Trabajamos juntas?
-            </p>
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "14px", color: "#666666", lineHeight: "1.6", marginBottom: "24px" }}>
-              Diseñamos un sistema para tu trabajo o equipo. Empezamos con una conversación.
-            </p>
-            <a
-              href="https://wa.me/5491133652899"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", backgroundColor: "#1A1A2E", color: "#FAF8F4", fontFamily: "Space Mono, monospace", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", padding: "14px 24px", borderRadius: "6px", textDecoration: "none", fontWeight: 400 }}
+          <div
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: "16px",
+              padding: "30px 24px",
+              border: "1px solid #E8E2DA",
+              borderTop: "3px solid #7C9E8A",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Space Mono, monospace",
+                fontSize: "9px",
+                color: "#7C9E8A",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                marginBottom: "14px",
+                fontWeight: 400,
+              }}
             >
-              HABLEMOS
-            </a>
-          </div>
+              CONTACTO DIRECTO
+            </p>
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 400,
+                fontSize: "14px",
+                color: "#777777",
+                lineHeight: "1.7",
+                marginBottom: "24px",
+              }}
+            >
+              Podemos empezar por WhatsApp y, si hace sentido, seguir después por el canal que mejor
+              acompañe tu proceso.
+            </p>
 
-          {/* Card: Sola */}
-          <div style={{ backgroundColor: "#FFFFFF", borderRadius: "12px", padding: "28px 24px", border: "1px solid #E8E2DA", borderTop: "3px solid #F5C842" }}>
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "13px", color: "#888888", marginBottom: "10px" }}>
-              Entrada libre · Gratis
-            </p>
-            <p style={{ fontFamily: "MuseoModerno, sans-serif", fontWeight: 700, fontSize: "20px", color: "#1A1A2E", lineHeight: "1.2", marginBottom: "10px" }}>
-              ¿Preferís empezar sola?
-            </p>
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "14px", color: "#666666", lineHeight: "1.6", marginBottom: "24px" }}>
-              Descargá la guía gratuita y empezá a entender cómo funciona tu sistema.
-            </p>
-            <a
-              href="/guia"
-              style={{ display: "inline-flex", alignItems: "center", backgroundColor: "transparent", color: "#1A1A2E", fontFamily: "Space Mono, monospace", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", padding: "13px 24px", borderRadius: "6px", border: "1px solid #1A1A2E", textDecoration: "none", fontWeight: 400 }}
-            >
-              DESCARGAR GUÍA
-            </a>
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <a
+                href="https://wa.me/5491133652899"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#1A1A2E",
+                  color: "#FAF8F4",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "10px",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  height: "50px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontWeight: 400,
+                }}
+              >
+                Hablemos por WhatsApp
+              </a>
+              <button
+                onClick={() => navigate("/contacto")}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "transparent",
+                  color: "#1A1A2E",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "10px",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  height: "50px",
+                  borderRadius: "6px",
+                  border: "1px solid #1A1A2E",
+                  cursor: "pointer",
+                  fontWeight: 400,
+                }}
+              >
+                Ir a contacto
+              </button>
+            </div>
           </div>
         </div>
       </section>
     );
   }
 
-  /* ─── DESKTOP ─── */
   return (
     <section
       id="contacto"
       style={{
         backgroundColor: "#FAF8F4",
-        paddingTop: "120px",
-        paddingBottom: "120px",
+        paddingTop: "92px",
+        paddingBottom: "110px",
         paddingLeft: "80px",
         paddingRight: "80px",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      <div style={{ position: "absolute", bottom: "-60px", right: "-60px", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, #7C9E8A 0%, transparent 65%)", opacity: 0.07, pointerEvents: "none" }} />
-      <div style={{ position: "absolute", top: "-40px", left: "-40px", width: "260px", height: "260px", borderRadius: "50%", background: "radial-gradient(circle, #F5C842 0%, transparent 65%)", opacity: 0.06, pointerEvents: "none" }} />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-60px",
+          right: "-60px",
+          width: "300px",
+          height: "300px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, #7C9E8A 0%, transparent 70%)",
+          opacity: 0.08,
+          pointerEvents: "none",
+        }}
+      />
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-        {/* Header */}
-        <p style={{ fontFamily: "Space Mono, monospace", fontSize: "10px", color: "#AAAAAA", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "20px", fontWeight: 400 }}>
-          CONECTEMOS
-        </p>
-        <h2 style={{ fontFamily: "Fraunces, serif", fontStyle: "italic", fontWeight: 400, fontSize: "48px", color: "#1A1A2E", lineHeight: "1.1", marginBottom: "64px" }}>
-          ¿Por dónde empezamos?
-        </h2>
+      <div style={{ maxWidth: "1080px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(0, 0.9fr) minmax(320px, 0.85fr)",
+            gap: "56px",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <p
+              style={{
+                fontFamily: "Space Mono, monospace",
+                fontSize: "9px",
+                color: "#AAAAAA",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                marginBottom: "18px",
+                fontWeight: 400,
+              }}
+            >
+              CONECTEMOS
+            </p>
+            <h2
+              style={{
+                fontFamily: "Fraunces, serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "46px",
+                color: "#1A1A2E",
+                lineHeight: "1.12",
+                marginBottom: "18px",
+                maxWidth: "640px",
+              }}
+            >
+              Hablemos de lo que hoy te está pidiendo más claridad.
+            </h2>
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 400,
+                fontSize: "16px",
+                color: "#666666",
+                lineHeight: "1.8",
+                margin: 0,
+                maxWidth: "560px",
+              }}
+            >
+              Si querés ordenar una idea, un proyecto o una forma de trabajar, podemos empezar por
+              una conversación simple.
+            </p>
+          </div>
 
-        {/* Two equal panels */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", alignItems: "stretch" }}>
-          {/* Left: Juntas */}
           <div
-            style={{ backgroundColor: "#FFFFFF", borderRadius: "14px", padding: "48px 44px", border: "1px solid #E8E2DA", borderTop: "3px solid #7C9E8A", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s ease" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = "0 6px 24px rgba(26,26,46,0.07)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = "none")}
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: "18px",
+              padding: "38px 34px",
+              border: "1px solid #E8E2DA",
+              borderTop: "3px solid #7C9E8A",
+              boxShadow: "0 10px 32px rgba(26,26,46,0.04)",
+            }}
           >
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "13px", color: "#999999", marginBottom: "16px" }}>
-              Servicios · Consultoría
+            <p
+              style={{
+                fontFamily: "Space Mono, monospace",
+                fontSize: "9px",
+                color: "#7C9E8A",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                marginBottom: "16px",
+                fontWeight: 400,
+              }}
+            >
+              CONTACTO DIRECTO
             </p>
-            <p style={{ fontFamily: "MuseoModerno, sans-serif", fontWeight: 700, fontSize: "28px", color: "#1A1A2E", lineHeight: "1.15", marginBottom: "16px" }}>
-              ¿Trabajamos juntas?
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 400,
+                fontSize: "15px",
+                color: "#777777",
+                lineHeight: "1.75",
+                marginBottom: "30px",
+              }}
+            >
+              Podemos empezar por WhatsApp y, si hace sentido, seguir después por el canal que mejor
+              acompañe tu proceso.
             </p>
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "16px", color: "#666666", lineHeight: "1.65", marginBottom: "40px", maxWidth: "380px" }}>
-              Diseñamos un sistema para tu trabajo o equipo. Empezamos con una conversación sin compromiso.
-            </p>
-            <div style={{ marginTop: "auto" }}>
+
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <a
                 href="https://wa.me/5491133652899"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", backgroundColor: "#1A1A2E", color: "#FAF8F4", fontFamily: "Space Mono, monospace", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "18px 36px", borderRadius: "6px", textDecoration: "none", fontWeight: 400, transition: "opacity 0.2s ease" }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.85")}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#1A1A2E",
+                  color: "#FAF8F4",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  padding: "16px 24px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontWeight: 400,
+                  transition: "opacity 0.2s ease",
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
               >
-                HABLEMOS →
+                Hablemos por WhatsApp
               </a>
-            </div>
-          </div>
-
-          {/* Right: Sola */}
-          <div
-            style={{ backgroundColor: "#FFFFFF", borderRadius: "14px", padding: "48px 44px", border: "1px solid #E8E2DA", borderTop: "3px solid #F5C842", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s ease" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = "0 6px 24px rgba(26,26,46,0.07)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = "none")}
-          >
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "13px", color: "#999999", marginBottom: "16px" }}>
-              Entrada libre · Gratis
-            </p>
-            <p style={{ fontFamily: "MuseoModerno, sans-serif", fontWeight: 700, fontSize: "28px", color: "#1A1A2E", lineHeight: "1.15", marginBottom: "16px" }}>
-              ¿Preferís empezar sola?
-            </p>
-            <p style={{ fontFamily: "Space Grotesk, sans-serif", fontWeight: 400, fontSize: "16px", color: "#666666", lineHeight: "1.65", marginBottom: "40px", maxWidth: "380px" }}>
-              Descargá la guía gratuita y empezá a entender cómo funciona tu sistema — tu mente, tu tiempo, tu entorno.
-            </p>
-            <div style={{ marginTop: "auto" }}>
-              <a
-                href="/guia"
-                style={{ display: "inline-flex", alignItems: "center", backgroundColor: "transparent", color: "#1A1A2E", fontFamily: "Space Mono, monospace", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "17px 36px", borderRadius: "6px", border: "1px solid #1A1A2E", textDecoration: "none", fontWeight: 400, transition: "background 0.2s ease, color 0.2s ease" }}
+              <button
+                onClick={() => navigate("/contacto")}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "transparent",
+                  color: "#1A1A2E",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  padding: "15px 24px",
+                  borderRadius: "6px",
+                  border: "1px solid #1A1A2E",
+                  cursor: "pointer",
+                  fontWeight: 400,
+                  transition: "background 0.2s ease, color 0.2s ease",
+                }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.backgroundColor = "#1A1A2E";
@@ -159,8 +334,8 @@ export function ContactoSection() {
                   el.style.color = "#1A1A2E";
                 }}
               >
-                DESCARGAR GUÍA →
-              </a>
+                Ir a contacto
+              </button>
             </div>
           </div>
         </div>

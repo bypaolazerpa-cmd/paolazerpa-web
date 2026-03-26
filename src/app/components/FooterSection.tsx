@@ -57,9 +57,9 @@ export function FooterSection() {
             maxWidth: isMobile ? "100%" : "640px",
           }}
         >
-          Sistema para sostener lo que construyes —
+          Sistemas para sostener lo que construimos —
           <br />
-          sin depender solo de tu energía.
+          sin depender solo de nuestra energía.
         </p>
 
         {/* Attribution */}
