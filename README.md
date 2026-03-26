@@ -9,7 +9,7 @@
 ## Páginas
 - `/` — Home (Hero, Problema, Caminos, Enfoque, Blog preview, CTA, Contacto)
 - `/guia` — Landing de la guía gratuita
-- `/blog` — Blog con grid y categorías
+- `/notas` — Archivo de notas
 - `/contacto` — Página de contacto
 - `/programa` — Coming soon (equipos)
 
@@ -26,14 +26,14 @@ npm run dev
 2. Conectá el repo en [app.netlify.com](https://app.netlify.com)
 3. Build command: `npm run build`
 4. Publish directory: `dist`
-5. El archivo `public/_redirects` ya maneja el SPA routing ✓
+5. Si usás rutas directas, asegurate de tener redirects de SPA para `/notas`, `/mi-historia`, `/contacto` y `/guia`
 
 ## Deploy en Vercel
 
 1. Subí la carpeta a un repo en GitHub
 2. Importá en [vercel.com](https://vercel.com)
 3. Framework: Vite (detecta automático)
-4. El archivo `vercel.json` ya maneja el routing ✓
+4. Asegurate de mantener el rewrite de SPA para que funcionen rutas como `/notas` y `/mi-historia`
 
 ## PDF de la guía
 

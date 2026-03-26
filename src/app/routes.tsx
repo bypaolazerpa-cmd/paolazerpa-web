@@ -3,15 +3,15 @@ import { NavBar } from "./components/NavBar";
 import { HeroSection } from "./components/HeroSection";
 import { ProblemaQuienSoySection } from "./components/ProblemaQuienSoySection";
 import { CaminosSection } from "./components/CaminosSection";
-import { EnfoqueSection } from "./components/EnfoqueSection";
 import { NotasProcesoSection } from "./components/NotasProcesoSection";
-import { CTAFinalSection } from "./components/CTAFinalSection";
 import { ContactoSection } from "./components/ContactoSection";
 import { FooterSection } from "./components/FooterSection";
 import { GuiaPage } from "./components/GuiaPage";
 import { ProgramaPage } from "./components/ProgramaPage";
 import { BlogPage } from "./components/BlogPage";
+import { BlogNotePage } from "./components/BlogNotePage";
 import { ContactoPage } from "./components/ContactoPage";
+import { MiHistoriaPage } from "./components/MiHistoriaPage";
 
 function Home() {
   return (
@@ -21,9 +21,7 @@ function Home() {
         <HeroSection />
         <ProblemaQuienSoySection />
         <CaminosSection />
-        <EnfoqueSection />
         <NotasProcesoSection />
-        <CTAFinalSection />
         <ContactoSection />
       </main>
       <FooterSection />
@@ -35,6 +33,8 @@ export const router = createBrowserRouter([
   { path: "/", Component: Home },
   { path: "/guia", Component: GuiaPage },
   { path: "/programa", Component: ProgramaPage },
-  { path: "/blog", Component: BlogPage },
+  { path: "/notas", Component: BlogPage },
+  { path: "/notas/:slug", Component: BlogNotePage },
   { path: "/contacto", Component: ContactoPage },
+  { path: "/mi-historia", Component: MiHistoriaPage },
 ]);
