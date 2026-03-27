@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, useLocation, useOutlet } from "react-router";
 import { NavBar } from "./components/NavBar";
 import { HeroSection } from "./components/HeroSection";
 import { ProblemaQuienSoySection } from "./components/ProblemaQuienSoySection";
@@ -29,12 +29,29 @@ function Home() {
   );
 }
 
+function RootLayout() {
+  const outlet = useOutlet();
+  const location = useLocation();
+
+  return (
+    <div key={location.pathname} className="page-transition-enter" style={{ minHeight: "100vh" }}>
+      {outlet}
+    </div>
+  );
+}
+
 export const router = createBrowserRouter([
-  { path: "/", Component: Home },
-  { path: "/guia", Component: GuiaPage },
-  { path: "/programa", Component: ProgramaPage },
-  { path: "/notas", Component: BlogPage },
-  { path: "/notas/:slug", Component: BlogNotePage },
-  { path: "/contacto", Component: ContactoPage },
-  { path: "/mi-historia", Component: MiHistoriaPage },
+  {
+    path: "/",
+    Component: RootLayout,
+    children: [
+      { index: true, Component: Home },
+      { path: "guia", Component: GuiaPage },
+      { path: "programa", Component: ProgramaPage },
+      { path: "notas", Component: BlogPage },
+      { path: "notas/:slug", Component: BlogNotePage },
+      { path: "contacto", Component: ContactoPage },
+      { path: "mi-historia", Component: MiHistoriaPage },
+    ],
+  },
 ]);

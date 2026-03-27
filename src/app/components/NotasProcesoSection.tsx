@@ -1,6 +1,6 @@
-import { Link } from "react-router";
 import { featuredBlogPost, otherBlogPosts, coverToneStyles } from "../data/blogPosts";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { AppLink } from "./AppLink";
 
 export function NotasProcesoSection() {
   const isMobile = useIsMobile();
@@ -128,7 +128,7 @@ export function NotasProcesoSection() {
                   "{featuredBlogPost.featuredQuote}"
                 </blockquote>
               ) : null}
-              <Link
+              <AppLink
                 to={`/notas/${featuredBlogPost.slug}`}
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
@@ -140,12 +140,12 @@ export function NotasProcesoSection() {
                 }}
               >
                 Leer nota completa →
-              </Link>
+              </AppLink>
             </div>
           </div>
 
           <div style={{ marginBottom: "28px" }}>
-            <Link
+            <AppLink
               to="/notas"
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
@@ -157,7 +157,7 @@ export function NotasProcesoSection() {
               }}
             >
               Ver todas las notas →
-            </Link>
+            </AppLink>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -214,7 +214,7 @@ export function NotasProcesoSection() {
                     >
                       {post.title}
                     </p>
-                    <Link
+                    <AppLink
                       to={`/notas/${post.slug}`}
                       style={{
                         fontFamily: "Space Grotesk, sans-serif",
@@ -225,7 +225,7 @@ export function NotasProcesoSection() {
                       }}
                     >
                       Leer →
-                    </Link>
+                    </AppLink>
                   </div>
                 </div>
               );
@@ -301,7 +301,7 @@ export function NotasProcesoSection() {
             </p>
           </div>
 
-          <Link
+          <AppLink
             to="/notas"
             style={{
               fontFamily: "Space Grotesk, sans-serif",
@@ -313,7 +313,7 @@ export function NotasProcesoSection() {
             }}
           >
             Ver todas las notas →
-          </Link>
+          </AppLink>
         </div>
 
         <div
@@ -390,7 +390,7 @@ export function NotasProcesoSection() {
                   "{featuredBlogPost.featuredQuote}"
                 </blockquote>
               ) : null}
-              <Link
+              <AppLink
                 to={`/notas/${featuredBlogPost.slug}`}
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
@@ -401,7 +401,7 @@ export function NotasProcesoSection() {
                 }}
               >
                 Leer nota completa →
-              </Link>
+              </AppLink>
             </div>
           </div>
 
@@ -459,7 +459,7 @@ export function NotasProcesoSection() {
                     >
                       {post.title}
                     </p>
-                    <Link
+                    <AppLink
                       to={`/notas/${post.slug}`}
                       style={{
                         fontFamily: "Space Grotesk, sans-serif",
@@ -470,7 +470,7 @@ export function NotasProcesoSection() {
                       }}
                     >
                       Leer →
-                    </Link>
+                    </AppLink>
                   </div>
                 </div>
               );

@@ -1,4 +1,5 @@
 import { useIsMobile } from "../hooks/useIsMobile";
+import { AppLink } from "./AppLink";
 
 export function HeroSection() {
   const isMobile = useIsMobile();
@@ -142,8 +143,8 @@ export function HeroSection() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <a
-              href="/guia"
+            <AppLink
+              to="/guia"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -162,7 +163,7 @@ export function HeroSection() {
               }}
             >
               DESCARGAR GUÍA
-            </a>
+            </AppLink>
             <button
               onClick={() => scrollTo("caminos")}
               style={{
@@ -178,7 +179,7 @@ export function HeroSection() {
                 height: "52px",
                 border: "none",
                 cursor: "pointer",
-                opacity: 0.7,
+                opacity: 0.76,
               }}
             >
               Ver cómo funciona ↓
@@ -321,8 +322,8 @@ export function HeroSection() {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "28px" }}>
-            <a
-              href="/guia"
+            <AppLink
+              to="/guia"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -343,7 +344,7 @@ export function HeroSection() {
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
             >
               DESCARGAR GUÍA
-            </a>
+            </AppLink>
             <button
               onClick={() => scrollTo("caminos")}
               style={{
@@ -354,7 +355,7 @@ export function HeroSection() {
                 fontWeight: 400,
                 border: "none",
                 cursor: "pointer",
-                opacity: 0.68,
+                opacity: 0.78,
                 transition: "opacity 0.2s ease",
                 padding: 0,
               }}

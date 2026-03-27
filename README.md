@@ -1,55 +1,79 @@
 # Paola Zerpa — Sitio Web Personal
 
+Sitio personal de Paola Zerpa para presentar su enfoque, abrir conversaciones de trabajo y ofrecer una guía gratuita como punto de entrada.
+
 ## Stack
+
 - React 18 + TypeScript
 - Vite 6
 - React Router 7
-- Tailwind CSS 4
+- estilos inline como patrón principal
+- `lightningcss` vía Vite para el pipeline actual de CSS
 
-## Páginas
-- `/` — Home (Hero, Problema, Caminos, Enfoque, Blog preview, CTA, Contacto)
+## Rutas actuales
+
+- `/` — Home
 - `/guia` — Landing de la guía gratuita
 - `/notas` — Archivo de notas
+- `/notas/:slug` — Detalle de nota
+- `/mi-historia` — Historia y posicionamiento personal
 - `/contacto` — Página de contacto
-- `/programa` — Coming soon (equipos)
+- `/programa` — Coming soon para equipos
 
-## Correr en local
+## Desarrollo local
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Deploy en Netlify (recomendado)
+## Build
 
-1. Subí la carpeta a un repo en GitHub
-2. Conectá el repo en [app.netlify.com](https://app.netlify.com)
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Si usás rutas directas, asegurate de tener redirects de SPA para `/notas`, `/mi-historia`, `/contacto` y `/guia`
+```bash
+npm run build
+```
 
-## Deploy en Vercel
+Nota:
+- los scripts de Vite usan `--configLoader runner` para evitar fallos de resolución observados en este entorno
+- Tailwind quedó removido del pipeline y de las dependencias activas
 
-1. Subí la carpeta a un repo en GitHub
-2. Importá en [vercel.com](https://vercel.com)
-3. Framework: Vite (detecta automático)
-4. Asegurate de mantener el rewrite de SPA para que funcionen rutas como `/notas` y `/mi-historia`
+## Deploy
 
-## PDF de la guía
+Netlify:
+- usa [`public/_redirects`](/Users/paolazerpa/Desktop/apps/paola-web/public/_redirects)
 
-Reemplazá el archivo placeholder:
-`public/guia-ecosistema-personal.pdf`
-con tu PDF real antes de deployar.
+Vercel:
+- usa [`vercel.json`](/Users/paolazerpa/Desktop/apps/paola-web/vercel.json)
 
-## WhatsApp
+Antes de deployar:
+- validar `npm run build`
+- revisar links de navegación
+- revisar WhatsApp y email
+- reemplazar [`public/guia-ecosistema-personal.pdf`](/Users/paolazerpa/Desktop/apps/paola-web/public/guia-ecosistema-personal.pdf) si corresponde
 
-El número de contacto está hardcodeado como `5491133652899`.
-Verificá que sea correcto en:
-- `src/app/components/ContactoSection.tsx`
-- `src/app/components/ContactoPage.tsx`
+## Documentación viva
 
-## Fuentes (Google Fonts)
-- Fraunces (italic) — títulos principales
-- MuseoModerno — subtítulos
-- Space Grotesk — body text
-- Space Mono — labels, etiquetas, CTAs
+La documentación base del proyecto vive en:
+
+- [`AGENTS.md`](/Users/paolazerpa/Desktop/apps/paola-web/AGENTS.md)
+- [`docs/FOUNDATIONS.md`](/Users/paolazerpa/Desktop/apps/paola-web/docs/FOUNDATIONS.md)
+- [`docs/ARCHITECTURE_MAP.md`](/Users/paolazerpa/Desktop/apps/paola-web/docs/ARCHITECTURE_MAP.md)
+- [`docs/CONTENT_OPERATIONS.md`](/Users/paolazerpa/Desktop/apps/paola-web/docs/CONTENT_OPERATIONS.md)
+- [`docs/PROJECT_STATUS.md`](/Users/paolazerpa/Desktop/apps/paola-web/docs/PROJECT_STATUS.md)
+
+Regla práctica:
+- si cambian rutas, arquitectura, contenido estructural, contacto, deploy o decisiones base, actualizar estos documentos en el mismo cambio
+
+## Contacto hardcodeado actual
+
+- WhatsApp: `https://wa.me/5491133652899`
+- Email: `by.paolazerpa@gmail.com`
+
+## Tipografías
+
+- Fraunces italic
+- MuseoModerno
+- Space Grotesk
+- Space Mono
+
+Se cargan desde Google Fonts en [`index.html`](/Users/paolazerpa/Desktop/apps/paola-web/index.html).

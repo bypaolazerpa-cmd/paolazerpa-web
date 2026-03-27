@@ -33,7 +33,7 @@ export function BlogPage() {
             height: isMobile ? "220px" : "320px",
             borderRadius: "50%",
             background: "radial-gradient(circle, #E8E0EF 0%, transparent 68%)",
-            opacity: 0.7,
+            opacity: 0.55,
             pointerEvents: "none",
           }}
         />

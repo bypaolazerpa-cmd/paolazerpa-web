@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { navigateWithScroll } from "../utils/navigation";
 
 const startingPoints = [
   "Ordenar una idea que hoy está dispersa",
@@ -22,7 +23,7 @@ export function ContactoPage() {
         style={{
           backgroundColor: "#1A1A2E",
           paddingTop: isMobile ? "120px" : "156px",
-          paddingBottom: isMobile ? "64px" : "76px",
+          paddingBottom: isMobile ? "72px" : "88px",
           paddingLeft: px,
           paddingRight: px,
           position: "relative",
@@ -68,7 +69,7 @@ export function ContactoPage() {
               maxWidth: "760px",
             }}
           >
-            Si quieres conversar, podemos empezar por WhatsApp.
+            Si quieres conversar, aquí puedes elegir la forma más simple de empezar.
           </h1>
           <p
             style={{
@@ -90,7 +91,7 @@ export function ContactoPage() {
       <section
         style={{
           backgroundColor: "#FAF8F4",
-          paddingTop: isMobile ? "64px" : "82px",
+          paddingTop: isMobile ? "72px" : "92px",
           paddingBottom: isMobile ? "56px" : "64px",
           paddingLeft: px,
           paddingRight: px,
@@ -248,7 +249,7 @@ export function ContactoPage() {
               marginBottom: "24px",
             }}
           >
-            No hace falta llegar con todo resuelto. Podemos empezar por una consulta breve y ver qué
+            No hace falta llegar con todo resuelto. Puedes empezar por una consulta breve y ver qué
             forma conviene darle.
           </p>
           <a
@@ -275,7 +276,7 @@ export function ContactoPage() {
           </a>
           <div style={{ marginTop: "18px" }}>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigateWithScroll(navigate, "/")}
               style={{
                 background: "none",
                 border: "none",

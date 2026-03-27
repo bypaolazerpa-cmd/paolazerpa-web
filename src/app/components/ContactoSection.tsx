@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { navigateWithScroll } from "../utils/navigation";
 
 export function ContactoSection() {
   const isMobile = useIsMobile();
@@ -70,8 +71,8 @@ export function ContactoSection() {
               marginBottom: "32px",
             }}
           >
-            Si querés ordenar una idea, un proyecto o una forma de trabajar, podemos empezar por una
-            conversación simple.
+            Si quieres abrir la conversación sin pensar demasiado cómo formularla, este puede ser un
+            buen primer paso.
           </p>
 
           <div
@@ -94,7 +95,7 @@ export function ContactoSection() {
                 fontWeight: 400,
               }}
             >
-              CONTACTO DIRECTO
+              PRIMER PASO
             </p>
             <p
               style={{
@@ -106,8 +107,8 @@ export function ContactoSection() {
                 marginBottom: "24px",
               }}
             >
-              Podemos empezar por WhatsApp y, si hace sentido, seguir después por el canal que mejor
-              acompañe tu proceso.
+              Puedes escribirme por WhatsApp si ya quieres hablar, o ir a la página de contacto si
+              prefieres más contexto antes de hacerlo.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -134,7 +135,7 @@ export function ContactoSection() {
                 Hablemos por WhatsApp
               </a>
               <button
-                onClick={() => navigate("/contacto")}
+                onClick={() => navigateWithScroll(navigate, "/contacto")}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -236,8 +237,8 @@ export function ContactoSection() {
                 maxWidth: "560px",
               }}
             >
-              Si querés ordenar una idea, un proyecto o una forma de trabajar, podemos empezar por
-              una conversación simple.
+              Si quieres abrir la conversación sin pensar demasiado cómo formularla, este puede ser
+              un buen primer paso.
             </p>
           </div>
 
@@ -248,7 +249,6 @@ export function ContactoSection() {
               padding: "38px 34px",
               border: "1px solid #E8E2DA",
               borderTop: "3px solid #7C9E8A",
-              boxShadow: "0 10px 32px rgba(26,26,46,0.04)",
             }}
           >
             <p
@@ -262,7 +262,7 @@ export function ContactoSection() {
                 fontWeight: 400,
               }}
             >
-              CONTACTO DIRECTO
+              PRIMER PASO
             </p>
             <p
               style={{
@@ -274,8 +274,8 @@ export function ContactoSection() {
                 marginBottom: "30px",
               }}
             >
-              Podemos empezar por WhatsApp y, si hace sentido, seguir después por el canal que mejor
-              acompañe tu proceso.
+              Puedes escribirme por WhatsApp si ya quieres hablar, o ir a la página de contacto si
+              prefieres más contexto antes de hacerlo.
             </p>
 
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
@@ -305,7 +305,7 @@ export function ContactoSection() {
                 Hablemos por WhatsApp
               </a>
               <button
-                onClick={() => navigate("/contacto")}
+                onClick={() => navigateWithScroll(navigate, "/contacto")}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",

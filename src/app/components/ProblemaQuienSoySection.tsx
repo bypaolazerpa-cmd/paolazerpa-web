@@ -1,5 +1,6 @@
 import image_92a090bf23d02cde3e07b38a242a9cf87315ffb1 from "../../assets/paola-portrait.jpg";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { AppLink } from "./AppLink";
 
 const pillars = [
   {
@@ -146,8 +147,8 @@ export function ProblemaQuienSoySection() {
               >
                 {solutionBody}
               </p>
-              <a
-                href="/mi-historia"
+              <AppLink
+                to="/mi-historia"
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
                   fontWeight: 500,
@@ -160,7 +161,7 @@ export function ProblemaQuienSoySection() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
               >
                 Conoce mi historia →
-              </a>
+              </AppLink>
             </div>
           </div>
 
@@ -415,8 +416,8 @@ export function ProblemaQuienSoySection() {
               >
                 {solutionBody}
               </p>
-              <a
-                href="/mi-historia"
+              <AppLink
+                to="/mi-historia"
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
                   fontWeight: 500,
@@ -429,7 +430,7 @@ export function ProblemaQuienSoySection() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
               >
                 Conoce mi historia →
-              </a>
+              </AppLink>
             </div>
           </div>
 

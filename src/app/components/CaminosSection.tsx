@@ -1,4 +1,5 @@
 import { useIsMobile } from "../hooks/useIsMobile";
+import { AppLink } from "./AppLink";
 
 const scrollToContact = () => {
   document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
@@ -163,8 +164,8 @@ export function CaminosSection() {
                   {path.body}
                 </p>
                 {path.style === "solid" ? (
-                  <a
-                    href={path.href!}
+                  <AppLink
+                    to={path.href!}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -181,7 +182,7 @@ export function CaminosSection() {
                     }}
                   >
                     {path.cta}
-                  </a>
+                  </AppLink>
                 ) : (
                   <button
                     onClick={scrollToContact}
@@ -507,8 +508,8 @@ export function CaminosSection() {
               claridad.
             </p>
             <div style={{ marginTop: "auto" }}>
-              <a
-                href="/guia"
+              <AppLink
+                to="/guia"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -528,7 +529,7 @@ export function CaminosSection() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
               >
                 Descargar guía gratuita
-              </a>
+              </AppLink>
             </div>
           </article>
 

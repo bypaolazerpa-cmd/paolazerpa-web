@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { navigateWithScroll } from "../utils/navigation";
 
 function HamburgerIcon() {
   return (
@@ -35,7 +36,7 @@ export function NavBar() {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
-    navigate(href);
+    navigateWithScroll(navigate, href);
   };
 
   const isActive = (href: string) => {

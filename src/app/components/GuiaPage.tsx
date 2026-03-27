@@ -4,6 +4,7 @@ import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { GUIDE_CAPTURE_ENDPOINT, GUIDE_PDF_URL } from "../data/guideCapture";
+import { navigateWithScroll } from "../utils/navigation";
 
 const benefits = [
   "te ayuda a bajar ruido y ordenar lo que hoy está disperso",
@@ -426,7 +427,7 @@ export function GuiaPage() {
                       Acceder a la guía
                     </a>
                     <button
-                      onClick={() => navigate("/")}
+                      onClick={() => navigateWithScroll(navigate, "/")}
                       style={{
                         display: "inline-flex",
                         alignItems: "center",
@@ -500,7 +501,7 @@ export function GuiaPage() {
           </p>
           <div style={{ display: "flex", justifyContent: isMobile ? "flex-start" : "center", marginTop: "4px" }}>
             <button
-              onClick={() => navigate("/contacto")}
+              onClick={() => navigateWithScroll(navigate, "/contacto")}
               style={{
                 background: "none",
                 border: "none",

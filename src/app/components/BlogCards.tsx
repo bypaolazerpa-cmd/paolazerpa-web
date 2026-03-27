@@ -1,5 +1,6 @@
-import { Link } from "react-router";
 import { BlogPostRecord, coverToneStyles } from "../data/blogPosts";
+import { useIsMobile } from "../hooks/useIsMobile";
+import { AppLink } from "./AppLink";
 
 export type BlogCardPost = BlogPostRecord;
 
@@ -105,20 +106,23 @@ function CardImageSquare({ post }: { post: BlogCardPost }) {
 
 export function FeaturedCard({ post }: { post: BlogCardPost }) {
   const tone = coverToneStyles[post.coverTone];
+  const isMobile = useIsMobile();
 
   return (
     <div
-      className="flex flex-col md:flex-row"
       style={{
         border: "1px solid #E8E2DA",
         borderRadius: "18px",
         overflow: "hidden",
         background: "#FFFFFF",
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row",
       }}
     >
       <div
-        className="w-full md:w-[38%]"
         style={{
+          width: isMobile ? "100%" : "38%",
+          flexShrink: 0,
           minHeight: "240px",
           background: tone.background,
           position: "relative",
@@ -151,12 +155,12 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
       </div>
 
       <div
-        className="p-6 md:p-[52px]"
         style={{
           flex: 1,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          padding: isMobile ? "24px" : "52px",
         }}
       >
         <div
@@ -195,7 +199,6 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
         </div>
 
         <h2
-          className="text-[22px] md:text-[32px]"
           style={{
             fontFamily: "'Fraunces', serif",
             fontStyle: "italic",
@@ -203,13 +206,13 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
             lineHeight: 1.2,
             marginBottom: "16px",
             fontWeight: 400,
+            fontSize: isMobile ? "22px" : "32px",
           }}
         >
           {post.title}
         </h2>
 
         <p
-          className="text-[14px] md:text-[16px]"
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 300,
@@ -217,6 +220,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
             lineHeight: 1.7,
             marginBottom: "28px",
             maxWidth: "480px",
+            fontSize: isMobile ? "14px" : "16px",
           }}
         >
           {post.excerpt}
@@ -242,7 +246,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
           >
             {post.date} · {post.readingTime}
           </span>
-          <Link
+          <AppLink
             to={`/notas/${post.slug}`}
             style={{
               fontFamily: "'Space Mono', monospace",
@@ -272,7 +276,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
             }}
           >
             LEER NOTA →
-          </Link>
+          </AppLink>
         </div>
       </div>
     </div>
@@ -281,6 +285,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
 
 export function SecondaryCard({ post }: { post: BlogCardPost }) {
   const tone = coverToneStyles[post.coverTone];
+  const isMobile = useIsMobile();
 
   return (
     <div
@@ -291,139 +296,140 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        transition: "box-shadow 0.2s ease",
       }}
     >
-      <div className="hidden md:block">
-        <CardImageVertical post={post} />
-      </div>
-
-      <div className="md:hidden" style={{ display: "flex", minHeight: "150px" }}>
-        <CardImageSquare post={post} />
-        <div
-          style={{
-            padding: "18px 18px 18px 16px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            flex: 1,
-          }}
-        >
-          <p
+      {isMobile ? (
+        <div style={{ display: "flex", minHeight: "150px" }}>
+          <CardImageSquare post={post} />
+          <div
             style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "8px",
-              color: "#A0998E",
-              marginBottom: "8px",
-              textTransform: "uppercase",
+              padding: "18px 18px 18px 16px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              flex: 1,
             }}
           >
-            {post.date} · {post.readingTime}
-          </p>
-          <p
-            style={{
-              fontFamily: "'MuseoModerno', sans-serif",
-              fontWeight: 600,
-              fontSize: "15px",
-              color: "#1A1A2E",
-              lineHeight: "1.4",
-              marginBottom: "10px",
-            }}
-          >
-            {post.title}
-          </p>
-          <Link
-            to={`/notas/${post.slug}`}
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 500,
-              fontSize: "13px",
-              color: tone.accent,
-              textDecoration: "none",
-            }}
-          >
-            Leer →
-          </Link>
+            <p
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: "8px",
+                color: "#A0998E",
+                marginBottom: "8px",
+                textTransform: "uppercase",
+              }}
+            >
+              {post.date} · {post.readingTime}
+            </p>
+            <p
+              style={{
+                fontFamily: "'MuseoModerno', sans-serif",
+                fontWeight: 600,
+                fontSize: "15px",
+                color: "#1A1A2E",
+                lineHeight: "1.4",
+                marginBottom: "10px",
+              }}
+            >
+              {post.title}
+            </p>
+            <AppLink
+              to={`/notas/${post.slug}`}
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 500,
+                fontSize: "13px",
+                color: tone.accent,
+                textDecoration: "none",
+              }}
+            >
+              Leer →
+            </AppLink>
+          </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <CardImageVertical post={post} />
 
-      <div className="hidden md:flex" style={{ padding: "24px 24px 28px", flexDirection: "column", flex: 1 }}>
-        <div style={{ marginBottom: "12px" }}>
-          <span
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "8px",
-              letterSpacing: "2px",
-              color: tone.accent,
-              textTransform: "uppercase",
-            }}
-          >
-            {post.category}
-          </span>
-        </div>
+          <div style={{ padding: "24px 24px 28px", display: "flex", flexDirection: "column", flex: 1 }}>
+            <div style={{ marginBottom: "12px" }}>
+              <span
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "8px",
+                  letterSpacing: "2px",
+                  color: tone.accent,
+                  textTransform: "uppercase",
+                }}
+              >
+                {post.category}
+              </span>
+            </div>
 
-        <h3
-          style={{
-            fontFamily: "'MuseoModerno', sans-serif",
-            fontWeight: 700,
-            fontSize: "20px",
-            color: "#1A1A2E",
-            lineHeight: 1.25,
-            marginBottom: "12px",
-          }}
-        >
-          {post.title}
-        </h3>
+            <h3
+              style={{
+                fontFamily: "'MuseoModerno', sans-serif",
+                fontWeight: 700,
+                fontSize: "20px",
+                color: "#1A1A2E",
+                lineHeight: 1.25,
+                marginBottom: "12px",
+              }}
+            >
+              {post.title}
+            </h3>
 
-        <p
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 300,
-            fontSize: "14px",
-            color: "#66605A",
-            lineHeight: 1.7,
-            marginBottom: "22px",
-          }}
-        >
-          {post.excerpt}
-        </p>
+            <p
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 300,
+                fontSize: "14px",
+                color: "#66605A",
+                lineHeight: 1.7,
+                marginBottom: "22px",
+              }}
+            >
+              {post.excerpt}
+            </p>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "auto",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "8px",
-              color: "#A0998E",
-              textTransform: "uppercase",
-            }}
-          >
-            {post.date} · {post.readingTime}
-          </span>
-          <Link
-            to={`/notas/${post.slug}`}
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "10px",
-              letterSpacing: "2px",
-              color: "#1A1A2E",
-              textDecoration: "none",
-              borderBottom: "1px solid #1A1A2E",
-              paddingBottom: "2px",
-            }}
-          >
-            LEER →
-          </Link>
-        </div>
-      </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginTop: "auto",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "8px",
+                  color: "#A0998E",
+                  textTransform: "uppercase",
+                }}
+              >
+                {post.date} · {post.readingTime}
+              </span>
+              <AppLink
+                to={`/notas/${post.slug}`}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "10px",
+                  letterSpacing: "2px",
+                  color: "#1A1A2E",
+                  textDecoration: "none",
+                  borderBottom: "1px solid #1A1A2E",
+                  paddingBottom: "2px",
+                }}
+              >
+                LEER →
+              </AppLink>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useIsMobile } from "../hooks/useIsMobile";
 
 export function FooterSection() {
   const isMobile = useIsMobile();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer
@@ -74,7 +75,7 @@ export function FooterSection() {
             fontWeight: 400,
           }}
         >
-          — PAOLA ZERPA · DISEÑO &amp; SISTEMAS · 2025
+          — PAOLA ZERPA · DISEÑO &amp; SISTEMAS · {currentYear}
         </p>
 
         {/* Three pillar dots */}

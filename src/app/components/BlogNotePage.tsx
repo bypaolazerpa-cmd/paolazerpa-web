@@ -1,8 +1,9 @@
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
 import { coverToneStyles, getBlogPostBySlug } from "../data/blogPosts";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { AppLink } from "./AppLink";
 
 export function BlogNotePage() {
   const { slug } = useParams();
@@ -59,10 +60,10 @@ export function BlogNotePage() {
                 marginBottom: "28px",
               }}
             >
-              Podés volver al archivo de notas o seguir navegando desde el inicio.
+              Puedes volver al archivo de notas o seguir navegando desde el inicio.
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <Link
+              <AppLink
                 to="/notas"
                 style={{
                   display: "inline-flex",
@@ -80,8 +81,8 @@ export function BlogNotePage() {
                 }}
               >
                 Volver a notas
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 to="/"
                 style={{
                   display: "inline-flex",
@@ -100,7 +101,7 @@ export function BlogNotePage() {
                 }}
               >
                 Ir al inicio
-              </Link>
+              </AppLink>
             </div>
           </div>
         </section>
@@ -141,7 +142,7 @@ export function BlogNotePage() {
         />
 
         <div style={{ maxWidth: "820px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <Link
+          <AppLink
             to="/notas"
             style={{
               display: "inline-flex",
@@ -155,7 +156,7 @@ export function BlogNotePage() {
             }}
           >
             ← Volver a notas
-          </Link>
+          </AppLink>
 
           <h1
             style={{
@@ -315,7 +316,7 @@ export function BlogNotePage() {
               </p>
             </div>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <Link
+              <AppLink
                 to="/notas"
                 style={{
                   display: "inline-flex",
@@ -333,8 +334,8 @@ export function BlogNotePage() {
                 }}
               >
                 Volver a notas
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 to="/contacto"
                 style={{
                   display: "inline-flex",
@@ -353,7 +354,7 @@ export function BlogNotePage() {
                 }}
               >
                 Ir a contacto
-              </Link>
+              </AppLink>
             </div>
           </div>
         </div>

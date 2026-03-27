@@ -3,6 +3,7 @@ import imagePaola from "../../assets/paola-photo2.jpg";
 import { FooterSection } from "./FooterSection";
 import { NavBar } from "./NavBar";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { navigateWithScroll } from "../utils/navigation";
 
 const storyBlocks = [
   {
@@ -133,7 +134,7 @@ export function MiHistoriaPage() {
               borderRadius: "36px",
               overflow: "hidden",
               backgroundColor: "#D4E4DA",
-              boxShadow: "0 24px 48px rgba(0,0,0,0.18)",
+              border: "1px solid rgba(250,248,244,0.16)",
             }}
           >
             <img
@@ -254,14 +255,14 @@ export function MiHistoriaPage() {
                 marginBottom: "10px",
               }}
             >
-              Si quieres seguir la conversación, puedes escribirme. Y si no, también está bien volver
+              Si quieres seguir la conversación, puedes escribirme. Y si no, también puedes volver
               al inicio.
             </p>
           </div>
 
           <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: "12px" }}>
             <button
-              onClick={() => navigate("/contacto")}
+              onClick={() => navigateWithScroll(navigate, "/contacto")}
               style={{
                 backgroundColor: "#1A1A2E",
                 color: "#FAF8F4",
@@ -278,7 +279,7 @@ export function MiHistoriaPage() {
               Ir a contacto
             </button>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigateWithScroll(navigate, "/")}
               style={{
                 backgroundColor: "transparent",
                 color: "#1A1A2E",

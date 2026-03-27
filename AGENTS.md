@@ -18,7 +18,8 @@ URL: paolazerpa.com
 - React 18 + TypeScript
 - Vite 6
 - React Router 7
-- Tailwind CSS 4 (uso mixto con estilos inline)
+- Estilos inline como patrón principal
+- `lightningcss` en el pipeline de CSS de Vite
 - Sin backend propio. Sin base de datos. Sin auth.
 
 **Deploy:**
@@ -127,15 +128,27 @@ src/
 │   └── paola-photo3.jpg
 │
 └── styles/
-    ├── index.css                      # Entry CSS
-    ├── fonts.css                      # Google Fonts imports
-    ├── theme.css                      # Variables CSS (colores, radios)
-    └── tailwind.css
+    ├── fonts.css                      # Reset base mínimo
+    └── theme.css                      # Variables CSS y base global
 
 public/
 ├── _redirects                         # Netlify SPA routing
 └── guia-ecosistema-personal.pdf       # ← reemplazar con PDF real
 ```
+
+### 4.1) Documentación viva del proyecto
+
+Además de este `AGENTS.md`, el proyecto mantiene documentación viva en `docs/`.
+
+Archivos base:
+- `docs/FOUNDATIONS.md` — visión, alcance, decisiones vigentes y snapshot del proyecto
+- `docs/ARCHITECTURE_MAP.md` — mapa técnico, rutas, componentes y fuentes de verdad
+- `docs/CONTENT_OPERATIONS.md` — copy estructural, datos compartidos, assets, deploy y validaciones
+- `docs/PROJECT_STATUS.md` — evolución del repo, estado actual y worktree observado
+
+Regla:
+- Si un cambio modifica arquitectura, rutas, contenido estructural, contacto, deploy, dependencias o decisiones operativas, estos documentos deben actualizarse en el mismo cambio.
+- `AGENTS.md` sigue siendo la fuente de verdad operativa. Los documentos en `docs/` funcionan como contexto vivo y mapa del proyecto.
 
 ---
 
@@ -170,8 +183,8 @@ Aparecen en: `ContactoSection.tsx`, `ContactoPage.tsx`, `FooterSection.tsx`.
 
 ### Estilos
 - Estilos **inline** en la mayoría de los componentes (origen Figma Make).
-- Tailwind solo donde ya existe (principalmente `BlogCards.tsx`).
-- No migrar todo a Tailwind sin instrucción explícita — mezcla intencional.
+- No reintroducir Tailwind en el pipeline sin una razón concreta y validación de build.
+- El pipeline actual de estilos no depende de Tailwind ni PostCSS para funcionar.
 
 ### Componentes
 - Un archivo por componente/sección.
@@ -204,6 +217,7 @@ Todo cambio sigue este orden:
 - Preferir cambio atómico: UI **o** docs. Si se mezclan, debe ser para mantener coherencia inmediata del repo.
 - Mantener el patrón `useIsMobile()` en todo componente con responsive.
 - No introducir rutas nuevas sin actualizar `src/app/routes.tsx`, la navegación y la documentación afectada.
+- Si cambian rutas, estructura, contenido base, fuentes de verdad o dependencias: actualizar `docs/FOUNDATIONS.md`, `docs/ARCHITECTURE_MAP.md`, `docs/CONTENT_OPERATIONS.md` y/o `docs/PROJECT_STATUS.md` según corresponda.
 
 ### 9.3) VERIFY
 - Ejecutar `npm run build` y confirmar que no hay errores de TypeScript ni de Vite.
@@ -226,6 +240,7 @@ Todo cambio sigue este orden:
 | Cambio en NavBar o Footer | verificar links en todas las rutas |
 | Cambio en GuiaPage | verificar que el botón de descarga apunte al PDF correcto y que el checkbox requerido no bloquee el flujo por error |
 | Deploy | reemplazar `public/guia-ecosistema-personal.pdf` con PDF real |
+| Cambio estructural o de contenido base | actualizar documentación viva en `docs/` |
 
 ---
 
