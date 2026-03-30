@@ -2,7 +2,7 @@
 
 Mapa técnico vivo del proyecto.
 
-Última revisión manual: 2026-03-26
+Última revisión manual: 2026-03-30
 
 ## 1. Entrada de la aplicación
 
@@ -37,6 +37,12 @@ Home:
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
 - [`src/app/components/NotasProcesoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NotasProcesoSection.tsx)
 - [`src/app/components/ContactoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoSection.tsx)
+
+Detalle relevante del hero:
+- `HeroSection` mantiene ramas separadas para mobile y desktop con `useIsMobile()`
+- el titular visible hoy se resuelve en tres líneas alineadas a la izquierda
+- el eyebrow `HOLA, SOY PAOLA` ya no forma parte del hero
+- la bajada usa un fragmento con énfasis en negrita dentro del texto
 
 Páginas:
 - [`src/app/components/GuiaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuiaPage.tsx)

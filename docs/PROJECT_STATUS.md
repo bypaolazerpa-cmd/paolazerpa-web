@@ -2,7 +2,7 @@
 
 Estado vivo del proyecto observado en el repositorio.
 
-Última revisión manual: 2026-03-27
+Última revisión manual: 2026-03-30
 
 ## 1. Línea de tiempo visible en git
 
@@ -22,14 +22,14 @@ Lectura de esa evolución:
 ## 2. Estado del worktree observado
 
 Estado actual:
-- worktree limpio
-- `main` alineada con `origin/main`
-- último commit desplegable ya registrado en git
+- hay cambios locales sin commit
+- los cambios visibles están concentrados en copy y ajuste de presentación del hero, más su actualización documental pendiente de commit
+- no hay evidencia en esta revisión de rotura de build local
 
 Interpretación:
-- el repo quedó en un punto estable para continuar
-- la documentación ya refleja el estado real del proyecto después del bloque de estabilización
-- el siguiente trabajo puede volver a ser acotado y temático, no de saneamiento general
+- el repo sigue en un punto estable para continuar
+- la documentación necesitaba ponerse al día con la iteración reciente de copy del hero
+- el trabajo actual vuelve a ser acotado y temático, no de saneamiento general
 
 ## 3. Estado funcional actual inferido del código
 
@@ -59,7 +59,16 @@ Conversión:
 - La transición entre páginas fue normalizada con una implementación CSS simple y uniforme.
 - El tono visible quedó alineado con tuteo y el footer ahora usa año dinámico.
 
-## 5. Qué sigue después del deploy
+## 5. Estado del bloque actual en working tree
+
+- `HeroSection` fue reescrito en su copy visible para enfatizar intención, estructura y sostenibilidad.
+- El titular del hero ahora se presenta en tres líneas y quedó alineado a la izquierda tanto en mobile como en desktop.
+- La bajada del hero ahora pone el énfasis en "sistemas que mejoran la experiencia".
+- El CTA secundario del hero cambió a `Cómo trabajo ↓`.
+- El eyebrow `HOLA, SOY PAOLA` fue removido para limpiar la parte superior del hero.
+- La build local fue validada tras estos cambios con `npm run build`.
+
+## 6. Qué sigue después del deploy
 
 Siguiente bloque recomendado:
 - QA manual corto en producción sobre Home, Contacto, Notas, Mi historia y Programa
@@ -72,7 +81,7 @@ Orden sugerido:
 2. tomar decisión de producto sobre `/programa`
 3. limpiar dependencias o código residual si ya no aportan
 
-## 6. Cómo usar este documento
+## 7. Cómo usar este documento
 
 Usarlo para:
 - reconstruir rápidamente el estado del proyecto

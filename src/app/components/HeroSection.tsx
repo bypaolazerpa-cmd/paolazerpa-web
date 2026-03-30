@@ -10,8 +10,11 @@ export function HeroSection() {
 
   const copy = (
     <>
-      <strong style={{ fontWeight: 700, color: "#FAF8F4" }}>Diseño sistemas</strong> para sostener
-      lo que construimos, sin depender solo de nuestra energía.
+      Convierto ideas y procesos en{" "}
+      <strong style={{ fontWeight: 700, color: "#FAF8F4" }}>
+        sistemas que mejoran la experiencia
+      </strong>{" "}
+      y se sostienen en el tiempo.
     </>
   );
 
@@ -74,48 +77,49 @@ export function HeroSection() {
         />
 
         <div style={{ position: "relative", zIndex: 1 }}>
-          <p
-            style={{
-              fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
-              color: "#C97B5A",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              marginBottom: "22px",
-              fontWeight: 400,
-            }}
-          >
-            HOLA, SOY PAOLA
-          </p>
-
-          <h1 style={{ margin: "0 0 14px 0" }}>
+          <h1 style={{ margin: "0 0 14px 0", textAlign: "left" }}>
             <span
               style={{
                 fontFamily: "Fraunces, serif",
                 fontStyle: "italic",
                 fontWeight: 400,
-                fontSize: "38px",
+                fontSize: "31px",
                 color: "#FAF8F4",
                 lineHeight: "1.15",
                 display: "block",
                 marginBottom: "4px",
               }}
             >
-              Nuestro sistema de vida se diseña.
+              La forma en que vivimos y lo que construimos
+            </span>
+            <span
+              style={{
+                fontFamily: "Space Mono, monospace",
+                fontWeight: 400,
+                fontSize: "12px",
+                color: "#F5C842",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                lineHeight: "1.5",
+                display: "block",
+                marginBottom: "12px",
+              }}
+            >
+              nace de la intención
             </span>
             <span
               style={{
                 fontFamily: "Fraunces, serif",
                 fontStyle: "italic",
                 fontWeight: 400,
-                fontSize: "38px",
+                fontSize: "31px",
                 color: "#FAF8F4",
                 lineHeight: "1.15",
                 display: "block",
                 marginBottom: "18px",
               }}
             >
-              Las ideas que importan se sostienen.
+              Yo le doy estructura
             </span>
           </h1>
 
@@ -162,7 +166,7 @@ export function HeroSection() {
                 textDecoration: "none",
               }}
             >
-              DESCARGAR GUÍA
+              DESCARGA LA GUÍA GRATUITA
             </AppLink>
             <button
               onClick={() => scrollTo("caminos")}
@@ -182,7 +186,7 @@ export function HeroSection() {
                 opacity: 0.76,
               }}
             >
-              Ver cómo funciona ↓
+              Cómo trabajo ↓
             </button>
           </div>
         </div>
@@ -252,22 +256,8 @@ export function HeroSection() {
           width: "100%",
         }}
       >
-        <p
-          style={{
-            fontFamily: "Space Mono, monospace",
-            fontSize: "10px",
-            color: "#C97B5A",
-            letterSpacing: "3px",
-            textTransform: "uppercase",
-            marginBottom: "26px",
-            fontWeight: 400,
-          }}
-        >
-          HOLA, SOY PAOLA
-        </p>
-
         <div style={{ maxWidth: "760px" }}>
-          <h1 style={{ margin: 0 }}>
+          <h1 style={{ margin: 0, textAlign: "left" }}>
             <span
               style={{
                 fontFamily: "Fraunces, serif",
@@ -280,7 +270,22 @@ export function HeroSection() {
                 marginBottom: "6px",
               }}
             >
-              Nuestro sistema de vida se diseña.
+              La forma en que vivimos y lo que construimos
+            </span>
+            <span
+              style={{
+                fontFamily: "Space Mono, monospace",
+                fontWeight: 400,
+                fontSize: "16px",
+                color: "#F5C842",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                lineHeight: "1.5",
+                display: "block",
+                marginBottom: "14px",
+              }}
+            >
+              nace de la intención
             </span>
             <span
               style={{
@@ -294,7 +299,7 @@ export function HeroSection() {
                 marginBottom: "24px",
               }}
             >
-              Las ideas que importan se sostienen.
+              Yo le doy estructura
             </span>
           </h1>
 
@@ -343,7 +348,7 @@ export function HeroSection() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
             >
-              DESCARGAR GUÍA
+              DESCARGA LA GUÍA GRATUITA
             </AppLink>
             <button
               onClick={() => scrollTo("caminos")}
@@ -362,7 +367,7 @@ export function HeroSection() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.68")}
             >
-              Ver cómo funciona ↓
+              Cómo trabajo ↓
             </button>
           </div>
         </div>

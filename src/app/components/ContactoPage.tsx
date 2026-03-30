@@ -69,7 +69,7 @@ export function ContactoPage() {
               maxWidth: "760px",
             }}
           >
-            Si quieres conversar, aquí puedes elegir la forma más simple de empezar.
+            ¿Hay algo que hoy necesita más claridad o estructura?
           </h1>
           <p
             style={{
@@ -82,8 +82,8 @@ export function ContactoPage() {
               margin: 0,
             }}
           >
-            Si hay algo que hoy necesita más claridad, estructura o una mirada externa, este es un
-            buen lugar para empezar la conversación.
+            Este es un buen lugar para empezar — sin tener todo resuelto, sin un brief perfecto.
+            Solo una conversación.
           </p>
         </div>
       </section>

@@ -136,8 +136,8 @@ export function GuiaPage() {
                   maxWidth: "620px",
                 }}
               >
-                Una guía breve y gratuita para descargar muchas ideas y dar un primer paso con
-                estructura.
+                Una guía breve y gratuita para sacar las ideas de la cabeza y dar un primer paso
+                con estructura.
               </p>
 
               <div style={{ display: "grid", gap: "12px", maxWidth: "560px" }}>
@@ -476,19 +476,6 @@ export function GuiaPage() {
         >
           <p
             style={{
-              fontFamily: "Fraunces, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: isMobile ? "28px" : "36px",
-              color: "#1A1A2E",
-              lineHeight: "1.2",
-              margin: 0,
-            }}
-          >
-            Un primer paso breve para empezar con un poco más de claridad.
-          </p>
-          <p
-            style={{
               fontFamily: "Space Grotesk, sans-serif",
               fontWeight: 400,
               fontSize: "15px",
@@ -497,7 +484,7 @@ export function GuiaPage() {
               margin: 0,
             }}
           >
-            Si después quieres profundizar, puedes seguir desde contacto.
+            Si después quieres ir más lejos, puedes escribirme desde contacto.
           </p>
           <div style={{ display: "flex", justifyContent: isMobile ? "flex-start" : "center", marginTop: "4px" }}>
             <button

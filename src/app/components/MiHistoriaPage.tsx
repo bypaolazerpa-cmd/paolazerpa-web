@@ -106,7 +106,7 @@ export function MiHistoriaPage() {
                 marginBottom: "18px",
               }}
             >
-              Creativa con pensamiento sistémico.
+              Aprendí a diseñar mi vida. Ahora ayudo a otros a hacer lo mismo.
             </h1>
 
             <p

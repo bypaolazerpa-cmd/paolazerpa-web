@@ -15,7 +15,7 @@ const pillars = [
     color: "#C97B5A",
     name: "Estructura simple",
     line: "Sistemas que puedas usar hoy.",
-    detail: "Sistemas que puedes usar hoy, diseñados para sostener lo real.",
+    detail: "No necesitas reinventarlo cada semana. Está pensado para la vida real.",
   },
   {
     id: "sostenibilidad",
@@ -28,9 +28,8 @@ const pillars = [
 
 const solutionBody = (
   <>
-    <strong>Diseño sistemas para dar forma a procesos,</strong> sostener ideas, proyectos y maneras
-    de trabajar sin que todo dependa de la energía personal ni de saturar la cabeza intentando
-    recordar todo.
+    <strong>Diseño sistemas que le dan forma a lo que ya tienes</strong> — ideas, procesos, formas
+    de trabajar — para que se sostengan sin depender todo el tiempo de tu energía.
   </>
 );
 
@@ -63,7 +62,7 @@ export function ProblemaQuienSoySection() {
               fontWeight: 400,
             }}
           >
-            LA SOLUCIÓN ES TENER UN SISTEMA
+            EL PROBLEMA QUE RECONOCES
           </p>
 
           <h2
@@ -182,7 +181,7 @@ export function ProblemaQuienSoySection() {
               fontWeight: 400,
             }}
           >
-            CÓMO SE SOSTIENE
+            LA SOLUCIÓN ES UN SISTEMA
           </p>
           <p
             style={{
@@ -194,7 +193,7 @@ export function ProblemaQuienSoySection() {
               marginBottom: "22px",
             }}
           >
-            La solución es tener un sistema.
+            Un sistema bien diseñado te da tres cosas:
           </p>
           <div style={{ display: "grid", gap: "18px" }}>
               {pillars.map((pillar) => (
@@ -289,7 +288,7 @@ export function ProblemaQuienSoySection() {
                 fontWeight: 400,
               }}
             >
-              LA SOLUCIÓN ES TENER UN SISTEMA
+              EL PROBLEMA QUE RECONOCES
             </p>
 
             <h2
@@ -446,7 +445,7 @@ export function ProblemaQuienSoySection() {
                 fontWeight: 400,
               }}
             >
-              CÓMO SE SOSTIENE
+              LA SOLUCIÓN ES UN SISTEMA
             </p>
             <p
               style={{
@@ -459,7 +458,7 @@ export function ProblemaQuienSoySection() {
                 maxWidth: "420px",
               }}
             >
-              La solución es tener un sistema.
+              Un sistema bien diseñado te da tres cosas:
             </p>
           </div>
         </div>

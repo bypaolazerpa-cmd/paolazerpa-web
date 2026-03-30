@@ -21,7 +21,7 @@ const primaryPaths = [
     tag: "PARA TU EQUIPO DE TRABAJO",
     accentColor: "#7C9E8A",
     title: "Diseñemos un sistema para tu trabajo.",
-    body: "Si hay fricción, desorden o saturación en tu equipo o procesos, podemos empezar por una conversación.",
+    body: "Si hay fricción, desorden o saturación en tu equipo o procesos, puedo ayudarte a verlo con claridad.",
     cta: "Hablemos",
     href: null,
     style: "outline" as const,
@@ -98,7 +98,7 @@ export function CaminosSection() {
               marginBottom: "14px",
             }}
           >
-            Elegí por dónde empezar.
+            Elige por dónde empezar.
           </h2>
 
           <p
@@ -111,7 +111,7 @@ export function CaminosSection() {
               marginBottom: "34px",
             }}
           >
-            Dos entradas según lo que hoy necesites ordenar.
+            Dos entradas según lo que hoy necesitas ordenar.
           </p>
 
           <div style={{ display: "grid", gap: "18px", marginBottom: "18px" }}>
@@ -344,7 +344,7 @@ export function CaminosSection() {
                 margin: 0,
               }}
             >
-              Una app pensada para acompañar tu sistema personal en la vida real. En desarrollo.
+              Una app para llevar tu sistema personal al día a día. Hoy en desarrollo — pronto disponible.
             </p>
           </article>
         </div>
@@ -427,7 +427,7 @@ export function CaminosSection() {
                 marginBottom: "18px",
               }}
             >
-              Elegí por dónde empezar.
+              Elige por dónde empezar.
             </h2>
           </div>
 
@@ -443,7 +443,7 @@ export function CaminosSection() {
               justifySelf: "end",
             }}
           >
-            Dos entradas según lo que hoy necesites ordenar.
+            Dos entradas según lo que hoy necesitas ordenar.
           </p>
         </div>
 
@@ -757,7 +757,7 @@ export function CaminosSection() {
                     margin: 0,
                   }}
                 >
-                  Una app pensada para acompañar tu sistema personal en la vida real. En desarrollo.
+                  Una app para llevar tu sistema personal al día a día. Hoy en desarrollo — pronto disponible.
                 </p>
               </div>
               <div style={{ marginTop: "28px", paddingTop: "20px", borderTop: "1px solid rgba(155,143,176,0.18)" }}>

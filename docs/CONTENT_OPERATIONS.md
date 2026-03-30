@@ -2,7 +2,7 @@
 
 Documento vivo para contenido estructural, contacto, conversión, assets y deploy.
 
-Última revisión manual: 2026-03-26
+Última revisión manual: 2026-03-30
 
 ## 1. Mensaje del sitio
 
@@ -11,6 +11,7 @@ Eje actual:
 - claridad
 - estructura
 - sostenibilidad
+- intención
 
 Voz:
 - español neutro
@@ -33,6 +34,21 @@ Páginas y secciones que convierten:
 - [`src/app/components/ContactoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoSection.tsx)
 - [`src/app/components/ContactoPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoPage.tsx)
 - [`src/app/components/ProgramaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProgramaPage.tsx)
+
+Estado actual del hero:
+- titular:
+  `La forma en que vivimos y lo que construimos`
+  `nace de la intención`
+  `Yo le doy estructura`
+- bajada:
+  `Convierto ideas y procesos en sistemas que mejoran la experiencia y se sostienen en el tiempo.`
+- énfasis en negrita dentro de la bajada:
+  `sistemas que mejoran la experiencia`
+- CTA principal:
+  `DESCARGA LA GUÍA GRATUITA`
+- CTA secundario:
+  `Cómo trabajo ↓`
+- el hero ya no muestra el label `HOLA, SOY PAOLA`
 
 ## 3. Datos hardcodeados que hay que vigilar
 
@@ -103,6 +119,7 @@ Checklist antes de deploy:
 
 - El README histórico quedó desactualizado respecto del estado actual y fue corregido en este cambio.
 - Existe un documento previo de instrucciones de copy, [`codex-instrucciones-v1.md`](/Users/paolazerpa/Desktop/apps/paola-web/codex-instrucciones-v1.md), útil como antecedente pero no como fuente operativa principal.
+- Existe además un handoff puntual de copy en [`docs/copy_handoff_codex.md`](/Users/paolazerpa/Desktop/apps/paola-web/docs/copy_handoff_codex.md); sirve como antecedente de una ronda de cambios, no como fuente de verdad permanente.
 - Algunas implementaciones actuales se apartan levemente de la regla "sin sombras"; antes de normalizar eso, conviene decidir si son excepciones permitidas o deuda visual.
 
 ## 8. Cuándo actualizar este documento

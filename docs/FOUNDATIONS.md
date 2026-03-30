@@ -2,7 +2,7 @@
 
 Este documento resume qué es el proyecto, qué problemas resuelve, qué decisiones no deben romperse y qué fuentes de verdad usar antes de tocar código.
 
-Última revisión manual: 2026-03-26
+Última revisión manual: 2026-03-30
 
 ## 1. Qué es este proyecto
 
@@ -18,6 +18,11 @@ Objetivo del sitio:
 - abrir conversaciones por WhatsApp o email
 - ofrecer la guía gratuita como punto de entrada
 - alojar notas escritas sobre sistemas, vida y trabajo
+
+Snapshot de mensaje visible en home:
+- el hero abre con un titular en tres líneas sobre intención, vida y estructura
+- la bajada del hero presenta a Paola desde la conversión de ideas y procesos en sistemas sostenibles
+- el CTA principal del hero dirige a la guía gratuita y el secundario explica cómo trabaja
 
 No es este proyecto:
 - una app con backend
