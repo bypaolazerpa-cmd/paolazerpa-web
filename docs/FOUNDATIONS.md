@@ -39,6 +39,7 @@ Stack confirmado en el repo:
 - React Router 7
 - estilos inline como patrón dominante
 - `lightningcss` como pipeline actual de CSS
+- prerender estático por ruta durante el build para exponer HTML visible a bots y buscadores
 
 Dependencias visibles en uso:
 - `react`, `react-dom`, `react-router`
@@ -49,6 +50,7 @@ Estado del uso real:
 - No hay backend propio. La única integración externa contemplada es un endpoint opcional para captura en la guía.
 - El build actual ya no depende del plugin de Tailwind.
 - Las fuentes se cargan desde [`index.html`](/Users/paolazerpa/Desktop/apps/paola-web/index.html) y no desde CSS con `@import`.
+- El deploy sigue siendo estático, pero `dist/` ahora incluye HTML prerenderizado para las rutas públicas.
 
 ## 3. Principios que hoy gobiernan el proyecto
 

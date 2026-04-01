@@ -23,7 +23,7 @@ Lectura de esa evolución:
 
 Estado actual:
 - hay cambios locales sin commit
-- los cambios visibles están concentrados en copy y ajuste de presentación del hero, más su actualización documental pendiente de commit
+- los cambios visibles están concentrados en copy del hero, actualización documental y prerender estático para mejorar indexación
 - no hay evidencia en esta revisión de rotura de build local
 
 Interpretación:
@@ -66,7 +66,8 @@ Conversión:
 - La bajada del hero ahora pone el énfasis en "sistemas que mejoran la experiencia".
 - El CTA secundario del hero cambió a `Cómo trabajo ↓`.
 - El eyebrow `HOLA, SOY PAOLA` fue removido para limpiar la parte superior del hero.
-- La build local fue validada tras estos cambios con `npm run build`.
+- El build local fue extendido para generar HTML prerenderizado por ruta y fue validado con `npm run build`.
+- `dist/` ahora genera páginas estáticas para home, páginas internas y notas por slug.
 
 ## 6. Qué sigue después del deploy
 

@@ -10,6 +10,8 @@ Boot:
 - [`src/main.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/main.tsx) monta `App`
 - [`src/app/App.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/App.tsx) monta `RouterProvider`
 - [`src/app/routes.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/routes.tsx) declara todas las rutas
+- [`src/entry-prerender.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/entry-prerender.tsx) expone el render de rutas para prerender estático
+- [`scripts/prerender.mjs`](/Users/paolazerpa/Desktop/apps/paola-web/scripts/prerender.mjs) inyecta HTML renderizado en cada `index.html` generado
 
 ## 2. Estructura de rutas
 
@@ -62,6 +64,7 @@ Fuente de verdad:
 Regla aplicada:
 - breakpoint por defecto `< 768`
 - cada componente responsive suele tener una rama mobile y otra desktop
+- en prerender del lado servidor, el fallback actual renderiza variante desktop porque `window` no existe
 
 Patrón esperado:
 
@@ -113,6 +116,7 @@ Build:
 - script `npm run build`
 - scripts de Vite usando `--configLoader runner`
 - CSS usando `lightningcss`
+- `npm run build` ahora ejecuta build cliente, build SSR y prerender estático por ruta
 
 ## 8. Riesgos y particularidades actuales
 
@@ -120,6 +124,7 @@ Build:
 - `theme.css` fue simplificado para no depender de directivas de Tailwind/PostCSS.
 - `AppLink` y `navigateWithScroll` existen para mantener navegación interna con scroll al tope; si se cambia navegación, hay que revisar ambos.
 - Hay cambios locales sin commit en el worktree; ver [`docs/PROJECT_STATUS.md`](/Users/paolazerpa/Desktop/apps/paola-web/docs/PROJECT_STATUS.md).
+- El prerender actual expone HTML visible para indexación, pero emite warnings de `useLayoutEffect` en build SSR; hoy no bloquean el build.
 
 ## 9. Cuándo actualizar este documento
 

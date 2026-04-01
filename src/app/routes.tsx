@@ -1,4 +1,10 @@
-import { createBrowserRouter, useLocation, useOutlet } from "react-router";
+import {
+  createBrowserRouter,
+  createMemoryRouter,
+  useLocation,
+  useOutlet,
+  type RouteObject,
+} from "react-router";
 import { NavBar } from "./components/NavBar";
 import { HeroSection } from "./components/HeroSection";
 import { ProblemaQuienSoySection } from "./components/ProblemaQuienSoySection";
@@ -40,7 +46,7 @@ function RootLayout() {
   );
 }
 
-export const router = createBrowserRouter([
+export const routeConfig: RouteObject[] = [
   {
     path: "/",
     Component: RootLayout,
@@ -54,4 +60,14 @@ export const router = createBrowserRouter([
       { path: "mi-historia", Component: MiHistoriaPage },
     ],
   },
-]);
+];
+
+export function createBrowserAppRouter() {
+  return createBrowserRouter(routeConfig);
+}
+
+export function createPrerenderRouter(pathname: string) {
+  return createMemoryRouter(routeConfig, {
+    initialEntries: [pathname],
+  });
+}

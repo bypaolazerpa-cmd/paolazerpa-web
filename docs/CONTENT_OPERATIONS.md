@@ -28,6 +28,10 @@ Canales de acción:
 - WhatsApp como CTA principal
 - email como canal secundario
 
+Exposición para indexación:
+- las rutas públicas ahora se prerenderizan a HTML estático durante el build
+- esto permite que bots lean copy visible sin depender de ejecutar JavaScript del cliente
+
 Páginas y secciones que convierten:
 - [`src/app/components/HeroSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HeroSection.tsx)
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
@@ -114,6 +118,7 @@ Checklist antes de deploy:
 - validar CTA de WhatsApp y mail
 - validar que el PDF correcto esté en `public/`
 - validar que las rutas SPA sigan cubiertas
+- validar que `dist/` incluya `index.html` prerenderizados para `/`, `/guia`, `/contacto`, `/mi-historia`, `/programa`, `/notas` y notas por slug
 
 ## 7. Observaciones reales del repo
 
