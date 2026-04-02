@@ -2,7 +2,7 @@
 
 Mapa técnico vivo del proyecto.
 
-Última revisión manual: 2026-03-30
+Última revisión manual: 2026-04-01
 
 ## 1. Entrada de la aplicación
 
@@ -16,7 +16,8 @@ Boot:
 ## 2. Estructura de rutas
 
 Home:
-- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `NotasProcesoSection`, `ContactoSection`, `FooterSection`
+- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `ContactoSection`, `NotasProcesoSection`, `FooterSection`
+- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `ContactoSection`, `NotasProcesoSection`, `FooterSection`
 
 Páginas independientes:
 - `/guia` → `GuiaPage`
@@ -37,14 +38,21 @@ Home:
 - [`src/app/components/HeroSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HeroSection.tsx)
 - [`src/app/components/ProblemaQuienSoySection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProblemaQuienSoySection.tsx)
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
+- [`src/app/components/HomeGuideSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeGuideSection.tsx)
+- [`src/app/components/HomeAppSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeAppSection.tsx)
+- [`src/app/components/HomeAboutSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeAboutSection.tsx)
 - [`src/app/components/NotasProcesoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NotasProcesoSection.tsx)
 - [`src/app/components/ContactoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoSection.tsx)
+
+Soporte compartido:
+- [`src/app/components/GuideCaptureForm.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuideCaptureForm.tsx) centraliza la captura de guía en versión completa y compacta
 
 Detalle relevante del hero:
 - `HeroSection` mantiene ramas separadas para mobile y desktop con `useIsMobile()`
 - el titular visible hoy se resuelve en tres líneas alineadas a la izquierda
 - el eyebrow `HOLA, SOY PAOLA` ya no forma parte del hero
 - la bajada usa un fragmento con énfasis en negrita dentro del texto
+- los CTAs visibles hoy son `Hablemos` y `Ver servicios`
 
 Páginas:
 - [`src/app/components/GuiaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuiaPage.tsx)

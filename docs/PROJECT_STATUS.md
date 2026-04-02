@@ -2,7 +2,7 @@
 
 Estado vivo del proyecto observado en el repositorio.
 
-Última revisión manual: 2026-03-30
+Última revisión manual: 2026-04-01
 
 ## 1. Línea de tiempo visible en git
 
@@ -23,7 +23,7 @@ Lectura de esa evolución:
 
 Estado actual:
 - hay cambios locales sin commit
-- los cambios visibles están concentrados en copy del hero, actualización documental y prerender estático para mejorar indexación
+- los cambios visibles están concentrados en una nueva arquitectura del home, copy estructural actualizado y documentación viva al día
 - no hay evidencia en esta revisión de rotura de build local
 
 Interpretación:
@@ -61,13 +61,15 @@ Conversión:
 
 ## 5. Estado del bloque actual en working tree
 
-- `HeroSection` fue reescrito en su copy visible para enfatizar intención, estructura y sostenibilidad.
-- El titular del hero ahora se presenta en tres líneas y quedó alineado a la izquierda tanto en mobile como en desktop.
-- La bajada del hero ahora pone el énfasis en "sistemas que mejoran la experiencia".
-- El CTA secundario del hero cambió a `Cómo trabajo ↓`.
-- El eyebrow `HOLA, SOY PAOLA` fue removido para limpiar la parte superior del hero.
-- El build local fue extendido para generar HTML prerenderizado por ruta y fue validado con `npm run build`.
-- `dist/` ahora genera páginas estáticas para home, páginas internas y notas por slug.
+- El prerender quedó congelado antes de esta iteración en el commit `68c2a04`.
+- El home fue reorganizado para priorizar solución, servicios, guía y contacto.
+- El home quedó alineado al orden aprobado: hero, beneficios, servicios, guía, app futura, sobre mí, CTA final y notas.
+- `ProblemaQuienSoySection` ya no abre desde el problema y hoy funciona como bloque de beneficios.
+- `CaminosSection` fue reorientada como sección de servicios.
+- Se agregó `HomeGuideSection` para integrar la guía dentro del home con formulario compacto.
+- Se agregaron `HomeAppSection` y `HomeAboutSection` para reincorporar app futura y sobre mí sin volver a una versión extensa.
+- `ContactoSection` pasó a funcionar como CTA final antes de notas.
+- El build local con prerender fue validado tras estos cambios con `npm run build`.
 
 ## 6. Qué sigue después del deploy
 

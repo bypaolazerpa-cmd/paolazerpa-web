@@ -12,6 +12,9 @@ import { CaminosSection } from "./components/CaminosSection";
 import { NotasProcesoSection } from "./components/NotasProcesoSection";
 import { ContactoSection } from "./components/ContactoSection";
 import { FooterSection } from "./components/FooterSection";
+import { HomeGuideSection } from "./components/HomeGuideSection";
+import { HomeAppSection } from "./components/HomeAppSection";
+import { HomeAboutSection } from "./components/HomeAboutSection";
 import { GuiaPage } from "./components/GuiaPage";
 import { ProgramaPage } from "./components/ProgramaPage";
 import { BlogPage } from "./components/BlogPage";
@@ -27,8 +30,11 @@ function Home() {
         <HeroSection />
         <ProblemaQuienSoySection />
         <CaminosSection />
-        <NotasProcesoSection />
+        <HomeGuideSection />
+        <HomeAppSection />
+        <HomeAboutSection />
         <ContactoSection />
+        <NotasProcesoSection />
       </main>
       <FooterSection />
     </div>

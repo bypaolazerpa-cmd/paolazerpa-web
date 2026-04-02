@@ -12,8 +12,8 @@ export function ContactoSection() {
         id="contacto"
         style={{
           backgroundColor: "#FAF8F4",
-          paddingTop: "84px",
-          paddingBottom: "88px",
+          paddingTop: "74px",
+          paddingBottom: "76px",
           paddingLeft: "24px",
           paddingRight: "24px",
           position: "relative",
@@ -68,18 +68,18 @@ export function ContactoSection() {
               fontSize: "15px",
               color: "#666666",
               lineHeight: "1.75",
-              marginBottom: "32px",
+              marginBottom: "24px",
             }}
           >
-            Si quieres abrir la conversación sin pensar demasiado cómo formularla, este puede ser un
-            buen primer paso.
+            Si hay algo importante que depende demasiado de tu cabeza, podemos darle una estructura
+            que lo haga más claro, más liviano y más sostenible.
           </p>
 
           <div
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "16px",
-              padding: "30px 24px",
+              padding: "24px 20px",
               border: "1px solid #E8E2DA",
               borderTop: "3px solid #7C9E8A",
             }}
@@ -95,7 +95,7 @@ export function ContactoSection() {
                 fontWeight: 400,
               }}
             >
-              PRIMER PASO
+              CTA FINAL
             </p>
             <p
               style={{
@@ -104,11 +104,11 @@ export function ContactoSection() {
                 fontSize: "14px",
                 color: "#777777",
                 lineHeight: "1.7",
-                marginBottom: "24px",
+                marginBottom: "20px",
               }}
             >
-              Puedes escribirme por WhatsApp si ya quieres hablar, o ir a la página de contacto si
-              prefieres más contexto antes de hacerlo.
+              Puedes abrir la conversación por WhatsApp o ir a contacto si prefieres dar ese paso
+              con más contexto.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -126,7 +126,7 @@ export function ContactoSection() {
                   fontSize: "10px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
-                  height: "50px",
+                  height: "48px",
                   borderRadius: "6px",
                   textDecoration: "none",
                   fontWeight: 400,
@@ -146,7 +146,7 @@ export function ContactoSection() {
                   fontSize: "10px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
-                  height: "50px",
+                  height: "48px",
                   borderRadius: "6px",
                   border: "1px solid #1A1A2E",
                   cursor: "pointer",
@@ -156,6 +156,29 @@ export function ContactoSection() {
                 Ir a contacto
               </button>
             </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: "16px",
+              paddingTop: "16px",
+              borderTop: "1px solid rgba(139,111,71,0.18)",
+              maxWidth: "300px",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Fraunces, serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "18px",
+                color: "#8B6F47",
+                lineHeight: "1.42",
+                margin: 0,
+              }}
+            >
+              Sistemas para sostener lo que construimos sin depender solo de nuestra energía.
+            </p>
           </div>
         </div>
       </section>
@@ -237,105 +260,129 @@ export function ContactoSection() {
                 maxWidth: "560px",
               }}
             >
-              Si quieres abrir la conversación sin pensar demasiado cómo formularla, este puede ser
-              un buen primer paso.
+              Si hay algo importante que depende demasiado de tu cabeza, podemos darle una
+              estructura que lo haga más claro, más liviano y más sostenible.
             </p>
           </div>
 
-          <div
-            style={{
-              backgroundColor: "#FFFFFF",
-              borderRadius: "18px",
-              padding: "38px 34px",
-              border: "1px solid #E8E2DA",
-              borderTop: "3px solid #7C9E8A",
-            }}
-          >
-            <p
+          <div style={{ display: "grid", gap: "22px" }}>
+            <div
               style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
-                color: "#7C9E8A",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                marginBottom: "16px",
-                fontWeight: 400,
+                backgroundColor: "#FFFFFF",
+                borderRadius: "18px",
+                padding: "38px 34px",
+                border: "1px solid #E8E2DA",
+                borderTop: "3px solid #7C9E8A",
               }}
             >
-              PRIMER PASO
-            </p>
-            <p
-              style={{
-                fontFamily: "Space Grotesk, sans-serif",
-                fontWeight: 400,
-                fontSize: "15px",
-                color: "#777777",
-                lineHeight: "1.75",
-                marginBottom: "30px",
-              }}
-            >
-              Puedes escribirme por WhatsApp si ya quieres hablar, o ir a la página de contacto si
-              prefieres más contexto antes de hacerlo.
-            </p>
+              <p
+                style={{
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "9px",
+                  color: "#7C9E8A",
+                  letterSpacing: "3px",
+                  textTransform: "uppercase",
+                  marginBottom: "16px",
+                  fontWeight: 400,
+                }}
+              >
+                CTA FINAL
+              </p>
+              <p
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "15px",
+                  color: "#777777",
+                  lineHeight: "1.75",
+                  marginBottom: "30px",
+                }}
+              >
+                Puedes abrir la conversación por WhatsApp o ir a contacto si prefieres dar ese
+                paso con más contexto.
+              </p>
 
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <a
-                href="https://wa.me/5491133652899"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <a
+                  href="https://wa.me/5491133652899"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "#1A1A2E",
+                    color: "#FAF8F4",
+                    fontFamily: "Space Mono, monospace",
+                    fontSize: "11px",
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                    padding: "16px 24px",
+                    borderRadius: "6px",
+                    textDecoration: "none",
+                    fontWeight: 400,
+                    transition: "opacity 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
+                >
+                  Hablemos por WhatsApp
+                </a>
+                <button
+                  onClick={() => navigateWithScroll(navigate, "/contacto")}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "transparent",
+                    color: "#1A1A2E",
+                    fontFamily: "Space Mono, monospace",
+                    fontSize: "11px",
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                    padding: "15px 24px",
+                    borderRadius: "6px",
+                    border: "1px solid #1A1A2E",
+                    cursor: "pointer",
+                    fontWeight: 400,
+                    transition: "background 0.2s ease, color 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.backgroundColor = "#1A1A2E";
+                    el.style.color = "#FAF8F4";
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.backgroundColor = "transparent";
+                    el.style.color = "#1A1A2E";
+                  }}
+                >
+                  Ir a contacto
+                </button>
+              </div>
+            </div>
+
+            <div
+              style={{
+                maxWidth: "520px",
+                paddingTop: "18px",
+                borderTop: "1px solid rgba(139,111,71,0.18)",
+              }}
+            >
+              <p
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "#1A1A2E",
-                  color: "#FAF8F4",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "16px 24px",
-                  borderRadius: "6px",
-                  textDecoration: "none",
+                  fontFamily: "Fraunces, serif",
+                  fontStyle: "italic",
                   fontWeight: 400,
-                  transition: "opacity 0.2s ease",
-                }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-              >
-                Hablemos por WhatsApp
-              </a>
-              <button
-                onClick={() => navigateWithScroll(navigate, "/contacto")}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "transparent",
-                  color: "#1A1A2E",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "15px 24px",
-                  borderRadius: "6px",
-                  border: "1px solid #1A1A2E",
-                  cursor: "pointer",
-                  fontWeight: 400,
-                  transition: "background 0.2s ease, color 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.backgroundColor = "#1A1A2E";
-                  el.style.color = "#FAF8F4";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.backgroundColor = "transparent";
-                  el.style.color = "#1A1A2E";
+                  fontSize: "24px",
+                  color: "#8B6F47",
+                  lineHeight: "1.45",
+                  margin: 0,
                 }}
               >
-                Ir a contacto
-              </button>
+                Sistemas para sostener lo que construimos sin depender solo de nuestra energía.
+              </p>
             </div>
           </div>
         </div>

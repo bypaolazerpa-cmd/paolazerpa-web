@@ -67,13 +67,17 @@ export function NavBar() {
             left: 0,
             right: 0,
             zIndex: 1000,
-            backgroundColor: "#1A1A2E",
-            height: "56px",
+            background:
+              "linear-gradient(180deg, rgba(26, 26, 46, 0.94) 0%, rgba(26, 26, 46, 0.88) 100%)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            boxShadow: "0 1px 0 rgba(250, 248, 244, 0.07)",
+            height: "60px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             padding: "0 24px",
-            borderBottom: "1px solid #252540",
+            borderBottom: "1px solid rgba(245, 200, 66, 0.12)",
           }}
         >
           <button
@@ -88,7 +92,7 @@ export function NavBar() {
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 500,
                 fontSize: "17px",
-                letterSpacing: "0.3px",
+                letterSpacing: "0.2px",
               }}
             >
               🌷 Paola
@@ -97,7 +101,18 @@ export function NavBar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
+            style={{
+              background: "none",
+              border: menuOpen ? "1px solid rgba(245, 200, 66, 0.28)" : "1px solid transparent",
+              width: "36px",
+              height: "36px",
+              borderRadius: "10px",
+              padding: 0,
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
             aria-label={menuOpen ? "Cerrar navegación" : "Abrir navegación"}
           >
             {menuOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -109,37 +124,78 @@ export function NavBar() {
             style={{
               position: "fixed",
               inset: 0,
-              top: "56px",
+              top: "60px",
               zIndex: 999,
-              backgroundColor: "#1A1A2E",
-              padding: "28px 24px 32px",
+              background:
+                "linear-gradient(180deg, rgba(26,26,46,0.94) 0%, rgba(26,26,46,0.99) 100%)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              padding: "16px 24px 28px",
               display: "flex",
               flexDirection: "column",
-              gap: "12px",
-              borderTop: "1px solid #252540",
+              gap: "18px",
+              borderTop: "1px solid rgba(245, 200, 66, 0.12)",
             }}
           >
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => handleNavClick(link.href)}
+            <div
+              style={{
+                display: "grid",
+                gap: "6px",
+                paddingBottom: "18px",
+                borderBottom: "1px solid rgba(245, 200, 66, 0.12)",
+              }}
+            >
+              <p
                 style={{
-                  background: "none",
-                  border: "none",
-                  padding: "12px 0",
-                  textAlign: "left",
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  color: isActive(link.href) ? "#F5C842" : "#D6D0C4",
+                  fontSize: "8px",
+                  color: "#7A758D",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
-                  cursor: "pointer",
+                  margin: 0,
                 }}
               >
-                {link.label}
-              </button>
-            ))}
+                Navegación
+              </p>
+              <p
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontSize: "14px",
+                  color: "#B8B0A4",
+                  lineHeight: "1.55",
+                  margin: 0,
+                  maxWidth: "260px",
+                }}
+              >
+                Elige una sección y sigue el recorrido del sitio.
+              </p>
+            </div>
 
+            <div style={{ display: "grid", gap: "10px" }}>
+              {navLinks.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link.href)}
+                  style={{
+                    backgroundColor: isActive(link.href) ? "rgba(245, 200, 66, 0.08)" : "transparent",
+                    border: `1px solid ${
+                      isActive(link.href) ? "rgba(245, 200, 66, 0.22)" : "rgba(250,248,244,0.06)"
+                    }`,
+                    borderRadius: "14px",
+                    padding: "14px 16px",
+                    textAlign: "left",
+                    fontFamily: "Space Mono, monospace",
+                    fontSize: "11px",
+                    color: isActive(link.href) ? "#F5C842" : "#D6D0C4",
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                    cursor: "pointer",
+                  }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </>
@@ -154,13 +210,17 @@ export function NavBar() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: "#1A1A2E",
-        height: "72px",
+        background:
+          "linear-gradient(180deg, rgba(26, 26, 46, 0.94) 0%, rgba(26, 26, 46, 0.88) 100%)",
+        backdropFilter: "blur(22px)",
+        WebkitBackdropFilter: "blur(22px)",
+        boxShadow: "0 1px 0 rgba(250, 248, 244, 0.07)",
+        height: "74px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 80px",
-        borderBottom: "1px solid #252540",
+        borderBottom: "1px solid rgba(245, 200, 66, 0.12)",
       }}
     >
       <button
@@ -198,6 +258,10 @@ export function NavBar() {
               textTransform: "uppercase",
               cursor: "pointer",
               transition: "color 0.2s ease",
+              textDecorationLine: "underline",
+              textDecorationColor: isActive(link.href) ? "rgba(245, 200, 66, 0.36)" : "transparent",
+              textDecorationThickness: "1px",
+              textUnderlineOffset: "5px",
             }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F5C842")}
             onMouseLeave={(e) =>

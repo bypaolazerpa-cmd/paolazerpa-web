@@ -2,7 +2,7 @@
 
 Documento vivo para contenido estructural, contacto, conversión, assets y deploy.
 
-Última revisión manual: 2026-03-30
+Última revisión manual: 2026-04-01
 
 ## 1. Mensaje del sitio
 
@@ -49,10 +49,26 @@ Estado actual del hero:
 - énfasis en negrita dentro de la bajada:
   `sistemas que mejoran la experiencia`
 - CTA principal:
-  `DESCARGA LA GUÍA GRATUITA`
+  `Hablemos`
 - CTA secundario:
-  `Cómo trabajo ↓`
+  `Ver servicios`
 - el hero ya no muestra el label `HOLA, SOY PAOLA`
+
+Estado actual del home:
+- beneficios:
+  bloque directo sobre solución, claridad, estructura, funcionamiento y sostén
+- servicios:
+  `Para ti`
+  `Para tu trabajo`
+  `Para tu negocio`
+- guía:
+  integrada en home con formulario compacto reutilizando la misma lógica de captura de `/guia`
+- app futura:
+  visible como bloque corto dentro del home
+- sobre mí:
+  visible como bloque breve dentro del home
+- CTA final:
+  ubicado antes de notas e incluyendo la firma de marca
 
 ## 3. Datos hardcodeados que hay que vigilar
 

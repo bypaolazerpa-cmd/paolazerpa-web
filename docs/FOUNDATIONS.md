@@ -2,7 +2,7 @@
 
 Este documento resume qué es el proyecto, qué problemas resuelve, qué decisiones no deben romperse y qué fuentes de verdad usar antes de tocar código.
 
-Última revisión manual: 2026-03-30
+Última revisión manual: 2026-04-01
 
 ## 1. Qué es este proyecto
 
@@ -23,6 +23,16 @@ Snapshot de mensaje visible en home:
 - el hero abre con un titular en tres líneas sobre intención, vida y estructura
 - la bajada del hero presenta a Paola desde la conversión de ideas y procesos en sistemas sostenibles
 - el CTA principal del hero dirige a la guía gratuita y el secundario explica cómo trabaja
+
+Snapshot de estructura visible en home:
+- hero con salida directa a contacto y a servicios
+- bloque de solución y beneficios sin abrir desde el problema
+- servicios segmentados para vida, trabajo y negocio
+- guía integrada en home como lead magnet con formulario compacto
+- bloque breve para la app futura como extensión natural del enfoque
+- bloque breve de sobre mí reinsertado dentro del home
+- CTA final antes de notas
+- notas al cierre del home
 
 No es este proyecto:
 - una app con backend

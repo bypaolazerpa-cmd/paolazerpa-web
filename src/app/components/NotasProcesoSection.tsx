@@ -12,8 +12,8 @@ export function NotasProcesoSection() {
         id="notas"
         style={{
           backgroundColor: "#FAF8F4",
-          paddingTop: "80px",
-          paddingBottom: "80px",
+          paddingTop: "72px",
+          paddingBottom: "72px",
           paddingLeft: "24px",
           paddingRight: "24px",
           position: "relative",
@@ -46,7 +46,7 @@ export function NotasProcesoSection() {
               marginBottom: "8px",
             }}
           >
-            Procesos, no fórmulas.
+            Notas sobre sistemas, vida y trabajo
           </h2>
           <p
             style={{
@@ -55,11 +55,30 @@ export function NotasProcesoSection() {
               fontSize: "14px",
               color: "#888888",
               lineHeight: "1.6",
-              marginBottom: "40px",
+              marginBottom: "18px",
             }}
           >
-            Escribo estas notas para pensar con más criterio la relación entre sistemas, vida y trabajo.
+            Ideas, observaciones y formas de pensar la estructura de lo que hacemos, sostenemos y
+            construimos.
           </p>
+
+          <div style={{ marginBottom: "24px" }}>
+            <AppLink
+              to="/notas"
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 500,
+                fontSize: "14px",
+                color: "#1A1A2E",
+                textDecoration: "underline",
+                textDecorationColor: "rgba(245, 200, 66, 0.42)",
+                textDecorationThickness: "1px",
+                textUnderlineOffset: "3px",
+              }}
+            >
+              Ver notas →
+            </AppLink>
+          </div>
 
           <div
             style={{
@@ -67,7 +86,7 @@ export function NotasProcesoSection() {
               borderRadius: "12px",
               overflow: "hidden",
               border: "1px solid #E8E2DA",
-              marginBottom: "16px",
+              marginBottom: "14px",
             }}
           >
             <div style={{ backgroundColor: featuredTone.background, height: "180px", position: "relative", padding: "16px" }}>
@@ -87,7 +106,7 @@ export function NotasProcesoSection() {
                 {featuredBlogPost.category}
               </span>
             </div>
-            <div style={{ padding: "20px" }}>
+            <div style={{ padding: "18px" }}>
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
@@ -104,10 +123,10 @@ export function NotasProcesoSection() {
                 style={{
                   fontFamily: "MuseoModerno, sans-serif",
                   fontWeight: 700,
-                  fontSize: "22px",
+                  fontSize: "20px",
                   color: "#1A1A2E",
-                  lineHeight: "1.3",
-                  marginBottom: "20px",
+                  lineHeight: "1.28",
+                  marginBottom: "16px",
                 }}
               >
                 {featuredBlogPost.title}
@@ -117,12 +136,12 @@ export function NotasProcesoSection() {
                   style={{
                     fontFamily: "Fraunces, serif",
                     fontStyle: "italic",
-                    fontSize: "17px",
+                    fontSize: "16px",
                     color: "#8B6F47",
                     borderLeft: "2px solid #F5C842",
-                    paddingLeft: "14px",
-                    margin: "0 0 24px 0",
-                    lineHeight: "1.5",
+                    paddingLeft: "12px",
+                    margin: "0 0 18px 0",
+                    lineHeight: "1.45",
                   }}
                 >
                   "{featuredBlogPost.featuredQuote}"
@@ -144,22 +163,6 @@ export function NotasProcesoSection() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "28px" }}>
-            <AppLink
-              to="/notas"
-              style={{
-                fontFamily: "Space Grotesk, sans-serif",
-                fontWeight: 500,
-                fontSize: "14px",
-                color: "#1A1A2E",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-              }}
-            >
-              Ver todas las notas →
-            </AppLink>
-          </div>
-
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {otherBlogPosts.map((post) => {
               const tone = coverToneStyles[post.coverTone];
@@ -174,7 +177,7 @@ export function NotasProcesoSection() {
                     display: "flex",
                   }}
                 >
-                  <div style={{ backgroundColor: tone.background, width: "100px", minWidth: "100px", flexShrink: 0, position: "relative", padding: "14px 12px" }}>
+                  <div style={{ backgroundColor: tone.background, width: "88px", minWidth: "88px", flexShrink: 0, position: "relative", padding: "12px 10px" }}>
                     <span
                       style={{
                         fontFamily: "Space Mono, monospace",
@@ -189,7 +192,7 @@ export function NotasProcesoSection() {
                       {post.category}
                     </span>
                   </div>
-                  <div style={{ padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <div style={{ padding: "16px 18px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <p
                       style={{
                         fontFamily: "Space Mono, monospace",
@@ -206,10 +209,10 @@ export function NotasProcesoSection() {
                       style={{
                         fontFamily: "MuseoModerno, sans-serif",
                         fontWeight: 600,
-                        fontSize: "15px",
+                        fontSize: "14px",
                         color: "#1A1A2E",
-                        lineHeight: "1.4",
-                        marginBottom: "12px",
+                        lineHeight: "1.35",
+                        marginBottom: "10px",
                       }}
                     >
                       {post.title}
@@ -284,7 +287,7 @@ export function NotasProcesoSection() {
                 marginBottom: "8px",
               }}
             >
-              Procesos, no fórmulas.
+              Notas sobre sistemas, vida y trabajo
             </h2>
             <p
               style={{
@@ -296,8 +299,8 @@ export function NotasProcesoSection() {
                 margin: 0,
               }}
             >
-              Escribo estas notas para pensar con más criterio la relación entre sistemas, vida y
-              trabajo.
+              Ideas, observaciones y formas de pensar la estructura de lo que hacemos, sostenemos y
+              construimos.
             </p>
           </div>
 
@@ -309,10 +312,12 @@ export function NotasProcesoSection() {
               fontSize: "14px",
               color: "#1A1A2E",
               textDecoration: "underline",
+              textDecorationColor: "rgba(245, 200, 66, 0.42)",
+              textDecorationThickness: "1px",
               textUnderlineOffset: "3px",
             }}
           >
-            Ver todas las notas →
+            Ver notas →
           </AppLink>
         </div>
 
