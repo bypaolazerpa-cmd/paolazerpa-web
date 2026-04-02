@@ -2,7 +2,7 @@
 
 Estado vivo del proyecto observado en el repositorio.
 
-Última revisión manual: 2026-04-01
+Última revisión manual: 2026-04-02
 
 ## 1. Línea de tiempo visible en git
 
@@ -52,6 +52,7 @@ Navegación:
 Conversión:
 - WhatsApp sigue siendo canal principal
 - la guía tiene formulario con estado local y captura opcional
+- el home ya no duplica la sección de contacto y deriva las cards de servicios a `/contacto#email`
 
 ## 4. Estado del bloque recién cerrado
 
@@ -70,7 +71,8 @@ Conversión:
 - `CaminosSection` fue reorientada como sección de servicios.
 - Se agregó `HomeGuideSection` para integrar la guía dentro del home con formulario compacto.
 - Se agregaron `HomeAppSection` y `HomeAboutSection` para reincorporar app futura y sobre mí sin volver a una versión extensa.
-- `ContactoSection` pasó a funcionar como CTA final antes de notas.
+- `ContactoSection` queda fuera del home para evitar duplicación con `/contacto`.
+- Las tres CTAs de `CaminosSection` ahora convergen en `/contacto#email`.
 - El build local con prerender fue validado tras estos cambios con `npm run build`.
 
 ## 6. Qué sigue después del deploy

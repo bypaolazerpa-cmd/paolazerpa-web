@@ -46,7 +46,7 @@ export function NotasProcesoSection() {
               marginBottom: "8px",
             }}
           >
-            Notas sobre sistemas, vida y trabajo
+            Mi Bitácora
           </h2>
           <p
             style={{
@@ -287,7 +287,7 @@ export function NotasProcesoSection() {
                 marginBottom: "8px",
               }}
             >
-              Notas sobre sistemas, vida y trabajo
+              Mi Bitácora
             </h2>
             <p
               style={{

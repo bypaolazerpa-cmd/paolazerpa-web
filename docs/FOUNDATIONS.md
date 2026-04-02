@@ -2,7 +2,7 @@
 
 Este documento resume qué es el proyecto, qué problemas resuelve, qué decisiones no deben romperse y qué fuentes de verdad usar antes de tocar código.
 
-Última revisión manual: 2026-04-01
+Última revisión manual: 2026-04-02
 
 ## 1. Qué es este proyecto
 
@@ -15,7 +15,7 @@ Posicionamiento actual:
 
 Objetivo del sitio:
 - presentar el enfoque de Paola
-- abrir conversaciones por WhatsApp o email
+- abrir conversaciones concentrando la intención comercial en `/contacto`
 - ofrecer la guía gratuita como punto de entrada
 - alojar notas escritas sobre sistemas, vida y trabajo
 
@@ -28,10 +28,10 @@ Snapshot de estructura visible en home:
 - hero con salida directa a contacto y a servicios
 - bloque de solución y beneficios sin abrir desde el problema
 - servicios segmentados para vida, trabajo y negocio
+- las tres cards de servicios derivan al bloque de email en `/contacto#email`
 - guía integrada en home como lead magnet con formulario compacto
 - bloque breve para la app futura como extensión natural del enfoque
 - bloque breve de sobre mí reinsertado dentro del home
-- CTA final antes de notas
 - notas al cierre del home
 
 No es este proyecto:

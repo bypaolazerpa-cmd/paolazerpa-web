@@ -2,7 +2,7 @@
 
 Mapa técnico vivo del proyecto.
 
-Última revisión manual: 2026-04-01
+Última revisión manual: 2026-04-02
 
 ## 1. Entrada de la aplicación
 
@@ -16,8 +16,8 @@ Boot:
 ## 2. Estructura de rutas
 
 Home:
-- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `ContactoSection`, `NotasProcesoSection`, `FooterSection`
-- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `ContactoSection`, `NotasProcesoSection`, `FooterSection`
+- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `NotasProcesoSection`, `FooterSection`
+- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `NotasProcesoSection`, `FooterSection`
 
 Páginas independientes:
 - `/guia` → `GuiaPage`
@@ -44,7 +44,6 @@ Home:
 - [`src/app/components/HomeAppSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeAppSection.tsx)
 - [`src/app/components/HomeAboutSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeAboutSection.tsx)
 - [`src/app/components/NotasProcesoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NotasProcesoSection.tsx)
-- [`src/app/components/ContactoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoSection.tsx)
 
 Soporte compartido:
 - [`src/app/components/GuideCaptureForm.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuideCaptureForm.tsx) centraliza la captura de guía en versión completa y compacta
@@ -55,6 +54,7 @@ Detalle relevante del hero:
 - el eyebrow `HOLA, SOY PAOLA` ya no forma parte del hero
 - la bajada usa un fragmento con énfasis en negrita dentro del texto
 - los CTAs visibles hoy son `Hablemos` y `Ver servicios`
+- las CTAs de servicios resuelven navegación interna hacia `/contacto#email`
 
 Páginas:
 - [`src/app/components/GuiaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuiaPage.tsx)

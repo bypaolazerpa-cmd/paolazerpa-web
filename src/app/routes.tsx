@@ -10,7 +10,6 @@ import { HeroSection } from "./components/HeroSection";
 import { ProblemaQuienSoySection } from "./components/ProblemaQuienSoySection";
 import { CaminosSection } from "./components/CaminosSection";
 import { NotasProcesoSection } from "./components/NotasProcesoSection";
-import { ContactoSection } from "./components/ContactoSection";
 import { FooterSection } from "./components/FooterSection";
 import { HomeGuideSection } from "./components/HomeGuideSection";
 import { HomeAppSection } from "./components/HomeAppSection";
@@ -33,7 +32,6 @@ function Home() {
         <HomeGuideSection />
         <HomeAppSection />
         <HomeAboutSection />
-        <ContactoSection />
         <NotasProcesoSection />
       </main>
       <FooterSection />

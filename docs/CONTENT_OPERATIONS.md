@@ -27,6 +27,7 @@ Punto de entrada principal:
 Canales de acción:
 - WhatsApp como CTA principal
 - email como canal secundario
+- las cards de servicios del home concentran la conversión en `/contacto#email`
 
 Exposición para indexación:
 - las rutas públicas ahora se prerenderizan a HTML estático durante el build
@@ -35,7 +36,6 @@ Exposición para indexación:
 Páginas y secciones que convierten:
 - [`src/app/components/HeroSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HeroSection.tsx)
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
-- [`src/app/components/ContactoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoSection.tsx)
 - [`src/app/components/ContactoPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoPage.tsx)
 - [`src/app/components/ProgramaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProgramaPage.tsx)
 
@@ -43,6 +43,7 @@ Estado actual de `/contacto`:
 - WhatsApp se mantiene como acción principal de inicio de conversación
 - email se presenta como alternativa secundaria, visible y clara
 - el copy quedó reenfocado desde diseño de sistemas, procesos, experiencias y estructuras, evitando un tono de acompañamiento emocional
+- el bloque de correo expone `id="email"` y margen de scroll para navegación con hash
 
 Estado actual de `/guia`:
 - la promesa se presenta como primer paso concreto para revisar prioridades, fricciones y forma de organización
@@ -72,14 +73,13 @@ Estado actual del home:
   `Para ti`
   `Para tu trabajo`
   `Para tu negocio`
+  sus tres CTAs llevan a `/contacto#email`
 - guía:
   integrada en home con formulario compacto reutilizando la misma lógica de captura de `/guia`
 - app futura:
   visible como bloque corto dentro del home
 - sobre mí:
   visible como bloque breve dentro del home
-- CTA final:
-  ubicado antes de notas e incluyendo la firma de marca
 
 ## 3. Datos hardcodeados que hay que vigilar
 
@@ -143,6 +143,7 @@ Checklist antes de deploy:
 - validar build
 - validar links de navegación
 - validar CTA de WhatsApp y mail
+- validar navegación a `/contacto#email` desde las cards de servicios
 - validar que el PDF correcto esté en `public/`
 - validar que las rutas SPA sigan cubiertas
 - validar que `dist/` incluya `index.html` prerenderizados para `/`, `/guia`, `/contacto`, `/mi-historia`, `/programa`, `/notas` y notas por slug

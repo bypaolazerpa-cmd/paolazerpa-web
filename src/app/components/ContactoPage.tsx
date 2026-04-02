@@ -200,7 +200,9 @@ export function ContactoPage() {
       </section>
 
       <section
+        id="email"
         style={{
+          scrollMarginTop: isMobile ? "84px" : "98px",
           backgroundColor: "#1A1A2E",
           paddingTop: isMobile ? "56px" : "64px",
           paddingBottom: isMobile ? "56px" : "64px",
@@ -319,7 +321,6 @@ export function ContactoPage() {
               </a>
             </div>
             <div
-              id="email"
               style={{
                 backgroundColor: "rgba(250,248,244,0.03)",
                 border: "1px solid rgba(250,248,244,0.1)",

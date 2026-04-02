@@ -1,9 +1,5 @@
+import { AppLink } from "./AppLink";
 import { useIsMobile } from "../hooks/useIsMobile";
-
-const whatsappBaseUrl = "https://wa.me/5491133652899";
-
-const createWhatsAppLink = (message: string) =>
-  `${whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
 
 const services = [
   {
@@ -12,9 +8,7 @@ const services = [
     title: "Ordenar tu tiempo y energía",
     body: "Para diseñar una estructura personal más clara: prioridades, decisiones, hábitos y formas de organizar tu vida con más intención y menos improvisación.",
     cta: "Ordenar esto contigo",
-    href: createWhatsAppLink(
-      "Hola, Paola. Quiero conversar sobre una estructura personal más clara para ordenar mi tiempo, prioridades y energía."
-    ),
+    href: "/contacto#email",
     backgroundColor: "#F6F0DE",
     borderColor: "rgba(245,200,66,0.22)",
     labelColor: "#8B6F47",
@@ -30,9 +24,7 @@ const services = [
     title: "Tu trabajo también es un sistema",
     body: "Para revisar procesos, roles, dinámicas y decisiones de estructura que hoy generan fricción o te quitan claridad en el día a día.",
     cta: "Revisar mi forma de trabajo",
-    href: createWhatsAppLink(
-      "Hola, Paola. Quiero revisar mi forma de trabajo, mis procesos o algunas decisiones de estructura que hoy me generan fricción."
-    ),
+    href: "/contacto#email",
     backgroundColor: "#EEF3ED",
     borderColor: "rgba(124,158,138,0.22)",
     labelColor: "#5B7D69",
@@ -48,9 +40,7 @@ const services = [
     title: "Diseñar mejor lo que sostiene tu negocio",
     body: "Para pensar con más criterio un producto, un servicio, una experiencia o una operación que necesita estructura para crecer con coherencia.",
     cta: "Pensar mi negocio contigo",
-    href: createWhatsAppLink(
-      "Hola, Paola. Quiero pensar mejor un producto, servicio, experiencia u operación de mi negocio para que crezca con más coherencia."
-    ),
+    href: "/contacto#email",
     backgroundColor: "#F4ECE8",
     borderColor: "rgba(201,123,90,0.22)",
     labelColor: "#A16044",
@@ -198,10 +188,8 @@ export function CaminosSection() {
                 >
                   {service.body}
                 </p>
-                <a
-                  href={service.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <AppLink
+                  to={service.href}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -219,7 +207,7 @@ export function CaminosSection() {
                   }}
                 >
                   {service.cta}
-                </a>
+                </AppLink>
               </article>
             ))}
           </div>
@@ -384,10 +372,8 @@ export function CaminosSection() {
                 {service.body}
               </p>
               <div style={{ marginTop: "auto" }}>
-                <a
-                  href={service.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <AppLink
+                  to={service.href}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -405,7 +391,7 @@ export function CaminosSection() {
                   }}
                 >
                   {service.cta}
-                </a>
+                </AppLink>
               </div>
             </article>
           ))}
