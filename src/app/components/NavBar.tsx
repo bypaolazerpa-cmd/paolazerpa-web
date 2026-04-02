@@ -29,7 +29,6 @@ export function NavBar() {
 
   const navLinks = [
     { label: "INICIO", href: "/" },
-    { label: "MI HISTORIA", href: "/mi-historia" },
     { label: "NOTAS", href: "/notas" },
     { label: "CONTACTO", href: "/contacto" },
   ];

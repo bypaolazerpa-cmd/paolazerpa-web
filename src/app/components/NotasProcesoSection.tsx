@@ -24,7 +24,7 @@ export function NotasProcesoSection() {
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: "#AAAAAA",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -58,8 +58,8 @@ export function NotasProcesoSection() {
               marginBottom: "18px",
             }}
           >
-            Ideas, observaciones y formas de pensar la estructura de lo que hacemos, sostenemos y
-            construimos.
+            Comparto ideas, aprendizajes y formas de pensar lo que diseñamos, sostenemos y
+            construimos en la práctica.
           </p>
 
           <div style={{ marginBottom: "24px" }}>
@@ -93,7 +93,7 @@ export function NotasProcesoSection() {
               <span
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "7px",
+                  fontSize: "8px",
                   textTransform: "uppercase",
                   letterSpacing: "1.5px",
                   backgroundColor: "#1A1A2E",
@@ -110,7 +110,7 @@ export function NotasProcesoSection() {
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "8px",
+                  fontSize: "9px",
                   color: "#C8C2BA",
                   marginBottom: "10px",
                   fontWeight: 400,
@@ -181,7 +181,7 @@ export function NotasProcesoSection() {
                     <span
                       style={{
                         fontFamily: "Space Mono, monospace",
-                        fontSize: "7px",
+                        fontSize: "8px",
                         textTransform: "uppercase",
                         letterSpacing: "1px",
                         color: tone.accent,
@@ -196,7 +196,7 @@ export function NotasProcesoSection() {
                     <p
                       style={{
                         fontFamily: "Space Mono, monospace",
-                        fontSize: "8px",
+                        fontSize: "9px",
                         color: "#C8C2BA",
                         marginBottom: "8px",
                         fontWeight: 400,
@@ -266,7 +266,7 @@ export function NotasProcesoSection() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: "10px",
                 color: "#AAAAAA",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -299,8 +299,8 @@ export function NotasProcesoSection() {
                 margin: 0,
               }}
             >
-              Ideas, observaciones y formas de pensar la estructura de lo que hacemos, sostenemos y
-              construimos.
+              Comparto ideas, aprendizajes y formas de pensar lo que diseñamos, sostenemos y
+              construimos en la práctica.
             </p>
           </div>
 
@@ -341,7 +341,7 @@ export function NotasProcesoSection() {
               <span
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "8px",
+                  fontSize: "9px",
                   textTransform: "uppercase",
                   letterSpacing: "2px",
                   backgroundColor: "#1A1A2E",
@@ -358,7 +358,7 @@ export function NotasProcesoSection() {
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "9px",
+                  fontSize: "10px",
                   color: "#C8C2BA",
                   marginBottom: "12px",
                   fontWeight: 400,
@@ -428,7 +428,7 @@ export function NotasProcesoSection() {
                     <span
                       style={{
                         fontFamily: "Space Mono, monospace",
-                        fontSize: "7px",
+                        fontSize: "8px",
                         textTransform: "uppercase",
                         letterSpacing: "1px",
                         color: tone.accent,
@@ -443,7 +443,7 @@ export function NotasProcesoSection() {
                     <p
                       style={{
                         fontFamily: "Space Mono, monospace",
-                        fontSize: "8px",
+                        fontSize: "9px",
                         color: "#C8C2BA",
                         marginBottom: "8px",
                         fontWeight: 400,

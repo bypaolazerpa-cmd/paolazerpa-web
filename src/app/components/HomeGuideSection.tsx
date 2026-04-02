@@ -51,7 +51,7 @@ export function HomeGuideSection() {
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: "#8B6F47",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -84,8 +84,8 @@ export function HomeGuideSection() {
               marginBottom: "24px",
             }}
           >
-            Una guía breve y gratuita para sacar ideas de la cabeza, bajar ruido y dar un primer
-            paso con estructura.
+            Una guía útil y gratuita para registrar ideas, organizar mejor tu tiempo y dar un
+            primer paso con más estructura.
           </p>
 
           <GuideCaptureForm variant="compact" theme="light" source="home-guide" />
@@ -132,7 +132,7 @@ export function HomeGuideSection() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: "10px",
                 color: "#8B6F47",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -166,8 +166,8 @@ export function HomeGuideSection() {
                 maxWidth: "520px",
               }}
             >
-              Una guía breve y gratuita para sacar ideas de la cabeza, bajar ruido y dar un primer
-              paso con estructura.
+              Una guía útil y gratuita para registrar ideas, organizar mejor tu tiempo y dar un
+              primer paso con más estructura.
             </p>
           </div>
 

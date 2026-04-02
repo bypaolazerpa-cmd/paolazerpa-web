@@ -2,7 +2,7 @@
 
 Documento vivo para contenido estructural, contacto, conversión, assets y deploy.
 
-Última revisión manual: 2026-04-01
+Última revisión manual: 2026-04-02
 
 ## 1. Mensaje del sitio
 
@@ -38,6 +38,17 @@ Páginas y secciones que convierten:
 - [`src/app/components/ContactoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoSection.tsx)
 - [`src/app/components/ContactoPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoPage.tsx)
 - [`src/app/components/ProgramaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProgramaPage.tsx)
+
+Estado actual de `/contacto`:
+- WhatsApp se mantiene como acción principal de inicio de conversación
+- email se presenta como alternativa secundaria, visible y clara
+- el copy quedó reenfocado desde diseño de sistemas, procesos, experiencias y estructuras, evitando un tono de acompañamiento emocional
+
+Estado actual de `/guia`:
+- la promesa se presenta como primer paso concreto para revisar prioridades, fricciones y forma de organización
+- el formulario prioriza una sola acción principal: dejar el email para recibir la guía
+- el CTA secundario hacia `/` quedó orientado a entender mejor el enfoque
+- la salida inferior hacia `/contacto` quedó resuelta como siguiente paso posterior a la guía
 
 Estado actual del hero:
 - titular:
@@ -76,7 +87,7 @@ WhatsApp:
 - `https://wa.me/5491133652899`
 
 Email:
-- `by.paolazerpa@gmail.com`
+- `paolakzerpa@gmail.com`
 
 PDF de la guía:
 - [`public/guia-ecosistema-personal.pdf`](/Users/paolazerpa/Desktop/apps/paola-web/public/guia-ecosistema-personal.pdf)

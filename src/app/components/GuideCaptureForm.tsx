@@ -77,7 +77,7 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: titleColor,
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -98,7 +98,9 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
               marginBottom: "18px",
             }}
           >
-            Deja tu email y recibe la guía al instante.
+            {isCompact
+              ? "Deja tu email y recibe la guía al instante."
+              : "Deja tu email y recibe la guía al instante para empezar a usarla."}
           </p>
 
           <form onSubmit={handleSubmit} style={{ display: "grid", gap: "14px" }}>
@@ -107,7 +109,7 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                 <span
                   style={{
                     fontFamily: "Space Mono, monospace",
-                    fontSize: "9px",
+                    fontSize: "10px",
                     color: labelColor,
                     letterSpacing: "2px",
                     textTransform: "uppercase",
@@ -139,7 +141,7 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
               <span
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "9px",
+                  fontSize: "10px",
                   color: labelColor,
                   letterSpacing: "2px",
                   textTransform: "uppercase",
@@ -151,7 +153,7 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@email.com"
+                placeholder="tu@correo.com"
                 required
                 style={{
                   height: "50px",
@@ -195,7 +197,9 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                   lineHeight: "1.6",
                 }}
               >
-                Acepto recibir la guía y comunicaciones ocasionales de Paola Zerpa.
+                {isCompact
+                  ? "Acepto recibir la guía y mensajes ocasionales relacionados con este contenido."
+                  : "Acepto recibir la guía y mensajes ocasionales relacionados con este contenido."}
               </span>
             </label>
 
@@ -217,7 +221,7 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                 opacity: isSubmitting ? 0.72 : hasConsent ? 1 : 0.48,
               }}
             >
-              {isSubmitting ? "Enviando..." : "Recibir guía"}
+              {isSubmitting ? "Enviando..." : "Recibir la guía"}
             </button>
 
             {submitError ? (
@@ -243,7 +247,9 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                 margin: 0,
               }}
             >
-              Es un recurso breve para empezar con claridad, sin tener que ordenar todo de una vez.
+              {isCompact
+                ? "Recibes acceso inmediato. Es una guía breve para empezar sin tener que resolver todo de una vez."
+                : "Recibes acceso inmediato. Es una guía breve para revisar tu situación actual y decidir por dónde empezar."}
             </p>
           </form>
         </>
@@ -252,7 +258,7 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: titleColor,
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -287,7 +293,9 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
               margin: 0,
             }}
           >
-            Ya puedes abrir la guía y recorrerla a tu ritmo.
+            {isCompact
+              ? "Ya puedes abrir la guía y recorrerla a tu ritmo."
+              : "Ya puedes abrir la guía y usarla como primer paso para ordenar con más claridad."}
           </p>
 
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "6px" }}>

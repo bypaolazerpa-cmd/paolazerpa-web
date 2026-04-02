@@ -38,7 +38,7 @@ export function ContactoSection() {
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: "#AAAAAA",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -59,7 +59,7 @@ export function ContactoSection() {
               marginBottom: "16px",
             }}
           >
-            Hablemos de lo que hoy te está pidiendo más claridad.
+            Hablemos de lo que quieres diseñar mejor.
           </h2>
           <p
             style={{
@@ -71,8 +71,9 @@ export function ContactoSection() {
               marginBottom: "24px",
             }}
           >
-            Si hay algo importante que depende demasiado de tu cabeza, podemos darle una estructura
-            que lo haga más claro, más liviano y más sostenible.
+            Trabajo ordenando sistemas personales, formas de trabajo, productos, experiencias y
+            estructuras de negocio. Si quieres conversar una necesidad antes de convertirla en
+            proyecto, este es un buen lugar para empezar.
           </p>
 
           <div
@@ -87,7 +88,7 @@ export function ContactoSection() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: "10px",
                 color: "#7C9E8A",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -95,7 +96,7 @@ export function ContactoSection() {
                 fontWeight: 400,
               }}
             >
-              CTA FINAL
+              Conversemos
             </p>
             <p
               style={{
@@ -107,8 +108,8 @@ export function ContactoSection() {
                 marginBottom: "20px",
               }}
             >
-              Puedes abrir la conversación por WhatsApp o ir a contacto si prefieres dar ese paso
-              con más contexto.
+              Puedes escribirme por WhatsApp si ya quieres abrir la conversación, o ir por mail si
+              prefieres escribir con más contexto.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -123,7 +124,7 @@ export function ContactoSection() {
                   backgroundColor: "#1A1A2E",
                   color: "#FAF8F4",
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "10px",
+                  fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   height: "48px",
@@ -135,7 +136,7 @@ export function ContactoSection() {
                 Hablemos por WhatsApp
               </a>
               <button
-                onClick={() => navigateWithScroll(navigate, "/contacto")}
+                onClick={() => navigateWithScroll(navigate, "/contacto#email")}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -143,7 +144,7 @@ export function ContactoSection() {
                   backgroundColor: "transparent",
                   color: "#1A1A2E",
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "10px",
+                  fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   height: "48px",
@@ -153,7 +154,7 @@ export function ContactoSection() {
                   fontWeight: 400,
                 }}
               >
-                Ir a contacto
+                Escribir por mail
               </button>
             </div>
           </div>
@@ -224,16 +225,16 @@ export function ContactoSection() {
           <div>
             <p
               style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+              fontFamily: "Space Mono, monospace",
+              fontSize: "10px",
                 color: "#AAAAAA",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
                 marginBottom: "18px",
                 fontWeight: 400,
               }}
-            >
-              CONECTEMOS
+          >
+            CONECTEMOS
             </p>
             <h2
               style={{
@@ -247,7 +248,7 @@ export function ContactoSection() {
                 maxWidth: "640px",
               }}
             >
-              Hablemos de lo que hoy te está pidiendo más claridad.
+              Hablemos de lo que quieres diseñar mejor.
             </h2>
             <p
               style={{
@@ -260,8 +261,9 @@ export function ContactoSection() {
                 maxWidth: "560px",
               }}
             >
-              Si hay algo importante que depende demasiado de tu cabeza, podemos darle una
-              estructura que lo haga más claro, más liviano y más sostenible.
+              Trabajo ordenando sistemas personales, formas de trabajo, productos, experiencias y
+              estructuras de negocio. Si quieres conversar una necesidad antes de convertirla en
+              proyecto, este es un buen lugar para empezar.
             </p>
           </div>
 
@@ -278,7 +280,7 @@ export function ContactoSection() {
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "9px",
+                  fontSize: "10px",
                   color: "#7C9E8A",
                   letterSpacing: "3px",
                   textTransform: "uppercase",
@@ -286,7 +288,7 @@ export function ContactoSection() {
                   fontWeight: 400,
                 }}
               >
-                CTA FINAL
+                  Conversemos
               </p>
               <p
                 style={{
@@ -298,8 +300,8 @@ export function ContactoSection() {
                   marginBottom: "30px",
                 }}
               >
-                Puedes abrir la conversación por WhatsApp o ir a contacto si prefieres dar ese
-                paso con más contexto.
+                Puedes escribirme por WhatsApp si ya quieres abrir la conversación, o ir por mail
+                si prefieres escribir con más contexto.
               </p>
 
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
@@ -329,7 +331,7 @@ export function ContactoSection() {
                   Hablemos por WhatsApp
                 </a>
                 <button
-                  onClick={() => navigateWithScroll(navigate, "/contacto")}
+                  onClick={() => navigateWithScroll(navigate, "/contacto#email")}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -358,7 +360,7 @@ export function ContactoSection() {
                     el.style.color = "#1A1A2E";
                   }}
                 >
-                  Ir a contacto
+                  Escribir por mail
                 </button>
               </div>
             </div>

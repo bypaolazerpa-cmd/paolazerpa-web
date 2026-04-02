@@ -33,6 +33,8 @@ Navegación:
 - [`src/app/components/NavBar.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NavBar.tsx)
 - [`src/app/components/AppLink.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/AppLink.tsx)
 - [`src/app/utils/navigation.ts`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/utils/navigation.ts)
+- hoy la navegación principal visible expone `Inicio`, `Notas` y `Contacto`
+- `/mi-historia`, `/guia` y `/programa` siguen como rutas públicas directas, pero quedan fuera del menú principal
 
 Home:
 - [`src/app/components/HeroSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HeroSection.tsx)

@@ -46,6 +46,8 @@ Navegación:
 - usa botones y navegación programática con scroll al inicio
 - `AppLink` abstrae el comportamiento de enlaces internos
 - la transición entre páginas se resuelve globalmente desde el layout raíz con CSS
+- la navegación principal visible hoy expone `Inicio`, `Notas` y `Contacto`
+- `/mi-historia`, `/guia` y `/programa` siguen vivas por URL directa, pero fuera del menú principal
 
 Conversión:
 - WhatsApp sigue siendo canal principal

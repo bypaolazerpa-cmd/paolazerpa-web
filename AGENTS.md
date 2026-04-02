@@ -171,7 +171,7 @@ Todas las rutas están declaradas en `src/app/routes.tsx`.
 ## 6) Datos de contacto (hardcodeados)
 
 - WhatsApp: `https://wa.me/5491133652899`
-- Email: `by.paolazerpa@gmail.com`
+- Email: `paolakzerpa@gmail.com`
 - Instagram: pendiente de agregar URL real
 
 Verificar que estén actualizados antes de deployar.
@@ -258,7 +258,9 @@ Todo cambio sigue este orden:
 
 ## 11) Estado actual a respetar
 
-- La navegación visible usa `Inicio`, `Mi historia`, `Notas`, `Contacto`.
+- La navegación visible usa `Inicio`, `Notas`, `Contacto`.
+- `/mi-historia` sigue activa por URL directa, pero hoy queda fuera de la navegación principal.
+- `/guia` y `/programa` siguen activas por URL directa, pero hoy quedan fuera de la navegación principal.
 - La marca visible en navbar es `🌷 Paola`.
 - El home actual usa `ProblemaQuienSoySection` en lugar del split antiguo entre `ElProblemaSection`, `QuienSoySection` y `EnfoqueSection`.
 - Las rutas legacy `/blog` y `/mihistoria` ya no deben reintroducirse.

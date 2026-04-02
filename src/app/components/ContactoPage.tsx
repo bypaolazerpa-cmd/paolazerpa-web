@@ -1,19 +1,20 @@
-import { useNavigate } from "react-router";
 import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { navigateWithScroll } from "../utils/navigation";
 
 const startingPoints = [
-  "Ordenar una idea que hoy está dispersa",
-  "Revisar una necesidad, un proceso o una forma de trabajar",
-  "Empezar por una pregunta simple, sin tener todo resuelto",
+  "Ordenar una idea, una necesidad o un problema concreto antes de convertirlo en algo más grande",
+  "Revisar un proceso, una forma de trabajar o una decisión de estructura que hoy no termina de cerrar",
+  "Conversar una necesidad de producto, servicio, experiencia, equipo o negocio con más criterio",
+  "Empezar por una pregunta concreta, sin tener todo definido ni escrito en formato proyecto",
 ];
 
 export function ContactoPage() {
-  const navigate = useNavigate();
   const isMobile = useIsMobile();
   const px = isMobile ? "24px" : "80px";
+  const scrollToEmail = () => {
+    document.getElementById("email")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <div style={{ backgroundColor: "#FAF8F4", overflowX: "hidden" }}>
@@ -47,7 +48,7 @@ export function ContactoPage() {
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: isMobile ? "9px" : "10px",
+              fontSize: isMobile ? "10px" : "11px",
               color: "#F5C842",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -55,7 +56,7 @@ export function ContactoPage() {
               fontWeight: 400,
             }}
           >
-            Conectemos
+            Contacto
           </p>
           <h1
             style={{
@@ -69,7 +70,7 @@ export function ContactoPage() {
               maxWidth: "760px",
             }}
           >
-            ¿Hay algo que hoy necesita más claridad o estructura?
+            Empecemos por una conversación clara.
           </h1>
           <p
             style={{
@@ -82,8 +83,8 @@ export function ContactoPage() {
               margin: 0,
             }}
           >
-            Este es un buen lugar para empezar — sin tener todo resuelto, sin un brief perfecto.
-            Solo una conversación.
+            Trabajo ordenando ideas, procesos, experiencias y estructuras. Si hay algo que quieres
+            revisar mejor antes de convertirlo en proyecto, esta es una buena forma de empezar.
           </p>
         </div>
       </section>
@@ -111,7 +112,7 @@ export function ContactoPage() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: isMobile ? "10px" : "11px",
                 color: "#AAAAAA",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -119,7 +120,7 @@ export function ContactoPage() {
                 fontWeight: 400,
               }}
             >
-              Para qué sirve escribir
+              Para qué escribirme
             </p>
             <h2
               style={{
@@ -131,11 +132,11 @@ export function ContactoPage() {
                 lineHeight: "1.15",
                 marginBottom: "14px",
                 maxWidth: "520px",
-              }}
-            >
-              Para abrir una conversación concreta, no para llenar un formulario eterno.
-            </h2>
-            <p
+            }}
+          >
+            Para abrir una conversación útil, no para llegar con todo resuelto.
+          </h2>
+          <p
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 400,
@@ -144,12 +145,12 @@ export function ContactoPage() {
                 lineHeight: "1.8",
                 margin: 0,
                 maxWidth: "480px",
-              }}
-            >
-              Suele funcionar mejor cuando todavía no tienes todo ordenado, pero sí una intuición
-              clara de que algo necesita mejor diseño.
-            </p>
-          </div>
+            }}
+          >
+            Puedes escribirme si necesitas perspectiva para ordenar una decisión, revisar una forma
+            de trabajar, pensar una experiencia o darle mejor forma a una necesidad concreta.
+          </p>
+        </div>
 
           <div
             style={{
@@ -225,11 +226,11 @@ export function ContactoPage() {
           }}
         />
 
-        <div style={{ maxWidth: "620px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: isMobile ? "620px" : "980px", margin: "0 auto", position: "relative", zIndex: 1 }}>
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: isMobile ? "10px" : "11px",
               color: "#F5C842",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -237,130 +238,156 @@ export function ContactoPage() {
               fontWeight: 400,
             }}
           >
-            Qué esperar
+            Cómo empezar
           </p>
-          <p
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              color: "#D6D0C4",
-              lineHeight: "1.75",
-              marginBottom: "24px",
-            }}
-          >
-            No hace falta llegar con todo resuelto. Puedes empezar por una consulta breve y ver qué
-            forma conviene darle.
-          </p>
-          <a
-            href="https://wa.me/5491133652899"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "#F5C842",
-              color: "#1A1A2E",
-              fontFamily: "Space Mono, monospace",
-              fontSize: isMobile ? "10px" : "11px",
-              letterSpacing: "2px",
-              padding: isMobile ? "16px 28px" : "18px 34px",
-              borderRadius: "6px",
-              textTransform: "uppercase",
-              fontWeight: 400,
-              textDecoration: "none",
-            }}
-          >
-            Hablemos por WhatsApp
-          </a>
-          <div style={{ marginTop: "18px" }}>
-            <button
-              onClick={() => navigateWithScroll(navigate, "/")}
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                fontFamily: "Space Grotesk, sans-serif",
-                fontSize: "14px",
-                color: "#D6D0C4",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                cursor: "pointer",
-              }}
-            >
-              → Volver al inicio
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section
-        style={{
-          backgroundColor: "#FAF8F4",
-          paddingTop: isMobile ? "64px" : "76px",
-          paddingBottom: isMobile ? "64px" : "76px",
-          paddingLeft: px,
-          paddingRight: px,
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "620px", margin: "0 auto" }}>
-          <p
+          <h2
             style={{
               fontFamily: "Fraunces, serif",
               fontStyle: "italic",
               fontWeight: 400,
-              fontSize: isMobile ? "30px" : "40px",
-              color: "#1A1A2E",
-              lineHeight: "1.2",
+              fontSize: isMobile ? "30px" : "38px",
+              color: "#FAF8F4",
+              lineHeight: "1.15",
               marginBottom: "14px",
             }}
           >
-            Si te resulta más fácil, también puedes escribirme por mail.
-          </p>
-          <p
+            WhatsApp es la forma más directa de abrir la conversación.
+          </h2>
+          <div
             style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              color: "#666666",
-              lineHeight: "1.75",
-              marginBottom: "22px",
+              display: "grid",
+              gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
+              gap: isMobile ? "14px" : "18px",
+              textAlign: "left",
             }}
           >
-            WhatsApp es el canal principal, pero si prefieres un primer contacto por correo, está
-            bien empezar por ahí.
-          </p>
-          <a
-            href="mailto:by.paolazerpa@gmail.com"
-            style={{
-              fontFamily: "Fraunces, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: isMobile ? "24px" : "34px",
-              color: "#1A1A2E",
-              textDecoration: "none",
-              display: "block",
-              marginBottom: "18px",
-            }}
-          >
-            by.paolazerpa@gmail.com
-          </a>
-          <a
-            href="https://wa.me/5491133652899"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 500,
-              fontSize: "14px",
-              color: "#C97B5A",
-              textDecoration: "none",
-            }}
-          >
-            O abrir WhatsApp directamente →
-          </a>
+            <div
+              style={{
+                backgroundColor: "rgba(250,248,244,0.05)",
+                border: "1px solid rgba(250,248,244,0.12)",
+                borderRadius: "18px",
+                padding: isMobile ? "22px 20px" : "26px 24px",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "10px",
+                  color: "#F5C842",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  margin: "0 0 12px 0",
+                  fontWeight: 400,
+                }}
+              >
+                WhatsApp
+              </p>
+              <p
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "15px",
+                  color: "#D6D0C4",
+                  lineHeight: "1.75",
+                  margin: "0 0 18px 0",
+                }}
+              >
+                Ideal para una primera conversación breve sobre una idea, un proceso o una
+                necesidad que quieres revisar conmigo.
+              </p>
+              <a
+                href="https://wa.me/5491133652899"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#F5C842",
+                  color: "#1A1A2E",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  letterSpacing: "2px",
+                  padding: "16px 24px",
+                  borderRadius: "6px",
+                  textTransform: "uppercase",
+                  fontWeight: 400,
+                  textDecoration: "none",
+                }}
+              >
+                Hablemos por WhatsApp
+              </a>
+            </div>
+            <div
+              id="email"
+              style={{
+                backgroundColor: "rgba(250,248,244,0.03)",
+                border: "1px solid rgba(250,248,244,0.1)",
+                borderRadius: "18px",
+                padding: isMobile ? "22px 20px" : "26px 24px",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "10px",
+                  color: "#C8C2BA",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  margin: "0 0 12px 0",
+                  fontWeight: 400,
+                }}
+              >
+                Email
+              </p>
+              <p
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "15px",
+                  color: "#D6D0C4",
+                  lineHeight: "1.75",
+                  margin: "0 0 18px 0",
+                }}
+              >
+                Si prefieres explicar mejor el contexto antes de hablar, puedes escribirme por
+                correo y seguimos desde ahí.
+              </p>
+              <a
+                href="mailto:paolakzerpa@gmail.com"
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontWeight: 500,
+                  fontSize: isMobile ? "20px" : "24px",
+                  color: "#FAF8F4",
+                  textDecoration: "none",
+                  display: "block",
+                  marginBottom: "14px",
+                  lineHeight: "1.35",
+                  letterSpacing: "-0.01em",
+                  overflowWrap: "anywhere",
+                  wordBreak: "break-word",
+                  maxWidth: "100%",
+                }}
+              >
+                paolakzerpa@gmail.com
+              </a>
+              <a
+                href="mailto:paolakzerpa@gmail.com"
+                style={{
+                  display: "inline-block",
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontSize: "14px",
+                  color: "#D6D0C4",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                  cursor: "pointer",
+                }}
+              >
+                Abrir mail
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

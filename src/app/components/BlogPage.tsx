@@ -42,7 +42,7 @@ export function BlogPage() {
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: "#AAAAAA",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -50,7 +50,7 @@ export function BlogPage() {
               fontWeight: 400,
             }}
           >
-            MI BLOG PERSONAL
+            BITÁCORA DE PAOLA
           </p>
           <h1
             style={{
@@ -110,9 +110,9 @@ export function BlogPage() {
           >
             <div style={{ display: "grid", gap: "6px" }}>
               <p
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "9px",
+            style={{
+              fontFamily: "Space Mono, monospace",
+              fontSize: "10px",
                   color: "#AAAAAA",
                   letterSpacing: "3px",
                   textTransform: "uppercase",
@@ -143,9 +143,9 @@ export function BlogPage() {
 
           <div style={{ marginBottom: "18px" }}>
             <p
-              style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+            style={{
+              fontFamily: "Space Mono, monospace",
+              fontSize: "10px",
                 color: "#AAAAAA",
                 letterSpacing: "3px",
                 textTransform: "uppercase",

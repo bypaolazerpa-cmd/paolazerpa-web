@@ -48,7 +48,7 @@ function CardImageVertical({ post }: { post: BlogCardPost }) {
           bottom: "16px",
           right: "16px",
           fontFamily: "'Space Mono', monospace",
-          fontSize: "8px",
+          fontSize: "9px",
           letterSpacing: "2px",
           color: tone.accent,
           opacity: 0.6,
@@ -175,7 +175,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
           <span
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: "8px",
+              fontSize: "9px",
               letterSpacing: "2px",
               color: tone.accent,
               background: tone.soft,
@@ -189,7 +189,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
           <span
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: "8px",
+              fontSize: "9px",
               letterSpacing: "2px",
               color: "#A0998E",
             }}
@@ -238,7 +238,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
           <span
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               letterSpacing: "1.5px",
               color: "#A0998E",
               textTransform: "uppercase",
@@ -250,7 +250,7 @@ export function FeaturedCard({ post }: { post: BlogCardPost }) {
             to={`/notas/${post.slug}`}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: "10px",
+              fontSize: "11px",
               letterSpacing: "2px",
               color: "#1A1A2E",
               background: "none",
@@ -313,7 +313,7 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
             <p
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: "8px",
+                fontSize: "9px",
                 color: "#A0998E",
                 marginBottom: "8px",
                 textTransform: "uppercase",
@@ -356,7 +356,7 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
               <span
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: "8px",
+                  fontSize: "9px",
                   letterSpacing: "2px",
                   color: tone.accent,
                   textTransform: "uppercase",
@@ -405,7 +405,7 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
               <span
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: "8px",
+                  fontSize: "9px",
                   color: "#A0998E",
                   textTransform: "uppercase",
                 }}
@@ -416,7 +416,7 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
                 to={`/notas/${post.slug}`}
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: "10px",
+                  fontSize: "11px",
                   letterSpacing: "2px",
                   color: "#1A1A2E",
                   textDecoration: "none",

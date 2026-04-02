@@ -5,17 +5,29 @@ const storyCards = [
   {
     label: "Origen",
     title: "La adversidad cambió mi forma de ver las cosas.",
-    body: "Entendí que nada funciona de manera aislada. No hay resultados sin procesos, ni procesos que se sostengan sin una estructura.",
+    points: [
+      "Entendí que nada funciona de manera aislada.",
+      "No hay resultados sin procesos.",
+      "No hay procesos sostenibles sin estructura.",
+    ],
   },
   {
     label: "Sistema",
     title: "Cuando la base falla, todo se vuelve frágil.",
-    body: "Con el tiempo empecé a reconocer esos mismos patrones en otras áreas y proyectos. Cuando un equipo se traba, muchas veces el problema no son las personas, sino lo que las conecta: el sistema.",
+    points: [
+      "Empecé a reconocer los mismos patrones en otras áreas y proyectos.",
+      "Cuando un equipo se traba, el problema rara vez son solo las personas.",
+      "Muchas veces lo que falla es el sistema que las conecta.",
+    ],
   },
   {
     label: "Hoy",
     title: "Diseño sistemas que ordenan y conectan.",
-    body: "Transformo ideas y procesos en estructuras claras, pensadas para funcionar en el día a día y sostenerse en el tiempo. También diseño productos y experiencias pensadas para un usuario real, no solo para verse bien.",
+    points: [
+      "Transformo ideas y procesos en estructuras claras.",
+      "Diseño para que funcionen en el día a día y se sostengan en el tiempo.",
+      "También pienso productos y experiencias para usuarios reales, no solo para verse bien.",
+    ],
   },
 ];
 
@@ -58,7 +70,7 @@ export function HomeAboutSection() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: "10px",
                 color: "#AAAAAA",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -149,7 +161,7 @@ export function HomeAboutSection() {
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "8px",
+                  fontSize: "10px",
                   color: "#C97B5A",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
@@ -172,18 +184,41 @@ export function HomeAboutSection() {
               >
                 {card.title}
               </h3>
-              <p
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 400,
-                  fontSize: isMobile ? "14px" : "15px",
-                  color: "#666666",
-                  lineHeight: "1.68",
-                  margin: 0,
-                }}
-              >
-                {card.body}
-              </p>
+              <div style={{ display: "grid", gap: "10px" }}>
+                {card.points.map((point) => (
+                  <div
+                    key={point}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "10px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: "6px",
+                        height: "6px",
+                        borderRadius: "50%",
+                        backgroundColor: "#C97B5A",
+                        marginTop: "8px",
+                        flexShrink: 0,
+                      }}
+                    />
+                    <p
+                      style={{
+                        fontFamily: "Space Grotesk, sans-serif",
+                        fontWeight: 400,
+                        fontSize: isMobile ? "14px" : "15px",
+                        color: "#666666",
+                        lineHeight: "1.68",
+                        margin: 0,
+                      }}
+                    >
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

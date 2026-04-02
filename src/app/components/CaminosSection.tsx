@@ -1,15 +1,20 @@
 import { useIsMobile } from "../hooks/useIsMobile";
 
-const scrollToContact = () => {
-  document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
-};
+const whatsappBaseUrl = "https://wa.me/5491133652899";
+
+const createWhatsAppLink = (message: string) =>
+  `${whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
 
 const services = [
   {
     id: "personal",
     tag: "PARA TI",
-    title: "Para ti",
-    body: "Cuando necesitas más claridad, orden y sostén en tu manera de vivir, pensar y organizarte.",
+    title: "Ordenar tu tiempo y energía",
+    body: "Para diseñar una estructura personal más clara: prioridades, decisiones, hábitos y formas de organizar tu vida con más intención y menos improvisación.",
+    cta: "Ordenar esto contigo",
+    href: createWhatsAppLink(
+      "Hola, Paola. Quiero conversar sobre una estructura personal más clara para ordenar mi tiempo, prioridades y energía."
+    ),
     backgroundColor: "#F6F0DE",
     borderColor: "rgba(245,200,66,0.22)",
     labelColor: "#8B6F47",
@@ -22,8 +27,12 @@ const services = [
   {
     id: "trabajo",
     tag: "PARA TU TRABAJO",
-    title: "Para tu trabajo",
-    body: "Cuando tu forma de trabajar necesita una estructura más clara, más simple y más funcional.",
+    title: "Tu trabajo también es un sistema",
+    body: "Para revisar procesos, roles, dinámicas y decisiones de estructura que hoy generan fricción o te quitan claridad en el día a día.",
+    cta: "Revisar mi forma de trabajo",
+    href: createWhatsAppLink(
+      "Hola, Paola. Quiero revisar mi forma de trabajo, mis procesos o algunas decisiones de estructura que hoy me generan fricción."
+    ),
     backgroundColor: "#EEF3ED",
     borderColor: "rgba(124,158,138,0.22)",
     labelColor: "#5B7D69",
@@ -36,8 +45,12 @@ const services = [
   {
     id: "negocio",
     tag: "PARA TU NEGOCIO",
-    title: "Para tu negocio",
-    body: "Cuando lo que construiste necesita sistemas que acompañen su crecimiento con más coherencia y menos fricción.",
+    title: "Diseñar mejor lo que sostiene tu negocio",
+    body: "Para pensar con más criterio un producto, un servicio, una experiencia o una operación que necesita estructura para crecer con coherencia.",
+    cta: "Pensar mi negocio contigo",
+    href: createWhatsAppLink(
+      "Hola, Paola. Quiero pensar mejor un producto, servicio, experiencia u operación de mi negocio para que crezca con más coherencia."
+    ),
     backgroundColor: "#F4ECE8",
     borderColor: "rgba(201,123,90,0.22)",
     labelColor: "#A16044",
@@ -97,7 +110,7 @@ export function CaminosSection() {
           <p
             style={{
               fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
+              fontSize: "10px",
               color: "#555577",
               letterSpacing: "3px",
               textTransform: "uppercase",
@@ -149,7 +162,7 @@ export function CaminosSection() {
                 <p
                   style={{
                     fontFamily: "Space Mono, monospace",
-                    fontSize: "9px",
+                    fontSize: "10px",
                     color: service.labelColor,
                     letterSpacing: "3px",
                     textTransform: "uppercase",
@@ -164,10 +177,11 @@ export function CaminosSection() {
                     fontFamily: "Fraunces, serif",
                     fontStyle: "italic",
                     fontWeight: 400,
-                    fontSize: "30px",
+                    fontSize: "28px",
                     color: service.titleColor,
-                    lineHeight: "1.18",
+                    lineHeight: "1.14",
                     marginBottom: "14px",
+                    maxWidth: "260px",
                   }}
                 >
                   {service.title}
@@ -184,26 +198,28 @@ export function CaminosSection() {
                 >
                   {service.body}
                 </p>
-                <button
-                  onClick={scrollToContact}
+                <a
+                  href={service.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     backgroundColor: service.buttonBackground,
                     color: service.buttonColor,
                     fontFamily: "Space Mono, monospace",
-                    fontSize: "10px",
+                    fontSize: "11px",
                     letterSpacing: "2px",
                     textTransform: "uppercase",
                     padding: "14px 22px",
                     borderRadius: "6px",
                     border: `1px solid ${service.buttonBorder}`,
-                    cursor: "pointer",
                     fontWeight: 400,
+                    textDecoration: "none",
                   }}
                 >
-                  Hablemos
-                </button>
+                  {service.cta}
+                </a>
               </article>
             ))}
           </div>
@@ -266,7 +282,7 @@ export function CaminosSection() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: "10px",
                 color: "#555577",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -331,7 +347,7 @@ export function CaminosSection() {
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "9px",
+                  fontSize: "10px",
                   color: service.labelColor,
                   letterSpacing: "3px",
                   textTransform: "uppercase",
@@ -346,10 +362,11 @@ export function CaminosSection() {
                   fontFamily: "Fraunces, serif",
                   fontStyle: "italic",
                   fontWeight: 400,
-                  fontSize: "40px",
+                  fontSize: "36px",
                   color: service.titleColor,
-                  lineHeight: "1.08",
+                  lineHeight: "1.06",
                   marginBottom: "18px",
+                  maxWidth: "290px",
                 }}
               >
                 {service.title}
@@ -367,8 +384,10 @@ export function CaminosSection() {
                 {service.body}
               </p>
               <div style={{ marginTop: "auto" }}>
-                <button
-                  onClick={scrollToContact}
+                <a
+                  href={service.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -381,12 +400,12 @@ export function CaminosSection() {
                     padding: "16px 28px",
                     borderRadius: "6px",
                     border: `1px solid ${service.buttonBorder}`,
-                    cursor: "pointer",
                     fontWeight: 400,
+                    textDecoration: "none",
                   }}
                 >
-                  Hablemos
-                </button>
+                  {service.cta}
+                </a>
               </div>
             </article>
           ))}

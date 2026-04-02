@@ -41,7 +41,7 @@ export function HomeAppSection() {
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
+                fontSize: "10px",
                 color: "#9B8FB0",
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -78,8 +78,8 @@ export function HomeAppSection() {
                   margin: 0,
                 }}
               >
-                Estoy desarrollando una herramienta que nace del mismo principio: crear sistemas
-                que ayuden a ordenar y dar forma a lo que vivimos y construimos.
+                Estoy desarrollando una herramienta que une bienestar, journaling y pensamiento
+                sistémico en una misma experiencia.
               </p>
               <p
                 style={{
@@ -91,8 +91,8 @@ export function HomeAppSection() {
                   margin: 0,
                 }}
               >
-                Una herramienta que sostiene lo que sientes, lo que estás procesando y lo que
-                atraviesas a diario.
+                Nace de una forma muy personal de entender la estructura: registrar lo que vivimos,
+                ordenar lo importante y darle seguimiento con más claridad.
               </p>
               <p
                 style={{
@@ -104,7 +104,8 @@ export function HomeAppSection() {
                   margin: 0,
                 }}
               >
-                Una forma más clara y organizada de acompañar nuestros propios procesos.
+                Es una prueba de mi manera de diseñar: convertir procesos cotidianos en sistemas
+                simples, útiles y sostenibles.
               </p>
               <p
                 style={{

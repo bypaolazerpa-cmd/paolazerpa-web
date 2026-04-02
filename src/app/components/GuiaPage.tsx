@@ -6,9 +6,9 @@ import { GuideCaptureForm } from "./GuideCaptureForm";
 import { navigateWithScroll } from "../utils/navigation";
 
 const benefits = [
-  "te ayuda a bajar ruido y ordenar lo que hoy está disperso",
-  "te da una forma simple de mirar tu tiempo, energía y prioridades",
-  "funciona como primer paso sin volverse una solución complicada",
+  "te ayuda a detectar qué sí vale ordenar primero y qué puede esperar",
+  "te propone una forma simple de revisar tiempo, energía y prioridades",
+  "te da un punto de partida concreto sin convertirlo en un sistema pesado",
 ];
 
 export function GuiaPage() {
@@ -59,7 +59,7 @@ export function GuiaPage() {
               <p
                 style={{
                   fontFamily: "Space Mono, monospace",
-                  fontSize: isMobile ? "9px" : "10px",
+                  fontSize: isMobile ? "10px" : "11px",
                   color: "#F5C842",
                   letterSpacing: "3px",
                   textTransform: "uppercase",
@@ -67,7 +67,7 @@ export function GuiaPage() {
                   fontWeight: 400,
                 }}
               >
-                GUÍA GRATUITA + PLANTILLA DE NOTION
+                GUÍA GRATUITA
               </p>
 
               <h1
@@ -82,7 +82,7 @@ export function GuiaPage() {
                   maxWidth: "700px",
                 }}
               >
-                Empieza a ordenar tu sistema personal.
+                Un primer paso para ordenar tu sistema personal.
               </h1>
 
               <p
@@ -96,11 +96,11 @@ export function GuiaPage() {
                   maxWidth: "620px",
                 }}
               >
-                Una guía breve y gratuita para sacar las ideas de la cabeza y dar un primer paso
-                con estructura.
+                Una guía breve y gratuita para revisar prioridades, detectar fricciones y empezar a
+                organizar mejor tu forma de sostener lo que haces.
               </p>
 
-              <div style={{ display: "grid", gap: "12px", maxWidth: "560px" }}>
+              <div style={{ display: "grid", gap: "12px", maxWidth: "560px", marginBottom: isMobile ? "0" : "6px" }}>
                 {benefits.map((item) => (
                   <div
                     key={item}
@@ -147,7 +147,20 @@ export function GuiaPage() {
               }}
             >
               <GuideCaptureForm variant="full" theme="dark" source="guia-page" />
-              <div style={{ marginTop: "14px" }}>
+              <div style={{ marginTop: "16px", display: "grid", gap: "10px" }}>
+                <p
+                  style={{
+                    fontFamily: "Space Grotesk, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "13px",
+                    color: "#8F8AA5",
+                    lineHeight: "1.6",
+                    margin: 0,
+                  }}
+                >
+                  Si quieres entender mejor mi enfoque antes de descargarla, puedes recorrer el
+                  sitio primero.
+                </p>
                 <button
                   onClick={() => navigateWithScroll(navigate, "/")}
                   style={{
@@ -166,7 +179,7 @@ export function GuiaPage() {
                     cursor: "pointer",
                   }}
                 >
-                  Volver al inicio
+                  Conocer cómo trabajo
                 </button>
               </div>
             </div>
@@ -187,13 +200,28 @@ export function GuiaPage() {
           style={{
             maxWidth: "920px",
             margin: "0 auto",
-            borderTop: "1px solid #E8E2DA",
-            paddingTop: isMobile ? "28px" : "34px",
+            border: "1px solid #E8E2DA",
+            borderRadius: "18px",
+            padding: isMobile ? "28px 22px" : "34px 36px",
             display: "grid",
             gap: "14px",
             textAlign: isMobile ? "left" : "center",
+            backgroundColor: "#FFFFFF",
           }}
         >
+          <p
+            style={{
+              fontFamily: "Space Mono, monospace",
+              fontSize: "9px",
+              color: "#8888AA",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              margin: 0,
+              fontWeight: 400,
+            }}
+          >
+            Siguiente paso
+          </p>
           <p
             style={{
               fontFamily: "Space Grotesk, sans-serif",
@@ -204,24 +232,29 @@ export function GuiaPage() {
               margin: 0,
             }}
           >
-            Si después quieres ir más lejos, puedes escribirme desde contacto.
+            Si después de la guía ves una decisión, un proceso o una experiencia que quieres
+            diseñar mejor, la página de contacto es el siguiente paso natural.
           </p>
-          <div style={{ display: "flex", justifyContent: isMobile ? "flex-start" : "center", marginTop: "4px" }}>
+          <div style={{ display: "flex", justifyContent: isMobile ? "flex-start" : "center", marginTop: "6px" }}>
             <button
               onClick={() => navigateWithScroll(navigate, "/contacto")}
               style={{
-                background: "none",
-                border: "none",
-                fontFamily: "Space Grotesk, sans-serif",
-                fontSize: "14px",
-                color: "#777777",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                color: "#1A1A2E",
+                fontFamily: "Space Mono, monospace",
+                fontSize: "11px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                padding: "15px 24px",
+                borderRadius: "6px",
+                border: "1px solid #1A1A2E",
                 cursor: "pointer",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                padding: 0,
               }}
             >
-              Ir a contacto →
+              Ir a contacto
             </button>
           </div>
         </div>

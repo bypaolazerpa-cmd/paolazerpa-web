@@ -105,16 +105,20 @@ Rutas activas:
 
 Navegación visible:
 - `Inicio`
-- `Mi historia`
 - `Notas`
 - `Contacto`
+
+Rutas públicas secundarias fuera de navegación principal:
+- `/mi-historia` sigue activa y accesible por URL directa
+- `/guia` sigue activa y accesible por URL directa
+- `/programa` sigue activa y accesible por URL directa
 
 Marca visible:
 - `🌷 Paola`
 
 Canales de contacto hardcodeados:
 - WhatsApp: `https://wa.me/5491133652899`
-- Email: `by.paolazerpa@gmail.com`
+- Email: `paolakzerpa@gmail.com`
 
 ## 6. Fuentes de verdad
 
