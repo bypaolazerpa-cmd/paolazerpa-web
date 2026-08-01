@@ -52,34 +52,38 @@ Estado actual de `/guia`:
 - la salida inferior hacia `/contacto` quedó resuelta como siguiente paso posterior a la guía
 
 Estado actual del hero:
-- titular:
-  `La forma en que vivimos y lo que construimos`
-  `nace de la intención`
-  `Yo le doy estructura`
-- bajada:
-  `Convierto ideas y procesos en sistemas que mejoran la experiencia y se sostienen en el tiempo.`
-- énfasis en negrita dentro de la bajada:
-  `sistemas que mejoran la experiencia`
+- texto principal:
+  `Hola, soy Paola`
+- línea inferior:
+  `Diseño sistémico · Producto digital · Procesos · Personas`
 - CTA principal:
-  `Hablemos`
+  `Ver proyectos`
 - CTA secundario:
-  `Ver servicios`
-- el hero ya no muestra el label `HOLA, SOY PAOLA`
+  `Hablemos`
+- el hero muestra el label `Hola, soy Paola`
+- el hero incorpora una nota manuscrita como pieza de marca:
+  `Diseño que ordena, conecta y transforma.`
+- el hero usa `public/paola-hero-video.mov` como video provisional fijo hasta contar con material ideal
 
 Estado actual del home:
-- beneficios:
-  bloque directo sobre solución, claridad, estructura, funcionamiento y sostén
+- problema:
+  bloque de señales sobre negocio, producto digital y proyectos personales, con `paola-problema-scene.jpg` como escena fotográfica integrada, franja rasgada azul y CTA
+- enfoque:
+  bloque reservado para video futuro, hoy apoyado por `paola-enfoque.jpg`, con una sola idea principal sobre relaciones sistémicas
 - servicios:
-  `Para ti`
-  `Para tu trabajo`
-  `Para tu negocio`
-  sus tres CTAs llevan a `/contacto#email`
-- guía:
-  integrada en home con formulario compacto reutilizando la misma lógica de captura de `/guia`
-- app futura:
-  visible como bloque corto dentro del home
-- sobre mí:
-  visible como bloque breve dentro del home
+  `Sistema a medida`
+  `Tu espacio digital`
+  `Hecho sistema`
+  `Tu vida, tu sistema`
+  se presentan como cards con imágenes generadas al frente y reverso en hover/focus
+- método:
+  recorrido `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`
+- cómo empezamos:
+  recorrido `Me cuentas tu caso`, `Nos encontramos`, `Definimos el camino`, `Lo construimos`
+- proyectos:
+  archivo/carrusel con cuatro casos reales: `Control de vencimientos`, `Nodux`, `Cosmic Studio` y `Operación de tienda`
+- footer:
+  base mínima con copyright y descriptor
 
 ## 3. Datos hardcodeados que hay que vigilar
 
@@ -117,6 +121,19 @@ Si cambia el contenido editorial, revisar:
 Fotos de Paola usadas en el sitio:
 - [`src/assets/paola-portrait.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-portrait.jpg)
 - [`src/assets/paola-photo2.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo2.jpg)
+- [`src/assets/paola-photo3.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo3.jpg)
+- [`src/assets/paola-hero-fallback.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-hero-fallback.jpg)
+- [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg)
+- [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg)
+
+Video provisional:
+- [`public/paola-hero-video.mov`](/Users/paolazerpa/Code/paola-web/public/paola-hero-video.mov)
+
+Imágenes generadas de servicios:
+- [`src/assets/service-sistema-medida.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-sistema-medida.jpg)
+- [`src/assets/service-espacio-digital.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-espacio-digital.jpg)
+- [`src/assets/service-hecho-sistema.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-hecho-sistema.jpg)
+- [`src/assets/service-vida-sistema.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-vida-sistema.jpg)
 
 Fuentes:
 - se cargan desde Google Fonts en [`index.html`](/Users/paolazerpa/Desktop/apps/paola-web/index.html)

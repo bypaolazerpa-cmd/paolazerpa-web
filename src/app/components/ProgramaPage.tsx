@@ -40,7 +40,7 @@ export function ProgramaPage() {
               href="https://wa.me/5491133652899"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", backgroundColor: "#F5C842", color: "#1A1A2E", fontFamily: "Space Mono, monospace", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "16px 28px", borderRadius: "6px", textDecoration: "none", fontWeight: 400, transition: "opacity 0.2s ease" }}
+              style={{ display: "inline-flex", alignItems: "center", background: "var(--cta-glass-bg)", color: "#173B44", fontFamily: "Space Mono, monospace", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "16px 28px", borderRadius: "999px", border: "1px solid var(--cta-glass-border)", textDecoration: "none", fontWeight: 400, transition: "opacity 0.2s ease", boxShadow: "var(--cta-glass-shadow)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.85")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
             >
@@ -50,7 +50,7 @@ export function ProgramaPage() {
 
           <button
               onClick={() => navigateWithScroll(navigate, "/")}
-            style={{ fontFamily: "Space Grotesk, sans-serif", fontSize: "13px", color: "#555577", background: "none", border: "none", cursor: "pointer", textDecoration: "underline", textUnderlineOffset: "3px" }}
+            style={{ fontFamily: "Space Mono, monospace", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#173B44", background: "var(--cta-glass-bg)", border: "1px solid var(--cta-glass-border)", borderRadius: "999px", cursor: "pointer", padding: "14px 22px", boxShadow: "var(--cta-glass-shadow)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
           >
             ← Volver al inicio
           </button>

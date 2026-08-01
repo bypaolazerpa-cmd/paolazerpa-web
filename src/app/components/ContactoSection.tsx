@@ -121,16 +121,22 @@ export function ContactoSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "#1A1A2E",
-                  color: "#FAF8F4",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   height: "48px",
-                  borderRadius: "6px",
+                  borderRadius: "999px",
+                  border: "1px solid var(--cta-glass-border)",
                   textDecoration: "none",
                   fontWeight: 400,
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Hablemos por WhatsApp
@@ -141,17 +147,22 @@ export function ContactoSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "transparent",
-                  color: "#1A1A2E",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   height: "48px",
-                  borderRadius: "6px",
-                  border: "1px solid #1A1A2E",
+                  borderRadius: "999px",
+                  border: "1px solid var(--cta-glass-border)",
                   cursor: "pointer",
                   fontWeight: 400,
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Escribir por mail
@@ -313,17 +324,23 @@ export function ContactoSection() {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "#1A1A2E",
-                    color: "#FAF8F4",
+                    background:
+                      "var(--cta-glass-bg)",
+                    color: "#173B44",
                     fontFamily: "Space Mono, monospace",
                     fontSize: "11px",
                     letterSpacing: "2px",
                     textTransform: "uppercase",
                     padding: "16px 24px",
-                    borderRadius: "6px",
+                    borderRadius: "999px",
+                    border: "1px solid var(--cta-glass-border)",
                     textDecoration: "none",
                     fontWeight: 400,
                     transition: "opacity 0.2s ease",
+                    boxShadow:
+                      "var(--cta-glass-shadow)",
+                    backdropFilter: "blur(16px)",
+                    WebkitBackdropFilter: "blur(16px)",
                   }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.88")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
@@ -336,28 +353,31 @@ export function ContactoSection() {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "transparent",
-                    color: "#1A1A2E",
+                    background:
+                      "var(--cta-glass-bg)",
+                    color: "#173B44",
                     fontFamily: "Space Mono, monospace",
                     fontSize: "11px",
                     letterSpacing: "2px",
                     textTransform: "uppercase",
                     padding: "15px 24px",
-                    borderRadius: "6px",
-                    border: "1px solid #1A1A2E",
+                    borderRadius: "999px",
+                    border: "1px solid var(--cta-glass-border)",
                     cursor: "pointer",
                     fontWeight: 400,
                     transition: "background 0.2s ease, color 0.2s ease",
+                    boxShadow:
+                      "var(--cta-glass-shadow)",
+                    backdropFilter: "blur(16px)",
+                    WebkitBackdropFilter: "blur(16px)",
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement;
-                    el.style.backgroundColor = "#1A1A2E";
-                    el.style.color = "#FAF8F4";
+                    el.style.transform = "translateY(-1px)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;
-                    el.style.backgroundColor = "transparent";
-                    el.style.color = "#1A1A2E";
+                    el.style.transform = "translateY(0)";
                   }}
                 >
                   Escribir por mail

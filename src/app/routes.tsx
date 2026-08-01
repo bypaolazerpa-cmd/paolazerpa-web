@@ -9,11 +9,11 @@ import { NavBar } from "./components/NavBar";
 import { HeroSection } from "./components/HeroSection";
 import { ProblemaQuienSoySection } from "./components/ProblemaQuienSoySection";
 import { CaminosSection } from "./components/CaminosSection";
-import { NotasProcesoSection } from "./components/NotasProcesoSection";
 import { FooterSection } from "./components/FooterSection";
-import { HomeGuideSection } from "./components/HomeGuideSection";
-import { HomeAppSection } from "./components/HomeAppSection";
-import { HomeAboutSection } from "./components/HomeAboutSection";
+import { HomeApproachSection } from "./components/HomeApproachSection";
+import { HomeMethodSection } from "./components/HomeMethodSection";
+import { HomeStartSection } from "./components/HomeStartSection";
+import { HomeProjectsSection } from "./components/HomeProjectsSection";
 import { GuiaPage } from "./components/GuiaPage";
 import { ProgramaPage } from "./components/ProgramaPage";
 import { BlogPage } from "./components/BlogPage";
@@ -23,16 +23,16 @@ import { MiHistoriaPage } from "./components/MiHistoriaPage";
 
 function Home() {
   return (
-    <div style={{ width: "100%", backgroundColor: "#1A1A2E", overflowX: "hidden" }}>
+    <div className="pz-page" style={{ width: "100%", overflowX: "hidden" }}>
       <NavBar />
       <main>
         <HeroSection />
         <ProblemaQuienSoySection />
+        <HomeApproachSection />
         <CaminosSection />
-        <HomeGuideSection />
-        <HomeAppSection />
-        <HomeAboutSection />
-        <NotasProcesoSection />
+        <HomeMethodSection />
+        <HomeStartSection />
+        <HomeProjectsSection />
       </main>
       <FooterSection />
     </div>

@@ -6,110 +6,51 @@ export function FooterSection() {
 
   return (
     <footer
+      className="pz-dark"
       style={{
-        backgroundColor: "#1A1A2E",
-        borderTop: "1px solid rgba(214, 208, 196, 0.2)",
-        paddingTop: "48px",
-        paddingBottom: "48px",
+        borderTop: "1px solid rgba(230, 215, 198, 0.18)",
+        paddingTop: isMobile ? "36px" : "42px",
+        paddingBottom: isMobile ? "36px" : "42px",
         paddingLeft: isMobile ? "24px" : "80px",
         paddingRight: isMobile ? "24px" : "80px",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
-      {/* Decorative subtle circle */}
       <div
         style={{
-          position: "absolute",
-          bottom: "-80px",
-          right: "-80px",
-          width: "300px",
-          height: "300px",
-          borderRadius: "50%",
-          backgroundColor: "#8B6F47",
-          opacity: 0.06,
-          pointerEvents: "none",
-        }}
-      />
-
-      <div
-        style={{
-          maxWidth: "1200px",
+          maxWidth: "1160px",
           margin: "0 auto",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "24px",
-          textAlign: "center",
-          position: "relative",
-          zIndex: 1,
+          flexDirection: isMobile ? "column" : "row",
+          alignItems: isMobile ? "flex-start" : "center",
+          justifyContent: "space-between",
+          gap: "18px",
         }}
       >
-        {/* Tagline — Fraunces Italic */}
-        <p
-          style={{
-            fontFamily: "Fraunces, serif",
-            fontStyle: "italic",
-            fontWeight: 400,
-            fontSize: isMobile ? "22px" : "28px",
-            color: "#8B6F47",
-            lineHeight: "1.4",
-            margin: 0,
-            maxWidth: isMobile ? "100%" : "640px",
-          }}
-        >
-          Sistemas para sostener lo que construimos —
-          <br />
-          sin depender solo de nuestra energía.
-        </p>
-
-        {/* Attribution */}
         <p
           style={{
             fontFamily: "Space Mono, monospace",
-            fontSize: "9px",
-            color: "#D6D0C4",
-            letterSpacing: "2px",
+            fontSize: "10px",
+            color: "rgba(230, 215, 198, 0.68)",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
             margin: 0,
-            fontWeight: 400,
           }}
         >
-          — PAOLA ZERPA · DISEÑO &amp; SISTEMAS · {currentYear}
+          Paola Zerpa · Diseñadora de productos digitales · {currentYear}
         </p>
 
-        {/* Three pillar dots */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-          }}
-        >
-          <div
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              backgroundColor: "#7C9E8A",
-            }}
-          />
-          <div
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              backgroundColor: "#C97B5A",
-            }}
-          />
-          <div
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              backgroundColor: "#9B8FB0",
-            }}
-          />
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }} aria-hidden="true">
+          {["var(--citron-loto)", "var(--magenta)", "var(--cielo-suave)"].map((color) => (
+            <span
+              key={color}
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor: color,
+              }}
+            />
+          ))}
         </div>
       </div>
     </footer>

@@ -1,297 +1,85 @@
-import { AppLink } from "./AppLink";
+import imageEspacioDigital from "../../assets/service-espacio-digital.jpg";
+import imageHechoSistema from "../../assets/service-hecho-sistema.jpg";
+import imageSistemaMedida from "../../assets/service-sistema-medida.jpg";
+import imageVidaSistema from "../../assets/service-vida-sistema.jpg";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { BrandButton } from "./brand/BrandButton";
+import { SectionLabel } from "./brand/SectionLabel";
 
 const services = [
   {
-    id: "personal",
-    tag: "PARA TI",
-    title: "Ordenar tu tiempo y energía",
-    body: "Para diseñar una estructura personal más clara: prioridades, decisiones, hábitos y formas de organizar tu vida con más intención y menos improvisación.",
-    cta: "Ordenar esto contigo",
-    href: "/contacto#email",
-    backgroundColor: "#F6F0DE",
-    borderColor: "rgba(245,200,66,0.22)",
-    labelColor: "#8B6F47",
-    titleColor: "#1A1A2E",
-    bodyColor: "#5D5548",
-    buttonBackground: "#1A1A2E",
-    buttonBorder: "#1A1A2E",
-    buttonColor: "#FAF8F4",
+    number: "01",
+    title: "Sistema a medida",
+    short: "Una estructura propia para que tu trabajo funcione mejor.",
+    body:
+      "Organizamos procesos, tareas, responsabilidades, información y herramientas para que tu trabajo avance con mayor claridad y menos dependencia.",
+    image: imageSistemaMedida,
   },
   {
-    id: "trabajo",
-    tag: "PARA TU TRABAJO",
-    title: "Tu trabajo también es un sistema",
-    body: "Para revisar procesos, roles, dinámicas y decisiones de estructura que hoy generan fricción o te quitan claridad en el día a día.",
-    cta: "Revisar mi forma de trabajo",
-    href: "/contacto#email",
-    backgroundColor: "#EEF3ED",
-    borderColor: "rgba(124,158,138,0.22)",
-    labelColor: "#5B7D69",
-    titleColor: "#1A1A2E",
-    bodyColor: "#4F665A",
-    buttonBackground: "#1A1A2E",
-    buttonBorder: "#1A1A2E",
-    buttonColor: "#FAF8F4",
+    number: "02",
+    title: "Tu espacio digital",
+    short: "Un espacio pensado para que te encuentren, te entiendan y te elijan.",
+    body:
+      "Diseñamos páginas web y tiendas online que comunican con claridad, presentan lo que haces y ayudan a que te entiendan y te elijan.",
+    image: imageEspacioDigital,
   },
   {
-    id: "negocio",
-    tag: "PARA TU NEGOCIO",
-    title: "Diseñar mejor lo que sostiene tu negocio",
-    body: "Para pensar con más criterio un producto, un servicio, una experiencia o una operación que necesita estructura para crecer con coherencia.",
-    cta: "Pensar mi negocio contigo",
-    href: "/contacto#email",
-    backgroundColor: "#F4ECE8",
-    borderColor: "rgba(201,123,90,0.22)",
-    labelColor: "#A16044",
-    titleColor: "#1A1A2E",
-    bodyColor: "#64564F",
-    buttonBackground: "#1A1A2E",
-    buttonBorder: "#1A1A2E",
-    buttonColor: "#FAF8F4",
+    number: "03",
+    title: "Hecho sistema",
+    short: "Una solución digital propia para una necesidad concreta.",
+    body:
+      "Creamos plataformas, dashboards y herramientas digitales que convierten necesidades complejas en soluciones claras y útiles.",
+    image: imageHechoSistema,
+  },
+  {
+    number: "04",
+    title: "Tu vida, tu sistema",
+    short: "Una estructura personal para sostener todo lo que quieres construir.",
+    body:
+      "Organizamos proyectos, objetivos, ideas y prioridades para que puedas sostener lo que quieres construir con claridad y enfoque.",
+    image: imageVidaSistema,
   },
 ];
 
 export function CaminosSection() {
   const isMobile = useIsMobile();
 
-  if (isMobile) {
-    return (
-      <section
-        id="servicios"
-        style={{
-          backgroundColor: "#1A1A2E",
-          paddingTop: "92px",
-          paddingBottom: "92px",
-          paddingLeft: "24px",
-          paddingRight: "24px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "-60px",
-            right: "-60px",
-            width: "260px",
-            height: "260px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, #F5C842 0%, transparent 70%)",
-            opacity: 0.05,
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-40px",
-            left: "-40px",
-            width: "200px",
-            height: "200px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, #7C9E8A 0%, transparent 70%)",
-            opacity: 0.06,
-            pointerEvents: "none",
-          }}
-        />
-
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <p
-            style={{
-              fontFamily: "Space Mono, monospace",
-              fontSize: "10px",
-              color: "#555577",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              marginBottom: "18px",
-              fontWeight: 400,
-            }}
-          >
-            SERVICIOS
-          </p>
-
-          <h2
-            style={{
-              fontFamily: "Fraunces, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "34px",
-              color: "#FAF8F4",
-              lineHeight: "1.18",
-              marginBottom: "14px",
-            }}
-          >
-            Formas de trabajar conmigo
-          </h2>
-
-          <p
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              color: "#8F8AA5",
-              lineHeight: "1.75",
-              marginBottom: "34px",
-            }}
-          >
-            Diseño sistemas aplicados a distintas capas de la vida, el trabajo y los negocios.
-          </p>
-
-          <div style={{ display: "grid", gap: "18px" }}>
-            {services.map((service) => (
-              <article
-                key={service.id}
-                style={{
-                  backgroundColor: service.backgroundColor,
-                  border: `1px solid ${service.borderColor}`,
-                  borderRadius: "18px",
-                  padding: "28px 24px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "Space Mono, monospace",
-                    fontSize: "10px",
-                    color: service.labelColor,
-                    letterSpacing: "3px",
-                    textTransform: "uppercase",
-                    marginBottom: "16px",
-                    fontWeight: 400,
-                  }}
-                >
-                  {service.tag}
-                </p>
-                <h3
-                  style={{
-                    fontFamily: "Fraunces, serif",
-                    fontStyle: "italic",
-                    fontWeight: 400,
-                    fontSize: "28px",
-                    color: service.titleColor,
-                    lineHeight: "1.14",
-                    marginBottom: "14px",
-                    maxWidth: "260px",
-                  }}
-                >
-                  {service.title}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: "Space Grotesk, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "15px",
-                    color: service.bodyColor,
-                    lineHeight: "1.7",
-                    marginBottom: "26px",
-                  }}
-                >
-                  {service.body}
-                </p>
-                <AppLink
-                  to={service.href}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    backgroundColor: service.buttonBackground,
-                    color: service.buttonColor,
-                    fontFamily: "Space Mono, monospace",
-                    fontSize: "11px",
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                    padding: "14px 22px",
-                    borderRadius: "6px",
-                    border: `1px solid ${service.buttonBorder}`,
-                    fontWeight: 400,
-                    textDecoration: "none",
-                  }}
-                >
-                  {service.cta}
-                </AppLink>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section
       id="servicios"
       style={{
-        backgroundColor: "#1A1A2E",
-        paddingTop: "116px",
-        paddingBottom: "118px",
-        paddingLeft: "80px",
-        paddingRight: "80px",
+        backgroundColor: "var(--arena-clara)",
+        paddingTop: isMobile ? "86px" : "112px",
+        paddingBottom: isMobile ? "88px" : "118px",
+        paddingLeft: isMobile ? "24px" : "80px",
+        paddingRight: isMobile ? "24px" : "80px",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: "-120px",
-          right: "-80px",
-          width: "420px",
-          height: "420px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, #F5C842 0%, transparent 70%)",
-          opacity: 0.05,
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-80px",
-          left: "-80px",
-          width: "300px",
-          height: "300px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, #7C9E8A 0%, transparent 70%)",
-          opacity: 0.06,
-          pointerEvents: "none",
-        }}
-      />
-
-      <div style={{ maxWidth: "1160px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+      <div style={{ maxWidth: "1220px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(0, 0.95fr) minmax(0, 1.05fr)",
-            gap: "48px",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.86fr) minmax(320px, 0.76fr)",
+            gap: isMobile ? "24px" : "54px",
             alignItems: "end",
-            marginBottom: "42px",
+            marginBottom: isMobile ? "34px" : "50px",
           }}
         >
           <div>
-            <p
-              style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "10px",
-                color: "#555577",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                marginBottom: "18px",
-                fontWeight: 400,
-              }}
-            >
-              SERVICIOS
-            </p>
+            <SectionLabel number="04">Servicios</SectionLabel>
             <h2
               style={{
-                fontFamily: "Fraunces, serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: "54px",
-                color: "#FAF8F4",
-                lineHeight: "1.08",
-                marginBottom: "18px",
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 600,
+                fontSize: isMobile ? "36px" : "60px",
+                color: "var(--mar-profundo)",
+                lineHeight: 1.02,
+                margin: "22px 0 0",
               }}
             >
-              Formas de trabajar conmigo
+              ¿Cuáles son mis servicios?
             </h2>
           </div>
 
@@ -299,99 +87,69 @@ export function CaminosSection() {
             style={{
               fontFamily: "Space Grotesk, sans-serif",
               fontWeight: 400,
-              fontSize: "16px",
-              color: "#8F8AA5",
-              lineHeight: "1.8",
+              fontSize: isMobile ? "16px" : "18px",
+              color: "rgba(23, 59, 68, 0.86)",
+              lineHeight: 1.72,
               margin: 0,
-              maxWidth: "520px",
-              justifySelf: "end",
+              maxWidth: "540px",
             }}
           >
-            Diseño sistemas aplicados a distintas capas de la vida, el trabajo y los negocios.
+            Toca o pasa el mouse por una tarjeta para ver el detalle.
           </p>
         </div>
 
         <div
           style={{
+            marginBottom: isMobile ? "34px" : "44px",
             display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            gap: "24px",
-            alignItems: "stretch",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) auto",
+            gap: "22px",
+            alignItems: "center",
+            borderTop: "1px solid rgba(23, 59, 68, 0.16)",
+            borderBottom: "1px solid rgba(23, 59, 68, 0.16)",
+            paddingTop: isMobile ? "26px" : "30px",
+            paddingBottom: isMobile ? "26px" : "30px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "Space Grotesk, sans-serif",
+              fontSize: isMobile ? "18px" : "22px",
+              lineHeight: 1.45,
+              color: "var(--mar-profundo)",
+              margin: 0,
+              maxWidth: "760px",
+            }}
+          >
+            Si no sabes por dónde empezar, lo revisamos juntas.
+          </p>
+          <BrandButton to="/contacto#email">Cuéntame qué estás construyendo</BrandButton>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(4, minmax(0, 1fr))",
+            gap: isMobile ? "18px" : "20px",
           }}
         >
           {services.map((service) => (
-            <article
-              key={service.id}
-              style={{
-                backgroundColor: service.backgroundColor,
-                border: `1px solid ${service.borderColor}`,
-                borderRadius: "22px",
-                padding: "40px 36px",
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "360px",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "10px",
-                  color: service.labelColor,
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
-                  marginBottom: "20px",
-                  fontWeight: 400,
-                }}
-              >
-                {service.tag}
-              </p>
-              <h3
-                style={{
-                  fontFamily: "Fraunces, serif",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  fontSize: "36px",
-                  color: service.titleColor,
-                  lineHeight: "1.06",
-                  marginBottom: "18px",
-                  maxWidth: "290px",
-                }}
-              >
-                {service.title}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "16px",
-                  color: service.bodyColor,
-                  lineHeight: "1.8",
-                  marginBottom: "34px",
-                }}
-              >
-                {service.body}
-              </p>
-              <div style={{ marginTop: "auto" }}>
-                <AppLink
-                  to={service.href}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    backgroundColor: service.buttonBackground,
-                    color: service.buttonColor,
-                    fontFamily: "Space Mono, monospace",
-                    fontSize: "11px",
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                    padding: "16px 28px",
-                    borderRadius: "6px",
-                    border: `1px solid ${service.buttonBorder}`,
-                    fontWeight: 400,
-                    textDecoration: "none",
-                  }}
-                >
-                  {service.cta}
-                </AppLink>
+            <article key={service.title} className="service-card" tabIndex={0}>
+              <div className="service-card-inner">
+                <div className="service-card-face service-card-front">
+                  <img src={service.image} alt="" aria-hidden="true" />
+                  <div className="service-card-overlay" />
+                  <div className="service-card-copy">
+                    <p>{service.number}</p>
+                    <h3>{service.title}</h3>
+                    <span>{service.short}</span>
+                  </div>
+                </div>
+                <div className="service-card-face service-card-back">
+                  <p>{service.number}</p>
+                  <h3>{service.title}</h3>
+                  <span>{service.body}</span>
+                </div>
               </div>
             </article>
           ))}

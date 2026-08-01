@@ -12,9 +12,6 @@ const startingPoints = [
 export function ContactoPage() {
   const isMobile = useIsMobile();
   const px = isMobile ? "24px" : "80px";
-  const scrollToEmail = () => {
-    document.getElementById("email")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <div style={{ backgroundColor: "#FAF8F4", overflowX: "hidden" }}>
@@ -305,16 +302,22 @@ export function ContactoPage() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "#F5C842",
-                  color: "#1A1A2E",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   padding: "16px 24px",
-                  borderRadius: "6px",
+                  borderRadius: "999px",
+                  border: "1px solid var(--cta-glass-border)",
                   textTransform: "uppercase",
                   fontWeight: 400,
                   textDecoration: "none",
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Hablemos por WhatsApp

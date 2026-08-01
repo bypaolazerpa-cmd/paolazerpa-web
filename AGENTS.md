@@ -108,7 +108,14 @@ src/
 │       │   — Secciones de Home —
 │       ├── HeroSection.tsx
 │       ├── ProblemaQuienSoySection.tsx
-│       ├── CaminosSection.tsx         # Cards: para ti / equipo / negocio / app
+│       ├── HomeApproachSection.tsx    # Enfoque sistémico
+│       ├── CaminosSection.tsx         # Cards: para ti / trabajo / negocio
+│       ├── HomeMethodSection.tsx      # Método Paola
+│       ├── HomeStartSection.tsx       # Cómo empezamos
+│       ├── HomeProjectsSection.tsx    # Proyectos/casos seleccionados
+│       ├── HomeGuideSection.tsx       # Página/sección heredada, no conectada al home actual
+│       ├── HomeAppSection.tsx         # Página/sección heredada, no conectada al home actual
+│       ├── HomeAboutSection.tsx       # Página/sección heredada, no conectada al home actual
 │       ├── NotasProcesoSection.tsx    # Preview de notas en home
 │       ├── ContactoSection.tsx        # Sección contacto inline en home
 │       │
@@ -125,7 +132,13 @@ src/
 │   ├── paola-portrait.jpg             # Foto principal (usada en hero/about)
 │   ├── paola-full.jpg
 │   ├── paola-photo2.jpg
-│   └── paola-photo3.jpg
+│   ├── paola-photo3.jpg
+│   ├── paola-problema-bg.jpg          # Fondo fotográfico de sección 02
+│   ├── paola-enfoque.jpg              # Imagen provisional de sección 03
+│   ├── service-sistema-medida.jpg
+│   ├── service-espacio-digital.jpg
+│   ├── service-hecho-sistema.jpg
+│   └── service-vida-sistema.jpg
 │
 └── styles/
     ├── fonts.css                      # Reset base mínimo
@@ -133,6 +146,7 @@ src/
 
 public/
 ├── _redirects                         # Netlify SPA routing
+├── paola-hero-video.mov               # Video provisional del hero
 └── guia-ecosistema-personal.pdf       # ← reemplazar con PDF real
 ```
 
@@ -258,11 +272,9 @@ Todo cambio sigue este orden:
 
 ## 11) Estado actual a respetar
 
-- La navegación visible usa `Inicio`, `Notas`, `Contacto`.
-- `/mi-historia` sigue activa por URL directa, pero hoy queda fuera de la navegación principal.
-- `/guia` y `/programa` siguen activas por URL directa, pero hoy quedan fuera de la navegación principal.
+- La navegación visible usa `Inicio`, `Mi historia`, `Notas`, `Contacto`.
 - La marca visible en navbar es `🌷 Paola`.
-- El home actual usa `ProblemaQuienSoySection` en lugar del split antiguo entre `ElProblemaSection`, `QuienSoySection` y `EnfoqueSection`.
+- El home actual usa `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection` y `HomeProjectsSection` como eje narrativo de landing.
 - Las rutas legacy `/blog` y `/mihistoria` ya no deben reintroducirse.
 - Existen archivos legacy todavía en el repo, como `CTAFinalSection.tsx`, que pueden no estar conectados. Verificar referencias antes de editarlos o reinsertarlos.
 
