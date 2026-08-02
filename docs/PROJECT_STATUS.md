@@ -46,8 +46,8 @@ Navegación:
 - usa botones y navegación programática con scroll al inicio
 - `AppLink` abstrae el comportamiento de enlaces internos
 - la transición entre páginas se resuelve globalmente desde el layout raíz con CSS
-- la navegación principal visible hoy expone `Inicio`, `Notas` y `Contacto`
-- `/mi-historia`, `/guia` y `/programa` siguen vivas por URL directa, pero fuera del menú principal
+- la navegación principal visible hoy expone `Inicio`, `Mi historia`, `Notas` y `Contacto`
+- `/guia` y `/programa` siguen vivas por URL directa, pero fuera del menú principal
 
 Conversión:
 - WhatsApp sigue siendo canal principal
@@ -92,6 +92,10 @@ Conversión:
 - `/mi-historia` quedó migrada a la nueva capa visual del sitio con `pz-page`, `pz-dark`, componentes compartidos de marca, foto principal y CTAs hacia contacto, servicios e inicio.
 - `npm run build` pasa después de la migración de `/mi-historia`; persisten warnings conocidos de prerender por `useLayoutEffect`.
 - `/mi-historia` recibió una segunda pasada de contenido: foto principal nueva, CTA neutral `Trabajemos`, relato más concreto con énfasis tipográfico y cierre orientado a territorios de trabajo.
+- `/contacto` quedó migrada a la nueva capa visual del sitio con hero oscuro editorial, nota manuscrita, tarjetas tipo papel y cierre de canales.
+- `/contacto#email` se conserva como ancla de conversión; WhatsApp sigue como acción principal y email como alternativa secundaria.
+- `npm run build` pasa después de la migración de `/contacto`; persisten warnings conocidos de prerender por `useLayoutEffect`.
+- `/contacto` recibió una pasada de simplificación de copy para sostener una lectura breve, precisa y orientada a contacto.
 
 ## 6. Qué sigue después del deploy
 

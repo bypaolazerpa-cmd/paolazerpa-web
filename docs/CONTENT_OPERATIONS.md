@@ -44,7 +44,9 @@ Páginas y secciones que convierten:
 Estado actual de `/contacto`:
 - WhatsApp se mantiene como acción principal de inicio de conversación
 - email se presenta como alternativa secundaria, visible y clara
-- el copy quedó reenfocado desde diseño de sistemas, procesos, experiencias y estructuras, evitando un tono de acompañamiento emocional
+- la página quedó migrada a la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
+- el copy organiza la entrada en tres momentos: contacto, para qué escribirme y cómo empezar
+- el mensaje quedó simplificado para reducir carga de lectura y priorizar acción directa
 - el bloque de correo expone `id="email"` y margen de scroll para navegación con hash
 
 Estado actual de `/guia`:

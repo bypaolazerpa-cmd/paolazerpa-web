@@ -1,197 +1,357 @@
-import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
+import { NavBar } from "./NavBar";
+import { BrandButton } from "./brand/BrandButton";
+import { PaperNote } from "./brand/PaperNote";
+import { SectionLabel } from "./brand/SectionLabel";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-const startingPoints = [
-  "Ordenar una idea, una necesidad o un problema concreto antes de convertirlo en algo más grande",
-  "Revisar un proceso, una forma de trabajar o una decisión de estructura que hoy no termina de cerrar",
-  "Conversar una necesidad de producto, servicio, experiencia, equipo o negocio con más criterio",
-  "Empezar por una pregunta concreta, sin tener todo definido ni escrito en formato proyecto",
+const contactReasons = [
+  {
+    label: "Ordenar una idea",
+    text: "Para darle forma antes de convertirla en proyecto.",
+  },
+  {
+    label: "Revisar un proceso",
+    text: "Para detectar qué está trabado y qué conviene ajustar.",
+  },
+  {
+    label: "Diseñar una experiencia",
+    text: "Para pensar mejor una web, servicio, producto o flujo de trabajo.",
+  },
+];
+
+const firstMessageIdeas = [
+  "qué estás construyendo",
+  "qué hoy se siente desordenado",
+  "qué quieres revisar o mejorar",
 ];
 
 export function ContactoPage() {
   const isMobile = useIsMobile();
-  const px = isMobile ? "24px" : "80px";
+  const pagePadding = isMobile ? "18px" : "28px";
+  const sectionPadding = isMobile ? "56px 22px" : "86px 80px";
 
   return (
-    <div style={{ backgroundColor: "#FAF8F4", overflowX: "hidden" }}>
+    <div className="pz-page">
       <NavBar />
 
       <section
+        className="pz-dark"
         style={{
-          backgroundColor: "#1A1A2E",
-          paddingTop: isMobile ? "120px" : "156px",
-          paddingBottom: isMobile ? "72px" : "88px",
-          paddingLeft: px,
-          paddingRight: px,
+          paddingTop: isMobile ? "84px" : "112px",
+          paddingBottom: isMobile ? "34px" : "44px",
+          paddingLeft: pagePadding,
+          paddingRight: pagePadding,
           position: "relative",
           overflow: "hidden",
         }}
       >
         <div
+          aria-hidden="true"
           style={{
             position: "absolute",
-            top: "-80px",
-            right: "-80px",
-            width: isMobile ? "220px" : "440px",
-            height: isMobile ? "220px" : "440px",
+            inset: 0,
+            background:
+              "linear-gradient(rgba(230,215,198,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(230,215,198,0.04) 1px, transparent 1px)",
+            backgroundSize: isMobile ? "28px 28px" : "42px 42px",
+            opacity: 0.45,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            right: isMobile ? "-88px" : "7%",
+            top: isMobile ? "92px" : "118px",
+            width: isMobile ? "210px" : "340px",
+            height: isMobile ? "210px" : "340px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, #7C9E8A 0%, transparent 65%)",
-            opacity: 0.06,
+            border: "1px solid rgba(230, 215, 198, 0.2)",
             pointerEvents: "none",
           }}
         />
-        <div style={{ maxWidth: "1040px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <p
-            style={{
-              fontFamily: "Space Mono, monospace",
-              fontSize: isMobile ? "10px" : "11px",
-              color: "#F5C842",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              marginBottom: "18px",
-              fontWeight: 400,
-            }}
-          >
-            Contacto
-          </p>
-          <h1
-            style={{
-              fontFamily: "Fraunces, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: isMobile ? "40px" : "62px",
-              color: "#FAF8F4",
-              lineHeight: "1.08",
-              marginBottom: "18px",
-              maxWidth: "760px",
-            }}
-          >
-            Empecemos por una conversación clara.
-          </h1>
-          <p
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 400,
-              fontSize: isMobile ? "16px" : "18px",
-              color: "#C8C2BA",
-              lineHeight: "1.8",
-              maxWidth: "640px",
-              margin: 0,
-            }}
-          >
-            Trabajo ordenando ideas, procesos, experiencias y estructuras. Si hay algo que quieres
-            revisar mejor antes de convertirlo en proyecto, esta es una buena forma de empezar.
-          </p>
-        </div>
-      </section>
 
-      <section
-        style={{
-          backgroundColor: "#FAF8F4",
-          paddingTop: isMobile ? "72px" : "92px",
-          paddingBottom: isMobile ? "56px" : "64px",
-          paddingLeft: px,
-          paddingRight: px,
-        }}
-      >
         <div
           style={{
-            maxWidth: "980px",
+            maxWidth: "1260px",
             margin: "0 auto",
+            position: "relative",
+            zIndex: 1,
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.85fr) minmax(320px, 0.9fr)",
-            gap: isMobile ? "24px" : "44px",
-            alignItems: "start",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.95fr) minmax(330px, 0.7fr)",
+            gap: isMobile ? "30px" : "60px",
+            alignItems: "center",
+            minHeight: isMobile ? "auto" : "calc(100svh - 156px)",
           }}
         >
           <div>
-            <p
+            <SectionLabel number="01" tone="light">
+              Contacto
+            </SectionLabel>
+
+            <h1
               style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: isMobile ? "10px" : "11px",
-                color: "#AAAAAA",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                marginBottom: "18px",
-                fontWeight: 400,
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 600,
+                fontSize: isMobile ? "34px" : "64px",
+                color: "var(--arena-clara)",
+                lineHeight: isMobile ? 1.04 : 0.98,
+                letterSpacing: 0,
+                margin: isMobile ? "22px 0 18px" : "28px 0 24px",
+                maxWidth: "720px",
               }}
             >
-              Para qué escribirme
-            </p>
-            <h2
-              style={{
-                fontFamily: "Fraunces, serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: isMobile ? "32px" : "42px",
-                color: "#1A1A2E",
-                lineHeight: "1.15",
-                marginBottom: "14px",
-                maxWidth: "520px",
-            }}
-          >
-            Para abrir una conversación útil, no para llegar con todo resuelto.
-          </h2>
-          <p
+              Empecemos por una conversación clara.
+            </h1>
+
+            <p
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 400,
-                fontSize: "16px",
-                color: "#666666",
-                lineHeight: "1.8",
+                fontSize: isMobile ? "16px" : "19px",
+                color: "rgba(230, 215, 198, 0.92)",
+                lineHeight: "1.58",
+                maxWidth: "640px",
                 margin: 0,
-                maxWidth: "480px",
-            }}
-          >
-            Puedes escribirme si necesitas perspectiva para ordenar una decisión, revisar una forma
-            de trabajar, pensar una experiencia o darle mejor forma a una necesidad concreta.
-          </p>
-        </div>
+              }}
+            >
+              Si tienes una idea, proceso, servicio o sistema que necesita más orden, escríbeme. No
+              hace falta llegar con todo definido: podemos empezar por ubicar qué está pasando.
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+                gap: "14px",
+                alignItems: isMobile ? "stretch" : "center",
+                marginTop: isMobile ? "28px" : "34px",
+              }}
+            >
+              <a
+                className="pz-button pz-button--primary"
+                href="https://wa.me/5491133652899"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hablemos por WhatsApp
+              </a>
+              <BrandButton variant="secondary" to="/#servicios">
+                Ver servicios
+              </BrandButton>
+            </div>
+          </div>
 
           <div
             style={{
-              backgroundColor: "#FFFFFF",
-              border: "1px solid #E8E2DA",
-              borderRadius: "16px",
-              padding: isMobile ? "24px 22px" : "28px 28px",
+              display: "grid",
+              gap: "18px",
+              justifyItems: isMobile ? "start" : "end",
             }}
           >
-            <div style={{ display: "grid", gap: "14px" }}>
-              {startingPoints.map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    display: "flex",
-                    gap: "12px",
-                    alignItems: "flex-start",
-                  }}
-                >
+            <div
+              style={{
+                width: "100%",
+                maxWidth: isMobile ? "360px" : "440px",
+                border: "1px solid rgba(230, 215, 198, 0.22)",
+                borderRadius: "14px",
+                background: "rgba(230, 215, 198, 0.1)",
+                padding: isMobile ? "24px 22px" : "30px",
+                boxShadow: "inset 0 1px 0 rgba(230, 215, 198, 0.12)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.13em",
+                  textTransform: "uppercase",
+                  color: "var(--citron-loto)",
+                  margin: "0 0 16px",
+                }}
+              >
+                Punto de partida
+              </p>
+              <div style={{ display: "grid", gap: "14px" }}>
+                {firstMessageIdeas.map((idea, index) => (
                   <div
+                    key={idea}
                     style={{
-                      width: "8px",
-                      height: "8px",
-                      borderRadius: "50%",
-                      backgroundColor: "#7C9E8A",
-                      marginTop: "8px",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <p
-                    style={{
-                      fontFamily: "Space Grotesk, sans-serif",
-                      fontWeight: 400,
-                      fontSize: "15px",
-                      color: "#555555",
-                      lineHeight: "1.75",
-                      margin: 0,
+                      display: "grid",
+                      gridTemplateColumns: "42px minmax(0, 1fr)",
+                      gap: "14px",
+                      alignItems: "start",
+                      paddingTop: index === 0 ? 0 : "14px",
+                      borderTop:
+                        index === 0 ? "none" : "1px solid rgba(230, 215, 198, 0.14)",
                     }}
                   >
-                    {item}
-                  </p>
-                </div>
-              ))}
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        width: "34px",
+                        height: "34px",
+                        borderRadius: "999px",
+                        border: "1px solid rgba(230, 215, 198, 0.24)",
+                        display: "grid",
+                        placeItems: "center",
+                        fontFamily: "Space Mono, monospace",
+                        fontSize: "11px",
+                        color: "var(--arena-clara)",
+                      }}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p
+                      style={{
+                        fontFamily: "Space Grotesk, sans-serif",
+                        fontSize: isMobile ? "15px" : "16px",
+                        lineHeight: 1.55,
+                        color: "rgba(230, 215, 198, 0.86)",
+                        margin: 0,
+                      }}
+                    >
+                      Cuéntame {idea}.
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            <PaperNote
+              style={{
+                justifySelf: isMobile ? "center" : "start",
+                marginTop: isMobile ? "-6px" : "-10px",
+                marginLeft: isMobile ? "42px" : "-46px",
+                maxWidth: isMobile ? "230px" : "280px",
+              }}
+            >
+              Una conversación clara también es una forma de empezar a diseñar.
+            </PaperNote>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: sectionPadding }}>
+        <div
+          style={{
+            maxWidth: "1160px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "320px minmax(0, 1fr)",
+            gap: isMobile ? "28px" : "72px",
+            alignItems: "start",
+          }}
+        >
+          <div
+            style={{
+              position: isMobile ? "relative" : "sticky",
+              top: isMobile ? "auto" : "112px",
+              display: "grid",
+              gap: "18px",
+            }}
+          >
+            <SectionLabel number="02">Para qué escribirme</SectionLabel>
+            <h2
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "30px" : "42px",
+                fontWeight: 600,
+                lineHeight: 1.05,
+                color: "var(--mar-profundo)",
+                margin: 0,
+                letterSpacing: 0,
+              }}
+            >
+              Escríbeme si necesitas mirar algo con más claridad.
+            </h2>
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "15px" : "17px",
+                lineHeight: 1.7,
+                color: "rgba(23, 59, 68, 0.76)",
+                margin: 0,
+              }}
+            >
+              Una primera conversación sirve para entender si el siguiente paso es ordenar, revisar
+              o diseñar mejor.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gap: isMobile ? "18px" : "22px" }}>
+            {contactReasons.map((reason, index) => (
+              <article
+                key={reason.label}
+                style={{
+                  position: "relative",
+                  background:
+                    "linear-gradient(rgba(23, 59, 68, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 59, 68, 0.025) 1px, transparent 1px), rgba(234, 223, 206, 0.76)",
+                  backgroundSize: "22px 22px",
+                  border: "1px solid rgba(23, 59, 68, 0.16)",
+                  borderRadius: "10px",
+                  padding: isMobile ? "24px 20px" : "30px 32px",
+                  boxShadow: "var(--shadow-soft)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "16px",
+                    marginBottom: "14px",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: "Space Grotesk, sans-serif",
+                      fontSize: isMobile ? "24px" : "30px",
+                      fontWeight: 700,
+                      lineHeight: 1.1,
+                      color: "var(--mar-profundo)",
+                      margin: 0,
+                      letterSpacing: 0,
+                    }}
+                  >
+                    {reason.label}
+                  </h3>
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      width: "38px",
+                      height: "38px",
+                      borderRadius: "999px",
+                      border: "1px solid rgba(23, 59, 68, 0.2)",
+                      display: "grid",
+                      placeItems: "center",
+                      flexShrink: 0,
+                      fontFamily: "Space Mono, monospace",
+                      fontSize: "12px",
+                      color: "var(--mar-profundo)",
+                    }}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p
+                  style={{
+                    fontFamily: "Space Grotesk, sans-serif",
+                    fontWeight: 400,
+                    fontSize: isMobile ? "15px" : "16px",
+                    color: "rgba(23, 59, 68, 0.76)",
+                    lineHeight: "1.72",
+                    margin: 0,
+                    maxWidth: "720px",
+                  }}
+                >
+                  {reason.text}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -200,197 +360,140 @@ export function ContactoPage() {
         id="email"
         style={{
           scrollMarginTop: isMobile ? "84px" : "98px",
-          backgroundColor: "#1A1A2E",
-          paddingTop: isMobile ? "56px" : "64px",
-          paddingBottom: isMobile ? "56px" : "64px",
-          paddingLeft: px,
-          paddingRight: px,
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
+          padding: isMobile ? "8px 22px 72px" : "0 80px 104px",
         }}
       >
         <div
+          className="pz-dark"
           style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%,-50%)",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, #9B8FB0 0%, transparent 60%)",
-            opacity: 0.05,
-            pointerEvents: "none",
+            maxWidth: "1160px",
+            margin: "0 auto",
+            borderRadius: "14px",
+            padding: isMobile ? "30px 22px" : "42px",
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.92fr) minmax(300px, 0.62fr)",
+            gap: isMobile ? "26px" : "44px",
+            alignItems: "center",
+            overflow: "hidden",
+            position: "relative",
           }}
-        />
-
-        <div style={{ maxWidth: isMobile ? "620px" : "980px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <p
-            style={{
-              fontFamily: "Space Mono, monospace",
-              fontSize: isMobile ? "10px" : "11px",
-              color: "#F5C842",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              marginBottom: "14px",
-              fontWeight: 400,
-            }}
-          >
-            Cómo empezar
-          </p>
-          <h2
-            style={{
-              fontFamily: "Fraunces, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: isMobile ? "30px" : "38px",
-              color: "#FAF8F4",
-              lineHeight: "1.15",
-              marginBottom: "14px",
-            }}
-          >
-            WhatsApp es la forma más directa de abrir la conversación.
-          </h2>
+        >
           <div
+            aria-hidden="true"
             style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
-              gap: isMobile ? "14px" : "18px",
-              textAlign: "left",
+              position: "absolute",
+              right: "-74px",
+              bottom: "-74px",
+              width: isMobile ? "180px" : "270px",
+              height: isMobile ? "180px" : "270px",
+              borderRadius: "999px",
+              border: "1px solid rgba(230, 215, 198, 0.18)",
             }}
-          >
-            <div
+          />
+          <div style={{ position: "relative", zIndex: 1, display: "grid", gap: "18px" }}>
+            <SectionLabel number="03" tone="light">
+              Cómo empezar
+            </SectionLabel>
+            <h2
               style={{
-                backgroundColor: "rgba(250,248,244,0.05)",
-                border: "1px solid rgba(250,248,244,0.12)",
-                borderRadius: "18px",
-                padding: isMobile ? "22px 20px" : "26px 24px",
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "30px" : "44px",
+                fontWeight: 600,
+                lineHeight: 1.05,
+                color: "var(--arena-clara)",
+                margin: 0,
+                letterSpacing: 0,
+                maxWidth: "720px",
               }}
             >
-              <p
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "10px",
-                  color: "#F5C842",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  margin: "0 0 12px 0",
-                  fontWeight: 400,
-                }}
-              >
-                WhatsApp
-              </p>
-              <p
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "15px",
-                  color: "#D6D0C4",
-                  lineHeight: "1.75",
-                  margin: "0 0 18px 0",
-                }}
-              >
-                Ideal para una primera conversación breve sobre una idea, un proceso o una
-                necesidad que quieres revisar conmigo.
-              </p>
+              WhatsApp es la forma más directa.
+            </h2>
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "15px" : "17px",
+                lineHeight: 1.65,
+                color: "rgba(230, 215, 198, 0.86)",
+                margin: 0,
+                maxWidth: "650px",
+              }}
+            >
+              Envíame una síntesis breve de lo que quieres ordenar. Si tiene sentido, definimos el
+              siguiente paso.
+            </p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+                gap: "14px",
+                alignItems: isMobile ? "stretch" : "center",
+              }}
+            >
               <a
+                className="pz-button pz-button--primary"
                 href="https://wa.me/5491133652899"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "var(--cta-glass-bg)",
-                  color: "#173B44",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  padding: "16px 24px",
-                  borderRadius: "999px",
-                  border: "1px solid var(--cta-glass-border)",
-                  textTransform: "uppercase",
-                  fontWeight: 400,
-                  textDecoration: "none",
-                  boxShadow:
-                    "var(--cta-glass-shadow)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
               >
                 Hablemos por WhatsApp
               </a>
+              <a className="pz-button pz-button--secondary" href="mailto:paolakzerpa@gmail.com">
+                Abrir email
+              </a>
             </div>
-            <div
+          </div>
+
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              backgroundColor: "rgba(230, 215, 198, 0.1)",
+              border: "1px solid rgba(230, 215, 198, 0.2)",
+              borderRadius: "10px",
+              padding: isMobile ? "22px 20px" : "28px",
+              display: "grid",
+              gap: "16px",
+            }}
+          >
+            <p
               style={{
-                backgroundColor: "rgba(250,248,244,0.03)",
-                border: "1px solid rgba(250,248,244,0.1)",
-                borderRadius: "18px",
-                padding: isMobile ? "22px 20px" : "26px 24px",
+                fontFamily: "Space Mono, monospace",
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "0.13em",
+                textTransform: "uppercase",
+                color: "var(--citron-loto)",
+                margin: 0,
               }}
             >
-              <p
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "10px",
-                  color: "#C8C2BA",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  margin: "0 0 12px 0",
-                  fontWeight: 400,
-                }}
-              >
-                Email
-              </p>
-              <p
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "15px",
-                  color: "#D6D0C4",
-                  lineHeight: "1.75",
-                  margin: "0 0 18px 0",
-                }}
-              >
-                Si prefieres explicar mejor el contexto antes de hablar, puedes escribirme por
-                correo y seguimos desde ahí.
-              </p>
-              <a
-                href="mailto:paolakzerpa@gmail.com"
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 500,
-                  fontSize: isMobile ? "20px" : "24px",
-                  color: "#FAF8F4",
-                  textDecoration: "none",
-                  display: "block",
-                  marginBottom: "14px",
-                  lineHeight: "1.35",
-                  letterSpacing: "-0.01em",
-                  overflowWrap: "anywhere",
-                  wordBreak: "break-word",
-                  maxWidth: "100%",
-                }}
-              >
-                paolakzerpa@gmail.com
-              </a>
-              <a
-                href="mailto:paolakzerpa@gmail.com"
-                style={{
-                  display: "inline-block",
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: "14px",
-                  color: "#D6D0C4",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "3px",
-                  cursor: "pointer",
-                }}
-              >
-                Abrir mail
-              </a>
-            </div>
+              Canal secundario
+            </p>
+            <a
+              href="mailto:paolakzerpa@gmail.com"
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 700,
+                fontSize: isMobile ? "22px" : "27px",
+                color: "var(--arena-clara)",
+                textDecoration: "none",
+                lineHeight: 1.2,
+                overflowWrap: "anywhere",
+                wordBreak: "break-word",
+              }}
+            >
+              paolakzerpa@gmail.com
+            </a>
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: "15px",
+                lineHeight: 1.65,
+                color: "rgba(230, 215, 198, 0.78)",
+                margin: 0,
+              }}
+            >
+              Si prefieres mandar más contexto, también puedes escribirme por email.
+            </p>
           </div>
         </div>
       </section>

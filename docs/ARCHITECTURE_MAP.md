@@ -78,6 +78,12 @@ Detalle relevante de `/mi-historia`:
 - los CTAs principales apuntan a `/contacto#email`, `/#servicios` y `/`
 - el copy y las CTAs usan lenguaje neutral, sin asumir que la audiencia es solo femenina
 
+Detalle relevante de `/contacto`:
+- usa la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
+- organiza la página en tres bloques numerados: `Contacto`, `Para qué escribirme` y `Cómo empezar`
+- mantiene WhatsApp como CTA principal y email como canal secundario visible
+- conserva el ancla `id="email"` para las CTAs internas que navegan a `/contacto#email`
+
 ## 4. Patrón responsive vigente
 
 Fuente de verdad:
