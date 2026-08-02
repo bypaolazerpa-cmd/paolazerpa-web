@@ -90,6 +90,14 @@ La guía descargable es un PDF estático en `/public/`.
 No generar texto de relleno (Lorem ipsum, etc.).
 Todo el copy debe ser coherente con la voz de marca: directa, sin relleno, en español neutro.
 
+### 3.5) Audiencia — no segmentar por género
+
+La marca personal de Paola Zerpa habla y trabaja con mujeres y hombres: dueños de negocios,
+profesionales con varios proyectos, clientes o trabajos, personas con emprendimientos o empresas,
+fundadores de startups y equipos de trabajo mixtos. No escribir CTAs ni mensajes como si el servicio
+fuera exclusivamente para mujeres. Preferir fórmulas neutras como `Trabajemos`, `Hablemos` o
+`Cuéntame tu caso`.
+
 ---
 
 ## 4) Mapa del repositorio
@@ -133,6 +141,8 @@ src/
 │   ├── paola-full.jpg
 │   ├── paola-photo2.jpg
 │   ├── paola-photo3.jpg
+│   ├── paola-mi-historia.jpg          # Foto principal de /mi-historia
+│   ├── paola-mi-historia-portrait.png # Versión retrato con fondo desenfocado
 │   ├── paola-problema-scene.jpg       # Foto usada en hero actual
 │   ├── paola-enfoque.jpg              # Imagen disponible, no conectada al home actual
 │   ├── service-sistema-medida.jpg
@@ -240,7 +250,40 @@ Todo cambio sigue este orden:
 ### 9.4) COMMIT
 - Solo con confirmación explícita.
 - Prefijos: `feat:` / `fix:` / `docs:` / `chore:` / `refactor:`
-- Rama única: `main`. Si se requiere rama temporal: prefijo `web/`.
+- Para trabajo revisable, usar rama temporal con prefijo `codex/` y abrir PR contra `main`.
+- No hacer merge desde el agente salvo instrucción explícita de la usuaria.
+
+### 9.5) PUSH + PR
+- Después de commit, hacer `git push -u origin <rama>`.
+- Si la usuaria pide PR, intentar primero con GitHub CLI:
+
+```bash
+gh pr create --base main --head <rama> --title "<titulo>" --body "<resumen>"
+```
+
+- Antes de diagnosticar permisos, verificar sesión:
+
+```bash
+gh auth status
+```
+
+- Si `gh auth status` muestra `token is invalid`, renovar login con:
+
+```bash
+gh auth login -h github.com -w
+```
+
+- En el flujo interactivo elegir `HTTPS`, porque el remoto actual usa HTTPS.
+- Copiar el código de un solo uso que entrega la CLI, abrir `https://github.com/login/device`, autorizar la cuenta correcta y esperar a que la CLI confirme `Logged in as bypaolazerpa-cmd`.
+- Después de login exitoso, repetir `gh pr create`.
+- Si la integración MCP/GitHub devuelve `403 Resource not accessible by integration`, no insistir con esa vía: usar GitHub CLI autenticado.
+- Si no es posible autenticar, entregar el link manual que devuelve `git push`:
+
+```text
+https://github.com/bypaolazerpa-cmd/paolazerpa-web/pull/new/<rama>
+```
+
+- No dejar sesiones interactivas abiertas indefinidamente. Si el login queda esperando autorización más de unos minutos, explicar el estado, el código vigente y el link exacto.
 
 ---
 

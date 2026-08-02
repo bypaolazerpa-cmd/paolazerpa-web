@@ -2,7 +2,7 @@
 
 Estado vivo del proyecto observado en el repositorio.
 
-Última revisión manual: 2026-04-02
+Última revisión manual: 2026-08-02
 
 ## 1. Línea de tiempo visible en git
 
@@ -89,6 +89,9 @@ Conversión:
 - Servicios ahora usa cards reversibles con imágenes generadas al frente, copy alineado arriba y CTA de contacto antes de las cards.
 - Portfolio quedó convertido en archivo/carrusel con cuatro casos reales: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda.
 - `npm run lint` y `npm run build` pasan después de esta reestructura; persisten warnings conocidos de prerender por `useLayoutEffect`.
+- `/mi-historia` quedó migrada a la nueva capa visual del sitio con `pz-page`, `pz-dark`, componentes compartidos de marca, foto principal y CTAs hacia contacto, servicios e inicio.
+- `npm run build` pasa después de la migración de `/mi-historia`; persisten warnings conocidos de prerender por `useLayoutEffect`.
+- `/mi-historia` recibió una segunda pasada de contenido: foto principal nueva, CTA neutral `Trabajemos`, relato más concreto con énfasis tipográfico y cierre orientado a territorios de trabajo.
 
 ## 6. Qué sigue después del deploy
 
