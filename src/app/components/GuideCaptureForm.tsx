@@ -209,16 +209,21 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
               style={{
                 marginTop: "4px",
                 height: "52px",
-                borderRadius: "6px",
-                border: "none",
-                backgroundColor: "#F5C842",
-                color: "#1A1A2E",
+                borderRadius: "999px",
+                border: "1px solid var(--cta-glass-border)",
+                background:
+                  "var(--cta-glass-bg)",
+                color: "#173B44",
                 fontFamily: "Space Mono, monospace",
                 fontSize: "11px",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 cursor: isSubmitting ? "wait" : hasConsent ? "pointer" : "not-allowed",
                 opacity: isSubmitting ? 0.72 : hasConsent ? 1 : 0.48,
+                boxShadow:
+                  "var(--cta-glass-shadow)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
               }}
             >
               {isSubmitting ? "Enviando..." : "Recibir la guía"}
@@ -307,15 +312,21 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "#F5C842",
-                color: "#1A1A2E",
+                background:
+                  "var(--cta-glass-bg)",
+                color: "#173B44",
                 fontFamily: "Space Mono, monospace",
                 fontSize: "11px",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 padding: "16px 24px",
-                borderRadius: "6px",
+                borderRadius: "999px",
+                border: "1px solid var(--cta-glass-border)",
                 textDecoration: "none",
+                boxShadow:
+                  "var(--cta-glass-shadow)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
               }}
             >
               Acceder a la guía
@@ -328,16 +339,21 @@ export function GuideCaptureForm({ variant, theme, source }: GuideCaptureFormPro
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "transparent",
-                  color: isDark ? "#FAF8F4" : "#1A1A2E",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   padding: "15px 24px",
-                  borderRadius: "6px",
-                  border: `1px solid ${isDark ? "rgba(250,248,244,0.2)" : "#1A1A2E"}`,
+                  borderRadius: "999px",
+                  border: "1px solid var(--cta-glass-border)",
                   textDecoration: "none",
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Ver guía

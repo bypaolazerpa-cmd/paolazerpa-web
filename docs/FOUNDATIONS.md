@@ -20,19 +20,20 @@ Objetivo del sitio:
 - alojar notas escritas sobre sistemas, vida y trabajo
 
 Snapshot de mensaje visible en home:
-- el hero abre con un titular en tres líneas sobre intención, vida y estructura
-- la bajada del hero presenta a Paola desde la conversión de ideas y procesos en sistemas sostenibles
-- el CTA principal del hero dirige a la guía gratuita y el secundario explica cómo trabaja
+- el hero es casi visual: video provisional de Paola, `Hola, soy Paola`, CTAs y línea inferior de enfoque
+- el claim `Diseño que ordena, conecta y transforma.` vive como nota de papel en el hero
+- el CTA principal del hero apunta a proyectos y el secundario dirige a contacto
+- la dirección visual actual incorpora una capa más orgánica, cálida y editorial sobre el sistema existente
 
 Snapshot de estructura visible en home:
-- hero con salida directa a contacto y a servicios
-- bloque de solución y beneficios sin abrir desde el problema
-- servicios segmentados para vida, trabajo y negocio
-- las tres cards de servicios derivan al bloque de email en `/contacto#email`
-- guía integrada en home como lead magnet con formulario compacto
-- bloque breve para la app futura como extensión natural del enfoque
-- bloque breve de sobre mí reinsertado dentro del home
-- notas al cierre del home
+- hero con salida directa a proyectos y contacto
+- bloque de problema/señales para negocio, producto digital y trabajo, con fondo fotográfico oscuro
+- bloque de enfoque sistémico preparado para video futuro
+- servicios segmentados en cuatro ofertas y presentados como cards reversibles con imágenes generadas
+- método Paola con cinco pasos
+- cómo empezamos con cuatro pasos
+- proyectos como archivo/carrusel con cuatro casos: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda
+- footer mínimo
 
 No es este proyecto:
 - una app con backend
@@ -72,25 +73,31 @@ Estado del uso real:
 
 ## 4. Decisiones de diseño vigentes
 
-Paleta operativa:
-- oscuro `#1A1A2E`
-- claro `#FAF8F4`
-- acento amarillo `#F5C842`
-- terracota `#C97B5A`
-- verde `#7C9E8A`
-- lila `#9B8FB0`
+Paleta operativa actual:
+- arena clara `#E6D7C6`
+- beige lino `#D5BA9A`
+- madera tostada `#7A543D`
+- café corteza `#4D3428`
+- musgo oliva `#5D6835`
+- citron loto `#B7C334`
+- magenta `#F07FA8`
+- terracota viva `#B45B45`
+- cielo suave `#A9CDE3`
+- mar profundo `#173B44`
 
 Tipografías:
-- `Fraunces` italic para títulos
-- `MuseoModerno` para subtítulos y énfasis de nombre
-- `Space Grotesk` para cuerpo
+- `Space Grotesk` para títulos y cuerpo
 - `Space Mono` para labels, metadata y CTAs
+- `Homemade Apple` para notas manuscritas puntuales
+- `Fraunces` y `MuseoModerno` siguen cargadas porque páginas internas heredadas todavía las usan
 
 Reglas visuales observadas en la implementación:
 - círculos y radial gradients como recurso de fondo
+- superficies tipo papel y notas manuscritas como acento editorial
 - contraste alto entre secciones oscuras y claras
-- bordes finos y redondeos suaves
-- casi sin sombras por filosofía del sistema, aunque hoy existen excepciones en algunos componentes
+- bordes finos y radios contenidos
+- sombras suaves solo en piezas de papel o superficies que necesitan separación
+- CTAs y controles principales usan magenta sólido con acabado glass, texto azul profundo y peso alto para sostener contraste en fondos claros y oscuros
 
 ## 5. Snapshot funcional actual
 
@@ -105,11 +112,11 @@ Rutas activas:
 
 Navegación visible:
 - `Inicio`
+- `Mi historia`
 - `Notas`
 - `Contacto`
 
 Rutas públicas secundarias fuera de navegación principal:
-- `/mi-historia` sigue activa y accesible por URL directa
 - `/guia` sigue activa y accesible por URL directa
 - `/programa` sigue activa y accesible por URL directa
 

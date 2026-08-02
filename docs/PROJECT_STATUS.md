@@ -74,6 +74,21 @@ Conversión:
 - `ContactoSection` queda fuera del home para evitar duplicación con `/contacto`.
 - Las tres CTAs de `CaminosSection` ahora convergen en `/contacto#email`.
 - El build local con prerender fue validado tras estos cambios con `npm run build`.
+- La nueva capa de marca empezó a aplicarse sobre home y navegación: tokens de color orgánicos, `Homemade Apple`, clases `pz-*` y componentes compartidos `BrandButton`, `SectionLabel` y `PaperNote`.
+- `HeroSection`, `ProblemaQuienSoySection` y `CaminosSection` quedaron migrados a la nueva dirección visual.
+- La navegación visible volvió a incluir `Mi historia`.
+- Las fuentes heredadas `Fraunces` y `MuseoModerno` siguen cargadas para no degradar páginas internas todavía no migradas.
+- El build local con prerender fue validado otra vez después de esta capa con `npm run build`.
+- La landing avanzó hacia el siguiente lote: hero con video provisional, sección de señales/problema con fondo fotográfico, `HomeApproachSection`, servicios con imágenes generadas, `HomeMethodSection`, cómo empezamos, proyectos y footer mínimo.
+- `npm run lint` y `npm run build` pasan después de este lote; persisten warnings conocidos de prerender por `useLayoutEffect`.
+- El home fue reestructurado según el boceto/copy nuevo: se retiraron del recorrido principal las secciones heredadas de guía, app futura, sobre mí y notas.
+- El orden actual de home es hero, problema, enfoque, servicios, método, cómo empezamos, proyectos y footer.
+- El hero usa `public/paola-hero-video.mov` como video provisional fijo.
+- La sección 02 usa `paola-problema-scene.jpg` como escena fotográfica integrada, con el título desplazado fuera de la zona de la cara.
+- La sección 03 usa `paola-enfoque.jpg` como imagen provisional hasta reemplazarla por video y quedó reducida a una sola idea principal.
+- Servicios ahora usa cards reversibles con imágenes generadas al frente, copy alineado arriba y CTA de contacto antes de las cards.
+- Proyectos quedó convertido en archivo/carrusel con cuatro casos reales: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda.
+- `npm run lint` y `npm run build` pasan después de esta reestructura; persisten warnings conocidos de prerender por `useLayoutEffect`.
 
 ## 6. Qué sigue después del deploy
 

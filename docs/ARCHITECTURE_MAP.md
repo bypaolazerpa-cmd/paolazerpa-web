@@ -16,8 +16,8 @@ Boot:
 ## 2. Estructura de rutas
 
 Home:
-- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `NotasProcesoSection`, `FooterSection`
-- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `CaminosSection`, `HomeGuideSection`, `HomeAppSection`, `HomeAboutSection`, `NotasProcesoSection`, `FooterSection`
+- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `HomeProjectsSection`, `FooterSection`
+- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `HomeProjectsSection`, `FooterSection`
 
 Páginas independientes:
 - `/guia` → `GuiaPage`
@@ -33,27 +33,30 @@ Navegación:
 - [`src/app/components/NavBar.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NavBar.tsx)
 - [`src/app/components/AppLink.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/AppLink.tsx)
 - [`src/app/utils/navigation.ts`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/utils/navigation.ts)
-- hoy la navegación principal visible expone `Inicio`, `Notas` y `Contacto`
-- `/mi-historia`, `/guia` y `/programa` siguen como rutas públicas directas, pero quedan fuera del menú principal
+- hoy la navegación principal visible expone `Inicio`, `Mi historia`, `Notas` y `Contacto`
+- `/guia` y `/programa` siguen como rutas públicas directas, pero quedan fuera del menú principal
 
 Home:
 - [`src/app/components/HeroSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HeroSection.tsx)
 - [`src/app/components/ProblemaQuienSoySection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProblemaQuienSoySection.tsx)
+- [`src/app/components/HomeApproachSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeApproachSection.tsx)
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
-- [`src/app/components/HomeGuideSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeGuideSection.tsx)
-- [`src/app/components/HomeAppSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeAppSection.tsx)
-- [`src/app/components/HomeAboutSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeAboutSection.tsx)
-- [`src/app/components/NotasProcesoSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NotasProcesoSection.tsx)
+- [`src/app/components/HomeMethodSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeMethodSection.tsx)
+- [`src/app/components/HomeStartSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeStartSection.tsx)
+- [`src/app/components/HomeProjectsSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeProjectsSection.tsx)
 
 Soporte compartido:
 - [`src/app/components/GuideCaptureForm.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuideCaptureForm.tsx) centraliza la captura de guía en versión completa y compacta
+- [`src/app/components/brand/BrandButton.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/brand/BrandButton.tsx) centraliza botones de marca sobre `AppLink`
+- [`src/app/components/brand/SectionLabel.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/brand/SectionLabel.tsx) centraliza labels numerados de sección
+- [`src/app/components/brand/PaperNote.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/brand/PaperNote.tsx) centraliza notas manuscritas tipo papel
 
 Detalle relevante del hero:
-- `HeroSection` mantiene ramas separadas para mobile y desktop con `useIsMobile()`
-- el titular visible hoy se resuelve en tres líneas alineadas a la izquierda
-- el eyebrow `HOLA, SOY PAOLA` ya no forma parte del hero
-- la bajada usa un fragmento con énfasis en negrita dentro del texto
-- los CTAs visibles hoy son `Hablemos` y `Ver servicios`
+- `HeroSection` usa `useIsMobile()` para ajustar spacing, grilla y escala tipográfica
+- el eyebrow visible es `Hola, soy Paola`
+- el claim vive en una nota de papel: `Diseño que ordena, conecta y transforma.`
+- usa `public/paola-hero-video.mov` como video provisional fijo hasta tener material ideal
+- los CTAs visibles hoy son `Ver proyectos` y `Hablemos`
 - las CTAs de servicios resuelven navegación interna hacia `/contacto#email`
 
 Páginas:
@@ -106,12 +109,20 @@ Fuentes:
 
 Theme base heredado:
 - [`src/styles/theme.css`](/Users/paolazerpa/Desktop/apps/paola-web/src/styles/theme.css)
+- define tokens de la nueva capa visual (`arena-clara`, `mar-profundo`, `magenta`, `citron-loto`, etc.) y clases compartidas `pz-*`
 
 Assets visuales:
 - [`src/assets/paola-portrait.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-portrait.jpg)
 - [`src/assets/paola-full.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-full.jpg)
 - [`src/assets/paola-photo2.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo2.jpg)
 - [`src/assets/paola-photo3.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo3.jpg)
+- [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg) — escena fotográfica integrada de sección 02
+- [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg) — imagen provisional de sección 03
+- [`public/paola-hero-video.mov`](/Users/paolazerpa/Code/paola-web/public/paola-hero-video.mov) — video provisional de hero
+- [`src/assets/service-sistema-medida.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-sistema-medida.jpg)
+- [`src/assets/service-espacio-digital.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-espacio-digital.jpg)
+- [`src/assets/service-hecho-sistema.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-hecho-sistema.jpg)
+- [`src/assets/service-vida-sistema.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-vida-sistema.jpg)
 
 ## 7. Deploy y routing de SPA
 

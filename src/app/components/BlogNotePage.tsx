@@ -69,15 +69,21 @@ export function BlogNotePage() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "#1A1A2E",
-                  color: "#FAF8F4",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   padding: "16px 24px",
-                  borderRadius: "6px",
+                  borderRadius: "999px",
+                  border: "1px solid var(--cta-glass-border)",
                   textDecoration: "none",
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Volver a notas
@@ -88,16 +94,21 @@ export function BlogNotePage() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "transparent",
-                  color: "#1A1A2E",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   padding: "15px 24px",
-                  borderRadius: "6px",
+                  borderRadius: "999px",
                   textDecoration: "none",
-                  border: "1px solid #1A1A2E",
+                  border: "1px solid var(--cta-glass-border)",
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Ir al inicio
@@ -322,15 +333,21 @@ export function BlogNotePage() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "#1A1A2E",
-                  color: "#FAF8F4",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   padding: "16px 24px",
-                  borderRadius: "6px",
+                  borderRadius: "999px",
+                  border: "1px solid var(--cta-glass-border)",
                   textDecoration: "none",
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Volver a notas
@@ -341,16 +358,21 @@ export function BlogNotePage() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "transparent",
-                  color: "#1A1A2E",
+                  background:
+                    "var(--cta-glass-bg)",
+                  color: "#173B44",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   padding: "15px 24px",
-                  borderRadius: "6px",
+                  borderRadius: "999px",
                   textDecoration: "none",
-                  border: "1px solid #1A1A2E",
+                  border: "1px solid var(--cta-glass-border)",
+                  boxShadow:
+                    "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
                 }}
               >
                 Ir a contacto

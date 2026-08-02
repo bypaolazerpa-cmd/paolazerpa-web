@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
 import { FeaturedCard, SecondaryCard } from "./BlogCards";
