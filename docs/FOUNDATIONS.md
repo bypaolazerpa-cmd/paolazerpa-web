@@ -20,19 +20,19 @@ Objetivo del sitio:
 - alojar notas escritas sobre sistemas, vida y trabajo
 
 Snapshot de mensaje visible en home:
-- el hero es casi visual: video provisional de Paola, `Hola, soy Paola`, CTAs y línea inferior de enfoque
-- el claim `Diseño que ordena, conecta y transforma.` vive como nota de papel en el hero
-- el CTA principal del hero apunta a proyectos y el secundario dirige a contacto
+- el hero abre con diagnóstico y solución: `Todo lo que construyes depende del sistema que hay detrás.` y una bajada sobre ordenar procesos, producto y decisiones
+- el claim `Diseño que ordena y conecta.` vive como nota de papel en el hero
+- el CTA principal del hero apunta a portfolio y el secundario dirige a contacto
 - la dirección visual actual incorpora una capa más orgánica, cálida y editorial sobre el sistema existente
 
 Snapshot de estructura visible en home:
-- hero con salida directa a proyectos y contacto
-- bloque de problema/señales para negocio, producto digital y trabajo, con fondo fotográfico oscuro
-- bloque de enfoque sistémico preparado para video futuro
+- hero con salida directa a portfolio y contacto
+- bloque de problema/señales para negocio, producto digital y proyectos personales, con intro breve y fondo de identidad sin fotografía
+- bloque de enfoque sistémico con video provisional
 - servicios segmentados en cuatro ofertas y presentados como cards reversibles con imágenes generadas
 - método Paola con cinco pasos
 - cómo empezamos con cuatro pasos
-- proyectos como archivo/carrusel con cuatro casos: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda
+- portfolio como archivo/carrusel con cuatro casos: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda
 - footer mínimo
 
 No es este proyecto:

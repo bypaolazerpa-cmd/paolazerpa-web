@@ -20,7 +20,7 @@ const methodSteps = [
   {
     title: "Diseñar",
     body:
-      "Convertimos esa estructura en una solución concreta: sistema de trabajo, web, tienda, plataforma o herramienta digital.",
+      "Esa estructura se convierte en una solución concreta: sistema personal, sistema de trabajo, web, tienda online, plataforma o herramienta digital.",
   },
   {
     title: "Evolucionar",
@@ -68,7 +68,8 @@ export function HomeMethodSection() {
                 maxWidth: "780px",
               }}
             >
-              Una forma de diseñar que comienza mucho antes de elegir la solución.
+              Una forma de <span className="pz-highlight">diseñar</span> que comienza mucho antes
+              de elegir la solución.
             </h2>
           </div>
         </div>

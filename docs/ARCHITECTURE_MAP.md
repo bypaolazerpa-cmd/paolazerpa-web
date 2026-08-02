@@ -54,9 +54,11 @@ Soporte compartido:
 Detalle relevante del hero:
 - `HeroSection` usa `useIsMobile()` para ajustar spacing, grilla y escala tipográfica
 - el eyebrow visible es `Hola, soy Paola`
-- el claim vive en una nota de papel: `Diseño que ordena, conecta y transforma.`
-- usa `public/paola-hero-video.mov` como video provisional fijo hasta tener material ideal
-- los CTAs visibles hoy son `Ver proyectos` y `Hablemos`
+- el título visible abre con `Todo lo que construyes depende del sistema que hay detrás.`
+- la bajada conecta el problema con la solución: diseñar una estructura clara para ordenar procesos, producto y decisiones
+- el claim vive en una nota de papel: `Diseño que ordena y conecta.`
+- usa `paola-problema-scene.jpg` como foto provisional del hero
+- los CTAs visibles hoy son `Ver portfolio` y `Hablemos`
 - las CTAs de servicios resuelven navegación interna hacia `/contacto#email`
 
 Páginas:
@@ -116,9 +118,9 @@ Assets visuales:
 - [`src/assets/paola-full.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-full.jpg)
 - [`src/assets/paola-photo2.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo2.jpg)
 - [`src/assets/paola-photo3.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo3.jpg)
-- [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg) — escena fotográfica integrada de sección 02
-- [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg) — imagen provisional de sección 03
-- [`public/paola-hero-video.mov`](/Users/paolazerpa/Code/paola-web/public/paola-hero-video.mov) — video provisional de hero
+- [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg) — foto provisional de hero
+- [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg) — imagen disponible, no conectada al home actual
+- [`public/paola-hero-video.mov`](/Users/paolazerpa/Code/paola-web/public/paola-hero-video.mov) — video provisional de sección 03 / enfoque
 - [`src/assets/service-sistema-medida.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-sistema-medida.jpg)
 - [`src/assets/service-espacio-digital.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-espacio-digital.jpg)
 - [`src/assets/service-hecho-sistema.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/service-hecho-sistema.jpg)
