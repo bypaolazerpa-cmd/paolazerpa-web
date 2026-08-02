@@ -2,7 +2,7 @@
 
 Mapa técnico vivo del proyecto.
 
-Última revisión manual: 2026-04-02
+Última revisión manual: 2026-08-02
 
 ## 1. Entrada de la aplicación
 
@@ -71,6 +71,13 @@ Páginas:
 - [`src/app/components/ProgramaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProgramaPage.tsx)
 - [`src/app/components/FooterSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/FooterSection.tsx)
 
+Detalle relevante de `/mi-historia`:
+- usa la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
+- mantiene el relato en tres momentos: `Antes`, `Giro` y `Hoy`
+- el hero usa `paola-mi-historia-portrait.png` como foto principal de Paola, con fondo suavemente desenfocado y persona enfocada
+- los CTAs principales apuntan a `/contacto#email`, `/#servicios` y `/`
+- el copy y las CTAs usan lenguaje neutral, sin asumir que la audiencia es solo femenina
+
 ## 4. Patrón responsive vigente
 
 Fuente de verdad:
@@ -118,6 +125,8 @@ Assets visuales:
 - [`src/assets/paola-full.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-full.jpg)
 - [`src/assets/paola-photo2.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo2.jpg)
 - [`src/assets/paola-photo3.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo3.jpg)
+- [`src/assets/paola-mi-historia.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-mi-historia.jpg) — foto principal de `/mi-historia`
+- [`src/assets/paola-mi-historia-portrait.png`](/Users/paolazerpa/Code/paola-web/src/assets/paola-mi-historia-portrait.png) — versión retrato con fondo desenfocado para hero de `/mi-historia`
 - [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg) — foto provisional de hero
 - [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg) — imagen disponible, no conectada al home actual
 - [`public/paola-hero-video.mov`](/Users/paolazerpa/Code/paola-web/public/paola-hero-video.mov) — video provisional de sección 03 / enfoque

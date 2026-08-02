@@ -1,215 +1,383 @@
-import { useNavigate } from "react-router";
-import imagePaola from "../../assets/paola-photo2.jpg";
+import type { ReactNode } from "react";
+import imagePaola from "../../assets/paola-mi-historia-portrait.png";
 import { FooterSection } from "./FooterSection";
 import { NavBar } from "./NavBar";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { navigateWithScroll } from "../utils/navigation";
+import { BrandButton } from "./brand/BrandButton";
+import { PaperNote } from "./brand/PaperNote";
+import { SectionLabel } from "./brand/SectionLabel";
 
-const storyBlocks = [
+type StoryBlock = {
+  eyebrow: string;
+  title: ReactNode;
+  paragraphs: ReactNode[];
+};
+
+const storyBlocks: StoryBlock[] = [
   {
-    eyebrow: "01 · ANTES",
+    eyebrow: "Antes",
     title: "Durante mucho tiempo tuve muchas cosas en la cabeza y pocas formas de sostenerlas.",
     paragraphs: [
-      "Cuando emigré con 19 años tenía expectativas más altas de lo que podía sostener en la vida real. Trabajando en un país y una cultura diferentes, con amigas como familia y cuentas que pagar, era la mejor manera de empezar a explorar mi yo adulta. A mi riesgo, claro.",
-      'Quería sostener mi vida cotidiana, el trabajo, la carrera, ahorrar dinero, tener tiempo para disfrutar... pero también sentía que debía tener todo resuelto porque ya "vivía sola y era joven". Un caos personal, básicamente.',
+      <>
+        Cuando emigré{" "}
+        <strong>
+          con 19 años tenía expectativas más altas de lo que podía sostener en la vida real.
+        </strong>{" "}
+        Trabajando en un país distinto a donde crecí, con amistades como familia y muchas cuentas
+        que pagar. Era la mejor manera de empezar a explorar y sostener mi yo adulta.
+      </>,
+      <>
+        Quería sostener mi vida cotidiana, el trabajo, la carrera, ahorrar dinero, tener tiempo para
+        disfrutar... pero también{" "}
+        <strong>sentía que debía tener mi vida resuelta</strong> porque "ya vivía sola, adulta y
+        joven". Un poco de caos a nivel personal por tener tantas expectativas al mismo tiempo.
+      </>,
     ],
   },
   {
-    eyebrow: "02 · GIRO",
+    eyebrow: "Giro",
     title: "Empecé a entender que el problema no era hacer más, sino diseñar mejor.",
     paragraphs: [
-      "Haberme puesto en esa situación preparó las bases para entender que la vida no se sostiene sola, y que tampoco cae del cielo una solución que lo resuelve todo.",
-      "Aprendí que anotar las cosas más importantes para hacer en la semana baja el ruido. Eso se llama diseño con intención: que lo importante no quede al azar ni a la energía del momento.",
-      "Aunque aún no le ponía nombre, empecé a notar más claridad, más estructura en ciertos procesos. Ahí apareció una forma distinta de pensar.",
+      <>
+        Haberme puesto en esa situación preparó las bases para entender que{" "}
+        <strong>la vida no se sostiene sola</strong>, y que tampoco cae del cielo una solución que
+        lo resuelve todo.
+      </>,
+      <>
+        Por ejemplo, durante todos estos años aprendí que anotar las cosas más importantes para
+        hacer en la semana, en las notas del celular por ejemplo, baja el ruido mental y la urgencia
+        de no saber qué hacer. Hoy, a mis 28 años, sé que eso se llama{" "}
+        <strong>diseño con intención</strong>: que lo importante no quede al azar ni a la motivación
+        del momento.
+      </>,
+      "Aunque aún no le ponía nombre a lo que hacía, empecé a notar que me generaba más claridad, más estructura para decidir en ciertos procesos. Ahí noté una forma distinta de pensar en mí.",
     ],
   },
   {
-    eyebrow: "03 · HOY",
-    title: "Hoy diseño sistemas, procesos y comunico con claridad para sostener mejor lo que hago.",
+    eyebrow: "Hoy",
+    title: (
+      <>
+        Hoy diseño{" "}
+        <span style={{ fontFamily: "Space Mono, monospace", fontStyle: "italic", fontWeight: 700 }}>
+          sistemas, procesos y comunicación
+        </span>{" "}
+        para sostener mejor vidas, proyectos, marcas y equipos.
+      </>
+    ),
     paragraphs: [
-      "Hoy sigo construyendo estructuras, poniéndome a prueba y descubriendo que vale la pena construir ideas, proyectos y la vida misma con sistemas coherentes.",
-      "Ese proceso puede ser mi vida, mi rutina, mis hábitos. Puede ser un proyecto personal o externo, un producto o un equipo de trabajo.",
-      "De cualquier manera, hoy acompaño a través del diseño y de los sistemas.",
+      "Hoy sigo creando formas más organizadas de sostener mis cosas: mis rutinas, mis proyectos, mi trabajo y las decisiones que aparecen todos los días. Me pongo a prueba constantemente buscando opciones que funcionen mejor conmigo y con lo que estoy construyendo.",
+      "Ese mismo enfoque también sirve para un negocio, una marca personal, un producto digital, una operación, una agenda con varios clientes o un equipo que necesita ordenar responsabilidades, prioridades y formas de trabajar.",
+      "Hoy acompaño desde distintos niveles: vida cotidiana, proyectos, procesos, productos y equipos. En todos esos espacios miro lo que existe como un sistema, para entender qué conservar, qué ajustar y qué dejar de sostener a mano.",
     ],
+  },
+];
+
+const principles = [
+  {
+    label: "Vida y proyectos",
+    text: "Hábitos, rutinas, prioridades, metas, carrera y proyectos personales que necesitan una forma sostenible.",
+  },
+  {
+    label: "Negocios y equipos",
+    text: "Procesos, operación, responsabilidades, herramientas, clientes y formas de trabajo que ya no pueden depender de memoria o esfuerzo manual.",
+  },
+  {
+    label: "Productos y sistemas digitales",
+    text: "Dashboards, herramientas internas, plataformas, SaaS, arquitectura de información y experiencias que deben ser claras para poder escalar.",
   },
 ];
 
 export function MiHistoriaPage() {
   const isMobile = useIsMobile();
-  const navigate = useNavigate();
-  const px = isMobile ? "24px" : "80px";
+  const pagePadding = isMobile ? "18px" : "28px";
+  const sectionPadding = isMobile ? "56px 22px" : "86px 80px";
 
   return (
-    <div style={{ backgroundColor: "#FAF8F4", overflowX: "hidden" }}>
+    <div className="pz-page" style={{ overflowX: "hidden" }}>
       <NavBar />
 
       <section
+        className="pz-dark"
         style={{
-          backgroundColor: "#1A1A2E",
-          paddingTop: isMobile ? "128px" : "164px",
-          paddingBottom: isMobile ? "68px" : "84px",
-          paddingLeft: px,
-          paddingRight: px,
+          paddingTop: isMobile ? "84px" : "112px",
+          paddingBottom: isMobile ? "28px" : "34px",
+          paddingLeft: pagePadding,
+          paddingRight: pagePadding,
           position: "relative",
           overflow: "hidden",
         }}
       >
         <div
+          aria-hidden="true"
           style={{
             position: "absolute",
-            top: "-80px",
-            right: "-60px",
-            width: isMobile ? "240px" : "420px",
-            height: isMobile ? "240px" : "420px",
+            inset: 0,
+            background:
+              "linear-gradient(rgba(230,215,198,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(230,215,198,0.04) 1px, transparent 1px)",
+            backgroundSize: isMobile ? "28px 28px" : "42px 42px",
+            opacity: 0.45,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            right: isMobile ? "-80px" : "6%",
+            top: isMobile ? "80px" : "118px",
+            width: isMobile ? "190px" : "330px",
+            height: isMobile ? "190px" : "330px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, #9B8FB0 0%, transparent 65%)",
-            opacity: 0.07,
+            border: "1px solid rgba(230, 215, 198, 0.2)",
             pointerEvents: "none",
           }}
         />
 
         <div
           style={{
-            maxWidth: "980px",
+            maxWidth: "1260px",
             margin: "0 auto",
             position: "relative",
             zIndex: 1,
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) 320px",
-            gap: isMobile ? "28px" : "44px",
-            alignItems: "start",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.95fr) minmax(360px, 0.72fr)",
+            gap: isMobile ? "30px" : "56px",
+            alignItems: "center",
+            minHeight: isMobile ? "auto" : "calc(100svh - 146px)",
           }}
         >
           <div>
-            <p
-              style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
-                color: "#C97B5A",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                marginBottom: "20px",
-                fontWeight: 400,
-              }}
-            >
-              HOLA, SOY PAOLA
-            </p>
+            <SectionLabel number="01" tone="light">
+              Mi historia
+            </SectionLabel>
 
             <h1
               style={{
-                fontFamily: "Fraunces, serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: isMobile ? "42px" : "64px",
-                color: "#FAF8F4",
-                lineHeight: "1.06",
-                marginBottom: "18px",
+                fontFamily: "Space Grotesk, sans-serif",
+                fontWeight: 600,
+                fontSize: isMobile ? "34px" : "64px",
+                color: "var(--arena-clara)",
+                lineHeight: isMobile ? 1.04 : 0.98,
+                letterSpacing: 0,
+                margin: isMobile ? "22px 0 18px" : "28px 0 24px",
+                maxWidth: "690px",
               }}
             >
-              Aprendí a diseñar mi vida. Ahora ayudo a otros a hacer lo mismo.
+              Entendí que mi forma de vivir también se podía diseñar.
             </h1>
 
             <p
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
-                fontWeight: 700,
-                fontSize: isMobile ? "20px" : "24px",
-                color: "#F5C842",
-                lineHeight: "1.6",
-                maxWidth: "660px",
+                fontWeight: 400,
+                fontSize: isMobile ? "16px" : "19px",
+                color: "rgba(230, 215, 198, 0.92)",
+                lineHeight: "1.58",
+                maxWidth: "620px",
                 margin: 0,
               }}
             >
-              Descubrí el diseño como forma de expresar el orden y la estructura que sostienen
-              nuestras ideas, proyectos y vida.
+              Cuando dejé de mirar solo la meta final y empecé a mirar el sistema que la sostenía,
+              entendí que mis hábitos, rutinas, proyectos y trabajo podían tener más forma y menos
+              dependencia de mi motivación.
             </p>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+                gap: "14px",
+                alignItems: isMobile ? "stretch" : "center",
+                marginTop: isMobile ? "28px" : "34px",
+                maxWidth: isMobile ? "100%" : "none",
+              }}
+            >
+              <BrandButton to="/contacto#email">Trabajemos tu sistema</BrandButton>
+              <BrandButton variant="secondary" to="/#servicios">
+                Ver servicios
+              </BrandButton>
+            </div>
           </div>
 
           <div
             style={{
-              width: "100%",
-              maxWidth: isMobile ? "260px" : "320px",
-              justifySelf: isMobile ? "start" : "end",
-              aspectRatio: "4 / 5",
-              borderRadius: "36px",
-              overflow: "hidden",
-              backgroundColor: "#D4E4DA",
-              border: "1px solid rgba(250,248,244,0.16)",
+              position: "relative",
+              justifySelf: isMobile ? "stretch" : "end",
+              display: "grid",
+              justifyItems: isMobile ? "start" : "end",
+              gap: "18px",
             }}
           >
-            <img
-              src={imagePaola}
-              alt="Paola"
+            <div
               style={{
                 width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center top",
+                maxWidth: isMobile ? "330px" : "520px",
+                aspectRatio: isMobile ? "4 / 5.3" : "4 / 5.05",
+                borderRadius: isMobile ? "18px" : "24px",
+                overflow: "hidden",
+                backgroundColor: "var(--beige-lino)",
+                border: "2px solid rgba(213, 186, 154, 0.92)",
+                boxShadow: "0 24px 60px rgba(12, 16, 14, 0.22)",
               }}
-            />
+            >
+              <img
+                src={imagePaola}
+                alt="Paola Zerpa"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: isMobile ? "center 42%" : "center 40%",
+                }}
+              />
+            </div>
+
+            <PaperNote
+              style={{
+                justifySelf: "center",
+                marginTop: isMobile ? "-58px" : "-88px",
+                marginRight: 0,
+                marginLeft: isMobile ? "54px" : "-112px",
+                maxWidth: isMobile ? "220px" : "292px",
+              }}
+            >
+              Diseñar también es decidir qué conservar, qué ajustar y qué ya no va más.
+            </PaperNote>
           </div>
         </div>
       </section>
 
       <section
         style={{
-          backgroundColor: "#FAF8F4",
-          paddingTop: isMobile ? "68px" : "86px",
-          paddingBottom: isMobile ? "62px" : "76px",
-          paddingLeft: px,
-          paddingRight: px,
+          padding: sectionPadding,
+          position: "relative",
         }}
       >
-        <div style={{ maxWidth: "900px", margin: "0 auto", display: "grid", gap: isMobile ? "18px" : "22px" }}>
-          {storyBlocks.map((block) => (
+        <div
+          style={{
+            maxWidth: "1160px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "320px minmax(0, 1fr)",
+            gap: isMobile ? "28px" : "72px",
+            alignItems: "start",
+          }}
+        >
+          <div
+            style={{
+              position: isMobile ? "relative" : "sticky",
+              top: isMobile ? "auto" : "112px",
+              display: "grid",
+              gap: "18px",
+            }}
+          >
+            <SectionLabel number="02">Recorrido</SectionLabel>
+            <h2
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "30px" : "42px",
+                fontWeight: 600,
+                lineHeight: 1.05,
+                color: "var(--mar-profundo)",
+                margin: 0,
+                letterSpacing: 0,
+              }}
+            >
+              No llegué al diseño solo por estética y lo visual. Llegué por una necesidad de orden y
+              estructura en mi vida.
+            </h2>
+            <p
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "15px" : "17px",
+                lineHeight: 1.7,
+                color: "rgba(23, 59, 68, 0.76)",
+                margin: 0,
+              }}
+            >
+              Lo que aplico en productos, procesos y comunicación empezó como una forma de entender
+              cómo transitar mejor mi vida a diario. Cómo tener más claridad y aprovechar un poco
+              mejor tiempo y recursos.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gap: isMobile ? "18px" : "22px" }}>
+            {storyBlocks.map((block, index) => (
             <article
               key={block.eyebrow}
               style={{
-                backgroundColor: "#FFFFFF",
-                border: "1px solid #E8E2DA",
-                borderRadius: "16px",
-                padding: isMobile ? "26px 22px" : "30px 28px",
+                position: "relative",
+                background:
+                  "linear-gradient(rgba(23, 59, 68, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 59, 68, 0.025) 1px, transparent 1px), rgba(234, 223, 206, 0.76)",
+                backgroundSize: "22px 22px",
+                border: "1px solid rgba(23, 59, 68, 0.16)",
+                borderRadius: "10px",
+                padding: isMobile ? "24px 20px" : "32px 34px",
+                boxShadow: "var(--shadow-soft)",
               }}
             >
-              <p
+              <div
                 style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "9px",
-                  color: "#AAAAAA",
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "16px",
                   marginBottom: "16px",
-                  fontWeight: 400,
                 }}
               >
-                {block.eyebrow}
-              </p>
+                <p
+                  style={{
+                    fontFamily: "Space Mono, monospace",
+                    fontSize: "11px",
+                    color: "var(--terracota-viva)",
+                    letterSpacing: "0.13em",
+                    textTransform: "uppercase",
+                    margin: 0,
+                    fontWeight: 700,
+                  }}
+                >
+                  {block.eyebrow}
+                </p>
+                <span
+                  aria-hidden="true"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    borderRadius: "999px",
+                    border: "1px solid rgba(23, 59, 68, 0.2)",
+                    display: "grid",
+                    placeItems: "center",
+                    fontFamily: "Space Mono, monospace",
+                    fontSize: "12px",
+                    color: "var(--mar-profundo)",
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
 
               <h2
                 style={{
-                  fontFamily: "Fraunces, serif",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  fontSize: isMobile ? "28px" : "36px",
-                  color: "#1A1A2E",
-                  lineHeight: "1.18",
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontWeight: 600,
+                  fontSize: isMobile ? "25px" : "34px",
+                  color: "var(--mar-profundo)",
+                  lineHeight: "1.08",
                   marginBottom: "16px",
-                  maxWidth: "760px",
+                  letterSpacing: 0,
                 }}
               >
                 {block.title}
               </h2>
 
               <div style={{ display: "grid", gap: "14px", maxWidth: "760px" }}>
-                {block.paragraphs.map((paragraph) => (
+                {block.paragraphs.map((paragraph, paragraphIndex) => (
                   <p
-                    key={paragraph}
+                    key={paragraphIndex}
                     style={{
                       fontFamily: "Space Grotesk, sans-serif",
                       fontWeight: 400,
                       fontSize: isMobile ? "15px" : "16px",
-                      color: "#666666",
-                      lineHeight: "1.8",
+                      color: "rgba(23, 59, 68, 0.76)",
+                      lineHeight: "1.72",
                       margin: 0,
                     }}
                   >
@@ -218,93 +386,180 @@ export function MiHistoriaPage() {
                 ))}
               </div>
             </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       <section
         style={{
-          backgroundColor: "#FAF8F4",
-          paddingBottom: isMobile ? "88px" : "104px",
-          paddingLeft: px,
-          paddingRight: px,
+          padding: isMobile ? "10px 22px 72px" : "0 80px 104px",
         }}
       >
         <div
           style={{
-            maxWidth: "900px",
+            maxWidth: "1160px",
             margin: "0 auto",
-            borderTop: "1px solid #E8E2DA",
-            paddingTop: isMobile ? "30px" : "36px",
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            justifyContent: "space-between",
-            alignItems: isMobile ? "flex-start" : "center",
-            gap: "20px",
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.9fr) minmax(320px, 0.72fr)",
+            gap: isMobile ? "24px" : "44px",
+            alignItems: "stretch",
           }}
         >
-          <div style={{ maxWidth: "620px" }}>
+          <div
+            className="pz-dark"
+            style={{
+              borderRadius: "14px",
+              padding: isMobile ? "28px 22px" : "38px",
+              display: "grid",
+              gap: "20px",
+              alignContent: "center",
+              minHeight: isMobile ? "auto" : "310px",
+              overflow: "hidden",
+              position: "relative",
+            }}
+          >
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                right: "-72px",
+                bottom: "-74px",
+                width: isMobile ? "180px" : "250px",
+                height: isMobile ? "180px" : "250px",
+                borderRadius: "999px",
+                border: "1px solid rgba(230, 215, 198, 0.18)",
+              }}
+            />
+            <SectionLabel number="03" tone="light">
+              Sistemas posibles
+            </SectionLabel>
+            <h2
+              style={{
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "30px" : "44px",
+                fontWeight: 600,
+                lineHeight: 1.05,
+                color: "var(--arena-clara)",
+                margin: 0,
+                letterSpacing: 0,
+              }}
+            >
+              Diseño para ordenar lo que hoy se siente pesado, disperso o difícil de sostener.
+            </h2>
             <p
               style={{
-                fontFamily: "Fraunces, serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: isMobile ? "28px" : "34px",
-                color: "#1A1A2E",
-                lineHeight: "1.2",
-                marginBottom: "10px",
+                fontFamily: "Space Grotesk, sans-serif",
+                fontSize: isMobile ? "15px" : "17px",
+                lineHeight: 1.65,
+                color: "rgba(230, 215, 198, 0.86)",
+                margin: 0,
+                maxWidth: "620px",
               }}
             >
-              Si quieres seguir la conversación, puedes escribirme. Y si no, también puedes volver
-              al inicio.
+              Si estás construyendo una idea, un servicio, una rutina, una marca, una operación o una
+              forma de trabajo que necesita más claridad, podemos mirar cómo se conectan sus partes:
+              prioridades, tiempos, recursos, decisiones, personas y próximos pasos.
             </p>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+                gap: "14px",
+                alignItems: isMobile ? "stretch" : "center",
+              }}
+            >
+              <BrandButton to="/contacto#email">Cuéntame tu caso</BrandButton>
+              <BrandButton variant="secondary" to="/">
+                Volver al inicio
+              </BrandButton>
+            </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: "12px" }}>
-            <button
-              onClick={() => navigateWithScroll(navigate, "/contacto")}
+          <div
+            style={{
+              backgroundColor: "rgba(234, 223, 206, 0.72)",
+              border: "1px solid rgba(23, 59, 68, 0.16)",
+              borderRadius: "10px",
+              padding: isMobile ? "24px 20px" : "30px",
+              display: "grid",
+              gap: "16px",
+              alignContent: "center",
+            }}
+          >
+            <p
               style={{
-                background:
-                  "var(--cta-glass-bg)",
-                color: "#173B44",
                 fontFamily: "Space Mono, monospace",
                 fontSize: "11px",
-                letterSpacing: "2px",
+                fontWeight: 700,
+                letterSpacing: "0.13em",
                 textTransform: "uppercase",
-                padding: "16px 24px",
-                borderRadius: "999px",
-                border: "1px solid var(--cta-glass-border)",
-                cursor: "pointer",
-                boxShadow:
-                  "var(--cta-glass-shadow)",
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
+                color: "var(--terracota-viva)",
+                margin: 0,
               }}
             >
-              Ir a contacto
-            </button>
-            <button
-              onClick={() => navigateWithScroll(navigate, "/")}
-              style={{
-                background:
-                  "var(--cta-glass-bg)",
-                color: "#173B44",
-                fontFamily: "Space Mono, monospace",
-                fontSize: "11px",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                padding: "15px 24px",
-                borderRadius: "999px",
-                border: "1px solid var(--cta-glass-border)",
-                cursor: "pointer",
-                boxShadow:
-                  "var(--cta-glass-shadow)",
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
-              }}
-            >
-              Volver al inicio
-            </button>
+              Territorios de trabajo
+            </p>
+            {principles.map((principle, index) => (
+              <div
+                key={principle.label}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: isMobile ? "1fr" : "72px minmax(0, 1fr)",
+                  gap: isMobile ? "10px" : "18px",
+                  alignItems: "start",
+                  padding: isMobile ? "16px 0" : "18px 0",
+                  borderTop: index === 0 ? "1px solid rgba(23, 59, 68, 0.16)" : "1px solid rgba(23, 59, 68, 0.12)",
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "999px",
+                    border: "1px solid rgba(23, 59, 68, 0.18)",
+                    display: "grid",
+                    placeItems: "center",
+                    fontFamily: "Space Mono, monospace",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    color: "var(--mar-profundo)",
+                    background: "rgba(240, 127, 168, 0.14)",
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div style={{ display: "grid", gap: "6px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "Space Grotesk, sans-serif",
+                      fontSize: isMobile ? "20px" : "24px",
+                      fontWeight: 700,
+                      lineHeight: 1.15,
+                      color: "var(--mar-profundo)",
+                      margin: 0,
+                      letterSpacing: 0,
+                    }}
+                  >
+                    {principle.label}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "Space Grotesk, sans-serif",
+                      fontSize: isMobile ? "15px" : "16px",
+                      fontWeight: 400,
+                      lineHeight: 1.55,
+                      color: "rgba(23, 59, 68, 0.72)",
+                      margin: 0,
+                    }}
+                  >
+                    {principle.text}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

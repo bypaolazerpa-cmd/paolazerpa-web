@@ -2,7 +2,7 @@
 
 Documento vivo para contenido estructural, contacto, conversión, assets y deploy.
 
-Última revisión manual: 2026-04-02
+Última revisión manual: 2026-08-02
 
 ## 1. Mensaje del sitio
 
@@ -18,6 +18,8 @@ Voz:
 - directa
 - sin placeholder
 - sin tono corporativo genérico
+- no asumir audiencia exclusivamente femenina; Paola trabaja con mujeres, hombres, profesionales,
+  dueños de negocio, emprendimientos, startups y equipos mixtos
 
 ## 2. CTAs y conversiones
 
@@ -50,6 +52,14 @@ Estado actual de `/guia`:
 - el formulario prioriza una sola acción principal: dejar el email para recibir la guía
 - el CTA secundario hacia `/` quedó orientado a entender mejor el enfoque
 - la salida inferior hacia `/contacto` quedó resuelta como siguiente paso posterior a la guía
+
+Estado actual de `/mi-historia`:
+- la página quedó alineada con la nueva identidad visual del home
+- el relato se organiza en tres bloques: `Antes`, `Giro` y `Hoy`
+- el mensaje central conecta la historia personal con diseño de sistemas, procesos y estructuras sostenibles
+- los CTAs llevan a `/contacto#email`, `/#servicios` y `/`
+- el CTA principal del hero usa `Trabajemos tu sistema` para mantener una audiencia neutral y concreta
+- el cierre organiza territorios de trabajo como niveles de un mismo enfoque: vida/proyectos, negocios/equipos y productos/sistemas digitales
 
 Estado actual del hero:
 - eyebrow:
@@ -126,6 +136,8 @@ Fotos de Paola usadas en el sitio:
 - [`src/assets/paola-portrait.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-portrait.jpg)
 - [`src/assets/paola-photo2.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo2.jpg)
 - [`src/assets/paola-photo3.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo3.jpg)
+- [`src/assets/paola-mi-historia.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-mi-historia.jpg)
+- [`src/assets/paola-mi-historia-portrait.png`](/Users/paolazerpa/Code/paola-web/src/assets/paola-mi-historia-portrait.png)
 - [`src/assets/paola-hero-fallback.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-hero-fallback.jpg)
 - [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg) — foto provisional de hero
 - [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg) — disponible, no conectada al home actual
