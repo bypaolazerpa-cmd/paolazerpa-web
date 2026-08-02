@@ -52,24 +52,28 @@ Estado actual de `/guia`:
 - la salida inferior hacia `/contacto` quedó resuelta como siguiente paso posterior a la guía
 
 Estado actual del hero:
-- texto principal:
+- eyebrow:
   `Hola, soy Paola`
+- texto principal:
+  `Todo lo que construyes depende del sistema que hay detrás.`
+- bajada:
+  `Si ese sistema deja de acompañarte, diseño contigo una estructura clara para ordenar procesos, producto y decisiones.`
 - línea inferior:
   `Diseño sistémico · Producto digital · Procesos · Personas`
 - CTA principal:
-  `Ver proyectos`
+  `Ver portfolio`
 - CTA secundario:
   `Hablemos`
 - el hero muestra el label `Hola, soy Paola`
 - el hero incorpora una nota manuscrita como pieza de marca:
-  `Diseño que ordena, conecta y transforma.`
-- el hero usa `public/paola-hero-video.mov` como video provisional fijo hasta contar con material ideal
+  `Diseño que ordena y conecta.`
+- el hero usa `paola-problema-scene.jpg` como foto provisional
 
 Estado actual del home:
 - problema:
-  bloque de señales sobre negocio, producto digital y proyectos personales, con `paola-problema-scene.jpg` como escena fotográfica integrada, franja rasgada azul y CTA
+  bloque de señales sobre negocio, producto digital y proyectos personales, con intro breve, fondo de identidad sin fotografía y recursos de papel rasgado
 - enfoque:
-  bloque reservado para video futuro, hoy apoyado por `paola-enfoque.jpg`, con una sola idea principal sobre relaciones sistémicas
+  bloque con `public/paola-hero-video.mov` como video provisional y una idea principal sobre estructura sistémica
 - servicios:
   `Sistema a medida`
   `Tu espacio digital`
@@ -80,7 +84,7 @@ Estado actual del home:
   recorrido `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`
 - cómo empezamos:
   recorrido `Me cuentas tu caso`, `Nos encontramos`, `Definimos el camino`, `Lo construimos`
-- proyectos:
+- portfolio:
   archivo/carrusel con cuatro casos reales: `Control de vencimientos`, `Nodux`, `Cosmic Studio` y `Operación de tienda`
 - footer:
   base mínima con copyright y descriptor
@@ -123,8 +127,8 @@ Fotos de Paola usadas en el sitio:
 - [`src/assets/paola-photo2.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo2.jpg)
 - [`src/assets/paola-photo3.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-photo3.jpg)
 - [`src/assets/paola-hero-fallback.jpg`](/Users/paolazerpa/Desktop/apps/paola-web/src/assets/paola-hero-fallback.jpg)
-- [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg)
-- [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg)
+- [`src/assets/paola-problema-scene.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-problema-scene.jpg) — foto provisional de hero
+- [`src/assets/paola-enfoque.jpg`](/Users/paolazerpa/Code/paola-web/src/assets/paola-enfoque.jpg) — disponible, no conectada al home actual
 
 Video provisional:
 - [`public/paola-hero-video.mov`](/Users/paolazerpa/Code/paola-web/public/paola-hero-video.mov)

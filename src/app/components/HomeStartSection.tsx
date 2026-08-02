@@ -3,10 +3,10 @@ import { BrandButton } from "./brand/BrandButton";
 import { SectionLabel } from "./brand/SectionLabel";
 
 const startSteps = [
-  ["Me cuentas tu caso", "Conozco qué estás construyendo y qué necesitas resolver."],
-  ["Nos encontramos", "Conversamos para comprender tu situación y tus objetivos."],
-  ["Definimos el camino", "Recibes una propuesta con alcance, etapas, tiempos e inversión."],
-  ["Lo construimos", "Diseñamos, revisamos y ajustamos la solución para ponerla en marcha."],
+  ["Me cuentas el contexto", "Reviso qué estás construyendo, qué te está trabando y qué necesitas resolver."],
+  ["Tenemos una reunión", "Aterrizamos objetivos, alcance, dudas y prioridades."],
+  ["Defino una propuesta", "Te comparto etapas, tiempos, entregables e inversión."],
+  ["Construimos la solución", "Diseño, reviso contigo y ajusto lo necesario para ponerla en marcha."],
 ];
 
 export function HomeStartSection() {
@@ -23,6 +23,7 @@ export function HomeStartSection() {
         paddingRight: isMobile ? "24px" : "80px",
         position: "relative",
         overflow: "hidden",
+        background: "var(--mar-profundo)",
       }}
     >
       <div style={{ maxWidth: "1160px", margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -49,7 +50,7 @@ export function HomeStartSection() {
                 margin: "22px 0 0",
               }}
             >
-              De lo que necesitas a una forma clara de avanzar.
+              Del primer diagnóstico a un plan claro de trabajo.
             </h2>
           </div>
           <BrandButton to="/contacto#email">Cuéntame qué estás construyendo</BrandButton>

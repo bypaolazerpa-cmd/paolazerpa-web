@@ -1,4 +1,5 @@
 import { useIsMobile } from "../hooks/useIsMobile";
+import imageHero from "../../assets/paola-problema-scene.jpg";
 import { BrandButton } from "./brand/BrandButton";
 import { PaperNote } from "./brand/PaperNote";
 
@@ -36,16 +37,13 @@ export function HeroSection() {
           borderRadius: isMobile ? "22px" : "28px",
           overflow: "hidden",
           minHeight: isMobile ? "calc(100svh - 100px)" : "calc(100svh - 126px)",
-          backgroundColor: "#b2aaa0",
+          backgroundColor: "#d8c9b8",
         }}
       >
-        <video
-          src="/paola-hero-video.mov"
+        <img
+          src={imageHero}
           aria-hidden="true"
-          autoPlay
-          muted
-          loop
-          playsInline
+          alt=""
           style={{
             position: "absolute",
             inset: 0,
@@ -53,35 +51,32 @@ export function HeroSection() {
             height: "100%",
             objectFit: "cover",
             objectPosition: "center center",
-            filter: "blur(28px) saturate(0.86) contrast(0.84) brightness(1.2)",
+            filter: "blur(24px) saturate(0.9) contrast(0.86) brightness(1.12)",
             transform: "scale(1.12)",
-            opacity: 0.98,
+            opacity: 0.92,
           }}
         />
 
-        <video
-          src="/paola-hero-video.mov"
+        <img
+          src={imageHero}
           aria-hidden="true"
-          autoPlay
-          muted
-          loop
-          playsInline
+          alt=""
           style={{
             position: "absolute",
             top: 0,
             bottom: 0,
-            left: isMobile ? "-18%" : "8%",
-            width: isMobile ? "136%" : "90%",
+            left: isMobile ? "-22%" : "-1%",
+            width: isMobile ? "140%" : "74%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "center center",
-            filter: "saturate(0.92) contrast(0.94) brightness(1.04)",
+            objectPosition: isMobile ? "34% center" : "center center",
+            filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
             WebkitMaskImage: isMobile
-              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 90%, transparent 100%)"
-              : "linear-gradient(90deg, transparent 0%, #000 7%, #000 92%, transparent 100%)",
+              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%)"
+              : "linear-gradient(90deg, #000 0%, #000 78%, transparent 100%)",
             maskImage: isMobile
-              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 90%, transparent 100%)"
-              : "linear-gradient(90deg, transparent 0%, #000 7%, #000 92%, transparent 100%)",
+              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%)"
+              : "linear-gradient(90deg, #000 0%, #000 78%, transparent 100%)",
           }}
         />
 
@@ -104,10 +99,47 @@ export function HeroSection() {
             position: "absolute",
             inset: 0,
             background: isMobile
-              ? "linear-gradient(180deg, rgba(12,16,14,0.7) 0%, rgba(12,16,14,0.2) 42%, rgba(12,16,14,0.66) 100%)"
-              : "linear-gradient(90deg, rgba(12,16,14,0.76) 0%, rgba(12,16,14,0.5) 25%, rgba(12,16,14,0.08) 50%, rgba(12,16,14,0.1) 78%, rgba(12,16,14,0.22) 100%)",
+              ? "linear-gradient(90deg, rgba(12,16,14,0.08) 0%, rgba(12,16,14,0.28) 34%, rgba(12,16,14,0.62) 72%, rgba(12,16,14,0.72) 100%), linear-gradient(180deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.06) 42%, rgba(12,16,14,0.62) 100%)"
+              : "linear-gradient(90deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.18) 28%, rgba(12,16,14,0.16) 46%, rgba(12,16,14,0.42) 65%, rgba(12,16,14,0.72) 100%)",
           }}
         />
+
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            right: isMobile ? "18px" : "16%",
+            top: isMobile ? "92px" : "132px",
+            width: isMobile ? "92px" : "170px",
+            height: isMobile ? "92px" : "170px",
+            border: "1px solid rgba(250, 248, 244, 0.22)",
+            borderRadius: "999px",
+            opacity: 0.58,
+          }}
+        />
+
+        {[
+          { top: isMobile ? "15%" : "21%", right: isMobile ? "16%" : "22%", size: isMobile ? 5 : 7 },
+          { top: isMobile ? "31%" : "33%", right: isMobile ? "8%" : "12%", size: isMobile ? 4 : 5 },
+          { top: isMobile ? "58%" : "18%", right: isMobile ? "20%" : "35%", size: isMobile ? 3 : 4 },
+        ].map((sparkle, index) => (
+          <span
+            key={index}
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: sparkle.top,
+              right: sparkle.right,
+              width: `${sparkle.size}px`,
+              height: `${sparkle.size}px`,
+              borderRadius: "999px",
+              background: "rgba(250, 248, 244, 0.92)",
+              boxShadow:
+                "0 0 0 4px rgba(240,127,168,0.12), 0 0 18px rgba(250,248,244,0.34)",
+              opacity: 0.78,
+            }}
+          />
+        ))}
 
         <div
           style={{
@@ -123,28 +155,74 @@ export function HeroSection() {
             style={{
               alignSelf: "center",
               display: "grid",
-              gap: isMobile ? "150px" : "190px",
-              maxWidth: "520px",
+              gap: isMobile ? "24px" : "34px",
+              width: "100%",
+              maxWidth: isMobile ? "250px" : "560px",
+              justifySelf: isMobile ? "end" : "end",
+              marginTop: isMobile ? "-26px" : "-34px",
+              marginRight: isMobile ? "0" : "6%",
             }}
           >
-            <p
-              style={{
-                justifySelf: "start",
-                fontFamily: "Space Mono, monospace",
-                fontSize: isMobile ? "11px" : "13px",
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: "var(--citron-loto)",
-                margin: 0,
-                textDecorationLine: "underline",
-                textDecorationColor: "rgba(240, 127, 168, 0.68)",
-                textDecorationThickness: "1px",
-                textUnderlineOffset: "6px",
-              }}
-            >
-              Hola, soy Paola
-            </p>
+            <div style={{ display: "grid", gap: isMobile ? "14px" : "18px" }}>
+              <p
+                style={{
+                  justifySelf: "start",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: isMobile ? "11px" : "13px",
+                  fontWeight: 700,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: "var(--citron-loto)",
+                  margin: 0,
+                  textAlign: isMobile ? "right" : "left",
+                  textDecorationLine: "underline",
+                  textDecorationColor: "rgba(240, 127, 168, 0.68)",
+                  textDecorationThickness: "1px",
+                  textUnderlineOffset: "6px",
+                }}
+              >
+                Hola, soy Paola
+              </p>
+
+              <h1
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontSize: isMobile ? "26px" : "50px",
+                  fontWeight: 600,
+                  lineHeight: isMobile ? 1.02 : 0.98,
+                  color: "var(--arena-clara)",
+                  margin: 0,
+                  letterSpacing: 0,
+                  maxWidth: isMobile ? "250px" : "560px",
+                  textAlign: isMobile ? "right" : "left",
+                  textShadow: "0 12px 32px rgba(12,16,14,0.3)",
+                }}
+              >
+                Todo lo que construyes depende del sistema que hay detrás.
+              </h1>
+
+              <p
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontSize: isMobile ? "15px" : "18px",
+                  fontWeight: 400,
+                  lineHeight: isMobile ? 1.48 : 1.5,
+                  color: "rgba(250, 248, 244, 0.96)",
+                  margin: 0,
+                  maxWidth: isMobile ? "250px" : "500px",
+                  textAlign: isMobile ? "right" : "left",
+                  textShadow: "0 2px 18px rgba(12,16,14,0.72)",
+                  background: "rgba(12, 16, 14, 0.16)",
+                  borderRadius: "8px",
+                  padding: isMobile ? "0" : "8px 10px",
+                  backdropFilter: isMobile ? "none" : "blur(6px)",
+                  WebkitBackdropFilter: isMobile ? "none" : "blur(6px)",
+                }}
+              >
+                Si ese sistema deja de acompañarte, diseño contigo una estructura clara para
+                ordenar procesos, producto y decisiones.
+              </p>
+            </div>
 
             <div
               style={{
@@ -152,11 +230,12 @@ export function HeroSection() {
                 flexDirection: isMobile ? "column" : "row",
                 gap: "14px",
                 alignItems: isMobile ? "stretch" : "center",
-                maxWidth: isMobile ? "280px" : "none",
+                justifyContent: isMobile ? "stretch" : "flex-start",
+                maxWidth: isMobile ? "250px" : "none",
               }}
             >
               <BrandButton variant="secondary" onClick={() => scrollTo("proyectos")}>
-                Ver proyectos ↗
+                Ver portfolio ↗
               </BrandButton>
               <BrandButton variant="secondary" to="/contacto#email">
                 Hablemos ↗
@@ -199,26 +278,26 @@ export function HeroSection() {
                 onClick={() => scrollTo("problema")}
                 style={{
                   background:
-                    "var(--cta-glass-bg)",
-                  border: "1px solid var(--cta-glass-border)",
+                    "linear-gradient(180deg, rgba(250,248,244,0.82) 0%, rgba(230,215,198,0.94) 100%)",
+                  border: "1px solid rgba(250, 248, 244, 0.72)",
                   borderRadius: "999px",
                   width: isMobile ? "54px" : "64px",
                   height: isMobile ? "54px" : "64px",
                   color: "var(--mar-profundo)",
                   fontFamily: "Space Mono, monospace",
-                  fontSize: "22px",
+                  fontSize: "0",
                   fontWeight: 700,
                   cursor: "pointer",
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "var(--cta-glass-shadow)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.42), 0 12px 24px rgba(12,16,14,0.18)",
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
                 }}
                 aria-label="Scroll para explorar"
               >
-                ↓
+                <span className="pz-scroll-mouse" aria-hidden="true" />
               </button>
             </div>
 
@@ -229,7 +308,7 @@ export function HeroSection() {
                 transform: "rotate(2.5deg)",
               }}
             >
-              Diseño que ordena, conecta y transforma.
+              Diseño que ordena y conecta.
             </PaperNote>
           </div>
         </div>

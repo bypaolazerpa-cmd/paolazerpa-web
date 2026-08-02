@@ -10,33 +10,33 @@ const services = [
   {
     number: "01",
     title: "Sistema a medida",
-    short: "Una estructura propia para que tu trabajo funcione mejor.",
+    short: "Procesos, tareas y herramientas conectadas para operar con claridad.",
     body:
-      "Organizamos procesos, tareas, responsabilidades, información y herramientas para que tu trabajo avance con mayor claridad y menos dependencia.",
+      "Reviso cómo trabajas hoy y diseño una estructura práctica: procesos, responsables, información y herramientas conectadas para reducir dependencia y ordenar la operación.",
     image: imageSistemaMedida,
   },
   {
     number: "02",
     title: "Tu espacio digital",
-    short: "Un espacio pensado para que te encuentren, te entiendan y te elijan.",
+    short: "Una web o tienda online que explica lo que haces y guía la acción.",
     body:
-      "Diseñamos páginas web y tiendas online que comunican con claridad, presentan lo que haces y ayudan a que te entiendan y te elijan.",
+      "Ordeno tu oferta, arquitectura y experiencia para convertirla en una web o tienda online clara, fácil de recorrer y lista para que una persona entienda qué haces y cómo avanzar.",
     image: imageEspacioDigital,
   },
   {
     number: "03",
     title: "Hecho sistema",
-    short: "Una solución digital propia para una necesidad concreta.",
+    short: "Una herramienta digital para resolver una operación puntual.",
     body:
-      "Creamos plataformas, dashboards y herramientas digitales que convierten necesidades complejas en soluciones claras y útiles.",
+      "Traduzco una necesidad concreta en un flujo digital: pantallas, datos, reglas y acciones para que una plataforma, dashboard o herramienta tenga sentido en uso real.",
     image: imageHechoSistema,
   },
   {
     number: "04",
     title: "Tu vida, tu sistema",
-    short: "Una estructura personal para sostener todo lo que quieres construir.",
+    short: "Un sistema personal para proyectos, objetivos y prioridades.",
     body:
-      "Organizamos proyectos, objetivos, ideas y prioridades para que puedas sostener lo que quieres construir con claridad y enfoque.",
+      "Te ayudo a convertir ideas, pendientes y objetivos en una estructura visible: prioridades, rutinas, espacios de seguimiento y decisiones para avanzar con menos ruido.",
     image: imageVidaSistema,
   },
 ];
@@ -121,7 +121,7 @@ export function CaminosSection() {
               maxWidth: "760px",
             }}
           >
-            Si no sabes por dónde empezar, lo revisamos juntas.
+            Si no sabes por dónde empezar, lo revisamos juntos.
           </p>
           <BrandButton to="/contacto#email">Cuéntame qué estás construyendo</BrandButton>
         </div>

@@ -112,7 +112,7 @@ src/
 │       ├── CaminosSection.tsx         # Cards: para ti / trabajo / negocio
 │       ├── HomeMethodSection.tsx      # Método Paola
 │       ├── HomeStartSection.tsx       # Cómo empezamos
-│       ├── HomeProjectsSection.tsx    # Proyectos/casos seleccionados
+│       ├── HomeProjectsSection.tsx    # Portfolio/casos seleccionados
 │       ├── HomeGuideSection.tsx       # Página/sección heredada, no conectada al home actual
 │       ├── HomeAppSection.tsx         # Página/sección heredada, no conectada al home actual
 │       ├── HomeAboutSection.tsx       # Página/sección heredada, no conectada al home actual
@@ -133,8 +133,8 @@ src/
 │   ├── paola-full.jpg
 │   ├── paola-photo2.jpg
 │   ├── paola-photo3.jpg
-│   ├── paola-problema-bg.jpg          # Fondo fotográfico de sección 02
-│   ├── paola-enfoque.jpg              # Imagen provisional de sección 03
+│   ├── paola-problema-scene.jpg       # Foto usada en hero actual
+│   ├── paola-enfoque.jpg              # Imagen disponible, no conectada al home actual
 │   ├── service-sistema-medida.jpg
 │   ├── service-espacio-digital.jpg
 │   ├── service-hecho-sistema.jpg
@@ -146,7 +146,7 @@ src/
 
 public/
 ├── _redirects                         # Netlify SPA routing
-├── paola-hero-video.mov               # Video provisional del hero
+├── paola-hero-video.mov               # Video provisional de sección 03 / enfoque
 └── guia-ecosistema-personal.pdf       # ← reemplazar con PDF real
 ```
 

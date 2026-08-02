@@ -29,7 +29,7 @@ export function NavBar() {
 
   const navLinks = [
     { label: "SERVICIOS", href: "/#servicios" },
-    { label: "PROYECTOS", href: "/#proyectos" },
+    { label: "PORTFOLIO", href: "/#proyectos" },
     { label: "SOBRE MÍ", href: "/mi-historia" },
     { label: "CONTACTO", href: "/contacto" },
   ];

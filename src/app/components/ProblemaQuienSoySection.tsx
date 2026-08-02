@@ -1,4 +1,3 @@
-import imageProblemaBg from "../../assets/paola-problema-scene.jpg";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { BrandButton } from "./brand/BrandButton";
 import { SectionLabel } from "./brand/SectionLabel";
@@ -6,7 +5,7 @@ import { SectionLabel } from "./brand/SectionLabel";
 const contexts = [
   {
     label: "Negocio",
-    title: "Tu empresa sigue creciendo, pero operar cada día requiere más esfuerzo.",
+    title: "Tu operación crece y cada día pesa más.",
     points: [
       "Procesos que dependen de personas clave.",
       "Información y comunicación dispersas.",
@@ -17,7 +16,7 @@ const contexts = [
   },
   {
     label: "Producto digital",
-    title: "Tu producto suma funciones, pero cada cambio lo vuelve más difícil de sostener.",
+    title: "Tu producto cambia y sostenerlo cuesta más.",
     points: [
       "Funcionalidades que no se conectan bien.",
       "Experiencias confusas o poco intuitivas.",
@@ -28,7 +27,7 @@ const contexts = [
   },
   {
     label: "Proyectos personales",
-    title: "Tienes objetivos importantes, pero cuesta convertirlos en una estructura sostenible.",
+    title: "Tus ideas avanzan lento porque falta estructura.",
     points: [
       "Ideas y proyectos que no avanzan.",
       "Falta de organización y prioridades.",
@@ -47,7 +46,7 @@ export function ProblemaQuienSoySection() {
       id="problema"
       style={{
         backgroundColor: "var(--mar-profundo)",
-        paddingTop: isMobile ? "82px" : "112px",
+        paddingTop: isMobile ? "68px" : "82px",
         paddingBottom: 0,
         paddingLeft: isMobile ? "24px" : "80px",
         paddingRight: isMobile ? "24px" : "80px",
@@ -55,70 +54,73 @@ export function ProblemaQuienSoySection() {
         overflow: "hidden",
       }}
     >
-      <img
-        src={imageProblemaBg}
-        alt=""
+      <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center center",
-          filter: "blur(22px) saturate(0.86) contrast(0.9)",
-          transform: "scale(1.08)",
-          opacity: 0.62,
-        }}
-      />
-      <img
-        src={imageProblemaBg}
-        alt=""
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: isMobile ? "18px" : "64px",
-          left: isMobile ? "-18%" : "-3%",
-          width: isMobile ? "136%" : "58%",
-          height: isMobile ? "560px" : "640px",
-          maxHeight: isMobile ? "58%" : "64%",
-          objectFit: "contain",
-          objectPosition: "center top",
-          opacity: 0.94,
-          WebkitMaskImage: isMobile
-            ? "linear-gradient(180deg, #000 0%, #000 72%, transparent 100%)"
-            : "linear-gradient(90deg, #000 0%, #000 80%, transparent 100%)",
-          maskImage: isMobile
-            ? "linear-gradient(180deg, #000 0%, #000 72%, transparent 100%)"
-            : "linear-gradient(90deg, #000 0%, #000 80%, transparent 100%)",
+          background:
+            "linear-gradient(rgba(230,215,198,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(230,215,198,0.04) 1px, transparent 1px), linear-gradient(135deg, rgba(23,59,68,0.96) 0%, rgba(23,59,68,0.9) 48%, rgba(12,16,14,0.92) 100%)",
+          backgroundSize: "38px 38px, 38px 38px, auto",
         }}
       />
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          inset: 0,
-          background: isMobile
-            ? "linear-gradient(180deg, rgba(12,16,14,0.72) 0%, rgba(12,16,14,0.36) 46%, rgba(12,16,14,0.82) 100%)"
-            : "linear-gradient(90deg, rgba(12,16,14,0.08) 0%, rgba(12,16,14,0.16) 34%, rgba(12,16,14,0.58) 58%, rgba(12,16,14,0.92) 100%)",
+          top: isMobile ? "70px" : "96px",
+          left: isMobile ? "-28px" : "42px",
+          width: isMobile ? "70%" : "460px",
+          height: isMobile ? "92px" : "132px",
+          background: "rgba(230, 215, 198, 0.12)",
+          clipPath:
+            "polygon(0 18%, 9% 8%, 19% 22%, 29% 10%, 42% 19%, 55% 7%, 67% 20%, 80% 11%, 91% 22%, 100% 13%, 100% 100%, 0 100%)",
+          transform: "rotate(-2.5deg)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          right: isMobile ? "-46px" : "7%",
+          top: isMobile ? "170px" : "132px",
+          width: isMobile ? "160px" : "280px",
+          height: isMobile ? "160px" : "280px",
+          border: "1px solid rgba(230, 215, 198, 0.16)",
+          borderRadius: "999px",
+          opacity: 0.7,
+        }}
+      />
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          right: isMobile ? "12px" : "14%",
+          bottom: isMobile ? "28%" : "26%",
+          width: isMobile ? "180px" : "320px",
+          height: isMobile ? "86px" : "120px",
+          background: "rgba(169, 205, 227, 0.12)",
+          clipPath:
+            "polygon(0 0, 100% 0, 100% 78%, 91% 70%, 80% 86%, 67% 72%, 55% 88%, 42% 75%, 30% 90%, 18% 76%, 8% 88%, 0 78%)",
+          transform: "rotate(3deg)",
         }}
       />
       <div style={{ maxWidth: "1160px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "minmax(360px, 0.78fr) minmax(0, 0.92fr)",
-            gap: isMobile ? "28px" : "64px",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(280px, 0.45fr) minmax(0, 0.98fr)",
+            gap: isMobile ? "22px" : "38px",
             alignItems: "start",
-            marginBottom: isMobile ? "34px" : "62px",
-            minHeight: isMobile ? "auto" : "420px",
+            marginBottom: isMobile ? "24px" : "30px",
+            minHeight: isMobile ? "auto" : "286px",
           }}
         >
           {!isMobile && <div aria-hidden="true" />}
           <div
             style={{
               alignSelf: "center",
-              padding: isMobile ? "0" : "28px 0 26px",
+              padding: isMobile ? "0" : "14px 0 18px",
             }}
           >
             <SectionLabel number="02" tone="light">
@@ -128,29 +130,29 @@ export function ProblemaQuienSoySection() {
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 600,
-                fontSize: isMobile ? "36px" : "56px",
+                fontSize: isMobile ? "34px" : "48px",
                 color: "var(--arena-clara)",
-                lineHeight: 1.04,
-                margin: "22px 0 0",
-                maxWidth: "660px",
+                lineHeight: 1.02,
+                margin: "18px 0 0",
+                maxWidth: "590px",
               }}
             >
-              Todo lo que construyes depende del sistema que hay detrás.
+              Se nota distinto según lo que estás construyendo.
             </h2>
 
             <p
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 400,
-                fontSize: isMobile ? "16px" : "18px",
+                fontSize: isMobile ? "16px" : "17px",
                 color: "rgba(250, 248, 244, 0.9)",
-                lineHeight: 1.72,
-                margin: isMobile ? "22px 0 0" : "26px 0 0",
-                maxWidth: "560px",
+                lineHeight: 1.54,
+                margin: isMobile ? "18px 0 0" : "18px 0 0",
+                maxWidth: "540px",
               }}
             >
-              Con el tiempo, ese sistema puede dejar de acompañar lo que estás construyendo. Y eso
-              comienza a notarse de distintas maneras.
+              En un negocio, un producto digital o un proyecto personal, el desorden aparece con
+              señales diferentes. Estas son algunas de las más comunes.
             </p>
           </div>
         </div>
@@ -161,7 +163,7 @@ export function ProblemaQuienSoySection() {
             display: "grid",
             gridTemplateColumns: isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))",
             gap: isMobile ? "16px" : "18px",
-            padding: isMobile ? "22px 0 10px" : "34px 18px 24px",
+            padding: isMobile ? "18px 0 10px" : "20px 18px 24px",
             marginLeft: isMobile ? "0" : "-18px",
             marginRight: isMobile ? "0" : "-18px",
           }}
@@ -170,7 +172,7 @@ export function ProblemaQuienSoySection() {
             aria-hidden="true"
             style={{
               position: "absolute",
-              inset: isMobile ? "-36px -24px -18px" : "-92px -80px -30px",
+              inset: isMobile ? "-28px -24px -18px" : "-48px -80px -30px",
               background: isMobile
                 ? "linear-gradient(180deg, rgba(12,16,14,0.04) 0%, rgba(12,16,14,0.68) 26%, rgba(12,16,14,0.78) 100%)"
                 : "linear-gradient(180deg, rgba(12,16,14,0) 0%, rgba(12,16,14,0.5) 24%, rgba(12,16,14,0.74) 100%)",
@@ -211,10 +213,11 @@ export function ProblemaQuienSoySection() {
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
                   fontWeight: 600,
-                  fontSize: isMobile ? "24px" : "30px",
+                  fontSize: isMobile ? "24px" : "26px",
                   color: "var(--arena-clara)",
-                  lineHeight: 1.08,
+                  lineHeight: 1.12,
                   margin: "0 0 22px",
+                  maxWidth: "360px",
                 }}
               >
                 {context.title}

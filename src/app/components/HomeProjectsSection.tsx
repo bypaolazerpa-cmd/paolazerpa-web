@@ -9,7 +9,7 @@ const projects = [
     category: "Sistema de control",
     title: "Control de vencimientos",
     body:
-      "Un sistema para organizar productos por fecha, ubicación y nivel de urgencia, y ayudar al equipo a decidir qué necesita atención y qué acción realizar.",
+      "Un sistema para organizar productos de una tienda de comestibles por fecha, ubicación y nivel de urgencia, y ayudar al equipo a decidir qué necesita atención y qué acción realizar.",
     tags: ["Operaciones", "Automatización", "Google Sheets"],
     accent: "var(--cielo-suave)",
   },
@@ -36,7 +36,7 @@ const projects = [
     category: "Sistema de operaciones",
     title: "Operación de tienda",
     body:
-      "Un sistema compartido para organizar las tareas de una tienda, coordinar el trabajo entre turnos y dar seguimiento a los pedidos realizados a proveedores.",
+      "Un sistema compartido para organizar las tareas diarias del equipo en una tienda, coordinar recordatorios entre turnos y dar seguimiento a los pedidos realizados a proveedores.",
     tags: ["Operaciones", "Equipo", "Trello"],
     accent: "var(--musgo-oliva)",
   },
@@ -86,7 +86,7 @@ export function HomeProjectsSection() {
         >
           <div>
             <SectionLabel number="07" tone="light">
-              Proyectos
+              Mi portfolio
             </SectionLabel>
             <h2
               style={{
@@ -113,7 +113,7 @@ export function HomeProjectsSection() {
           >
             <button
               onClick={goToPrevious}
-              aria-label="Ver proyectos anteriores"
+              aria-label="Ver casos anteriores del portfolio"
               style={{
                 width: "46px",
                 height: "46px",
@@ -147,7 +147,7 @@ export function HomeProjectsSection() {
             </p>
             <button
               onClick={goToNext}
-              aria-label="Ver siguientes proyectos"
+              aria-label="Ver siguientes casos del portfolio"
               style={{
                 width: "46px",
                 height: "46px",
@@ -174,8 +174,9 @@ export function HomeProjectsSection() {
             border: "1px solid rgba(230, 215, 198, 0.28)",
             borderRadius: "10px",
             background:
-              "linear-gradient(180deg, rgba(230,215,198,0.1) 0%, rgba(12,16,14,0.5) 100%)",
+              "linear-gradient(180deg, rgba(250,248,244,0.07) 0%, rgba(23,59,68,0.34) 44%, rgba(9,20,24,0.58) 100%)",
             overflow: "hidden",
+            boxShadow: "inset 0 1px 0 rgba(250,248,244,0.1)",
           }}
         >
           <div
@@ -241,11 +242,12 @@ export function HomeProjectsSection() {
                   gridTemplateRows: "auto 1fr auto",
                   gap: isMobile ? "28px" : "34px",
                   borderRadius: "8px",
-                  border: "1px solid rgba(230, 215, 198, 0.28)",
-                  borderTop: `3px solid ${project.accent}`,
+                  border: "1px solid rgba(250, 248, 244, 0.24)",
+                  borderTop: "3px solid rgba(240, 127, 168, 0.9)",
                   background:
-                    "linear-gradient(180deg, rgba(230,215,198,0.16) 0%, rgba(12,16,14,0.62) 100%)",
+                    "linear-gradient(180deg, rgba(250,248,244,0.1) 0%, rgba(23,59,68,0.58) 42%, rgba(9,20,24,0.82) 100%)",
                   backdropFilter: "blur(10px)",
+                  boxShadow: "inset 0 1px 0 rgba(250,248,244,0.12)",
                 }}
               >
                 <div>
@@ -255,7 +257,7 @@ export function HomeProjectsSection() {
                       fontSize: "11px",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      color: "rgba(230, 215, 198, 0.92)",
+                      color: "rgba(255, 203, 224, 0.92)",
                       margin: "0 0 18px",
                       fontWeight: 700,
                     }}
@@ -301,15 +303,15 @@ export function HomeProjectsSection() {
                     <span
                       key={tag}
                       style={{
-                        border: "1px solid rgba(230, 215, 198, 0.34)",
+                        border: "1px solid rgba(255, 203, 224, 0.28)",
                         borderRadius: "999px",
                         padding: "10px 12px",
                         fontFamily: "Space Mono, monospace",
                         fontSize: "10px",
                         letterSpacing: "0.08em",
                         textTransform: "uppercase",
-                        color: "rgba(230, 215, 198, 0.88)",
-                        background: "rgba(12, 16, 14, 0.26)",
+                        color: "rgba(250, 248, 244, 0.88)",
+                        background: "rgba(12, 16, 14, 0.3)",
                       }}
                     >
                       {tag}
