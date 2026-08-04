@@ -3,6 +3,21 @@ import { SectionLabel } from "./brand/SectionLabel";
 
 export function HomeApproachSection() {
   const isMobile = useIsMobile();
+  const approachHeading = isMobile
+    ? "Diseñemos el sistema que ordena y sostiene lo que estás construyendo."
+    : "¿Por qué diseñar conmigo el sistema que ordena y sostiene tu negocio, tus proyectos o tu producto?";
+  const approachTitle = [
+    "No diseño piezas sueltas.",
+    "Ordeno cómo se conectan las",
+    "decisiones, los procesos y las personas",
+    "para mejorar la experiencia.",
+  ];
+  const approachBody = isMobile
+    ? [
+        "Primero miro el contexto real y la forma de funcionar.",
+        "Después diseñamos una estructura sólida que se pueda sostener.",
+      ]
+    : "Antes de elegir una herramienta, diseñarla, sumar una función o usar una plantilla, miro el contexto, las personas, los procesos, la información y las decisiones que sostienen lo que quieres construir.";
 
   return (
     <section
@@ -41,8 +56,17 @@ export function HomeApproachSection() {
                 maxWidth: "860px",
               }}
             >
-              ¿Por qué <span className="pz-highlight">diseñar conmigo el sistema</span> que sostiene
-              lo que construyes?
+              {isMobile ? (
+                <>
+                  <span className="pz-highlight">Diseñemos el sistema</span>{" "}
+                  <span>
+                    que ordena y sostiene {" "}
+                    <span className="approach-emphasis">lo que estás construyendo.</span>
+                  </span>
+                </>
+              ) : (
+                <span className="pz-highlight">{approachHeading}</span>
+              )}
             </h2>
           </div>
         </div>
@@ -78,6 +102,7 @@ export function HomeApproachSection() {
               filter: "blur(24px) saturate(0.86) contrast(0.9) brightness(1.08)",
               transform: "scale(1.12)",
               opacity: 0.9,
+              display: isMobile ? "none" : "block",
             }}
           />
           <video
@@ -132,14 +157,19 @@ export function HomeApproachSection() {
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 600,
-                fontSize: isMobile ? "29px" : "46px",
-                lineHeight: 1.06,
+                fontSize: isMobile ? "26px" : "42px",
+                lineHeight: isMobile ? 1.02 : 1.04,
                 color: "var(--arena-clara)",
                 margin: "0 0 18px",
               }}
             >
-              No diseño piezas sueltas. Ordeno cómo se conectan las decisiones, los procesos y la
-              experiencia para que el sistema pueda sostenerse.
+              {Array.isArray(approachTitle)
+                ? approachTitle.map((line) => (
+                    <span key={line} style={{ display: "block" }}>
+                      {line}
+                    </span>
+                  ))
+                : approachTitle}
             </h3>
             <p
               style={{
@@ -150,9 +180,13 @@ export function HomeApproachSection() {
                 margin: 0,
               }}
             >
-              Antes de elegir una herramienta, diseñarla, sumar una función o usar una plantilla,
-              miro el contexto, las personas, los procesos, la información y las decisiones que
-              sostienen lo que quieres construir.
+              {Array.isArray(approachBody)
+                ? approachBody.map((line) => (
+                    <span key={line} style={{ display: "block", marginBottom: isMobile ? "2px" : "0" }}>
+                      {line}
+                    </span>
+                  ))
+                : approachBody}
             </p>
           </div>
         </div>

@@ -65,18 +65,14 @@ export function HeroSection() {
             position: "absolute",
             top: 0,
             bottom: 0,
-            left: isMobile ? "-22%" : "-1%",
-            width: isMobile ? "140%" : "74%",
+            left: 0,
+            width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: isMobile ? "34% center" : "center center",
+            objectPosition: "center center",
             filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
-            WebkitMaskImage: isMobile
-              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%)"
-              : "linear-gradient(90deg, #000 0%, #000 78%, transparent 100%)",
-            maskImage: isMobile
-              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%)"
-              : "linear-gradient(90deg, #000 0%, #000 78%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+            maskImage: "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
           }}
         />
 
@@ -157,7 +153,7 @@ export function HeroSection() {
               display: "grid",
               gap: isMobile ? "24px" : "34px",
               width: "100%",
-              maxWidth: isMobile ? "250px" : "560px",
+              maxWidth: isMobile ? "calc(100vw - 48px)" : "560px",
               justifySelf: isMobile ? "end" : "end",
               marginTop: isMobile ? "-26px" : "-34px",
               marginRight: isMobile ? "0" : "6%",
@@ -193,12 +189,16 @@ export function HeroSection() {
                   color: "var(--arena-clara)",
                   margin: 0,
                   letterSpacing: 0,
-                  maxWidth: isMobile ? "250px" : "560px",
+                  maxWidth: isMobile ? "calc(100vw - 48px)" : "560px",
                   textAlign: isMobile ? "right" : "left",
                   textShadow: "0 12px 32px rgba(12,16,14,0.3)",
                 }}
               >
-                Todo lo que construyes depende del sistema que hay detrás.
+                <span style={{ display: "block" }}>Todo lo que construyes</span>
+                <span style={{ display: "block" }}>
+                  depende del <span className="hero-system-word">sistema</span>
+                </span>
+                <span style={{ display: "block" }}>que hay detrás.</span>
               </h1>
 
               <p
@@ -209,7 +209,7 @@ export function HeroSection() {
                   lineHeight: isMobile ? 1.48 : 1.5,
                   color: "rgba(250, 248, 244, 0.96)",
                   margin: 0,
-                  maxWidth: isMobile ? "250px" : "500px",
+                  maxWidth: isMobile ? "calc(100vw - 48px)" : "500px",
                   textAlign: isMobile ? "right" : "left",
                   textShadow: "0 2px 18px rgba(12,16,14,0.72)",
                   background: "rgba(12, 16, 14, 0.16)",
@@ -219,8 +219,8 @@ export function HeroSection() {
                   WebkitBackdropFilter: isMobile ? "none" : "blur(6px)",
                 }}
               >
-                Si ese sistema deja de acompañarte, diseño contigo una estructura clara para
-                ordenar procesos, producto y decisiones.
+                Diseño contigo un sistema que pueda acompañarte. Ordeno procesos, datos y
+                decisiones en un producto más claro y estructurado.
               </p>
             </div>
 
@@ -229,9 +229,11 @@ export function HeroSection() {
                 display: "flex",
                 flexDirection: isMobile ? "column" : "row",
                 gap: "14px",
-                alignItems: isMobile ? "stretch" : "center",
+                alignItems: isMobile ? "flex-end" : "center",
                 justifyContent: isMobile ? "stretch" : "flex-start",
-                maxWidth: isMobile ? "250px" : "none",
+                width: isMobile ? "270px" : "auto",
+                maxWidth: isMobile ? "calc(100vw - 48px)" : "none",
+                justifySelf: isMobile ? "end" : "auto",
               }}
             >
               <BrandButton variant="secondary" onClick={() => scrollTo("proyectos")}>
