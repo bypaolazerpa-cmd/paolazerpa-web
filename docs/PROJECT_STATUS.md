@@ -104,7 +104,7 @@ Conversión:
 - El hero ahora fuerza una composición editorial de tres líneas, subraya `sistema` en magenta y conserva la escena completa de Paola junto a la computadora.
 - El copy mobile del hero y de la sección 03 fue acortado y distribuido por líneas intencionales para facilitar el escaneo.
 - La sección 02 concretó las señales de negocio, producto digital y proyectos personales, y reforzó el CTA con una franja de papel rasgado arriba y abajo.
-- La sección 03 subraya únicamente `Diseñemos el sistema`, reserva Space Mono italic para `lo que estás construyendo` y compacta la separación entre las dos frases de apoyo.
+- La sección 03 subraya únicamente `Diseñemos el sistema`, reserva Space Mono italic para `lo que estás construyendo` y usa un copy mobile más breve: `Ordeno decisiones, procesos y personas` / `Mejoro cómo se vive la experiencia`. El tratamiento mobile suma una capa oscura y un panel translúcido para asegurar contraste sobre el video.
 - Los botones del Hero mobile dejaron de ocupar todo el ancho disponible.
 - Las cards de servicios ahora muestran el detalle de forma continua en mobile; el flip queda reservado para desktop, donde el hover y el foco sí son patrones disponibles.
 - En mobile, el frente conserva el número y nombre del servicio una sola vez; la explicación inferior ya no repite ese encabezado.

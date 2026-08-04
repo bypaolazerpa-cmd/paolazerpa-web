@@ -6,16 +6,22 @@ export function HomeApproachSection() {
   const approachHeading = isMobile
     ? "Diseñemos el sistema que ordena y sostiene lo que estás construyendo."
     : "¿Por qué diseñar conmigo el sistema que ordena y sostiene tu negocio, tus proyectos o tu producto?";
-  const approachTitle = [
-    "No diseño piezas sueltas.",
-    "Ordeno cómo se conectan las",
-    "decisiones, los procesos y las personas",
-    "para mejorar la experiencia.",
-  ];
+  const approachTitle = isMobile
+    ? [
+        "No diseño piezas sueltas.",
+        "Ordeno decisiones, procesos y personas.",
+        "Mejoro cómo se vive la experiencia.",
+      ]
+    : [
+        "No diseño piezas sueltas.",
+        "Ordeno cómo se conectan las",
+        "decisiones, los procesos y las personas",
+        "para mejorar la experiencia.",
+      ];
   const approachBody = isMobile
     ? [
-        "Primero miro el contexto real y la forma de funcionar.",
-        "Después diseñamos una estructura sólida que se pueda sostener.",
+        "Primero entiendo cómo funciona hoy.",
+        "Después diseñamos una estructura que puedas sostener.",
       ]
     : "Antes de elegir una herramienta, diseñarla, sumar una función o usar una plantilla, miro el contexto, las personas, los procesos, la información y las decisiones que sostienen lo que quieres construir.";
 
@@ -136,7 +142,9 @@ export function HomeApproachSection() {
               position: "absolute",
               inset: 0,
               background:
-                "linear-gradient(180deg, rgba(12,16,14,0.06) 0%, rgba(12,16,14,0.18) 42%, rgba(12,16,14,0.78) 100%)",
+                isMobile
+                  ? "linear-gradient(180deg, rgba(12,16,14,0.36) 0%, rgba(12,16,14,0.5) 40%, rgba(12,16,14,0.88) 100%)"
+                  : "linear-gradient(180deg, rgba(12,16,14,0.06) 0%, rgba(12,16,14,0.18) 42%, rgba(12,16,14,0.78) 100%)",
             }}
           />
           <div
@@ -152,12 +160,24 @@ export function HomeApproachSection() {
               }}
             />
 
-          <div style={{ position: "relative", zIndex: 1, maxWidth: "720px" }}>
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              maxWidth: "720px",
+              backgroundColor: isMobile ? "rgba(12, 16, 14, 0.3)" : "transparent",
+              border: isMobile ? "1px solid rgba(250, 248, 244, 0.18)" : "none",
+              borderRadius: isMobile ? "14px" : "0",
+              padding: isMobile ? "16px 14px" : "0",
+              backdropFilter: isMobile ? "blur(4px)" : "none",
+              WebkitBackdropFilter: isMobile ? "blur(4px)" : "none",
+            }}
+          >
             <h3
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 600,
-                fontSize: isMobile ? "26px" : "42px",
+                fontSize: isMobile ? "25px" : "42px",
                 lineHeight: isMobile ? 1.02 : 1.04,
                 color: "var(--arena-clara)",
                 margin: "0 0 18px",
@@ -175,8 +195,8 @@ export function HomeApproachSection() {
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontSize: isMobile ? "15px" : "17px",
-                lineHeight: 1.7,
-                color: "rgba(230, 215, 198, 0.9)",
+                lineHeight: isMobile ? 1.45 : 1.7,
+                color: "var(--arena-clara)",
                 margin: 0,
               }}
             >
