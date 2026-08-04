@@ -94,7 +94,7 @@ export function CaminosSection() {
               maxWidth: "540px",
             }}
           >
-            Toca o pasa el mouse por una tarjeta para ver el detalle.
+            Cada servicio tiene una forma distinta de ordenar lo que estás construyendo.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export function CaminosSection() {
             <article key={service.title} className="service-card" tabIndex={0}>
               <div className="service-card-inner">
                 <div className="service-card-face service-card-front">
-                  <img src={service.image} alt="" aria-hidden="true" />
+                  <img src={service.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
                   <div className="service-card-overlay" />
                   <div className="service-card-copy">
                     <p>{service.number}</p>

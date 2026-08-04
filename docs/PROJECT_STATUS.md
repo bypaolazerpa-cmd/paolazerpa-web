@@ -99,6 +99,21 @@ Conversión:
 
 ## 6. Qué sigue después del deploy
 
+## 6.1. Bloque responsive mobile iniciado — 2026-08-04
+
+- El hero ahora fuerza una composición editorial de tres líneas, subraya `sistema` en magenta y conserva la escena completa de Paola junto a la computadora.
+- El copy mobile del hero y de la sección 03 fue acortado y distribuido por líneas intencionales para facilitar el escaneo.
+- La sección 02 concretó las señales de negocio, producto digital y proyectos personales, y reforzó el CTA con una franja de papel rasgado arriba y abajo.
+- La sección 03 subraya únicamente `Diseñemos el sistema`, reserva Space Mono italic para `lo que estás construyendo` y compacta la separación entre las dos frases de apoyo.
+- Los botones del Hero mobile dejaron de ocupar todo el ancho disponible.
+- Las cards de servicios ahora muestran el detalle de forma continua en mobile; el flip queda reservado para desktop, donde el hover y el foco sí son patrones disponibles.
+- En mobile, el frente conserva el número y nombre del servicio una sola vez; la explicación inferior ya no repite ese encabezado.
+- Se eliminó del copy mobile la instrucción basada en mouse.
+- La tarjeta de enfoque usa una versión de copy más breve en mobile para favorecer el escaneo.
+- El video de enfoque evita cargar la segunda capa desenfocada en mobile para reducir trabajo y consumo sin cambiar la composición desktop.
+- Las imágenes de servicios se cargan de forma diferida y asíncrona.
+- `npm run build` pasa después de este bloque; persisten únicamente los warnings conocidos de `useLayoutEffect` durante prerender.
+
 Siguiente bloque recomendado:
 - QA manual corto en producción sobre Home, Contacto, Notas, Mi historia y Programa
 - confirmar que el PDF final de la guía es el definitivo

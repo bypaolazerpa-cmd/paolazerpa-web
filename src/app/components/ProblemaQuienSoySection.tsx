@@ -5,34 +5,34 @@ import { SectionLabel } from "./brand/SectionLabel";
 const contexts = [
   {
     label: "Negocio",
-    title: "Tu operación crece y cada día pesa más.",
+    title: "Tu operación depende demasiado de ti.",
     points: [
-      "Procesos que dependen de personas clave.",
-      "Información y comunicación dispersas.",
-      "Tareas repetitivas que consumen tiempo.",
-      "Dificultad para tomar decisiones con claridad.",
+      "Procesos que solo conoce una persona del equipo.",
+      "Información repartida entre chats, archivos y herramientas.",
+      "Tareas repetitivas que podrían resolverse con un flujo claro.",
+      "Decisiones que se frenan porque nadie ve el panorama completo.",
     ],
     accent: "var(--citron-loto)",
   },
   {
     label: "Producto digital",
-    title: "Tu producto cambia y sostenerlo cuesta más.",
+    title: "Tu producto crece, pero la experiencia se desordena.",
     points: [
-      "Funcionalidades que no se conectan bien.",
-      "Experiencias confusas o poco intuitivas.",
-      "Una estructura que no acompaña el crecimiento.",
-      "Más tiempo y esfuerzo para mantenerlo o mejorarlo.",
+      "Funcionalidades que resuelven cosas aisladas y no forman un recorrido.",
+      "Personas usuarias que no encuentran qué hacer después.",
+      "Información, reglas y pantallas que se contradicen.",
+      "Cada cambio cuesta más porque la estructura no está clara.",
     ],
     accent: "var(--cielo-suave)",
   },
   {
     label: "Proyectos personales",
-    title: "Tus ideas avanzan lento porque falta estructura.",
+    title: "Tus ideas avanzan, pero cuesta sostenerlas en el día a día.",
     points: [
-      "Ideas y proyectos que no avanzan.",
-      "Falta de organización y prioridades.",
-      "Sensación de estar ocupada, pero sin avanzar.",
-      "Cambios constantes de foco.",
+      "Falta de organización y prioridades en tus rutinas semanales.",
+      "Proyectos que se mezclan y compiten por tu atención.",
+      "Pendientes que se acumulan y cuesta cerrar.",
+      "Dificultad para convertir ideas en próximos pasos.",
     ],
     accent: "var(--magenta)",
   },
@@ -247,11 +247,11 @@ export function ProblemaQuienSoySection() {
             marginTop: isMobile ? "44px" : "58px",
             marginLeft: isMobile ? "-24px" : "-80px",
             marginRight: isMobile ? "-24px" : "-80px",
-            backgroundColor: "var(--cielo-suave)",
+            className: "problem-cta-paper",
+            backgroundColor: "var(--surface-paper)",
             color: "var(--mar-profundo)",
             padding: isMobile ? "48px 24px 54px" : "56px 80px 64px",
-            clipPath:
-              "polygon(0 8%, 8% 2%, 17% 9%, 27% 3%, 38% 10%, 48% 5%, 60% 11%, 72% 4%, 84% 10%, 94% 3%, 100% 8%, 100% 100%, 0 100%)",
+            clipPath: "polygon(0 8%, 4% 3%, 10% 8%, 17% 2%, 24% 9%, 32% 4%, 40% 10%, 49% 3%, 58% 8%, 67% 2%, 76% 9%, 85% 3%, 94% 8%, 100% 4%, 100% 94%, 95% 98%, 88% 92%, 80% 99%, 71% 93%, 62% 98%, 53% 91%, 44% 99%, 35% 93%, 26% 98%, 17% 91%, 8% 97%, 0 92%)",
           }}
         >
           <div
@@ -267,14 +267,13 @@ export function ProblemaQuienSoySection() {
             <p
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
-                fontSize: isMobile ? "21px" : "28px",
+                fontSize: isMobile ? "18px" : "24px",
                 lineHeight: 1.24,
                 fontWeight: 600,
                 margin: 0,
               }}
             >
-              Si te identificas con alguna de estas situaciones, es momento de darle una estructura
-              más clara a lo que estás construyendo.
+              Es momento de diseñar conmigo una estructura para lo que estás construyendo.
             </p>
             <BrandButton to="/contacto#email">Hablemos de tu caso</BrandButton>
           </div>
