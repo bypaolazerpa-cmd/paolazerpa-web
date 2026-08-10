@@ -94,7 +94,7 @@ Estado actual del home:
 - problema:
   bloque de señales sobre negocio, producto digital y proyectos personales, con intro breve, fondo de identidad sin fotografía y recursos de papel rasgado
 - enfoque:
-  bloque con `public/paola-hero-video.mov` como video provisional y una idea principal sobre estructura sistémica
+  bloque con `public/paola-hero-video.mov` como video provisional y una idea principal sobre estructura sistémica. El contenido canónico compartido es `Diseñemos el sistema que ordena y sostiene lo que estás construyendo.`; el bloque visual usa `No diseño piezas sueltas.`, `Ordeno decisiones, procesos y personas.`, `Mejoro cómo se vive la experiencia.`, `Primero entiendo cómo funciona hoy.` y `Después diseñamos una estructura que puedas sostener.`
 - servicios:
   `Sistema a medida`
   `Tu espacio digital`

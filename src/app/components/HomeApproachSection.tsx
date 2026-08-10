@@ -3,27 +3,15 @@ import { SectionLabel } from "./brand/SectionLabel";
 
 export function HomeApproachSection() {
   const isMobile = useIsMobile();
-  const approachHeading = isMobile
-    ? "Diseñemos el sistema que ordena y sostiene lo que estás construyendo."
-    : "¿Por qué diseñar conmigo el sistema que ordena y sostiene tu negocio, tus proyectos o tu producto?";
-  const approachTitle = isMobile
-    ? [
-        "No diseño piezas sueltas.",
-        "Ordeno decisiones, procesos y personas.",
-        "Mejoro cómo se vive la experiencia.",
-      ]
-    : [
-        "No diseño piezas sueltas.",
-        "Ordeno cómo se conectan las",
-        "decisiones, los procesos y las personas",
-        "para mejorar la experiencia.",
-      ];
-  const approachBody = isMobile
-    ? [
-        "Primero entiendo cómo funciona hoy.",
-        "Después diseñamos una estructura que puedas sostener.",
-      ]
-    : "Antes de elegir una herramienta, diseñarla, sumar una función o usar una plantilla, miro el contexto, las personas, los procesos, la información y las decisiones que sostienen lo que quieres construir.";
+  const approachTitle = [
+    "No diseño piezas sueltas.",
+    "Ordeno decisiones, procesos y personas.",
+    "Mejoro cómo se vive la experiencia.",
+  ];
+  const approachBody = [
+    "Primero entiendo cómo funciona hoy.",
+    "Después diseñamos una estructura que puedas sostener.",
+  ];
 
   return (
     <section
@@ -62,17 +50,11 @@ export function HomeApproachSection() {
                 maxWidth: "860px",
               }}
             >
-              {isMobile ? (
-                <>
-                  <span className="pz-highlight">Diseñemos el sistema</span>{" "}
-                  <span>
-                    que ordena y sostiene {" "}
-                    <span className="approach-emphasis">lo que estás construyendo.</span>
-                  </span>
-                </>
-              ) : (
-                <span className="pz-highlight">{approachHeading}</span>
-              )}
+              <span className="pz-highlight">Diseñemos el sistema</span>{" "}
+              <span>
+                que ordena y sostiene{" "}
+                <span className="approach-emphasis">lo que estás construyendo.</span>
+              </span>
             </h2>
           </div>
         </div>
@@ -183,13 +165,11 @@ export function HomeApproachSection() {
                 margin: "0 0 18px",
               }}
             >
-              {Array.isArray(approachTitle)
-                ? approachTitle.map((line) => (
-                    <span key={line} style={{ display: "block" }}>
-                      {line}
-                    </span>
-                  ))
-                : approachTitle}
+              {approachTitle.map((line) => (
+                <span key={line} style={{ display: "block" }}>
+                  {line}
+                </span>
+              ))}
             </h3>
             <p
               style={{
@@ -200,13 +180,11 @@ export function HomeApproachSection() {
                 margin: 0,
               }}
             >
-              {Array.isArray(approachBody)
-                ? approachBody.map((line) => (
-                    <span key={line} style={{ display: "block", marginBottom: isMobile ? "2px" : "0" }}>
-                      {line}
-                    </span>
-                  ))
-                : approachBody}
+              {approachBody.map((line) => (
+                <span key={line} style={{ display: "block", marginBottom: isMobile ? "2px" : "0" }}>
+                  {line}
+                </span>
+              ))}
             </p>
           </div>
         </div>

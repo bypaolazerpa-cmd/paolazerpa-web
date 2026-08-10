@@ -105,14 +105,15 @@ Fuente de verdad:
 
 Regla aplicada:
 - breakpoint por defecto `< 768`
-- cada componente responsive suele tener una rama mobile y otra desktop
+- los componentes responsive adaptan layout y estilos con `useIsMobile()` sin duplicar el contenido semántico por viewport
 - en prerender del lado servidor, el fallback actual renderiza variante desktop porque `window` no existe
 - en mobile, `CaminosSection` evita depender del flip por hover y presenta el frente y el detalle de cada servicio en flujo continuo
 - en mobile, el detalle de cada servicio omite el número y título repetidos para mantener una sola jerarquía visible
 - en mobile, `HomeApproachSection` conserva una sola capa de video visible y omite la capa desenfocada duplicada
 - `HeroSection` mantiene una capa nítida a ancho completo para mostrar en la misma escena a Paola y la computadora; el titular usa saltos de línea intencionales
 - `ProblemaQuienSoySection` mantiene copy específico por contexto y usa `problem-cta-paper` para el CTA con textura y bordes rasgados
-- `HomeApproachSection` separa la jerarquía del título mobile entre highlight, énfasis monoespaciado y copy de apoyo compacto
+- `HomeApproachSection` comparte un único H2 y un único bloque visual de copy entre breakpoints; solo cambia composición, escala, contraste y video decorativo
+- `HeroSection` comparte un único H1, bajada, CTAs y tags; en desktop usa `object-position: center top` para recuperar la parte superior de la fotografía y una columna más ancha para mantener unido `Todo lo que construyes`
 
 Patrón esperado:
 

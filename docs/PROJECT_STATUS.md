@@ -111,6 +111,14 @@ Conversión:
 
 ## 6. Qué sigue después del deploy
 
+## 6.0. Unificación responsive de contenido — 2026-08-10
+
+- `HomeApproachSection` dejó de seleccionar copy distinto según `isMobile()` y ahora renderiza el H2, título visual y cuerpo canónicos en todos los breakpoints.
+- `BlogCards.SecondaryCard` conserva una sola estructura semántica para categoría, título, excerpt, fecha y CTA; mobile y desktop solo adaptan imagen, distribución y escala.
+- `HeroSection` mantiene un único H1 y ajusta el encuadre desktop de `paola-problema-scene.jpg` con `object-position: center top`; la columna desktop se amplió para mantener unido `Todo lo que construyes` cuando hay espacio.
+- Se verificaron las rutas públicas en 390px y 1440px sin overflow ni overlays, y la home en 390, 430, 768, 1024, 1280 y 1440px.
+- `npm run build` pasa; permanecen únicamente los warnings SSR conocidos de `useLayoutEffect`.
+
 ## 6.1. Bloque responsive mobile iniciado — 2026-08-04
 
 - El hero ahora fuerza una composición editorial de tres líneas, subraya `sistema` en magenta y conserva la escena completa de Paola junto a la computadora.
