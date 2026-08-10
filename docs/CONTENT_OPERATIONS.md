@@ -29,6 +29,8 @@ Punto de entrada principal:
 Portfolio profesional:
 - `/portfolio` es la página de presentación profesional de Paola como Product Designer.
 - el home usa un teaser y deriva a `/portfolio`.
+- `/portfolio` prioriza el recorrido `01 — Portfolio profesional`, `02 — Selected work`, `Otros proyectos`, `03 — Forma de trabajar`, `04 — Capacidades` y `05 — Hablemos`.
+- La introducción independiente fue eliminada; el mensaje profesional vive en el hero y Selected Work conserva los anchors `gestock`, `nodux` y `operacion-de-tienda`.
 - el teaser del home muestra únicamente preview, identificación y una frase breve por proyecto.
 - GeStock, NODUX y Sistemas de operación de tienda son los proyectos destacados iniciales.
 - Cosmic Studio aparece como trabajo secundario.
@@ -74,11 +76,11 @@ Estado actual de `/mi-historia`:
 
 Estado actual del hero:
 - eyebrow:
-  `Hola, soy Paola`
+  `Paola Zerpa · Product Designer`
 - texto principal:
   `Todo lo que construyes depende del sistema que hay detrás.`
 - bajada:
-  `Si ese sistema deja de acompañarte, diseño contigo una estructura clara para ordenar procesos, producto y decisiones.`
+  `Diseño productos digitales que ordenan procesos, información y decisiones para hacerlos más claros y fáciles de usar.`
 - línea inferior:
   `Diseño sistémico · Producto digital · Procesos · Personas`
 - CTA principal:
@@ -92,21 +94,17 @@ Estado actual del hero:
 
 Estado actual del home:
 - problema:
-  bloque de señales sobre negocio, producto digital y proyectos personales, con intro breve, fondo de identidad sin fotografía y recursos de papel rasgado
+  headline breve y directo sobre recordar, saber qué hacer y revisar cambios; tres problemas concretos de operación, producto y crecimiento/estructura con explicaciones breves, fondo de identidad sin fotografía y recursos de papel rasgado
 - enfoque:
-  bloque con `public/paola-hero-video.mov` como video provisional y una idea principal sobre estructura sistémica. El contenido canónico compartido es `Diseñemos el sistema que ordena y sostiene lo que estás construyendo.`; el bloque visual usa `No diseño piezas sueltas.`, `Ordeno decisiones, procesos y personas.`, `Mejoro cómo se vive la experiencia.`, `Primero entiendo cómo funciona hoy.` y `Después diseñamos una estructura que puedas sostener.`
+  bloque con `public/paola-hero-video.mov` como video provisional. El bloque sobre video contiene únicamente `No diseño piezas sueltas.` y `Ordeno procesos, información y decisiones para mejorar la experiencia.`
 - servicios:
-  `Sistema a medida`
-  `Tu espacio digital`
-  `Hecho sistema`
-  `Tu vida, tu sistema`
-  se presentan como cards con imágenes generadas al frente y reverso en hover/focus
+  tres cards principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; `También trabajo con sistemas personales.` aparece como oferta secundaria debajo
 - método:
   recorrido `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`
 - cómo empezamos:
   recorrido `Me cuentas tu caso`, `Nos encontramos`, `Definimos el camino`, `Lo construimos`
 - portfolio:
-  archivo/carrusel con cuatro casos reales: `Control de vencimientos`, `Nodux`, `Cosmic Studio` y `Operación de tienda`
+  teaser Home con tres proyectos destacados y cards clickeables hacia `/portfolio#gestock`, `/portfolio#nodux` y `/portfolio#operacion-de-tienda`; `/portfolio` conserva la evidencia profesional completa
 - footer:
   base mínima con copyright y descriptor
 

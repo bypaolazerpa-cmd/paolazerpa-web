@@ -173,7 +173,7 @@ export function HeroSection() {
                   textUnderlineOffset: "6px",
                 }}
               >
-                Hola, soy Paola
+                Paola Zerpa · Product Designer
               </p>
 
               <h1
@@ -215,8 +215,8 @@ export function HeroSection() {
                   WebkitBackdropFilter: isMobile ? "none" : "blur(6px)",
                 }}
               >
-                Diseño contigo un sistema que pueda acompañarte. Ordeno procesos, datos y
-                decisiones en un producto más claro y estructurado.
+                Diseño productos digitales que ordenan procesos, información y decisiones para
+                hacerlos más claros y fáciles de usar.
               </p>
             </div>
 

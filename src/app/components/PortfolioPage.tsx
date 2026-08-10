@@ -108,8 +108,8 @@ export function PortfolioPage() {
                   margin: 0,
                 }}
               >
-                Diseño productos digitales y sistemas que convierten procesos complejos en
-                experiencias claras y utilizables.
+                Diseño productos digitales que ordenan procesos, información y decisiones para
+                hacerlos más claros y fáciles de usar.
               </p>
             </div>
             <p
@@ -145,40 +145,6 @@ export function PortfolioPage() {
         </section>
 
         <section
-          style={{
-            backgroundColor: "var(--arena-clara)",
-            padding: isMobile ? "74px 24px" : "104px 80px",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: contentWidth,
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "0.8fr 1.2fr",
-              gap: isMobile ? "26px" : "80px",
-              alignItems: "start",
-            }}
-          >
-            <SectionLabel number="02">Introducción</SectionLabel>
-            <p
-              style={{
-                fontFamily: "Space Grotesk, sans-serif",
-                fontSize: isMobile ? "24px" : "34px",
-                lineHeight: 1.28,
-                color: "var(--mar-profundo)",
-                margin: 0,
-                maxWidth: "760px",
-              }}
-            >
-              Trabajo entre producto, operaciones y experiencia de usuario. Antes de diseñar una
-              interfaz, busco entender cómo funcionan las personas, los procesos, la información y
-              las decisiones que sostienen el producto.
-            </p>
-          </div>
-        </section>
-
-        <section
           id="selected-work"
           className="pz-dark"
           style={{
@@ -187,7 +153,7 @@ export function PortfolioPage() {
           }}
         >
           <div style={{ maxWidth: contentWidth, margin: "0 auto" }}>
-            <SectionLabel number="03" tone="light">
+            <SectionLabel number="02" tone="light">
               Selected work
             </SectionLabel>
             <div
@@ -221,8 +187,7 @@ export function PortfolioPage() {
                   margin: 0,
                 }}
               >
-                Identificar fricciones, organizar sistemas y diseñar experiencias que puedan
-                sostenerse en el día a día.
+                Proyectos donde trabajé sobre problemas reales de operación, información y experiencia de usuario.
               </p>
             </div>
 
@@ -244,7 +209,7 @@ export function PortfolioPage() {
                     margin: "0 0 18px",
                   }}
                 >
-                  Other work
+                  Otros proyectos
                 </p>
                 <div style={{ display: "grid", gap: "18px" }}>
                   {secondaryPortfolioProjects.map((project) => (
@@ -259,11 +224,11 @@ export function PortfolioPage() {
         <section
           style={{
             backgroundColor: "var(--arena-clara)",
-            padding: isMobile ? "78px 24px" : "110px 80px",
+            padding: isMobile ? "62px 24px" : "82px 80px",
           }}
         >
           <div style={{ maxWidth: contentWidth, margin: "0 auto" }}>
-            <SectionLabel number="04">Forma de trabajar</SectionLabel>
+            <SectionLabel number="03">Forma de trabajar</SectionLabel>
             <h2
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
@@ -326,7 +291,7 @@ export function PortfolioPage() {
         <section
           className="pz-dark"
           style={{
-            padding: isMobile ? "78px 24px 86px" : "108px 80px 118px",
+            padding: isMobile ? "62px 24px 70px" : "82px 80px 92px",
           }}
         >
           <div
@@ -339,7 +304,7 @@ export function PortfolioPage() {
               alignItems: "start",
             }}
           >
-            <SectionLabel number="05" tone="light">
+            <SectionLabel number="04" tone="light">
               Capacidades
             </SectionLabel>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
@@ -371,7 +336,7 @@ export function PortfolioPage() {
           }}
         >
           <div style={{ maxWidth: contentWidth, margin: "0 auto" }}>
-            <SectionLabel number="06">Hablemos</SectionLabel>
+            <SectionLabel number="05">Hablemos</SectionLabel>
             <div
               style={{
                 display: "flex",

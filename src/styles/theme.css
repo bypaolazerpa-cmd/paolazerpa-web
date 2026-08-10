@@ -405,6 +405,55 @@ a:focus-visible {
   transform: rotateY(180deg);
 }
 
+.portfolio-home-card-link {
+  display: flex;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.portfolio-home-card {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.portfolio-home-card-link:hover .portfolio-home-card,
+.portfolio-home-card-link:focus-visible .portfolio-home-card {
+  transform: translateY(-4px);
+  border-color: rgba(240, 127, 168, 0.72) !important;
+}
+
+.portfolio-home-card-link .portfolio-home-card img {
+  transition: transform 260ms ease;
+}
+
+.portfolio-home-card-link:hover .portfolio-home-card img,
+.portfolio-home-card-link:focus-visible .portfolio-home-card img {
+  transform: scale(1.025);
+}
+
+.portfolio-home-card-action {
+  justify-self: start;
+  min-height: 14px;
+  opacity: 0;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--arena-clara);
+  transform: translateY(4px);
+  transition: opacity 220ms ease, color 220ms ease, transform 220ms ease;
+}
+
+.portfolio-home-card-link:hover .portfolio-home-card-action,
+.portfolio-home-card-link:focus-visible .portfolio-home-card-action {
+  opacity: 1;
+  color: var(--magenta);
+  transform: translateY(0);
+}
+
 @media (max-width: 767px) {
   .problem-cta-paper {
     margin-top: 34px !important;
@@ -452,6 +501,12 @@ a:focus-visible {
   .service-card-back > h3 {
     display: none;
   }
+
+  .portfolio-home-card-action {
+    opacity: 1;
+    color: var(--magenta);
+    transform: none;
+  }
 }
 
 .page-transition-enter {
@@ -476,5 +531,11 @@ a:focus-visible {
 
   .pz-scroll-mouse::before {
     animation: none;
+  }
+
+  .portfolio-home-card,
+  .portfolio-home-card-link .portfolio-home-card img,
+  .portfolio-home-card-action {
+    transition: none;
   }
 }

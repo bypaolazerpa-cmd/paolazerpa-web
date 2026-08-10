@@ -21,7 +21,7 @@ Home:
 
 Portfolio profesional:
 - `/portfolio` → `PortfolioPage`
-- `PortfolioPage` compone hero profesional, introducción, selected work, proceso, capacidades, CTA y `FooterSection`
+- `PortfolioPage` compone hero profesional, selected work, proceso, capacidades, CTA y `FooterSection`
 - `PortfolioProjectCard` se reutiliza en Home y `/portfolio`
 - `PortfolioProjectCard` usa la variante `home` para el teaser breve y `portfolio` para el contexto profesional completo
 - [`src/app/data/portfolioProjects.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/portfolioProjects.ts) es la fuente compartida para los proyectos
@@ -111,7 +111,7 @@ Regla aplicada:
 - en mobile, el detalle de cada servicio omite el número y título repetidos para mantener una sola jerarquía visible
 - en mobile, `HomeApproachSection` conserva una sola capa de video visible y omite la capa desenfocada duplicada
 - `HeroSection` mantiene una capa nítida a ancho completo para mostrar en la misma escena a Paola y la computadora; el titular usa saltos de línea intencionales
-- `ProblemaQuienSoySection` mantiene copy específico por contexto y usa `problem-cta-paper` para el CTA con textura y bordes rasgados
+- `ProblemaQuienSoySection` presenta tres problemas concretos de producto y operación desde un único array de contenido y usa `problem-cta-paper` para el CTA con textura y bordes rasgados
 - `HomeApproachSection` comparte un único H2 y un único bloque visual de copy entre breakpoints; solo cambia composición, escala, contraste y video decorativo
 - `HeroSection` comparte un único H1, bajada, CTAs y tags; en desktop usa `object-position: center top` para recuperar la parte superior de la fotografía y una columna más ancha para mantener unido `Todo lo que construyes`
 
@@ -119,8 +119,7 @@ Patrón esperado:
 
 ```tsx
 const isMobile = useIsMobile();
-if (isMobile) return <section>...mobile...</section>;
-return <section>...desktop...</section>;
+return <section style={{ padding: isMobile ? "24px" : "80px" }}>...contenido único...</section>;
 ```
 
 ## 5. Datos centralizados

@@ -4,36 +4,21 @@ import { SectionLabel } from "./brand/SectionLabel";
 
 const contexts = [
   {
-    label: "Negocio",
-    title: "Tu operación depende demasiado de ti.",
-    points: [
-      "Procesos que solo conoce una persona del equipo.",
-      "Información repartida entre chats, archivos y herramientas.",
-      "Tareas repetitivas que podrían resolverse con un flujo claro.",
-      "Decisiones que se frenan porque nadie ve el panorama completo.",
-    ],
+    label: "Operación",
+    title: "El trabajo depende de recordar y resolver cosas manualmente.",
+    body: "La información está repartida y muchas tareas dependen de una o pocas personas.",
     accent: "var(--citron-loto)",
   },
   {
-    label: "Producto digital",
-    title: "Tu producto crece, pero la experiencia se desordena.",
-    points: [
-      "Funcionalidades que resuelven cosas aisladas y no forman un recorrido.",
-      "Personas usuarias que no encuentran qué hacer después.",
-      "Información, reglas y pantallas que se contradicen.",
-      "Cada cambio cuesta más porque la estructura no está clara.",
-    ],
+    label: "Producto",
+    title: "Cuesta saber qué hacer o qué sigue.",
+    body: "Las funciones están, pero las pantallas, reglas e información no siempre guían la tarea.",
     accent: "var(--cielo-suave)",
   },
   {
-    label: "Proyectos personales",
-    title: "Tus ideas avanzan, pero cuesta sostenerlas en el día a día.",
-    points: [
-      "Falta de organización y prioridades en tus rutinas semanales.",
-      "Proyectos que se mezclan y compiten por tu atención.",
-      "Pendientes que se acumulan y cuesta cerrar.",
-      "Dificultad para convertir ideas en próximos pasos.",
-    ],
+    label: "Crecimiento / estructura",
+    title: "Cada cambio obliga a revisar demasiadas cosas.",
+    body: "Agregar una función o cambiar un proceso implica revisar varias partes porque no está claro qué depende de qué.",
     accent: "var(--magenta)",
   },
 ];
@@ -137,23 +122,8 @@ export function ProblemaQuienSoySection() {
                 maxWidth: "590px",
               }}
             >
-              Se nota distinto según lo que estás construyendo.
+              Si hay que recordar demasiado, cuesta saber qué hacer y cada cambio complica todo, hay algo que ordenar.
             </h2>
-
-            <p
-              style={{
-                fontFamily: "Space Grotesk, sans-serif",
-                fontWeight: 400,
-                fontSize: isMobile ? "16px" : "17px",
-                color: "rgba(250, 248, 244, 0.9)",
-                lineHeight: 1.54,
-                margin: isMobile ? "18px 0 0" : "18px 0 0",
-                maxWidth: "540px",
-              }}
-            >
-              En un negocio, un producto digital o un proyecto personal, el desorden aparece con
-              señales diferentes. Estas son algunas de las más comunes.
-            </p>
           </div>
         </div>
 
@@ -193,7 +163,7 @@ export function ProblemaQuienSoySection() {
                 borderRadius: "8px",
                 backdropFilter: "blur(10px)",
                 padding: isMobile ? "24px 20px" : "30px 28px",
-                minHeight: isMobile ? "auto" : "396px",
+                minHeight: isMobile ? "auto" : "310px",
               }}
             >
               <p
@@ -222,22 +192,17 @@ export function ProblemaQuienSoySection() {
               >
                 {context.title}
               </h3>
-              <div style={{ display: "grid", gap: "12px" }}>
-                {context.points.map((point) => (
-                  <p
-                    key={point}
-                    style={{
-                      fontFamily: "Space Grotesk, sans-serif",
-                      fontSize: "15px",
-                      lineHeight: 1.56,
-                      color: "rgba(250, 248, 244, 0.88)",
-                      margin: 0,
-                    }}
-                  >
-                    — {point}
-                  </p>
-                ))}
-              </div>
+              <p
+                style={{
+                  fontFamily: "Space Grotesk, sans-serif",
+                  fontSize: "15px",
+                  lineHeight: 1.56,
+                  color: "rgba(250, 248, 244, 0.88)",
+                  margin: 0,
+                }}
+              >
+                {context.body}
+              </p>
             </article>
           ))}
         </div>
@@ -273,7 +238,7 @@ export function ProblemaQuienSoySection() {
                 margin: 0,
               }}
             >
-              Es momento de diseñar conmigo una estructura para lo que estás construyendo.
+              Es momento de ordenar lo que estás construyendo.
             </p>
             <BrandButton to="/contacto#email">Hablemos de tu caso</BrandButton>
           </div>

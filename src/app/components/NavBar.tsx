@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { navigateWithScroll } from "../utils/navigation";
+import { AppLink } from "./AppLink";
 
 function HamburgerIcon() {
   return (
@@ -85,8 +86,9 @@ export function NavBar() {
             borderBottom: "1px solid rgba(230, 215, 198, 0.16)",
           }}
         >
-          <button
-            onClick={() => handleNavClick("/")}
+          <AppLink
+            to="/"
+            onClick={() => setMenuOpen(false)}
             style={brandStyle}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.78")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
@@ -102,7 +104,7 @@ export function NavBar() {
             >
               PAOLA ZERPA
             </span>
-          </button>
+          </AppLink>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -208,6 +210,27 @@ export function NavBar() {
                   {link.label}
                 </button>
               ))}
+              <button
+                onClick={() => handleNavClick("/contacto#email")}
+                style={{
+                  background: "var(--cta-glass-bg)",
+                  border: "1px solid var(--cta-glass-border)",
+                  borderRadius: "999px",
+                  padding: "14px 16px",
+                  textAlign: "left",
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  color: "var(--mar-profundo)",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  boxShadow: "var(--cta-glass-shadow)",
+                  backdropFilter: "blur(14px)",
+                  WebkitBackdropFilter: "blur(14px)",
+                }}
+              >
+                HABLEMOS
+              </button>
             </div>
           </div>
         )}
@@ -236,8 +259,8 @@ export function NavBar() {
         borderBottom: "1px solid rgba(230, 215, 198, 0.16)",
       }}
     >
-      <button
-        onClick={() => handleNavClick("/")}
+      <AppLink
+        to="/"
         style={brandStyle}
         onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.78")}
         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
@@ -268,7 +291,7 @@ export function NavBar() {
                 Diseñadora de productos digitales
               </span>
             )}
-      </button>
+      </AppLink>
 
       <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
         {navLinks.map((link) => (
