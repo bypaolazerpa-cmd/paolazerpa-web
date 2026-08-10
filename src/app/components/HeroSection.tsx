@@ -6,10 +6,6 @@ import { PaperNote } from "./brand/PaperNote";
 export function HeroSection() {
   const isMobile = useIsMobile();
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section
       id="hero"
@@ -236,7 +232,7 @@ export function HeroSection() {
                 justifySelf: isMobile ? "end" : "auto",
               }}
             >
-              <BrandButton variant="secondary" onClick={() => scrollTo("proyectos")}>
+              <BrandButton variant="secondary" to="/portfolio">
                 Ver portfolio ↗
               </BrandButton>
               <BrandButton variant="secondary" to="/contacto#email">

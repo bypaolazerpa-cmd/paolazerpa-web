@@ -19,6 +19,14 @@ Home:
 - `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `HomeProjectsSection`, `FooterSection`
 - `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `HomeProjectsSection`, `FooterSection`
 
+Portfolio profesional:
+- `/portfolio` → `PortfolioPage`
+- `PortfolioPage` compone hero profesional, introducción, selected work, proceso, capacidades, CTA y `FooterSection`
+- `PortfolioProjectCard` se reutiliza en Home y `/portfolio`
+- `PortfolioProjectCard` usa la variante `home` para el teaser breve y `portfolio` para el contexto profesional completo
+- [`src/app/data/portfolioProjects.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/portfolioProjects.ts) es la fuente compartida para los proyectos
+- no existe todavía `/portfolio/:slug`; la estructura queda preparada para incorporarla cuando exista el primer case study completo
+
 Páginas independientes:
 - `/guia` → `GuiaPage`
 - `/programa` → `ProgramaPage`
@@ -44,6 +52,12 @@ Home:
 - [`src/app/components/HomeMethodSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeMethodSection.tsx)
 - [`src/app/components/HomeStartSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeStartSection.tsx)
 - [`src/app/components/HomeProjectsSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeProjectsSection.tsx)
+
+Portfolio:
+- [`src/app/components/PortfolioPage.tsx`](/Users/paolazerpa/Code/paola-web/src/app/components/PortfolioPage.tsx)
+- [`src/app/components/PortfolioProjectCard.tsx`](/Users/paolazerpa/Code/paola-web/src/app/components/PortfolioProjectCard.tsx)
+- [`src/app/data/portfolioProjects.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/portfolioProjects.ts)
+- [`src/app/data/pageMetadata.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/pageMetadata.ts)
 
 Soporte compartido:
 - [`src/app/components/GuideCaptureForm.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuideCaptureForm.tsx) centraliza la captura de guía en versión completa y compacta
@@ -118,6 +132,7 @@ Guía:
 - [`src/app/data/guideCapture.ts`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/data/guideCapture.ts)
 - `GUIDE_PDF_URL` apunta al PDF estático
 - `GUIDE_CAPTURE_ENDPOINT` está vacío por defecto
+- [`src/app/data/pageMetadata.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/pageMetadata.ts) centraliza title y description de rutas con metadata específica
 
 ## 6. Estilos y assets
 
@@ -161,6 +176,7 @@ Build:
 - scripts de Vite usando `--configLoader runner`
 - CSS usando `lightningcss`
 - `npm run build` ahora ejecuta build cliente, build SSR y prerender estático por ruta
+- `scripts/prerender.mjs` reemplaza title, description y Open Graph básico por ruta antes de escribir cada HTML
 
 ## 8. Riesgos y particularidades actuales
 

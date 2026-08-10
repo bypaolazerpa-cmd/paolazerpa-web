@@ -26,6 +26,14 @@ Voz:
 Punto de entrada principal:
 - guía gratuita en `/guia`
 
+Portfolio profesional:
+- `/portfolio` es la página de presentación profesional de Paola como Product Designer.
+- el home usa un teaser y deriva a `/portfolio`.
+- el teaser del home muestra únicamente preview, identificación y una frase breve por proyecto.
+- GeStock, NODUX y Sistemas de operación de tienda son los proyectos destacados iniciales.
+- Cosmic Studio aparece como trabajo secundario.
+- los previews visuales actuales son placeholders intencionales y deben reemplazarse por screenshots reales antes de presentar casos completos.
+
 Canales de acción:
 - WhatsApp como CTA principal
 - email como canal secundario
@@ -40,6 +48,7 @@ Páginas y secciones que convierten:
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
 - [`src/app/components/ContactoPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ContactoPage.tsx)
 - [`src/app/components/ProgramaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProgramaPage.tsx)
+- [`src/app/components/PortfolioPage.tsx`](/Users/paolazerpa/Code/paola-web/src/app/components/PortfolioPage.tsx)
 
 Estado actual de `/contacto`:
 - WhatsApp se mantiene como acción principal de inicio de conversación

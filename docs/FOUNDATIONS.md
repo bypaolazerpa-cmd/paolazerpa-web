@@ -35,6 +35,12 @@ Snapshot de estructura visible en home:
 - portfolio como archivo/carrusel con cuatro casos: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda
 - footer mínimo
 
+Evolución aprobada de portfolio:
+- `/` conserva la función de marca personal y servicios.
+- `/portfolio` concentra la presentación profesional de Product Design.
+- el home muestra un teaser de proyectos y deriva al portfolio completo.
+- los proyectos viven en una fuente de datos compartida; los case studies individuales quedan fuera de esta fase.
+
 No es este proyecto:
 - una app con backend
 - un CMS
@@ -103,6 +109,7 @@ Reglas visuales observadas en la implementación:
 
 Rutas activas:
 - `/`
+- `/portfolio`
 - `/guia`
 - `/notas`
 - `/notas/:slug`
