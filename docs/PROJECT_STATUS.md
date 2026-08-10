@@ -119,6 +119,34 @@ Conversión:
 - Se verificaron las rutas públicas en 390px y 1440px sin overflow ni overlays, y la home en 390, 430, 768, 1024, 1280 y 1440px.
 - `npm run build` pasa; permanecen únicamente los warnings SSR conocidos de `useLayoutEffect`.
 
+## 6.0.1. Pasada de contenido, estructura e interacción — 2026-08-10
+
+- El hero explicita `Paola Zerpa · Product Designer` y usa el copy definitivo de productos digitales, manteniendo un único H1, bajada y CTA por breakpoint.
+- La sección de problema ahora presenta tres problemas observables de operación, producto y crecimiento/estructura, con una explicación breve por card.
+- Mi enfoque usa el headline `Primero entiendo cómo funciona. Después diseño cómo mejorarlo.` y un único bloque de copy sobre el video.
+- Servicios prioriza `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; sistemas personales queda como oferta secundaria.
+- Método y Cómo empezamos fueron ajustados al copy definitivo del brief.
+- Home muestra únicamente GeStock, NODUX y Sistemas de operación de tienda; sus cards son clickeables hacia anchors estables de `/portfolio` y tienen hover/focus sutil con soporte para `prefers-reduced-motion`.
+- Navbar desktop y mobile comparten labels y destinos; `INICIO` y `PORTFOLIO` son los únicos estados activos de ruta.
+- Se validaron previews, overflow y anchors en 390px y 1440px, además de Home en 430, 768, 1024 y 1280px.
+
+## 6.0.2. Refinamiento puntual de Home — 2026-08-10
+
+- `ProblemaQuienSoySection` usa un headline más breve, elimina el subtítulo y mantiene tres situaciones observables con copy único.
+- `HomeApproachSection` redujo el bloque sobre video a dos ideas: statement y explicación complementaria.
+- La oferta de sistemas personales conserva su jerarquía secundaria, pero recupera identidad visual mediante label, acento rosa, grilla sutil y forma decorativa existentes.
+- Las tres cards del portfolio en Home comparten altura en filas desktop/tablet, preview `16 / 10`, estructura interna y espacio reservado para el CTA de hover; mobile conserva el componente único sin forzar alturas artificiales.
+- Se verificó que el hover mantenga las alturas `[463, 463, 463]` en desktop y no genere layout shift.
+
+## 6.0.3. Alineación profesional de `/portfolio` — 2026-08-10
+
+- Se eliminó la sección independiente `02 — Introducción` para llevar Selected Work antes en el recorrido.
+- El mensaje profesional de productos digitales ahora vive en el hero de `/portfolio`, compartido con Home.
+- Selected Work pasó a `02`, Otros proyectos usa español y el resto de secciones quedó numerado `03`, `04` y `05`.
+- Se retiraron los estados visibles de las cards sin modificar datos, tags, previews ni anchors.
+- Forma de trabajar y Capacidades redujeron moderadamente su padding vertical para conservar el protagonismo de los proyectos.
+- Se validó `/portfolio` en 390, 430, 768, 1024, 1280 y 1440px, sin overflow y con contenido consistente.
+
 ## 6.1. Bloque responsive mobile iniciado — 2026-08-04
 
 - El hero ahora fuerza una composición editorial de tres líneas, subraya `sistema` en magenta y conserva la escena completa de Paola junto a la computadora.

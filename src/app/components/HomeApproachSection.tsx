@@ -3,15 +3,8 @@ import { SectionLabel } from "./brand/SectionLabel";
 
 export function HomeApproachSection() {
   const isMobile = useIsMobile();
-  const approachTitle = [
-    "No diseño piezas sueltas.",
-    "Ordeno decisiones, procesos y personas.",
-    "Mejoro cómo se vive la experiencia.",
-  ];
-  const approachBody = [
-    "Primero entiendo cómo funciona hoy.",
-    "Después diseñamos una estructura que puedas sostener.",
-  ];
+  const approachStatement = "No diseño piezas sueltas.";
+  const approachBody = "Ordeno procesos, información y decisiones para mejorar la experiencia.";
 
   return (
     <section
@@ -50,11 +43,8 @@ export function HomeApproachSection() {
                 maxWidth: "860px",
               }}
             >
-              <span className="pz-highlight">Diseñemos el sistema</span>{" "}
-              <span>
-                que ordena y sostiene{" "}
-                <span className="approach-emphasis">lo que estás construyendo.</span>
-              </span>
+              <span className="pz-highlight">Primero entiendo cómo funciona.</span>{" "}
+              <span>Después diseño cómo mejorarlo.</span>
             </h2>
           </div>
         </div>
@@ -165,11 +155,7 @@ export function HomeApproachSection() {
                 margin: "0 0 18px",
               }}
             >
-              {approachTitle.map((line) => (
-                <span key={line} style={{ display: "block" }}>
-                  {line}
-                </span>
-              ))}
+              {approachStatement}
             </h3>
             <p
               style={{
@@ -180,11 +166,7 @@ export function HomeApproachSection() {
                 margin: 0,
               }}
             >
-              {approachBody.map((line) => (
-                <span key={line} style={{ display: "block", marginBottom: isMobile ? "2px" : "0" }}>
-                  {line}
-                </span>
-              ))}
+              {approachBody}
             </p>
           </div>
         </div>

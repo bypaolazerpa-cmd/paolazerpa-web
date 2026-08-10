@@ -5,27 +5,27 @@ const methodSteps = [
   {
     title: "Comprender",
     body:
-      "Antes de pensar en una solución, vamos a entender qué quieres lograr y cómo funciona actualmente lo que estás construyendo.",
+      "Entiendo qué necesitas resolver y cómo funciona hoy.",
   },
   {
     title: "Investigar",
     body:
-      "Busco información, referencias y casos similares para ampliar el criterio y tomar mejores decisiones para tu proyecto.",
+      "Busco información, referencias y casos que ayuden a tomar mejores decisiones.",
   },
   {
     title: "Organizar",
     body:
-      "Definimos qué necesita resolverse, qué es prioritario y qué elementos debe incluir la solución.",
+      "Defino prioridades, relaciones y qué necesita incluir la solución.",
   },
   {
     title: "Diseñar",
     body:
-      "Esa estructura se convierte en una solución concreta: sistema personal, sistema de trabajo, web, tienda online, plataforma o herramienta digital.",
+      "Convierto esa estructura en flujos, pantallas, herramientas o procesos concretos.",
   },
   {
     title: "Evolucionar",
     body:
-      "Observamos cómo funciona en la práctica para simplificar, mejorar o replantear lo necesario.",
+      "Observo cómo funciona en la práctica y ajusto lo necesario.",
   },
 ];
 

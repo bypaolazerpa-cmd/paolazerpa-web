@@ -1,4 +1,5 @@
 import { BrandButton } from "./brand/BrandButton";
+import { AppLink } from "./AppLink";
 import type { PortfolioProject } from "../data/portfolioProjects";
 
 type PortfolioProjectCardProps = {
@@ -85,13 +86,15 @@ function ProjectPreview({ project, compact }: { project: PortfolioProject; compa
 
 export function PortfolioProjectCard({ project, variant = "portfolio" }: PortfolioProjectCardProps) {
   const compact = variant === "home";
-  const statusLabel =
-    project.caseStudyStatus === "coming-soon" ? "Caso en preparación" : "Proyecto seleccionado";
 
-  return (
+  const card = (
     <article
+      id={compact ? undefined : project.slug}
+      className={compact ? "portfolio-home-card" : undefined}
       style={{
         display: "grid",
+        height: compact ? "100%" : undefined,
+        boxSizing: "border-box",
         gridTemplateColumns: compact ? "1fr" : "minmax(220px, 0.72fr) minmax(0, 1fr)",
         gap: compact ? "22px" : "34px",
         padding: compact ? "22px" : "28px",
@@ -105,7 +108,15 @@ export function PortfolioProjectCard({ project, variant = "portfolio" }: Portfol
     >
       <ProjectPreview project={project} compact={compact} />
 
-      <div style={{ display: "grid", gap: compact ? "18px" : "22px", alignContent: "start" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateRows: compact ? "minmax(0, 1fr) auto" : undefined,
+          gap: compact ? "18px" : "22px",
+          alignContent: "start",
+          minHeight: 0,
+        }}
+      >
         <div>
           <p
             style={{
@@ -186,23 +197,27 @@ export function PortfolioProjectCard({ project, variant = "portfolio" }: Portfol
               <BrandButton variant="secondary" to={`/portfolio/${project.slug}`}>
                 Ver caso ↗
               </BrandButton>
-            ) : (
-              <span
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "10px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "var(--arena-clara)",
-                }}
-              >
-                {statusLabel}
-              </span>
-            )}
+            ) : null}
           </div>
           </>
         )}
+
+        {compact && <span className="portfolio-home-card-action">Ver en portfolio ↗</span>}
       </div>
     </article>
   );
+
+  if (compact) {
+    return (
+      <AppLink
+        to={`/portfolio#${project.slug}`}
+        className="portfolio-home-card-link"
+        aria-label={`Ver ${project.title} en portfolio`}
+      >
+        {card}
+      </AppLink>
+    );
+  }
+
+  return card;
 }

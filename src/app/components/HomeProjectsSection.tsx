@@ -46,18 +46,6 @@ export function HomeProjectsSection() {
           >
             La prueba de cómo se ve un sistema cuando empieza a funcionar.
           </h2>
-          <p
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontSize: isMobile ? "17px" : "19px",
-              lineHeight: 1.55,
-              color: "rgba(230, 215, 198, 0.82)",
-              margin: 0,
-            }}
-          >
-            Una selección de proyectos donde operaciones, información y producto empiezan a
-            encontrar una forma más clara.
-          </p>
         </div>
 
         <div

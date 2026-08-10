@@ -3,10 +3,10 @@ import { BrandButton } from "./brand/BrandButton";
 import { SectionLabel } from "./brand/SectionLabel";
 
 const startSteps = [
-  ["Me cuentas el contexto", "Reviso qué estás construyendo, qué te está trabando y qué necesitas resolver."],
-  ["Tenemos una reunión", "Aterrizamos objetivos, alcance, dudas y prioridades."],
+  ["Me cuentas el contexto", "Qué estás haciendo, qué está costando y qué necesitas resolver."],
+  ["Tenemos una reunión", "Aterrizamos objetivos, alcance, prioridades y dudas."],
   ["Defino una propuesta", "Te comparto etapas, tiempos, entregables e inversión."],
-  ["Construimos la solución", "Diseño, reviso contigo y ajusto lo necesario para ponerla en marcha."],
+  ["Construimos la solución", "Diseño, revisamos juntos y ajustamos lo necesario para ponerla en marcha."],
 ];
 
 export function HomeStartSection() {
@@ -50,10 +50,10 @@ export function HomeStartSection() {
                 margin: "22px 0 0",
               }}
             >
-              Del primer diagnóstico a un plan claro de trabajo.
+              De entender el problema a empezar a construir.
             </h2>
           </div>
-          <BrandButton to="/contacto#email">Cuéntame qué estás construyendo</BrandButton>
+          <BrandButton to="/contacto#email">Cuéntame qué necesitas resolver</BrandButton>
         </div>
 
         <div
