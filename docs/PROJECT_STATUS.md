@@ -4,6 +4,8 @@ Estado vivo del proyecto observado en el repositorio.
 
 Última revisión manual: 2026-08-02
 
+Actualización de esta iteración: 2026-08-10
+
 ## 1. Línea de tiempo visible en git
 
 Commits recientes:
@@ -32,6 +34,16 @@ Interpretación:
 - el trabajo actual vuelve a ser acotado y temático, no de saneamiento general
 
 ## 3. Estado funcional actual inferido del código
+
+Portfolio:
+- existe la ruta `/portfolio` como página profesional independiente
+- Home y `/portfolio` consumen `portfolioProjects.ts` mediante `PortfolioProjectCard`
+- no existe todavía `/portfolio/:slug`
+- los previews visuales son placeholders intencionales mientras se reúnen screenshots reales
+- `/portfolio` cuenta con title, description y Open Graph básico en el HTML prerenderizado
+- el Home muestra un teaser reducido de los proyectos, con `homeSummary` separado del summary profesional
+- la navegación principal incluye `INICIO` y marca únicamente la ruta activa
+- los previews usan una proporción horizontal estable de `16 / 10` en desktop y mobile
 
 Home:
 - ya no usa el split legacy entre problema, quién soy y enfoque

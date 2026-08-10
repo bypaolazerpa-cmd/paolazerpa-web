@@ -20,6 +20,7 @@ import { BlogPage } from "./components/BlogPage";
 import { BlogNotePage } from "./components/BlogNotePage";
 import { ContactoPage } from "./components/ContactoPage";
 import { MiHistoriaPage } from "./components/MiHistoriaPage";
+import { PortfolioPage } from "./components/PortfolioPage";
 
 function Home() {
   return (
@@ -56,6 +57,7 @@ export const routeConfig: RouteObject[] = [
     Component: RootLayout,
     children: [
       { index: true, Component: Home },
+      { path: "portfolio", Component: PortfolioPage },
       { path: "guia", Component: GuiaPage },
       { path: "programa", Component: ProgramaPage },
       { path: "notas", Component: BlogPage },

@@ -147,6 +147,13 @@ select {
     0 12px 28px rgba(240, 127, 168, 0.18);
 }
 
+.pz-button:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--citron-loto);
+  outline-offset: 4px;
+}
+
 .pz-button--primary {
   background: var(--cta-glass-bg);
   color: var(--mar-profundo);

@@ -28,8 +28,9 @@ export function NavBar() {
   const location = useLocation();
 
   const navLinks = [
+    { label: "INICIO", href: "/" },
     { label: "SERVICIOS", href: "/#servicios" },
-    { label: "PORTFOLIO", href: "/#proyectos" },
+    { label: "PORTFOLIO", href: "/portfolio" },
     { label: "SOBRE MÍ", href: "/mi-historia" },
     { label: "CONTACTO", href: "/contacto" },
   ];
@@ -184,6 +185,7 @@ export function NavBar() {
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                   style={{
                     background: isActive(link.href)
                       ? "var(--cta-glass-bg)"
@@ -273,6 +275,7 @@ export function NavBar() {
           <button
             key={link.label}
             onClick={() => handleNavClick(link.href)}
+            aria-current={isActive(link.href) ? "page" : undefined}
             style={{
               background: "none",
               border: "none",
