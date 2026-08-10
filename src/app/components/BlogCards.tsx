@@ -295,63 +295,21 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
         borderRadius: "14px",
         overflow: "hidden",
         display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {isMobile ? (
-        <div style={{ display: "flex", minHeight: "150px" }}>
-          <CardImageSquare post={post} />
-          <div
-            style={{
-              padding: "18px 18px 18px 16px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              flex: 1,
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: "9px",
-                color: "#A0998E",
-                marginBottom: "8px",
-                textTransform: "uppercase",
-              }}
-            >
-              {post.date} · {post.readingTime}
-            </p>
-            <p
-              style={{
-                fontFamily: "'MuseoModerno', sans-serif",
-                fontWeight: 600,
-                fontSize: "15px",
-                color: "#1A1A2E",
-                lineHeight: "1.4",
-                marginBottom: "10px",
-              }}
-            >
-              {post.title}
-            </p>
-            <AppLink
-              to={`/notas/${post.slug}`}
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 500,
-                fontSize: "13px",
-                color: tone.accent,
-                textDecoration: "none",
-              }}
-            >
-              Leer →
-            </AppLink>
-          </div>
-        </div>
-      ) : (
-        <>
-          <CardImageVertical post={post} />
+      flexDirection: isMobile ? "row" : "column",
+    }}
+  >
+      {isMobile ? <CardImageSquare post={post} /> : <CardImageVertical post={post} />}
 
-          <div style={{ padding: "24px 24px 28px", display: "flex", flexDirection: "column", flex: 1 }}>
+      <div
+        style={{
+          padding: isMobile ? "18px 18px 18px 16px" : "24px 24px 28px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: isMobile ? "center" : "initial",
+          flex: 1,
+          minWidth: 0,
+        }}
+      >
             <div style={{ marginBottom: "12px" }}>
               <span
                 style={{
@@ -370,9 +328,9 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
               style={{
                 fontFamily: "'MuseoModerno', sans-serif",
                 fontWeight: 700,
-                fontSize: "20px",
+                fontSize: isMobile ? "15px" : "20px",
                 color: "#1A1A2E",
-                lineHeight: 1.25,
+                lineHeight: isMobile ? 1.4 : 1.25,
                 marginBottom: "12px",
               }}
             >
@@ -383,10 +341,10 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 300,
-                fontSize: "14px",
+                fontSize: isMobile ? "13px" : "14px",
                 color: "#66605A",
                 lineHeight: 1.7,
-                marginBottom: "22px",
+                marginBottom: isMobile ? "16px" : "22px",
               }}
             >
               {post.excerpt}
@@ -416,20 +374,18 @@ export function SecondaryCard({ post }: { post: BlogCardPost }) {
                 to={`/notas/${post.slug}`}
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  color: "#1A1A2E",
+                  fontSize: isMobile ? "13px" : "11px",
+                  letterSpacing: isMobile ? "0" : "2px",
+                  color: isMobile ? tone.accent : "#1A1A2E",
                   textDecoration: "none",
-                  borderBottom: "1px solid #1A1A2E",
-                  paddingBottom: "2px",
+                  borderBottom: isMobile ? "none" : "1px solid #1A1A2E",
+                  paddingBottom: isMobile ? "0" : "2px",
                 }}
               >
-                LEER →
+                Leer nota →
               </AppLink>
             </div>
-          </div>
-        </>
-      )}
+      </div>
     </div>
   );
 }
