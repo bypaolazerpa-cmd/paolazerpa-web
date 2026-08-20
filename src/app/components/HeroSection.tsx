@@ -4,6 +4,7 @@ import { BrandButton } from "./brand/BrandButton";
 
 export function HeroSection() {
   const isMobile = useIsMobile();
+  const isCompactMobile = useIsMobile(400);
   const isTablet = useIsMobile(1100) && !isMobile;
 
   return (
@@ -32,7 +33,7 @@ export function HeroSection() {
           border: "1px solid rgba(230, 215, 198, 0.18)",
           borderRadius: isMobile ? "22px" : "28px",
           overflow: "hidden",
-          minHeight: isMobile ? "calc(100svh - 100px)" : "calc(100svh - 126px)",
+          minHeight: isMobile ? "calc(100svh + 110px)" : "calc(100svh - 126px)",
           backgroundColor: "#d8c9b8",
         }}
       >
@@ -46,7 +47,7 @@ export function HeroSection() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: isMobile ? "24% center" : "center center",
+            objectPosition: isMobile ? "24% top" : "center center",
             filter: "blur(18px) saturate(0.88) contrast(0.86) brightness(1.08)",
             transform: "scale(1.08)",
             opacity: 0.9,
@@ -60,10 +61,10 @@ export function HeroSection() {
           style={{
             position: "absolute",
             top: 0,
-            bottom: 0,
+            bottom: isMobile ? "auto" : 0,
             left: 0,
             width: isMobile || isTablet ? "100%" : "75%",
-            height: "100%",
+            height: isMobile ? "58%" : "100%",
             objectFit: isMobile ? "cover" : "contain",
             objectPosition: isMobile ? "24% center" : "left center",
             filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
@@ -107,7 +108,7 @@ export function HeroSection() {
             position: "absolute",
             inset: 0,
             background: isMobile
-              ? "linear-gradient(90deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.08) 42%, rgba(12,16,14,0.6) 100%), linear-gradient(180deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.06) 30%, rgba(12,16,14,0.28) 50%, rgba(12,16,14,0.8) 78%, rgba(12,16,14,0.94) 100%)"
+              ? "linear-gradient(90deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.08) 42%, rgba(12,16,14,0.6) 100%), linear-gradient(180deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.1) 24%, rgba(12,16,14,0.42) 40%, rgba(12,16,14,0.84) 68%, rgba(12,16,14,0.96) 100%)"
               : "linear-gradient(90deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.18) 28%, rgba(12,16,14,0.16) 46%, rgba(12,16,14,0.42) 65%, rgba(12,16,14,0.72) 100%)",
           }}
         />
@@ -149,27 +150,28 @@ export function HeroSection() {
           />
         ))}
 
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            minHeight: "inherit",
-            display: "grid",
-            gridTemplateRows: "1fr auto",
-            padding: isMobile ? "28px 24px 18px" : "56px 72px 44px",
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              minHeight: "inherit",
+            display: isMobile ? "flex" : "grid",
+            flexDirection: isMobile ? "column" : undefined,
+            gridTemplateRows: isMobile ? undefined : "1fr auto",
+            padding: isMobile ? "0 24px 18px" : "56px 72px 44px",
           }}
         >
           <div
             style={{
-              alignSelf: isMobile ? "end" : "center",
+              alignSelf: isMobile ? "auto" : "center",
               display: "grid",
               gap: isMobile ? "24px" : "42px",
               width: "100%",
               maxWidth: isMobile ? "100%" : isTablet ? "500px" : "760px",
               justifySelf: isMobile ? "start" : "end",
-              marginTop: isMobile ? "0" : "-34px",
+              marginTop: isMobile ? "40svh" : "-34px",
               marginRight: isMobile ? "0" : isTablet ? "3%" : "6%",
-              marginBottom: isMobile ? "18px" : "0",
+              marginBottom: isMobile ? "24px" : "0",
             }}
           >
             <div style={{ display: "grid", gap: isMobile ? "18px" : "26px" }}>
@@ -196,7 +198,7 @@ export function HeroSection() {
               <h1
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? "28px" : isTablet ? "32px" : "50px",
+                  fontSize: isMobile ? (isCompactMobile ? "21px" : "24px") : isTablet ? "32px" : "50px",
                   fontWeight: 600,
                   lineHeight: isMobile ? 1.08 : 1.02,
                   color: "var(--arena-clara)",
@@ -291,6 +293,7 @@ export function HeroSection() {
               gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) auto",
               gap: isMobile ? "20px" : "30px",
               alignItems: "end",
+              marginTop: isMobile ? "auto" : "0",
             }}
           >
             <div
