@@ -30,9 +30,9 @@ export function NavBar() {
 
   const navLinks = [
     { label: "INICIO", href: "/" },
-    { label: "SERVICIOS", href: "/#servicios" },
     { label: "PORTFOLIO", href: "/portfolio" },
     { label: "SOBRE MÍ", href: "/mi-historia" },
+    { label: "NOTAS", href: "/notas" },
     { label: "CONTACTO", href: "/contacto" },
   ];
 

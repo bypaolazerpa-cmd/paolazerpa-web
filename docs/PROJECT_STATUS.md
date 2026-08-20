@@ -58,7 +58,7 @@ Navegación:
 - usa botones y navegación programática con scroll al inicio
 - `AppLink` abstrae el comportamiento de enlaces internos
 - la transición entre páginas se resuelve globalmente desde el layout raíz con CSS
-- la navegación principal visible hoy expone `Inicio`, `Mi historia`, `Notas` y `Contacto`
+- la navegación principal visible hoy expone `Inicio`, `Portfolio`, `Sobre mí`, `Notas` y `Contacto`; `Hablemos` funciona como CTA diferenciado hacia `/contacto`
 - `/guia` y `/programa` siguen vivas por URL directa, pero fuera del menú principal
 
 Conversión:

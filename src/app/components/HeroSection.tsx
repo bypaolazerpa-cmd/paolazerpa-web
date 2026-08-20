@@ -1,10 +1,11 @@
 import { useIsMobile } from "../hooks/useIsMobile";
 import imageHero from "../../assets/paola-problema-scene.jpg";
 import { BrandButton } from "./brand/BrandButton";
-import { PaperNote } from "./brand/PaperNote";
 
 export function HeroSection() {
   const isMobile = useIsMobile();
+  const isCompactMobile = useIsMobile(400);
+  const isTablet = useIsMobile(1100) && !isMobile;
 
   return (
     <section
@@ -32,7 +33,7 @@ export function HeroSection() {
           border: "1px solid rgba(230, 215, 198, 0.18)",
           borderRadius: isMobile ? "22px" : "28px",
           overflow: "hidden",
-          minHeight: isMobile ? "calc(100svh - 100px)" : "calc(100svh - 126px)",
+          minHeight: isMobile ? "calc(100svh + 110px)" : "calc(100svh - 126px)",
           backgroundColor: "#d8c9b8",
         }}
       >
@@ -46,10 +47,10 @@ export function HeroSection() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: isMobile ? "center center" : "center top",
-            filter: "blur(24px) saturate(0.9) contrast(0.86) brightness(1.12)",
-            transform: "scale(1.12)",
-            opacity: 0.92,
+            objectPosition: isMobile ? "16% top" : "center center",
+            filter: "blur(18px) saturate(0.88) contrast(0.86) brightness(1.08)",
+            transform: "scale(1.08)",
+            opacity: 0.9,
           }}
         />
 
@@ -60,15 +61,31 @@ export function HeroSection() {
           style={{
             position: "absolute",
             top: 0,
-            bottom: 0,
+            bottom: isMobile ? "auto" : 0,
             left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: isMobile ? "center center" : "center top",
+            width: isMobile || isTablet ? "100%" : "75%",
+            height: isMobile ? "58%" : "100%",
+            objectFit: isMobile ? "cover" : "contain",
+            objectPosition: isMobile ? "16% center" : "left center",
             filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
-            WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
-            maskImage: "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+            WebkitMaskImage: isMobile
+              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)"
+              : "linear-gradient(90deg, #000 0%, #000 44%, rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.16) 76%, transparent 88%)",
+            maskImage: isMobile
+              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)"
+              : "linear-gradient(90deg, #000 0%, #000 44%, rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.16) 76%, transparent 88%)",
+          }}
+        />
+
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: isMobile
+              ? "radial-gradient(ellipse at 52% 62%, rgba(12,16,14,0.5) 0%, rgba(12,16,14,0.3) 38%, rgba(12,16,14,0.1) 66%, transparent 86%)"
+              : "radial-gradient(ellipse at 66% 43%, rgba(12,16,14,0.48) 0%, rgba(12,16,14,0.3) 38%, rgba(12,16,14,0.1) 66%, transparent 86%)",
+            pointerEvents: "none",
           }}
         />
 
@@ -77,10 +94,10 @@ export function HeroSection() {
           style={{
             position: "absolute",
             inset: isMobile ? "auto -18px -18px" : "auto -60px -26px",
-            height: isMobile ? "34%" : "38%",
-            background:
-              "linear-gradient(180deg, rgba(12,16,14,0) 0%, rgba(12,16,14,0.4) 42%, rgba(12,16,14,0.72) 100%)",
-            backdropFilter: "blur(8px)",
+            height: isMobile ? "46%" : "18%",
+            background: isMobile
+              ? "linear-gradient(180deg, rgba(12,16,14,0) 0%, rgba(12,16,14,0.18) 34%, rgba(12,16,14,0.7) 72%, rgba(12,16,14,0.9) 100%)"
+              : "linear-gradient(180deg, rgba(12,16,14,0) 0%, rgba(12,16,14,0.32) 54%, rgba(12,16,14,0.68) 100%)",
             WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 20%, #000 100%)",
             maskImage: "linear-gradient(180deg, transparent 0%, #000 20%, #000 100%)",
           }}
@@ -91,7 +108,7 @@ export function HeroSection() {
             position: "absolute",
             inset: 0,
             background: isMobile
-              ? "linear-gradient(90deg, rgba(12,16,14,0.08) 0%, rgba(12,16,14,0.28) 34%, rgba(12,16,14,0.62) 72%, rgba(12,16,14,0.72) 100%), linear-gradient(180deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.06) 42%, rgba(12,16,14,0.62) 100%)"
+              ? "linear-gradient(90deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.08) 42%, rgba(12,16,14,0.6) 100%), linear-gradient(180deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.1) 24%, rgba(12,16,14,0.42) 40%, rgba(12,16,14,0.84) 68%, rgba(12,16,14,0.96) 100%)"
               : "linear-gradient(90deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.18) 28%, rgba(12,16,14,0.16) 46%, rgba(12,16,14,0.42) 65%, rgba(12,16,14,0.72) 100%)",
           }}
         />
@@ -133,29 +150,31 @@ export function HeroSection() {
           />
         ))}
 
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            minHeight: "inherit",
-            display: "grid",
-            gridTemplateRows: "1fr auto",
-            padding: isMobile ? "28px 18px 20px" : "56px 72px 44px",
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              minHeight: "inherit",
+            display: isMobile ? "flex" : "grid",
+            flexDirection: isMobile ? "column" : undefined,
+            gridTemplateRows: isMobile ? undefined : "1fr auto",
+            padding: isMobile ? "0 24px 18px" : "56px 72px 44px",
           }}
         >
           <div
             style={{
-              alignSelf: "center",
+              alignSelf: isMobile ? "auto" : "center",
               display: "grid",
-              gap: isMobile ? "24px" : "34px",
+              gap: isMobile ? "24px" : "42px",
               width: "100%",
-              maxWidth: isMobile ? "calc(100vw - 48px)" : "650px",
-              justifySelf: isMobile ? "end" : "end",
-              marginTop: isMobile ? "-26px" : "-34px",
-              marginRight: isMobile ? "0" : "6%",
+              maxWidth: isMobile ? "100%" : isTablet ? "500px" : "760px",
+              justifySelf: isMobile ? "start" : "end",
+              marginTop: isMobile ? "40svh" : "-34px",
+              marginRight: isMobile ? "0" : isTablet ? "3%" : "6%",
+              marginBottom: isMobile ? "24px" : "0",
             }}
           >
-            <div style={{ display: "grid", gap: isMobile ? "14px" : "18px" }}>
+            <div style={{ display: "grid", gap: isMobile ? "18px" : "26px" }}>
               <p
                 style={{
                   justifySelf: "start",
@@ -166,7 +185,7 @@ export function HeroSection() {
                   textTransform: "uppercase",
                   color: "var(--citron-loto)",
                   margin: 0,
-                  textAlign: isMobile ? "right" : "left",
+                  textAlign: "left",
                   textDecorationLine: "underline",
                   textDecorationColor: "rgba(240, 127, 168, 0.68)",
                   textDecorationThickness: "1px",
@@ -179,63 +198,90 @@ export function HeroSection() {
               <h1
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? "26px" : "50px",
+                  fontSize: isMobile ? (isCompactMobile ? "21px" : "24px") : isTablet ? "32px" : "50px",
                   fontWeight: 600,
-                  lineHeight: isMobile ? 1.02 : 0.98,
+                  lineHeight: isMobile ? 1.08 : 1.02,
                   color: "var(--arena-clara)",
                   margin: 0,
                   letterSpacing: 0,
-                  maxWidth: isMobile ? "calc(100vw - 48px)" : "650px",
-                  textAlign: isMobile ? "right" : "left",
+                  maxWidth: isMobile ? "100%" : isTablet ? "500px" : "760px",
+                  textAlign: "left",
                   textShadow: "0 12px 32px rgba(12,16,14,0.3)",
                 }}
               >
-                <span style={{ display: "block" }}>Todo lo que construyes</span>
-                <span style={{ display: "block" }}>
-                  depende del <span className="hero-system-word">sistema</span>
+                <span
+                  style={{
+                    display: "block",
+                    whiteSpace: isMobile ? "normal" : "nowrap",
+                    fontSize: "inherit",
+                    fontWeight: "inherit",
+                    lineHeight: "inherit",
+                  }}
+                >
+                  Diseño experiencias digitales
                 </span>
-                <span style={{ display: "block" }}>que hay detrás.</span>
+                <span
+                  style={{
+                    display: "block",
+                    marginTop: isMobile ? "4px" : "8px",
+                    fontSize: "inherit",
+                    fontWeight: "inherit",
+                    lineHeight: "inherit",
+                  }}
+                >
+                  que acompañan procesos
+                </span>
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "inherit",
+                    fontWeight: "inherit",
+                    lineHeight: "inherit",
+                  }}
+                >
+                  y permiten tomar decisiones.
+                </span>
               </h1>
 
               <p
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? "15px" : "18px",
+                  fontSize: isMobile ? "15px" : "17px",
                   fontWeight: 400,
-                  lineHeight: isMobile ? 1.48 : 1.5,
+                  lineHeight: isMobile ? 1.48 : 1.56,
                   color: "rgba(250, 248, 244, 0.96)",
                   margin: 0,
-                  maxWidth: isMobile ? "calc(100vw - 48px)" : "500px",
-                  textAlign: isMobile ? "right" : "left",
+                  maxWidth: isMobile ? "100%" : isTablet ? "430px" : "620px",
+                  textAlign: "left",
                   textShadow: "0 2px 18px rgba(12,16,14,0.72)",
-                  background: "rgba(12, 16, 14, 0.16)",
-                  borderRadius: "8px",
-                  padding: isMobile ? "0" : "8px 10px",
-                  backdropFilter: isMobile ? "none" : "blur(6px)",
-                  WebkitBackdropFilter: isMobile ? "none" : "blur(6px)",
+                  background: "transparent",
+                  padding: 0,
                 }}
               >
-                Diseño productos digitales que ordenan procesos, información y decisiones para
-                hacerlos más claros y fáciles de usar.
+                Trabajo el producto como un todo: quién lo usa, qué necesita lograr con él, qué
+                información necesita para avanzar y cómo todo eso define el recorrido, las
+                interacciones y la interfaz.
               </p>
             </div>
 
             <div
+              className="hero-cta-buttons"
               style={{
                 display: "flex",
-                flexDirection: isMobile ? "column" : "row",
-                gap: "14px",
-                alignItems: isMobile ? "flex-end" : "center",
-                justifyContent: isMobile ? "stretch" : "flex-start",
-                width: isMobile ? "270px" : "auto",
-                maxWidth: isMobile ? "calc(100vw - 48px)" : "none",
-                justifySelf: isMobile ? "end" : "auto",
+                flexDirection: "row",
+                flexWrap: isMobile ? "wrap" : "nowrap",
+                gap: isMobile ? "10px" : "14px",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                width: "100%",
+                maxWidth: isMobile ? "100%" : "none",
+                justifySelf: "start",
               }}
             >
               <BrandButton variant="secondary" to="/portfolio">
                 Ver portfolio ↗
               </BrandButton>
-              <BrandButton variant="secondary" to="/contacto#email">
+              <BrandButton variant="secondary" to="/contacto">
                 Hablemos ↗
               </BrandButton>
             </div>
@@ -243,35 +289,21 @@ export function HeroSection() {
 
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) auto",
-              gap: isMobile ? "20px" : "30px",
-              alignItems: "end",
+              position: "absolute",
+              left: "50%",
+              bottom: isMobile ? "26px" : "32px",
+              transform: "translateX(-50%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <div
               style={{
                 display: "flex",
-                flexDirection: isMobile ? "column" : "row",
-                gap: isMobile ? "14px" : "34px",
-                alignItems: isMobile ? "flex-start" : "end",
+                justifyContent: isMobile ? "flex-start" : "flex-end",
               }}
             >
-              <p
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: isMobile ? "10px" : "12px",
-                  fontWeight: 700,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "rgba(230, 215, 198, 0.92)",
-                  margin: 0,
-                }}
-              >
-                <span style={{ color: "var(--citron-loto)" }}>○</span> Diseño sistémico · Producto
-                digital · Procesos · Personas
-              </p>
-
               <button
                 onClick={() => scrollTo("problema")}
                 style={{
@@ -279,8 +311,8 @@ export function HeroSection() {
                     "linear-gradient(180deg, rgba(250,248,244,0.82) 0%, rgba(230,215,198,0.94) 100%)",
                   border: "1px solid rgba(250, 248, 244, 0.72)",
                   borderRadius: "999px",
-                  width: isMobile ? "54px" : "64px",
-                  height: isMobile ? "54px" : "64px",
+                  width: isMobile ? "44px" : "64px",
+                  height: isMobile ? "44px" : "64px",
                   color: "var(--mar-profundo)",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "0",
@@ -298,16 +330,6 @@ export function HeroSection() {
                 <span className="pz-scroll-mouse" aria-hidden="true" />
               </button>
             </div>
-
-            <PaperNote
-              style={{
-                maxWidth: isMobile ? "238px" : "270px",
-                justifySelf: isMobile ? "end" : "end",
-                transform: "rotate(2.5deg)",
-              }}
-            >
-              Diseño que ordena y conecta.
-            </PaperNote>
           </div>
         </div>
       </div>

@@ -168,6 +168,16 @@ a:focus-visible {
   box-shadow: var(--cta-glass-shadow);
 }
 
+@media (max-width: 768px) {
+  .hero-cta-buttons .pz-button {
+    min-height: 42px;
+    padding: 0 14px;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+}
+
 .pz-paper-note {
   position: relative;
   display: inline-block;
