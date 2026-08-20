@@ -289,11 +289,13 @@ export function HeroSection() {
 
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) auto",
-              gap: isMobile ? "20px" : "30px",
-              alignItems: "end",
-              marginTop: isMobile ? "auto" : "0",
+              position: "absolute",
+              left: "50%",
+              bottom: isMobile ? "26px" : "32px",
+              transform: "translateX(-50%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <div
@@ -309,8 +311,8 @@ export function HeroSection() {
                     "linear-gradient(180deg, rgba(250,248,244,0.82) 0%, rgba(230,215,198,0.94) 100%)",
                   border: "1px solid rgba(250, 248, 244, 0.72)",
                   borderRadius: "999px",
-                  width: isMobile ? "48px" : "64px",
-                  height: isMobile ? "48px" : "64px",
+                  width: isMobile ? "44px" : "64px",
+                  height: isMobile ? "44px" : "64px",
                   color: "var(--mar-profundo)",
                   fontFamily: "Space Mono, monospace",
                   fontSize: "0",
@@ -322,7 +324,6 @@ export function HeroSection() {
                   boxShadow: "inset 0 1px 0 rgba(255,255,255,0.42), 0 12px 24px rgba(12,16,14,0.18)",
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
-                  marginTop: isMobile ? "4px" : "0",
                 }}
                 aria-label="Scroll para explorar"
               >
