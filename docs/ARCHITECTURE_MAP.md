@@ -41,7 +41,7 @@ Navegación:
 - [`src/app/components/NavBar.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/NavBar.tsx)
 - [`src/app/components/AppLink.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/AppLink.tsx)
 - [`src/app/utils/navigation.ts`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/utils/navigation.ts)
-- hoy la navegación principal visible expone `Inicio`, `Mi historia`, `Notas` y `Contacto`
+- hoy la navegación principal visible expone `Inicio`, `Portfolio`, `Sobre mí`, `Notas` y `Contacto`; `Hablemos` funciona como CTA diferenciado hacia `/contacto`
 - `/guia` y `/programa` siguen como rutas públicas directas, pero quedan fuera del menú principal
 
 Home:

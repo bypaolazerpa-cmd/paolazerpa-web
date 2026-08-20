@@ -1,7 +1,6 @@
 import { useIsMobile } from "../hooks/useIsMobile";
 import imageHero from "../../assets/paola-problema-scene.jpg";
 import { BrandButton } from "./brand/BrandButton";
-import { PaperNote } from "./brand/PaperNote";
 
 export function HeroSection() {
   const isMobile = useIsMobile();
@@ -46,10 +45,10 @@ export function HeroSection() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: isMobile ? "center center" : "center top",
-            filter: "blur(24px) saturate(0.9) contrast(0.86) brightness(1.12)",
-            transform: "scale(1.12)",
-            opacity: 0.92,
+            objectPosition: isMobile ? "24% center" : "center center",
+            filter: "blur(18px) saturate(0.88) contrast(0.86) brightness(1.08)",
+            transform: "scale(1.08)",
+            opacity: 0.9,
           }}
         />
 
@@ -64,11 +63,15 @@ export function HeroSection() {
             left: 0,
             width: "100%",
             height: "100%",
-            objectFit: "cover",
-            objectPosition: isMobile ? "center center" : "center top",
+            objectFit: isMobile ? "cover" : "contain",
+            objectPosition: isMobile ? "24% center" : "left center",
             filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
-            WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
-            maskImage: "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+            WebkitMaskImage: isMobile
+              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)"
+              : "linear-gradient(90deg, #000 0%, #000 46%, rgba(0,0,0,0.82) 57%, rgba(0,0,0,0.18) 70%, transparent 76%)",
+            maskImage: isMobile
+              ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)"
+              : "linear-gradient(90deg, #000 0%, #000 46%, rgba(0,0,0,0.82) 57%, rgba(0,0,0,0.18) 70%, transparent 76%)",
           }}
         />
 
@@ -147,9 +150,9 @@ export function HeroSection() {
             style={{
               alignSelf: "center",
               display: "grid",
-              gap: isMobile ? "24px" : "34px",
+              gap: isMobile ? "24px" : "30px",
               width: "100%",
-              maxWidth: isMobile ? "calc(100vw - 48px)" : "650px",
+              maxWidth: isMobile ? "calc(100vw - 48px)" : "760px",
               justifySelf: isMobile ? "end" : "end",
               marginTop: isMobile ? "-26px" : "-34px",
               marginRight: isMobile ? "0" : "6%",
@@ -179,33 +182,50 @@ export function HeroSection() {
               <h1
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? "26px" : "50px",
+                  fontSize: isMobile ? "28px" : "50px",
                   fontWeight: 600,
-                  lineHeight: isMobile ? 1.02 : 0.98,
+                  lineHeight: isMobile ? 1.08 : 1.02,
                   color: "var(--arena-clara)",
                   margin: 0,
                   letterSpacing: 0,
-                  maxWidth: isMobile ? "calc(100vw - 48px)" : "650px",
+                  maxWidth: isMobile ? "calc(100vw - 48px)" : "760px",
                   textAlign: isMobile ? "right" : "left",
                   textShadow: "0 12px 32px rgba(12,16,14,0.3)",
                 }}
               >
-                <span style={{ display: "block" }}>Todo lo que construyes</span>
-                <span style={{ display: "block" }}>
-                  depende del <span className="hero-system-word">sistema</span>
+                <span
+                  style={{
+                    display: "block",
+                    whiteSpace: isMobile ? "normal" : "nowrap",
+                    fontSize: isMobile ? "1em" : "1em",
+                    lineHeight: 1,
+                  }}
+                >
+                  Diseño experiencias digitales
                 </span>
-                <span style={{ display: "block" }}>que hay detrás.</span>
+                <span
+                  style={{
+                    display: "block",
+                    marginTop: isMobile ? "8px" : "12px",
+                    fontSize: isMobile ? "0.82em" : "0.72em",
+                    lineHeight: 1.08,
+                    fontWeight: 500,
+                    maxWidth: isMobile ? "100%" : "670px",
+                  }}
+                >
+                  que acompañan procesos y permiten tomar decisiones.
+                </span>
               </h1>
 
               <p
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? "15px" : "18px",
+                  fontSize: isMobile ? "15px" : "17px",
                   fontWeight: 400,
-                  lineHeight: isMobile ? 1.48 : 1.5,
+                  lineHeight: isMobile ? 1.48 : 1.56,
                   color: "rgba(250, 248, 244, 0.96)",
                   margin: 0,
-                  maxWidth: isMobile ? "calc(100vw - 48px)" : "500px",
+                  maxWidth: isMobile ? "calc(100vw - 48px)" : "590px",
                   textAlign: isMobile ? "right" : "left",
                   textShadow: "0 2px 18px rgba(12,16,14,0.72)",
                   background: "rgba(12, 16, 14, 0.16)",
@@ -215,8 +235,9 @@ export function HeroSection() {
                   WebkitBackdropFilter: isMobile ? "none" : "blur(6px)",
                 }}
               >
-                Diseño productos digitales que ordenan procesos, información y decisiones para
-                hacerlos más claros y fáciles de usar.
+                Trabajo el producto como un todo: quién lo usa, qué necesita lograr con él, qué
+                información necesita para avanzar y cómo todo eso define el recorrido, las
+                interacciones y la interfaz.
               </p>
             </div>
 
@@ -235,7 +256,7 @@ export function HeroSection() {
               <BrandButton variant="secondary" to="/portfolio">
                 Ver portfolio ↗
               </BrandButton>
-              <BrandButton variant="secondary" to="/contacto#email">
+              <BrandButton variant="secondary" to="/contacto">
                 Hablemos ↗
               </BrandButton>
             </div>
@@ -252,26 +273,9 @@ export function HeroSection() {
             <div
               style={{
                 display: "flex",
-                flexDirection: isMobile ? "column" : "row",
-                gap: isMobile ? "14px" : "34px",
-                alignItems: isMobile ? "flex-start" : "end",
+                justifyContent: isMobile ? "flex-start" : "flex-end",
               }}
             >
-              <p
-                style={{
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: isMobile ? "10px" : "12px",
-                  fontWeight: 700,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "rgba(230, 215, 198, 0.92)",
-                  margin: 0,
-                }}
-              >
-                <span style={{ color: "var(--citron-loto)" }}>○</span> Diseño sistémico · Producto
-                digital · Procesos · Personas
-              </p>
-
               <button
                 onClick={() => scrollTo("problema")}
                 style={{
@@ -298,16 +302,6 @@ export function HeroSection() {
                 <span className="pz-scroll-mouse" aria-hidden="true" />
               </button>
             </div>
-
-            <PaperNote
-              style={{
-                maxWidth: isMobile ? "238px" : "270px",
-                justifySelf: isMobile ? "end" : "end",
-                transform: "rotate(2.5deg)",
-              }}
-            >
-              Diseño que ordena y conecta.
-            </PaperNote>
           </div>
         </div>
       </div>

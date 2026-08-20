@@ -119,9 +119,11 @@ Rutas activas:
 
 Navegación visible:
 - `Inicio`
-- `Mi historia`
+- `Portfolio`
+- `Sobre mí`
 - `Notas`
 - `Contacto`
+- CTA diferenciado: `Hablemos`
 
 Rutas públicas secundarias fuera de navegación principal:
 - `/guia` sigue activa y accesible por URL directa
