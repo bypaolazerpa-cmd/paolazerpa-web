@@ -47,7 +47,7 @@ export function HeroSection() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: isMobile ? "24% top" : "center center",
+            objectPosition: isMobile ? "16% top" : "center center",
             filter: "blur(18px) saturate(0.88) contrast(0.86) brightness(1.08)",
             transform: "scale(1.08)",
             opacity: 0.9,
@@ -66,7 +66,7 @@ export function HeroSection() {
             width: isMobile || isTablet ? "100%" : "75%",
             height: isMobile ? "58%" : "100%",
             objectFit: isMobile ? "cover" : "contain",
-            objectPosition: isMobile ? "24% center" : "left center",
+            objectPosition: isMobile ? "16% center" : "left center",
             filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
             WebkitMaskImage: isMobile
               ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)"
