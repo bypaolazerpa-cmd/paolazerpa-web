@@ -4,17 +4,25 @@ import type { PortfolioProject } from "../data/portfolioProjects";
 
 type PortfolioProjectCardProps = {
   project: PortfolioProject;
-  variant?: "home" | "portfolio";
+  variant?: "home" | "home-selected" | "portfolio";
 };
 
-function ProjectPreview({ project, compact }: { project: PortfolioProject; compact: boolean }) {
+function ProjectPreview({
+  project,
+  compact,
+  emphasis = false,
+}: {
+  project: PortfolioProject;
+  compact: boolean;
+  emphasis?: boolean;
+}) {
   return (
     <div
       role="img"
       aria-label={project.imageAlt ?? `Preview provisional de ${project.title}`}
       style={{
         width: "100%",
-        aspectRatio: "16 / 10",
+        aspectRatio: emphasis ? "15 / 10" : "16 / 10",
         position: "relative",
         overflow: "hidden",
         borderRadius: "8px",
@@ -85,19 +93,21 @@ function ProjectPreview({ project, compact }: { project: PortfolioProject; compa
 }
 
 export function PortfolioProjectCard({ project, variant = "portfolio" }: PortfolioProjectCardProps) {
+  const selectedHome = variant === "home-selected";
   const compact = variant === "home";
 
   const card = (
     <article
       id={compact ? undefined : project.slug}
-      className={compact ? "portfolio-home-card" : undefined}
+      className={compact ? "portfolio-home-card" : selectedHome ? "portfolio-home-card portfolio-home-card--selected" : undefined}
       style={{
         display: "grid",
         height: compact ? "100%" : undefined,
         boxSizing: "border-box",
-        gridTemplateColumns: compact ? "1fr" : "minmax(220px, 0.72fr) minmax(0, 1fr)",
-        gap: compact ? "22px" : "34px",
-        padding: compact ? "22px" : "28px",
+        gridTemplateColumns: compact || selectedHome ? "1fr" : "minmax(220px, 0.72fr) minmax(0, 1fr)",
+        gridTemplateRows: selectedHome ? "auto auto auto" : undefined,
+        gap: compact ? "22px" : selectedHome ? "14px" : "34px",
+        padding: compact ? "22px" : selectedHome ? "20px" : "28px",
         border: "1px solid rgba(230, 215, 198, 0.22)",
         borderTop: `3px solid ${project.featured ? "var(--magenta)" : "var(--citron-loto)"}`,
         borderRadius: "8px",
@@ -106,15 +116,16 @@ export function PortfolioProjectCard({ project, variant = "portfolio" }: Portfol
         boxShadow: "inset 0 1px 0 rgba(250,248,244,0.1)",
       }}
     >
-      <ProjectPreview project={project} compact={compact} />
+      {selectedHome ? null : <ProjectPreview project={project} compact={compact} />}
 
       <div
         style={{
           display: "grid",
           gridTemplateRows: compact ? "minmax(0, 1fr) auto" : undefined,
-          gap: compact ? "18px" : "22px",
+          gap: compact ? "18px" : selectedHome ? "0" : "22px",
           alignContent: "start",
           minHeight: 0,
+          minWidth: 0,
         }}
       >
         <div>
@@ -125,20 +136,20 @@ export function PortfolioProjectCard({ project, variant = "portfolio" }: Portfol
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               color: project.featured ? "var(--magenta)" : "var(--citron-loto)",
-              margin: "0 0 14px",
+              margin: "0 0 10px",
               fontWeight: 700,
             }}
           >
-            {project.number} — {project.category}
+              {selectedHome ? project.homeContext : `${project.number} — ${project.category}`}
           </p>
           <h3
             style={{
               fontFamily: "Space Grotesk, sans-serif",
               fontWeight: 600,
-              fontSize: compact ? "30px" : "42px",
+              fontSize: compact ? "30px" : selectedHome ? "34px" : "42px",
               color: "var(--arena-clara)",
               lineHeight: 1.02,
-              margin: "0 0 14px",
+              margin: "0 0 12px",
             }}
           >
             {project.title}
@@ -152,11 +163,12 @@ export function PortfolioProjectCard({ project, variant = "portfolio" }: Portfol
               margin: 0,
             }}
           >
-            {compact ? project.homeSummary : project.summary}
+            {compact || selectedHome ? project.homeSummary : project.summary}
           </p>
+
         </div>
 
-        {!compact && (
+        {!compact && !selectedHome && (
           <>
             <p
               style={{
@@ -204,10 +216,12 @@ export function PortfolioProjectCard({ project, variant = "portfolio" }: Portfol
 
         {compact && <span className="portfolio-home-card-action">Ver en portfolio ↗</span>}
       </div>
+      {selectedHome && <ProjectPreview project={project} compact={false} emphasis />}
+      {selectedHome && <span className="portfolio-home-card-action">Ver en portfolio ↗</span>}
     </article>
   );
 
-  if (compact) {
+  if (compact || selectedHome) {
     return (
       <AppLink
         to={`/portfolio#${project.slug}`}

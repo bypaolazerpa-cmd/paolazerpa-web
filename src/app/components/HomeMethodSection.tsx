@@ -4,33 +4,29 @@ import { SectionLabel } from "./brand/SectionLabel";
 const methodSteps = [
   {
     title: "Comprender",
-    body:
-      "Entiendo qué necesitas resolver y cómo funciona hoy.",
+    body: "Entiendo qué necesitamos resolver, para quién, qué ocurre hoy y qué resultado buscamos.",
   },
   {
     title: "Investigar",
-    body:
-      "Busco información, referencias y casos que ayuden a tomar mejores decisiones.",
+    body: "Busco evidencia, referencias y contexto para reducir incertidumbre antes de tomar decisiones.",
   },
   {
     title: "Organizar",
-    body:
-      "Defino prioridades, relaciones y qué necesita incluir la solución.",
+    body: "Defino prioridades, relaciones, información, recorridos y qué necesita contemplar la solución.",
   },
   {
     title: "Diseñar",
-    body:
-      "Convierto esa estructura en flujos, pantallas, herramientas o procesos concretos.",
+    body: "Llevo esas decisiones a flujos, interacciones, pantallas, componentes o herramientas concretas.",
   },
   {
     title: "Evolucionar",
-    body:
-      "Observo cómo funciona en la práctica y ajusto lo necesario.",
+    body: "Observo cómo funciona lo diseñado, incorporo nueva evidencia y vuelvo sobre decisiones cuando hace falta.",
   },
 ];
 
 export function HomeMethodSection() {
   const isMobile = useIsMobile();
+  const isTablet = useIsMobile(1100) && !isMobile;
 
   return (
     <section
@@ -56,20 +52,19 @@ export function HomeMethodSection() {
           }}
         >
           <div>
-            <SectionLabel number="05">Mi método</SectionLabel>
+            <SectionLabel number="04">Cómo trabajo</SectionLabel>
             <h2
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 600,
-                fontSize: isMobile ? "36px" : "58px",
+                fontSize: isMobile ? "36px" : isTablet ? "48px" : "58px",
                 color: "var(--mar-profundo)",
                 lineHeight: 1.04,
                 margin: "22px 0 0",
-                maxWidth: "780px",
+                maxWidth: "860px",
               }}
             >
-              Una forma de <span className="pz-highlight">diseñar</span> que comienza mucho antes
-              de elegir la solución.
+              Cinco momentos que uso para pasar del problema a una solución y seguir mejorándola.
             </h2>
           </div>
         </div>
@@ -87,7 +82,7 @@ export function HomeMethodSection() {
             <article
               key={step.title}
               style={{
-                padding: isMobile ? "22px 20px" : "30px 22px 32px",
+                padding: isMobile ? "20px 18px" : isTablet ? "26px 14px 28px" : "30px 22px 32px",
                 border: isMobile ? "1px solid rgba(23, 59, 68, 0.14)" : "none",
                 borderLeft: !isMobile && index > 0 ? "1px solid rgba(23, 59, 68, 0.2)" : "none",
                 borderRadius: isMobile ? "8px" : 0,
@@ -101,7 +96,7 @@ export function HomeMethodSection() {
                   color: "var(--mar-profundo)",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  margin: "0 0 18px",
+                  margin: "0 0 16px",
                   fontWeight: 700,
                 }}
               >
@@ -111,7 +106,7 @@ export function HomeMethodSection() {
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
                   fontWeight: 600,
-                  fontSize: isMobile ? "23px" : "24px",
+                  fontSize: isMobile ? "23px" : isTablet ? "21px" : "24px",
                   color: "var(--mar-profundo)",
                   lineHeight: 1.12,
                   margin: "0 0 12px",
@@ -122,8 +117,8 @@ export function HomeMethodSection() {
               <p
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: "15px",
-                  lineHeight: 1.66,
+                  fontSize: isTablet ? "14px" : "15px",
+                  lineHeight: isMobile ? 1.58 : 1.55,
                   color: "rgba(23, 59, 68, 0.84)",
                   margin: 0,
                 }}

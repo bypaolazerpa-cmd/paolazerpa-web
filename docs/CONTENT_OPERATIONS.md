@@ -28,10 +28,11 @@ Punto de entrada principal:
 
 Portfolio profesional:
 - `/portfolio` es la página de presentación profesional de Paola como Product Designer.
-- el home usa un teaser y deriva a `/portfolio`.
+- el home usa `SelectedWorkSection` inmediatamente después del hero y deriva a `/portfolio`.
+- `AreasOfWorkSection` ocupa la sección 03 del home y presenta cuatro áreas de intervención de Product Design con imágenes editoriales compartidas.
 - `/portfolio` prioriza el recorrido `01 — Portfolio profesional`, `02 — Selected work`, `Otros proyectos`, `03 — Forma de trabajar`, `04 — Capacidades` y `05 — Hablemos`.
 - La introducción independiente fue eliminada; el mensaje profesional vive en el hero y Selected Work conserva los anchors `gestock`, `nodux` y `operacion-de-tienda`.
-- el teaser del home muestra únicamente preview, identificación y una frase breve por proyecto.
+- Selected Work muestra únicamente preview, identificación, transformación y descripción secundaria breve por proyecto.
 - GeStock, NODUX y Sistemas de operación de tienda son los proyectos destacados iniciales.
 - Cosmic Studio aparece como trabajo secundario.
 - los previews visuales actuales son placeholders intencionales y deben reemplazarse por screenshots reales antes de presentar casos completos.
@@ -39,7 +40,7 @@ Portfolio profesional:
 Canales de acción:
 - WhatsApp como CTA principal
 - email como canal secundario
-- las cards de servicios del home concentran la conversión en `/contacto#email`
+- las cards de servicios del home concentran la conversión en `/contacto`
 
 Exposición para indexación:
 - las rutas públicas ahora se prerenderizan a HTML estático durante el build
@@ -70,7 +71,7 @@ Estado actual de `/mi-historia`:
 - la página quedó alineada con la nueva identidad visual del home
 - el relato se organiza en tres bloques: `Antes`, `Giro` y `Hoy`
 - el mensaje central conecta la historia personal con diseño de sistemas, procesos y estructuras sostenibles
-- los CTAs llevan a `/contacto#email`, `/#servicios` y `/`
+- los CTAs llevan a `/contacto`, `/#servicios` y `/`
 - el CTA principal del hero usa `Trabajemos tu sistema` para mantener una audiencia neutral y concreta
 - el cierre organiza territorios de trabajo como niveles de un mismo enfoque: vida/proyectos, negocios/equipos y productos/sistemas digitales
 
@@ -98,7 +99,7 @@ Estado actual del home:
 - enfoque:
   bloque con `public/paola-hero-video.mov` como video provisional. El bloque sobre video contiene únicamente `No diseño piezas sueltas.` y `Ordeno procesos, información y decisiones para mejorar la experiencia.`
 - servicios:
-  tres cards principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; `También trabajo con sistemas personales.` aparece como oferta secundaria debajo
+  tres servicios principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; no se muestran sistemas personales en el Home V2
 - método:
   recorrido `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`
 - cómo empezamos:
@@ -185,7 +186,7 @@ Checklist antes de deploy:
 - validar build
 - validar links de navegación
 - validar CTA de WhatsApp y mail
-- validar navegación a `/contacto#email` desde las cards de servicios
+- validar navegación a `/contacto` desde el cierre de servicios
 - validar que el PDF correcto esté en `public/`
 - validar que las rutas SPA sigan cubiertas
 - validar que `dist/` incluya `index.html` prerenderizados para `/`, `/guia`, `/contacto`, `/mi-historia`, `/programa`, `/notas` y notas por slug

@@ -38,10 +38,12 @@ Interpretación:
 Portfolio:
 - existe la ruta `/portfolio` como página profesional independiente
 - Home y `/portfolio` consumen `portfolioProjects.ts` mediante `PortfolioProjectCard`
+- Home muestra `SelectedWorkSection` inmediatamente después del hero; `ProblemaQuienSoySection` y `HomeProjectsSection` quedaron fuera del flujo actual
+- Home muestra `AreasOfWorkSection` como sección 03; `HomeApproachSection` se conserva como componente legacy fuera del flujo actual
 - no existe todavía `/portfolio/:slug`
 - los previews visuales son placeholders intencionales mientras se reúnen screenshots reales
 - `/portfolio` cuenta con title, description y Open Graph básico en el HTML prerenderizado
-- el Home muestra un teaser reducido de los proyectos, con `homeSummary` separado del summary profesional
+- el Home muestra Selected Work con copy de transformación (`homeSummary`), contexto y descripción secundaria separados del summary profesional
 - la navegación principal incluye `INICIO` y marca únicamente la ruta activa
 - los previews usan una proporción horizontal estable de `16 / 10` en desktop y mobile
 
@@ -64,7 +66,7 @@ Navegación:
 Conversión:
 - WhatsApp sigue siendo canal principal
 - la guía tiene formulario con estado local y captura opcional
-- el home ya no duplica la sección de contacto y deriva las cards de servicios a `/contacto#email`
+- el home ya no duplica la sección de contacto y deriva el cierre de servicios a `/contacto`
 
 ## 4. Estado del bloque recién cerrado
 
@@ -98,7 +100,7 @@ Conversión:
 - El hero usa `paola-problema-scene.jpg` como foto provisional.
 - La sección 02 usa un fondo de identidad sin fotografía, con textura de grilla y recursos de papel rasgado.
 - La sección 03 usa `public/paola-hero-video.mov` como video provisional y quedó reducida a una sola idea principal.
-- Servicios ahora usa cards reversibles con imágenes generadas al frente, copy alineado arriba y CTA de contacto antes de las cards.
+- Servicios ahora usa tres cards de una sola estructura semántica, con imágenes, descripción principal, bloque `Para qué` y CTA de cierre hacia contacto.
 - Portfolio quedó convertido en archivo/carrusel con cuatro casos reales: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda.
 - `npm run lint` y `npm run build` pasan después de esta reestructura; persisten warnings conocidos de prerender por `useLayoutEffect`.
 - `/mi-historia` quedó migrada a la nueva capa visual del sitio con `pz-page`, `pz-dark`, componentes compartidos de marca, foto principal y CTAs hacia contacto, servicios e inicio.
@@ -124,7 +126,7 @@ Conversión:
 - El hero explicita `Paola Zerpa · Product Designer` y usa el copy definitivo de productos digitales, manteniendo un único H1, bajada y CTA por breakpoint.
 - La sección de problema ahora presenta tres problemas observables de operación, producto y crecimiento/estructura, con una explicación breve por card.
 - Mi enfoque usa el headline `Primero entiendo cómo funciona. Después diseño cómo mejorarlo.` y un único bloque de copy sobre el video.
-- Servicios prioriza `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; sistemas personales queda como oferta secundaria.
+- Servicios muestra únicamente `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; sistemas personales ya no aparece en Servicios de Home.
 - Método y Cómo empezamos fueron ajustados al copy definitivo del brief.
 - Home muestra únicamente GeStock, NODUX y Sistemas de operación de tienda; sus cards son clickeables hacia anchors estables de `/portfolio` y tienen hover/focus sutil con soporte para `prefers-reduced-motion`.
 - Navbar desktop y mobile comparten labels y destinos; `INICIO` y `PORTFOLIO` son los únicos estados activos de ruta.
@@ -154,7 +156,7 @@ Conversión:
 - La sección 02 concretó las señales de negocio, producto digital y proyectos personales, y reforzó el CTA con una franja de papel rasgado arriba y abajo.
 - La sección 03 subraya únicamente `Diseñemos el sistema`, reserva Space Mono italic para `lo que estás construyendo` y usa un copy mobile más breve: `Ordeno decisiones, procesos y personas` / `Mejoro cómo se vive la experiencia`. El tratamiento mobile suma una capa oscura y un panel translúcido para asegurar contraste sobre el video.
 - Los botones del Hero mobile dejaron de ocupar todo el ancho disponible.
-- Las cards de servicios ahora muestran el detalle de forma continua en mobile; el flip queda reservado para desktop, donde el hover y el foco sí son patrones disponibles.
+- Las cards de servicios mantienen una sola estructura de contenido en todos los breakpoints; mobile adapta la disposición a una columna por servicio.
 - En mobile, el frente conserva el número y nombre del servicio una sola vez; la explicación inferior ya no repite ese encabezado.
 - Se eliminó del copy mobile la instrucción basada en mouse.
 - La tarjeta de enfoque usa una versión de copy más breve en mobile para favorecer el escaneo.

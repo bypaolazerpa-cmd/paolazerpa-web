@@ -16,14 +16,14 @@ Boot:
 ## 2. Estructura de rutas
 
 Home:
-- `/` compone `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `HomeProjectsSection`, `FooterSection`
-- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `ProblemaQuienSoySection`, `HomeApproachSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `HomeProjectsSection`, `FooterSection`
+- `/` compone `NavBar`, `HeroSection`, `SelectedWorkSection`, `AreasOfWorkSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `FooterSection`
+- `/` hoy renderiza en este orden: `NavBar`, `HeroSection`, `SelectedWorkSection`, `AreasOfWorkSection`, `CaminosSection`, `HomeMethodSection`, `HomeStartSection`, `FooterSection`
 
 Portfolio profesional:
 - `/portfolio` → `PortfolioPage`
 - `PortfolioPage` compone hero profesional, selected work, proceso, capacidades, CTA y `FooterSection`
 - `PortfolioProjectCard` se reutiliza en Home y `/portfolio`
-- `PortfolioProjectCard` usa la variante `home` para el teaser breve y `portfolio` para el contexto profesional completo
+- `PortfolioProjectCard` usa la variante `home-selected` para Selected Work, `home` para el teaser legacy y `portfolio` para el contexto profesional completo
 - [`src/app/data/portfolioProjects.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/portfolioProjects.ts) es la fuente compartida para los proyectos
 - no existe todavía `/portfolio/:slug`; la estructura queda preparada para incorporarla cuando exista el primer case study completo
 
@@ -46,12 +46,13 @@ Navegación:
 
 Home:
 - [`src/app/components/HeroSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HeroSection.tsx)
-- [`src/app/components/ProblemaQuienSoySection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/ProblemaQuienSoySection.tsx)
+- [`src/app/components/SelectedWorkSection.tsx`](/Users/paolazerpa/Code/paola-web/src/app/components/SelectedWorkSection.tsx)
+- [`src/app/components/AreasOfWorkSection.tsx`](/Users/paolazerpa/Code/paola-web/src/app/components/AreasOfWorkSection.tsx)
 - [`src/app/components/HomeApproachSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeApproachSection.tsx)
 - [`src/app/components/CaminosSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/CaminosSection.tsx)
 - [`src/app/components/HomeMethodSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeMethodSection.tsx)
 - [`src/app/components/HomeStartSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeStartSection.tsx)
-- [`src/app/components/HomeProjectsSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeProjectsSection.tsx)
+- [`src/app/components/HomeProjectsSection.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/HomeProjectsSection.tsx) — componente conservado, fuera del flujo actual del Home
 
 Portfolio:
 - [`src/app/components/PortfolioPage.tsx`](/Users/paolazerpa/Code/paola-web/src/app/components/PortfolioPage.tsx)
@@ -73,7 +74,7 @@ Detalle relevante del hero:
 - el claim vive en una nota de papel: `Diseño que ordena y conecta.`
 - usa `paola-problema-scene.jpg` como foto provisional del hero
 - los CTAs visibles hoy son `Ver portfolio` y `Hablemos`
-- las CTAs de servicios resuelven navegación interna hacia `/contacto#email`
+- las CTAs de servicios resuelven navegación interna hacia `/contacto`
 
 Páginas:
 - [`src/app/components/GuiaPage.tsx`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/components/GuiaPage.tsx)
@@ -89,7 +90,7 @@ Detalle relevante de `/mi-historia`:
 - usa la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
 - mantiene el relato en tres momentos: `Antes`, `Giro` y `Hoy`
 - el hero usa `paola-mi-historia-portrait.png` como foto principal de Paola, con fondo suavemente desenfocado y persona enfocada
-- los CTAs principales apuntan a `/contacto#email`, `/#servicios` y `/`
+- los CTAs principales apuntan a `/contacto`, `/#servicios` y `/`
 - el copy y las CTAs usan lenguaje neutral, sin asumir que la audiencia es solo femenina
 
 Detalle relevante de `/contacto`:
