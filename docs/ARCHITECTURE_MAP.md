@@ -88,9 +88,11 @@ Páginas:
 
 Detalle relevante de `/mi-historia`:
 - usa la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
-- mantiene el relato en tres momentos: `Antes`, `Giro` y `Hoy`
-- el hero usa `paola-mi-historia-portrait.png` como foto principal de Paola, con fondo suavemente desenfocado y persona enfocada
-- los CTAs principales apuntan a `/contacto`, `/#servicios` y `/`
+- organiza la narrativa V3 en cinco bloques: `Mi historia`, `Recorrido`, `Lo que ese camino me dejó`, `Dónde lo aplico` y `Conectemos`
+- el recorrido usa un único array (`journeyMoments`) y cuatro placeholders editoriales sustituibles por imágenes reales
+- el hero usa tres placeholders circulares (`VISUAL 00`–`VISUAL 02`) preparados para recibir imágenes sin cambiar el layout
+- el cierre usa un placeholder `FOTO FINAL`; LinkedIn queda identificado como pendiente hasta contar con una URL real
+- los CTAs activos apuntan a `/portfolio` y el contacto solo aparece en el hero
 - el copy y las CTAs usan lenguaje neutral, sin asumir que la audiencia es solo femenina
 
 Detalle relevante de `/contacto`:

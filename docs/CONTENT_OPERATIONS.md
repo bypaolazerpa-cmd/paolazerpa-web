@@ -68,12 +68,12 @@ Estado actual de `/guia`:
 - la salida inferior hacia `/contacto` quedó resuelta como siguiente paso posterior a la guía
 
 Estado actual de `/mi-historia`:
-- la página quedó alineada con la nueva identidad visual del home
-- el relato se organiza en tres bloques: `Antes`, `Giro` y `Hoy`
-- el mensaje central conecta la historia personal con diseño de sistemas, procesos y estructuras sostenibles
-- los CTAs llevan a `/contacto`, `/#servicios` y `/`
-- el CTA principal del hero usa `Trabajemos tu sistema` para mantener una audiencia neutral y concreta
-- el cierre organiza territorios de trabajo como niveles de un mismo enfoque: vida/proyectos, negocios/equipos y productos/sistemas digitales
+- la V3 organiza la página en cinco bloques editoriales compactos: `Mi historia`, `Recorrido`, `Lo que ese camino me dejó`, `Dónde lo aplico` y `Conectemos`
+- el recorrido mantiene una única timeline y una única fuente de contenido (`journeyMoments`), con placeholders editoriales `VISUAL 01`–`VISUAL 04`
+- el hero usa tres placeholders circulares para presente, migración/Buenos Aires y distintos caminos; no genera ni incorpora imágenes nuevas
+- el cierre usa `FOTO FINAL` como espacio preparado para un retrato real y deja LinkedIn como CTA pendiente sin URL inventada
+- el diseño reduce paddings, escala tipográfica y alturas visuales para acortar especialmente el scroll mobile
+- la página mantiene un único árbol semántico y adapta la presentación con `useIsMobile()`
 
 Estado actual del hero:
 - eyebrow:
