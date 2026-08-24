@@ -7,13 +7,12 @@ import {
 } from "react-router";
 import { NavBar } from "./components/NavBar";
 import { HeroSection } from "./components/HeroSection";
-import { ProblemaQuienSoySection } from "./components/ProblemaQuienSoySection";
+import { SelectedWorkSection } from "./components/SelectedWorkSection";
+import { AreasOfWorkSection } from "./components/AreasOfWorkSection";
 import { CaminosSection } from "./components/CaminosSection";
 import { FooterSection } from "./components/FooterSection";
-import { HomeApproachSection } from "./components/HomeApproachSection";
 import { HomeMethodSection } from "./components/HomeMethodSection";
 import { HomeStartSection } from "./components/HomeStartSection";
-import { HomeProjectsSection } from "./components/HomeProjectsSection";
 import { GuiaPage } from "./components/GuiaPage";
 import { ProgramaPage } from "./components/ProgramaPage";
 import { BlogPage } from "./components/BlogPage";
@@ -28,12 +27,11 @@ function Home() {
       <NavBar />
       <main>
         <HeroSection />
-        <ProblemaQuienSoySection />
-        <HomeApproachSection />
-        <CaminosSection />
+        <SelectedWorkSection />
+        <AreasOfWorkSection />
         <HomeMethodSection />
+        <CaminosSection />
         <HomeStartSection />
-        <HomeProjectsSection />
       </main>
       <FooterSection />
     </div>

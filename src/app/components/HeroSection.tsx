@@ -291,7 +291,7 @@ export function HeroSection() {
             style={{
               position: "absolute",
               left: "50%",
-              bottom: isMobile ? "26px" : "32px",
+              bottom: isMobile ? "56px" : "32px",
               transform: "translateX(-50%)",
               display: "flex",
               alignItems: "center",
@@ -305,7 +305,7 @@ export function HeroSection() {
               }}
             >
               <button
-                onClick={() => scrollTo("problema")}
+                onClick={() => scrollTo("selected-work")}
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(250,248,244,0.82) 0%, rgba(230,215,198,0.94) 100%)",

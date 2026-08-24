@@ -9,33 +9,34 @@ const services = [
   {
     number: "01",
     title: "Producto digital",
-    short: "Diseño cómo funciona tu producto.",
-    body: "Defino flujos, información y pantallas para plataformas, dashboards y herramientas digitales.",
+    description:
+      "Diseño o rediseño plataformas, dashboards y herramientas digitales trabajando su estructura, recorridos, interacción e interfaz.",
+    purpose:
+      "Para que el producto acompañe mejor lo que las personas necesitan hacer y la información que necesitan para avanzar.",
     image: imageHechoSistema,
   },
   {
     number: "02",
     title: "Sistema de trabajo",
-    short: "Ordeno cómo funciona una operación.",
-    body: "Organizo procesos, responsables, información y herramientas para reducir tareas manuales y hacer más claro el trabajo del equipo.",
+    description:
+      "Organizo procesos, responsabilidades, información y herramientas para definir una forma de trabajo que el equipo pueda sostener.",
+    purpose:
+      "Para reducir seguimiento manual, tareas repetidas y dependencia de la memoria o de una sola persona.",
     image: imageSistemaMedida,
   },
   {
     number: "03",
     title: "Web o tienda online",
-    short: "Diseño una experiencia clara para presentar y vender.",
-    body: "Organizo contenido, navegación y acciones para que una persona entienda qué ofreces y pueda avanzar fácilmente.",
+    description: "Diseño la estructura, el contenido, la navegación y la interfaz de webs y tiendas online.",
+    purpose:
+      "Para que una persona pueda entender qué encuentra, recorrerlo y completar acciones como consultar, elegir o comprar.",
     image: imageEspacioDigital,
   },
 ];
 
-const personalOffer = {
-  title: "También trabajo con sistemas personales.",
-  body: "Puedo ayudarte a ordenar proyectos, objetivos, pendientes y rutinas en una estructura simple de seguimiento.",
-};
-
 export function CaminosSection() {
   const isMobile = useIsMobile();
+  const isTablet = useIsMobile(1100) && !isMobile;
 
   return (
     <section
@@ -54,41 +55,28 @@ export function CaminosSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.86fr) minmax(320px, 0.76fr)",
+            gridTemplateColumns: "1fr",
             gap: isMobile ? "24px" : "54px",
             alignItems: "end",
             marginBottom: isMobile ? "34px" : "50px",
           }}
         >
           <div>
-            <SectionLabel number="04">Servicios</SectionLabel>
+            <SectionLabel number="05">Servicios</SectionLabel>
             <h2
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
                 fontWeight: 600,
-                fontSize: isMobile ? "36px" : "60px",
+                fontSize: isMobile ? "36px" : isTablet ? "44px" : "50px",
                 color: "var(--mar-profundo)",
                 lineHeight: 1.02,
                 margin: "22px 0 0",
+                maxWidth: "980px",
               }}
             >
-              ¿En qué puedo ayudarte?
+              Puedes trabajar conmigo para diseñar o mejorar un producto digital, una forma de trabajo o una web / tienda online.
             </h2>
           </div>
-
-          <p
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 400,
-              fontSize: isMobile ? "16px" : "18px",
-              color: "rgba(23, 59, 68, 0.86)",
-              lineHeight: 1.72,
-              margin: 0,
-              maxWidth: "540px",
-            }}
-          >
-            Diseño productos digitales y formas de trabajo para que sean más claras, útiles y fáciles de mantener.
-          </p>
         </div>
 
         <div
@@ -99,7 +87,7 @@ export function CaminosSection() {
           }}
         >
           {services.map((service) => (
-            <article key={service.title} className="service-card" tabIndex={0}>
+            <article key={service.title} className="service-card service-card--flat" tabIndex={0}>
               <div className="service-card-inner">
                 <div className="service-card-face service-card-front">
                   <img src={service.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
@@ -107,13 +95,12 @@ export function CaminosSection() {
                   <div className="service-card-copy">
                     <p>{service.number}</p>
                     <h3>{service.title}</h3>
-                    <span>{service.short}</span>
+                    <span className="service-card-primary">{service.description}</span>
+                    <div className="service-card-purpose">
+                      <span className="service-card-purpose-label">Para qué</span>
+                      <span>{service.purpose}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="service-card-face service-card-back">
-                  <p>{service.number}</p>
-                  <h3>{service.title}</h3>
-                  <span>{service.body}</span>
                 </div>
               </div>
             </article>
@@ -121,89 +108,17 @@ export function CaminosSection() {
         </div>
 
         <div
-          className="personal-systems-offer"
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            marginTop: isMobile ? "18px" : "22px",
-            padding: isMobile ? "24px 20px" : "28px 30px",
-            border: "1px solid rgba(23, 59, 68, 0.2)",
-            borderTop: "3px solid var(--magenta)",
-            borderRadius: "8px",
-            backgroundColor: "rgba(250, 248, 244, 0.72)",
-            backgroundImage:
-              "linear-gradient(rgba(23,59,68,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(23,59,68,0.045) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-            display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) auto",
-            gap: "18px",
-            alignItems: "center",
-          }}
-        >
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              right: isMobile ? "-38px" : "-24px",
-              top: isMobile ? "-42px" : "-54px",
-              width: isMobile ? "130px" : "170px",
-              height: isMobile ? "130px" : "170px",
-              border: "1px solid rgba(240, 127, 168, 0.4)",
-              borderRadius: "999px",
-              opacity: 0.8,
-            }}
-          />
-          <div style={{ position: "relative" }}>
-            <p
-              style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "10px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "var(--magenta)",
-                margin: "0 0 14px",
-              }}
-            >
-              04 — Sistemas personales
-            </p>
-            <h3
-              style={{
-                fontFamily: "Space Grotesk, sans-serif",
-                fontWeight: 600,
-                fontSize: isMobile ? "24px" : "28px",
-                lineHeight: 1.1,
-                color: "var(--mar-profundo)",
-                margin: "0 0 10px",
-              }}
-            >
-              {personalOffer.title}
-            </h3>
-            <p
-              style={{
-                fontFamily: "Space Grotesk, sans-serif",
-                fontSize: "15px",
-                lineHeight: 1.58,
-                color: "rgba(23, 59, 68, 0.82)",
-                margin: 0,
-              }}
-            >
-              {personalOffer.body}
-            </p>
-          </div>
-        </div>
-
-        <div
+          className="services-cta"
           style={{
             marginTop: isMobile ? "34px" : "44px",
             display: "grid",
             gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1fr) auto",
-            gap: "22px",
+            gap: "18px",
             alignItems: "center",
             borderTop: "1px solid rgba(23, 59, 68, 0.16)",
             borderBottom: "1px solid rgba(23, 59, 68, 0.16)",
-            paddingTop: isMobile ? "26px" : "30px",
-            paddingBottom: isMobile ? "26px" : "30px",
+            paddingTop: isMobile ? "24px" : "28px",
+            paddingBottom: isMobile ? "24px" : "28px",
           }}
         >
           <p
@@ -216,9 +131,9 @@ export function CaminosSection() {
               maxWidth: "760px",
             }}
           >
-            Si todavía no sabes qué necesitas, empezamos por entender el problema.
+            Cuéntame qué estás intentando resolver.
           </p>
-          <BrandButton to="/contacto#email">Cuéntame qué necesitas resolver</BrandButton>
+          <BrandButton to="/contacto">Hablemos ↗</BrandButton>
         </div>
       </div>
     </section>

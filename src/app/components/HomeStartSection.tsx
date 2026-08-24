@@ -3,10 +3,10 @@ import { BrandButton } from "./brand/BrandButton";
 import { SectionLabel } from "./brand/SectionLabel";
 
 const startSteps = [
-  ["Me cuentas el contexto", "Qué estás haciendo, qué está costando y qué necesitas resolver."],
-  ["Tenemos una reunión", "Aterrizamos objetivos, alcance, prioridades y dudas."],
-  ["Defino una propuesta", "Te comparto etapas, tiempos, entregables e inversión."],
-  ["Construimos la solución", "Diseño, revisamos juntos y ajustamos lo necesario para ponerla en marcha."],
+  ["Me cuentas el contexto", "Qué estás haciendo, qué está pasando y qué necesitas resolver."],
+  ["Lo conversamos", "Revisamos el proyecto, las necesidades y qué tendría sentido trabajar."],
+  ["Defino una propuesta", "Te comparto alcance, forma de trabajo, tiempos y próximos pasos."],
+  ["Empezamos a trabajar", "Diseñamos, construimos y vamos tomando decisiones sobre el producto o proyecto."],
 ];
 
 export function HomeStartSection() {
@@ -30,7 +30,7 @@ export function HomeStartSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 0.86fr) minmax(320px, 0.72fr)",
+            gridTemplateColumns: "1fr",
             gap: isMobile ? "28px" : "54px",
             alignItems: "end",
             marginBottom: isMobile ? "34px" : "48px",
@@ -48,12 +48,12 @@ export function HomeStartSection() {
                 color: "var(--arena-clara)",
                 lineHeight: 1.04,
                 margin: "22px 0 0",
+                maxWidth: "860px",
               }}
             >
-              De entender el problema a empezar a construir.
+              Si tienes algo que quieres diseñar o mejorar, podemos empezar por ahí.
             </h2>
           </div>
-          <BrandButton to="/contacto#email">Cuéntame qué necesitas resolver</BrandButton>
         </div>
 
         <div
@@ -116,6 +116,10 @@ export function HomeStartSection() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="home-start-cta">
+          <BrandButton to="/contacto">Cuéntame qué quieres resolver ↗</BrandButton>
         </div>
       </div>
     </section>
