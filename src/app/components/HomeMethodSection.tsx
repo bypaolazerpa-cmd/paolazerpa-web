@@ -4,23 +4,23 @@ import { SectionLabel } from "./brand/SectionLabel";
 const methodSteps = [
   {
     title: "COMPRENDER",
-    body: "Problema · personas · resultado",
+    body: "Empiezo por entender qué está pasando, para quién y qué necesitamos resolver.",
   },
   {
     title: "INVESTIGAR",
-    body: "Evidencia · contexto · referencias",
+    body: "Busco contexto, referencias y señales que me ayuden a decidir mejor.",
   },
   {
     title: "ORGANIZAR",
-    body: "Prioridades · información · recorridos",
+    body: "Ordeno prioridades, información y recorridos para darle estructura a la solución.",
   },
   {
     title: "DISEÑAR",
-    body: "Flujos · interacción · interfaz",
+    body: "Convierto esa estructura en flujos, interacciones e interfaces concretas.",
   },
   {
     title: "EVOLUCIONAR",
-    body: "Observar · aprender · ajustar",
+    body: "Veo cómo funciona en la práctica y ajusto lo necesario a medida que aprendo.",
   },
 ];
 
