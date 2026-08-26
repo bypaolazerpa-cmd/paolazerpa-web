@@ -1,6 +1,6 @@
-import heroPresent from "../../assets/mi-historia/01_mi_historia/visual_00.png";
-import heroMigration from "../../assets/mi-historia/01_mi_historia/visual_01.png";
-import heroPaths from "../../assets/mi-historia/01_mi_historia/visual_02.png";
+import heroPresent from "../../assets/mi-historia/01_mi_historia/optimized/visual_00.jpg";
+import heroMigration from "../../assets/mi-historia/01_mi_historia/optimized/visual_01.jpg";
+import heroPaths from "../../assets/mi-historia/01_mi_historia/optimized/visual_02.jpg";
 import journeyMigration from "../../assets/mi-historia/02_recorrido/visual_01.png";
 import journeyPaths from "../../assets/mi-historia/02_recorrido/visual_02.png";
 import journeyStructure from "../../assets/mi-historia/02_recorrido/visual_03.png";
@@ -88,7 +88,10 @@ const territories = [
 ];
 
 function StoryImage({ src, alt, className = "", fit = "cover", position = "center" }: { src: string; alt: string; className?: string; fit?: "cover" | "contain"; position?: string }) {
-  return <div className={`story-image ${className}`}><img src={src} alt={alt} loading={className.includes("story-hero") ? "eager" : "lazy"} decoding="async" style={{ objectFit: fit, objectPosition: position }} /></div>;
+  const isHeroImage = className.includes("story-hero");
+  const isPrimaryHeroImage = className.includes("story-hero-image--present");
+
+  return <div className={`story-image ${className}`}><img src={src} alt={alt} loading={isHeroImage ? "eager" : "lazy"} fetchPriority={isPrimaryHeroImage ? "high" : "auto"} decoding="async" style={{ objectFit: fit, objectPosition: position }} /></div>;
 }
 
 function HeroImages() {
@@ -109,6 +112,7 @@ export function MiHistoriaPage() {
       .story-page h1,.story-page h2,.story-page h3,.story-page p{margin-top:0}
       .story-reveal{animation:story-reveal 600ms both;animation-timeline:view();animation-range:entry 0% cover 20%}
       .story-image{position:relative;overflow:hidden;border:1px solid rgba(23,59,68,.24);background:var(--story-paper)}
+      .story-hero-image{background:var(--mar-profundo)}
       .story-image img{display:block;width:100%;height:100%}
       .story-hero-image::before,.story-hero-image::after{content:"";position:absolute;z-index:1;pointer-events:none;border:1px solid rgba(180,91,69,.3);border-radius:50%}
       .story-hero-image::before{width:56%;aspect-ratio:1}.story-hero-image::after{width:20%;aspect-ratio:1;background:rgba(240,127,168,.24);border-color:rgba(240,127,168,.5)}
