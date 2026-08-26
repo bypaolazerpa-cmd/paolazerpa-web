@@ -13,7 +13,7 @@ export function SelectedWorkSection() {
       id="selected-work"
       className="pz-dark"
       style={{
-        padding: isMobile ? "78px 24px 64px" : isTablet ? "92px 48px 78px" : "112px 80px 88px",
+        padding: isMobile ? "48px 24px 64px" : isTablet ? "92px 48px 78px" : "112px 80px 88px",
         scrollMarginTop: "80px",
         position: "relative",
         overflow: "hidden",
