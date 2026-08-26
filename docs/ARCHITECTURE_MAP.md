@@ -2,7 +2,7 @@
 
 Mapa técnico vivo del proyecto.
 
-Última revisión manual: 2026-08-02
+Última revisión manual: 2026-08-26
 
 ## 1. Entrada de la aplicación
 

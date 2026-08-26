@@ -130,8 +130,8 @@ Fuente de verdad de notas:
 - [`src/app/data/blogPosts.ts`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/data/blogPosts.ts)
 
 Estado actual:
-- 3 notas publicadas
-- 1 destacada
+- 1 nota publicada y destacada
+- el archivo conserva una única entrada real mientras la bitácora crece
 - datos embebidos en código, sin CMS
 
 Si cambia el contenido editorial, revisar:

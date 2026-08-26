@@ -4,7 +4,7 @@ Estado vivo del proyecto observado en el repositorio.
 
 Última revisión manual: 2026-08-02
 
-Actualización de esta iteración: 2026-08-10
+Actualización de esta iteración: 2026-08-26
 
 ## 1. Línea de tiempo visible en git
 
@@ -34,6 +34,11 @@ Interpretación:
 - el trabajo actual vuelve a ser acotado y temático, no de saneamiento general
 
 ## 3. Estado funcional actual inferido del código
+
+Notas V2:
+- `/notas` ahora presenta `01 — BITÁCORA` y una única nota real en una composición editorial horizontal en desktop y apilada en mobile
+- la nota individual usa el slug `un-ano-intentando-entender-que-significa-disenar-un-producto`, lectura continua y no incluye sidebar, índice ni CTA comercial
+- [`src/app/data/blogPosts.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/blogPosts.ts) es la fuente de verdad y contiene una única nota publicada
 
 Portfolio:
 - existe la ruta `/portfolio` como página profesional independiente

@@ -1,386 +1,217 @@
 import { useParams } from "react-router";
 import { NavBar } from "./NavBar";
 import { FooterSection } from "./FooterSection";
-import { coverToneStyles, getBlogPostBySlug } from "../data/blogPosts";
+import { getBlogPostBySlug } from "../data/blogPosts";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { AppLink } from "./AppLink";
+import { BrandButton } from "./brand/BrandButton";
 
 export function BlogNotePage() {
   const { slug } = useParams();
   const isMobile = useIsMobile();
   const post = slug ? getBlogPostBySlug(slug) : undefined;
-  const px = isMobile ? "24px" : "80px";
 
   if (!post) {
     return (
-      <div style={{ backgroundColor: "#FAF8F4", overflowX: "hidden" }}>
+      <div className="pz-page" style={{ overflowX: "hidden" }}>
         <NavBar />
+        <main>
+          <section
+            className="pz-dark"
+            style={{
+              padding: isMobile ? "112px 24px 72px" : "156px 80px 120px",
+              minHeight: "70vh",
+            }}
+          >
+            <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+              <p
+                style={{
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  letterSpacing: "0.14em",
+                  color: "var(--citron-loto)",
+                  margin: "0 0 18px",
+                }}
+              >
+                NOTA NO ENCONTRADA
+              </p>
+              <h1
+                style={{
+                  fontFamily: "Fraunces, serif",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  fontSize: isMobile ? "38px" : "58px",
+                  lineHeight: 1.08,
+                  color: "var(--arena-clara)",
+                  margin: "0 0 24px",
+                }}
+              >
+                Esta nota no está disponible.
+              </h1>
+              <BrandButton variant="secondary" to="/notas">
+                VOLVER A NOTAS ↗
+              </BrandButton>
+            </div>
+          </section>
+        </main>
+        <FooterSection />
+      </div>
+    );
+  }
+
+  return (
+    <div className="pz-page" style={{ overflowX: "hidden" }}>
+      <NavBar />
+
+      <main>
         <section
+          className="pz-dark"
           style={{
-            paddingTop: isMobile ? "128px" : "164px",
-            paddingBottom: isMobile ? "88px" : "120px",
-            paddingLeft: px,
-            paddingRight: px,
-            minHeight: "70vh",
+            padding: isMobile ? "104px 24px 56px" : "138px 80px 76px",
+            position: "relative",
+            overflow: "hidden",
           }}
         >
-          <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              width: isMobile ? "260px" : "460px",
+              height: isMobile ? "260px" : "460px",
+              borderRadius: "50%",
+              right: isMobile ? "-130px" : "-170px",
+              top: isMobile ? "-100px" : "-180px",
+              background: "radial-gradient(circle, rgba(240,127,168,0.24), transparent 68%)",
+              pointerEvents: "none",
+            }}
+          />
+          <div style={{ maxWidth: "860px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <AppLink
+              to="/notas"
+              style={{
+                display: "inline-flex",
+                fontFamily: "Space Mono, monospace",
+                fontSize: "11px",
+                letterSpacing: "0.12em",
+                color: "var(--arena-clara)",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                marginBottom: "30px",
+              }}
+            >
+              ← VOLVER A NOTAS
+            </AppLink>
             <p
               style={{
                 fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
-                color: "#AAAAAA",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                marginBottom: "18px",
-                fontWeight: 400,
+                fontSize: "11px",
+                letterSpacing: "0.1em",
+                color: "var(--citron-loto)",
+                margin: "0 0 22px",
               }}
             >
-              NOTA NO ENCONTRADA
+              {post.category} · {post.date} · {post.readingTime}
             </p>
             <h1
               style={{
                 fontFamily: "Fraunces, serif",
                 fontStyle: "italic",
                 fontWeight: 400,
-                fontSize: isMobile ? "38px" : "58px",
-                color: "#1A1A2E",
-                lineHeight: "1.08",
-                marginBottom: "18px",
+                fontSize: isMobile ? "40px" : "62px",
+                lineHeight: 1.06,
+                color: "var(--arena-clara)",
+                maxWidth: "820px",
+                margin: "0 0 22px",
               }}
             >
-              Esta nota no está disponible.
+              {post.title}
             </h1>
             <p
               style={{
                 fontFamily: "Space Grotesk, sans-serif",
-                fontSize: "16px",
-                color: "#666666",
-                lineHeight: "1.8",
-                marginBottom: "28px",
+                fontSize: isMobile ? "17px" : "20px",
+                lineHeight: 1.7,
+                color: "rgba(230,215,198,0.76)",
+                maxWidth: "720px",
+                margin: 0,
               }}
             >
-              Puedes volver al archivo de notas o seguir navegando desde el inicio.
+              {post.excerpt}
             </p>
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <AppLink
-                to="/notas"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "var(--cta-glass-bg)",
-                  color: "#173B44",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "16px 24px",
-                  borderRadius: "999px",
-                  border: "1px solid var(--cta-glass-border)",
-                  textDecoration: "none",
-                  boxShadow:
-                    "var(--cta-glass-shadow)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
-              >
-                Volver a notas
-              </AppLink>
-              <AppLink
-                to="/"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "var(--cta-glass-bg)",
-                  color: "#173B44",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "15px 24px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  border: "1px solid var(--cta-glass-border)",
-                  boxShadow:
-                    "var(--cta-glass-shadow)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
-              >
-                Ir al inicio
-              </AppLink>
-            </div>
           </div>
         </section>
-        <FooterSection />
-      </div>
-    );
-  }
 
-  const tone = coverToneStyles[post.coverTone];
-
-  return (
-    <div style={{ backgroundColor: "#FAF8F4", overflowX: "hidden" }}>
-      <NavBar />
-
-      <section
-        style={{
-          backgroundColor: "#1A1A2E",
-          paddingTop: isMobile ? "128px" : "164px",
-          paddingBottom: isMobile ? "64px" : "76px",
-          paddingLeft: px,
-          paddingRight: px,
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
+        <article
           style={{
-            position: "absolute",
-            top: "-90px",
-            right: "-70px",
-            width: isMobile ? "240px" : "420px",
-            height: isMobile ? "240px" : "420px",
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${tone.accent} 0%, transparent 65%)`,
-            opacity: 0.09,
-            pointerEvents: "none",
+            background: "var(--arena-clara)",
+            padding: isMobile ? "48px 24px 64px" : "72px 80px 96px",
           }}
-        />
-
-        <div style={{ maxWidth: "820px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <AppLink
-            to="/notas"
+        >
+          <div
             style={{
-              display: "inline-flex",
-              marginBottom: "24px",
-              fontFamily: "Space Mono, monospace",
-              fontSize: "9px",
-              color: "#C8C2BA",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              textDecoration: "none",
+              maxWidth: "720px",
+              margin: "0 auto",
+              color: "var(--mar-profundo)",
             }}
           >
-            ← Volver a notas
-          </AppLink>
-
-          <h1
-            style={{
-              fontFamily: "Fraunces, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: isMobile ? "40px" : "66px",
-              color: "#FAF8F4",
-              lineHeight: "1.06",
-              marginBottom: "18px",
-            }}
-          >
-            {post.title}
-          </h1>
-
-          <p
-            style={{
-              fontFamily: "Space Grotesk, sans-serif",
-              fontWeight: 300,
-              fontSize: isMobile ? "17px" : "20px",
-              color: "#B8B0A4",
-              lineHeight: "1.8",
-              maxWidth: "680px",
-              marginBottom: "28px",
-            }}
-          >
-            {post.excerpt}
-          </p>
-
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <span
-              style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
-                color: "#D6D0C4",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-              }}
-            >
-              {post.date}
-            </span>
-            <span
-              style={{
-                fontFamily: "Space Mono, monospace",
-                fontSize: "9px",
-                color: "#D6D0C4",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-              }}
-            >
-              {post.readingTime}
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <article
-        style={{
-          backgroundColor: "#FAF8F4",
-          paddingTop: isMobile ? "48px" : "64px",
-          paddingBottom: isMobile ? "88px" : "110px",
-          paddingLeft: px,
-          paddingRight: px,
-        }}
-      >
-        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-          {post.featuredQuote ? (
-            <blockquote
-              style={{
-                margin: "0 0 44px 0",
-                padding: isMobile ? "24px 22px" : "28px 30px",
-                borderRadius: "16px",
-                backgroundColor: tone.soft,
-                borderLeft: `3px solid ${tone.accent}`,
-                fontFamily: "Fraunces, serif",
-                fontStyle: "italic",
-                fontSize: isMobile ? "24px" : "30px",
-                color: "#1A1A2E",
-                lineHeight: "1.45",
-              }}
-            >
-              “{post.featuredQuote}”
-            </blockquote>
-          ) : null}
-
-          {post.content.map((section) => (
-            <section key={section.heading} style={{ marginBottom: isMobile ? "34px" : "40px" }}>
-              <h2
-                style={{
-                  fontFamily: "MuseoModerno, sans-serif",
-                  fontWeight: 700,
-                  fontSize: isMobile ? "24px" : "28px",
-                  color: "#1A1A2E",
-                  lineHeight: "1.2",
-                  marginBottom: "16px",
-                }}
-              >
-                {section.heading}
-              </h2>
-              <div style={{ display: "grid", gap: "16px" }}>
-                {section.paragraphs.map((paragraph) => (
+            <div style={{ display: "grid", gap: isMobile ? "20px" : "24px" }}>
+              {post.content.map((paragraph, index) => {
+                const isQuestion = paragraph.startsWith("¿") || paragraph.endsWith(":");
+                return (
                   <p
-                    key={paragraph}
+                    key={`${index}-${paragraph}`}
                     style={{
-                      fontFamily: "Space Grotesk, sans-serif",
-                      fontWeight: 400,
-                      fontSize: isMobile ? "15px" : "17px",
-                      color: "#555555",
-                      lineHeight: "1.9",
+                      fontFamily: isQuestion ? "Fraunces, serif" : "Space Grotesk, sans-serif",
+                      fontStyle: isQuestion ? "italic" : "normal",
+                      fontSize: isQuestion ? (isMobile ? "23px" : "28px") : isMobile ? "16px" : "18px",
+                      lineHeight: isQuestion ? 1.3 : 1.85,
+                      color: isQuestion ? "var(--mar-profundo)" : "rgba(23,59,68,0.82)",
                       margin: 0,
                     }}
                   >
                     {paragraph}
                   </p>
-                ))}
-              </div>
-            </section>
-          ))}
+                );
+              })}
+            </div>
 
-          <div
-            style={{
-              marginTop: "56px",
-              paddingTop: "32px",
-              borderTop: "1px solid #E8E2DA",
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              justifyContent: "space-between",
-              alignItems: isMobile ? "flex-start" : "center",
-              gap: "18px",
-            }}
-          >
-            <div>
+            <div
+              style={{
+                marginTop: isMobile ? "48px" : "68px",
+                paddingTop: isMobile ? "26px" : "34px",
+                borderTop: "1px solid rgba(23,59,68,0.3)",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "Space Mono, monospace",
+                  fontSize: "11px",
+                  letterSpacing: "0.14em",
+                  color: "var(--terracota-viva)",
+                  margin: "0 0 16px",
+                }}
+              >
+                SEGUIR LEYENDO
+              </p>
               <p
                 style={{
                   fontFamily: "Fraunces, serif",
                   fontStyle: "italic",
-                  fontWeight: 400,
                   fontSize: isMobile ? "28px" : "34px",
-                  color: "#1A1A2E",
-                  lineHeight: "1.2",
-                  marginBottom: "8px",
+                  lineHeight: 1.2,
+                  color: "var(--mar-profundo)",
+                  margin: "0 0 24px",
                 }}
               >
-                Si quieres seguir pensando este tema, hay más notas en el archivo.
+                Esta bitácora irá creciendo a medida que vaya encontrando cosas que valga la pena desarrollar un poco más.
               </p>
-              <p
-                style={{
-                  fontFamily: "Space Grotesk, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "15px",
-                  color: "#666666",
-                  lineHeight: "1.7",
-                  margin: 0,
-                }}
-              >
-                Y si prefieres llevar la conversación a un caso concreto, también puedes ir a contacto.
-              </p>
-            </div>
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <AppLink
-                to="/notas"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "var(--cta-glass-bg)",
-                  color: "#173B44",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "16px 24px",
-                  borderRadius: "999px",
-                  border: "1px solid var(--cta-glass-border)",
-                  textDecoration: "none",
-                  boxShadow:
-                    "var(--cta-glass-shadow)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
-              >
-                Volver a notas
-              </AppLink>
-              <AppLink
-                to="/contacto"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "var(--cta-glass-bg)",
-                  color: "#173B44",
-                  fontFamily: "Space Mono, monospace",
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "15px 24px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  border: "1px solid var(--cta-glass-border)",
-                  boxShadow:
-                    "var(--cta-glass-shadow)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
-              >
-                Ir a contacto
-              </AppLink>
+              <BrandButton variant="secondary" to="/notas">
+                VOLVER A NOTAS ↗
+              </BrandButton>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </main>
 
       <FooterSection />
     </div>
