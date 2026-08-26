@@ -8,28 +8,23 @@ import { SectionLabel } from "./brand/SectionLabel";
 const services = [
   {
     number: "01",
-    title: "Producto digital",
+    title: "PRODUCTO DIGITAL",
     description:
-      "Diseño o rediseño plataformas, dashboards y herramientas digitales trabajando su estructura, recorridos, interacción e interfaz.",
-    purpose:
-      "Para que el producto acompañe mejor lo que las personas necesitan hacer y la información que necesitan para avanzar.",
+      "Diseño o rediseño plataformas, dashboards y herramientas para ordenar su estructura, recorridos, interacción e interfaz.",
     image: imageHechoSistema,
   },
   {
     number: "02",
-    title: "Sistema de trabajo",
+    title: "SISTEMA DE TRABAJO",
     description:
-      "Organizo procesos, responsabilidades, información y herramientas para definir una forma de trabajo que el equipo pueda sostener.",
-    purpose:
-      "Para reducir seguimiento manual, tareas repetidas y dependencia de la memoria o de una sola persona.",
+      "Organizo procesos, responsabilidades, información y herramientas para reducir tareas manuales y dependencias innecesarias.",
     image: imageSistemaMedida,
   },
   {
     number: "03",
-    title: "Web o tienda online",
-    description: "Diseño la estructura, el contenido, la navegación y la interfaz de webs y tiendas online.",
-    purpose:
-      "Para que una persona pueda entender qué encuentra, recorrerlo y completar acciones como consultar, elegir o comprar.",
+    title: "WEB O TIENDA ONLINE",
+    description:
+      "Diseño estructura, contenido, navegación e interfaz para que las personas puedan entender, recorrer y completar acciones con claridad.",
     image: imageEspacioDigital,
   },
 ];
@@ -74,7 +69,7 @@ export function CaminosSection() {
                 maxWidth: "980px",
               }}
             >
-              Puedes trabajar conmigo para diseñar o mejorar un producto digital, una forma de trabajo o una web / tienda online.
+              Puedes trabajar conmigo en productos digitales, sistemas de trabajo y webs o tiendas online.
             </h2>
           </div>
         </div>
@@ -96,10 +91,6 @@ export function CaminosSection() {
                     <p>{service.number}</p>
                     <h3>{service.title}</h3>
                     <span className="service-card-primary">{service.description}</span>
-                    <div className="service-card-purpose">
-                      <span className="service-card-purpose-label">Para qué</span>
-                      <span>{service.purpose}</span>
-                    </div>
                   </div>
                 </div>
               </div>

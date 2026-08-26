@@ -99,11 +99,11 @@ Estado actual del home:
 - enfoque:
   bloque con `public/paola-hero-video.mov` como video provisional. El bloque sobre video contiene únicamente `No diseño piezas sueltas.` y `Ordeno procesos, información y decisiones para mejorar la experiencia.`
 - servicios:
-  tres servicios principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; no se muestran sistemas personales en el Home V2
+  tres servicios principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; cada uno se presenta con una única descripción breve, sin la división interna `Para qué`
 - método:
-  recorrido `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`
-- cómo empezamos:
-  recorrido `Me cuentas tu caso`, `Nos encontramos`, `Definimos el camino`, `Lo construimos`
+  recorrido compacto `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`, con microcopy de metadata
+- cierre:
+  sección `Hablemos` con una bajada breve y CTA hacia `/contacto`; no incluye el recorrido anterior de cuatro pasos
 - portfolio:
   teaser Home con tres proyectos destacados y cards clickeables hacia `/portfolio#gestock`, `/portfolio#nodux` y `/portfolio#operacion-de-tienda`; `/portfolio` conserva la evidencia profesional completa
 - footer:

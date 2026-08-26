@@ -8,33 +8,29 @@ import { SectionLabel } from "./brand/SectionLabel";
 const areas = [
   {
     number: "01",
-    title: "Producto y experiencia",
-    description:
-      "Defino qué necesita permitir el producto, para quién y qué experiencia debe sostener para que las personas puedan avanzar y lograr lo que necesitan.",
+    title: "PRODUCTO Y EXPERIENCIA",
+    description: "Defino qué necesita permitir el producto, para quién y qué experiencia necesita sostener.",
     image: imageProductExperience,
     imageAlt: "Interfaz de producto digital representada en un smartphone",
   },
   {
     number: "02",
-    title: "Información y estructura",
-    description:
-      "Organizo funciones, contenidos y relaciones para que la información aparezca donde hace falta y pueda usarse dentro del recorrido.",
+    title: "INFORMACIÓN Y ESTRUCTURA",
+    description: "Organizo funciones, contenidos y relaciones para que la información aparezca donde hace falta.",
     image: imageInformationStructure,
     imageAlt: "Dashboard modular con paneles, gráficos y controles",
   },
   {
     number: "03",
-    title: "Recorridos e interacción",
-    description:
-      "Diseño pasos, acciones, estados, respuestas y excepciones para definir cómo una persona avanza y qué ocurre en cada momento.",
+    title: "RECORRIDOS E INTERACCIÓN",
+    description: "Diseño pasos, acciones y estados para que una persona entienda cómo avanzar.",
     image: imageFlowsInteraction,
     imageAlt: "Recorrido visual formado por nodos y conexiones",
   },
   {
     number: "04",
-    title: "Interfaz y evolución",
-    description:
-      "Llevo esas decisiones a pantallas y componentes, acompaño su implementación y ajusto el producto a medida que aparece nueva evidencia.",
+    title: "INTERFAZ Y EVOLUCIÓN",
+    description: "Llevo esas decisiones a la interfaz, acompaño su implementación y ajusto con nueva evidencia.",
     image: imageInterfaceEvolution,
     imageAlt: "Composición de interfaz modular y componentes conectados",
   },
@@ -89,8 +85,8 @@ export function AreasOfWorkSection() {
                 gap: isMobile ? "18px" : "26px",
                 alignItems: "center",
                 minWidth: 0,
-                minHeight: isMobile ? "206px" : isTablet ? "240px" : "270px",
-                padding: isMobile ? "24px 0" : "30px 24px 30px 0",
+                minHeight: isMobile ? "190px" : isTablet ? "240px" : "270px",
+                padding: isMobile ? "20px 0" : "30px 24px 30px 0",
                 borderBottom: "1px solid rgba(23, 59, 68, 0.2)",
                 borderRight:
                   !isMobile && index % 2 === 0 ? "1px solid rgba(23, 59, 68, 0.2)" : "none",
