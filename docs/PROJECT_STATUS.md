@@ -4,7 +4,7 @@ Estado vivo del proyecto observado en el repositorio.
 
 Última revisión manual: 2026-08-02
 
-Actualización de esta iteración: 2026-08-10
+Actualización de esta iteración: 2026-08-26
 
 ## 1. Línea de tiempo visible en git
 
@@ -34,6 +34,11 @@ Interpretación:
 - el trabajo actual vuelve a ser acotado y temático, no de saneamiento general
 
 ## 3. Estado funcional actual inferido del código
+
+Notas V2:
+- `/notas` ahora presenta `01 — BITÁCORA` y una única nota real en una composición editorial horizontal en desktop y apilada en mobile
+- la nota individual usa el slug `un-ano-intentando-entender-que-significa-disenar-un-producto`, lectura continua y no incluye sidebar, índice ni CTA comercial
+- [`src/app/data/blogPosts.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/blogPosts.ts) es la fuente de verdad y contiene una única nota publicada
 
 Portfolio:
 - existe la ruta `/portfolio` como página profesional independiente
@@ -107,7 +112,7 @@ Conversión:
 - Se eliminaron la fotografía grande del hero, `PaperNote` y los gráficos SVG/CSS de `JourneyVisual`; el contenido visual ahora usa `EditorialPlaceholder`.
 - El recorrido de cuatro momentos sigue en un único array y mantiene timeline responsive con reveal sutil y `prefers-reduced-motion`.
 - Los CTAs activos de `/mi-historia` apuntan a `/portfolio` y `/contacto`; LinkedIn queda pendiente sin URL inventada. Home V2 y otras páginas no se modificaron.
-- `/contacto` quedó migrada a la nueva capa visual del sitio con hero oscuro editorial, nota manuscrita, tarjetas tipo papel y cierre de canales.
+- `/contacto` quedó consolidada en una composición compacta de dos columnas, con lista editorial de motivos y canales directos.
 - `/contacto#email` se conserva como ancla de conversión; WhatsApp sigue como acción principal y email como alternativa secundaria.
 - `npm run build` pasa después de la migración de `/contacto`; persisten warnings conocidos de prerender por `useLayoutEffect`.
 - `/contacto` recibió una pasada de simplificación de copy para sostener una lectura breve, precisa y orientada a contacto.

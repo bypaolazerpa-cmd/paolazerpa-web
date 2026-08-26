@@ -56,8 +56,8 @@ Páginas y secciones que convierten:
 Estado actual de `/contacto`:
 - WhatsApp se mantiene como acción principal de inicio de conversación
 - email se presenta como alternativa secundaria, visible y clara
-- la página quedó migrada a la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
-- el copy organiza la entrada en tres momentos: contacto, para qué escribirme y cómo empezar
+- la página quedó migrada a una composición compacta de dos columnas sobre la capa visual compartida (`pz-page`, `pz-dark`, `SectionLabel`)
+- el copy organiza en un mismo bloque la conversación inicial, tres motivos editoriales y los canales directos
 - el mensaje quedó simplificado para reducir carga de lectura y priorizar acción directa
 - el bloque de correo expone `id="email"` y margen de scroll para navegación con hash
 
@@ -130,8 +130,8 @@ Fuente de verdad de notas:
 - [`src/app/data/blogPosts.ts`](/Users/paolazerpa/Desktop/apps/paola-web/src/app/data/blogPosts.ts)
 
 Estado actual:
-- 3 notas publicadas
-- 1 destacada
+- 1 nota publicada y destacada
+- el archivo conserva una única entrada real mientras la bitácora crece
 - datos embebidos en código, sin CMS
 
 Si cambia el contenido editorial, revisar:

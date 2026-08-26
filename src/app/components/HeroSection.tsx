@@ -7,6 +7,15 @@ export function HeroSection() {
   const isCompactMobile = useIsMobile(400);
   const isTablet = useIsMobile(1100) && !isMobile;
 
+  const handleScrollToSelectedWork = () => {
+    const target = document.getElementById("selected-work");
+
+    if (!target) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+  };
+
   return (
     <section
       id="hero"
@@ -18,7 +27,7 @@ export function HeroSection() {
         paddingRight: isMobile ? "14px" : "28px",
         position: "relative",
         overflow: "hidden",
-        minHeight: "100svh",
+        minHeight: isMobile ? "auto" : "100svh",
         display: "flex",
         alignItems: "stretch",
       }}
@@ -33,7 +42,7 @@ export function HeroSection() {
           border: "1px solid rgba(230, 215, 198, 0.18)",
           borderRadius: isMobile ? "22px" : "28px",
           overflow: "hidden",
-          minHeight: isMobile ? "calc(100svh + 110px)" : "calc(100svh - 126px)",
+          minHeight: isMobile ? "auto" : "calc(100svh - 126px)",
           backgroundColor: "#d8c9b8",
         }}
       >
@@ -158,7 +167,7 @@ export function HeroSection() {
             display: isMobile ? "flex" : "grid",
             flexDirection: isMobile ? "column" : undefined,
             gridTemplateRows: isMobile ? undefined : "1fr auto",
-            padding: isMobile ? "0 24px 18px" : "56px 72px 44px",
+              padding: isMobile ? "0 24px 24px" : "56px 72px 44px",
           }}
         >
           <div
@@ -289,10 +298,10 @@ export function HeroSection() {
 
           <div
             style={{
-              position: "absolute",
-              left: "50%",
-              bottom: isMobile ? "56px" : "32px",
-              transform: "translateX(-50%)",
+              position: isMobile ? "relative" : "absolute",
+              left: isMobile ? "auto" : "50%",
+              bottom: isMobile ? "auto" : "32px",
+              transform: isMobile ? "none" : "translateX(-50%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -301,11 +310,11 @@ export function HeroSection() {
             <div
               style={{
                 display: "flex",
-                justifyContent: isMobile ? "flex-start" : "flex-end",
+                justifyContent: "center",
               }}
             >
               <button
-                onClick={() => scrollTo("selected-work")}
+                onClick={handleScrollToSelectedWork}
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(250,248,244,0.82) 0%, rgba(230,215,198,0.94) 100%)",
@@ -325,7 +334,7 @@ export function HeroSection() {
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
                 }}
-                aria-label="Scroll para explorar"
+                aria-label="Ir a proyectos seleccionados"
               >
                 <span className="pz-scroll-mouse" aria-hidden="true" />
               </button>

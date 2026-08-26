@@ -50,7 +50,7 @@ export function NavBar() {
       return location.pathname === "/";
     }
 
-    return location.pathname === href;
+    return location.pathname === href || location.pathname.startsWith(`${href}/`);
   };
 
   const brandStyle = {
