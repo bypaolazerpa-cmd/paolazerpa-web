@@ -112,7 +112,7 @@ Conversión:
 - Se eliminaron la fotografía grande del hero, `PaperNote` y los gráficos SVG/CSS de `JourneyVisual`; el contenido visual ahora usa `EditorialPlaceholder`.
 - El recorrido de cuatro momentos sigue en un único array y mantiene timeline responsive con reveal sutil y `prefers-reduced-motion`.
 - Los CTAs activos de `/mi-historia` apuntan a `/portfolio` y `/contacto`; LinkedIn queda pendiente sin URL inventada. Home V2 y otras páginas no se modificaron.
-- `/contacto` quedó migrada a la nueva capa visual del sitio con hero oscuro editorial, nota manuscrita, tarjetas tipo papel y cierre de canales.
+- `/contacto` quedó consolidada en una composición compacta de dos columnas, con lista editorial de motivos y canales directos.
 - `/contacto#email` se conserva como ancla de conversión; WhatsApp sigue como acción principal y email como alternativa secundaria.
 - `npm run build` pasa después de la migración de `/contacto`; persisten warnings conocidos de prerender por `useLayoutEffect`.
 - `/contacto` recibió una pasada de simplificación de copy para sostener una lectura breve, precisa y orientada a contacto.

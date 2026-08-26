@@ -96,8 +96,8 @@ Detalle relevante de `/mi-historia`:
 - el copy y las CTAs usan lenguaje neutral, sin asumir que la audiencia es solo femenina
 
 Detalle relevante de `/contacto`:
-- usa la nueva capa visual compartida (`pz-page`, `pz-dark`, `BrandButton`, `SectionLabel`, `PaperNote`)
-- organiza la página en tres bloques numerados: `Contacto`, `Para qué escribirme` y `Cómo empezar`
+- usa la nueva capa visual compartida (`pz-page`, `pz-dark`, `SectionLabel`)
+- organiza la página en una composición compacta de dos columnas: conversación inicial, `Punto de partida` y canales directos
 - mantiene WhatsApp como CTA principal y email como canal secundario visible
 - conserva el ancla `id="email"` para las CTAs internas que navegan a `/contacto#email`
 
