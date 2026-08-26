@@ -156,6 +156,14 @@ Conversión:
 - Forma de trabajar y Capacidades redujeron moderadamente su padding vertical para conservar el protagonismo de los proyectos.
 - Se validó `/portfolio` en 390, 430, 768, 1024, 1280 y 1440px, sin overflow y con contenido consistente.
 
+## 6.0.4. Portfolio V2 — 2026-08-26
+
+- `/portfolio` quedó reducido a cuatro bloques: `01 — Portfolio`, `02 — Trabajo seleccionado`, `03 — Otros proyectos` y `04 — Hablemos`.
+- Se eliminaron de esta página las secciones `Forma de trabajar` y `Capacidades`; Home conserva sus propios bloques sin cambios.
+- Trabajo seleccionado ordena NODUX, GeStock y Sistemas de operación de tienda con una única estructura responsive; Cosmic Studio queda como proyecto secundario.
+- Las cards usan la variante `portfolio-v2`, previews provisionales y anchors existentes; no se agregaron rutas de case study.
+- Se validó en 1440, 1024, 430 y 390px sin overflow horizontal.
+
 ## 6.1. Bloque responsive mobile iniciado — 2026-08-04
 
 - El hero ahora fuerza una composición editorial de tres líneas, subraya `sistema` en magenta y conserva la escena completa de Paola junto a la computadora.

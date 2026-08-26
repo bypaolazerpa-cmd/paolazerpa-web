@@ -21,9 +21,9 @@ Home:
 
 Portfolio profesional:
 - `/portfolio` → `PortfolioPage`
-- `PortfolioPage` compone hero profesional, selected work, proceso, capacidades, CTA y `FooterSection`
+- `PortfolioPage` compone hero de escaneo, trabajo seleccionado, otros proyectos, CTA y `FooterSection`
 - `PortfolioProjectCard` se reutiliza en Home y `/portfolio`
-- `PortfolioProjectCard` usa la variante `home-selected` para Selected Work, `home` para el teaser legacy y `portfolio` para el contexto profesional completo
+- `PortfolioProjectCard` usa variantes para Home y `portfolio-v2` para las cards de selección de `/portfolio`
 - [`src/app/data/portfolioProjects.ts`](/Users/paolazerpa/Code/paola-web/src/app/data/portfolioProjects.ts) es la fuente compartida para los proyectos
 - no existe todavía `/portfolio/:slug`; la estructura queda preparada para incorporarla cuando exista el primer case study completo
 
