@@ -3,24 +3,24 @@ import { SectionLabel } from "./brand/SectionLabel";
 
 const methodSteps = [
   {
-    title: "Comprender",
-    body: "Entiendo qué necesitamos resolver, para quién, qué ocurre hoy y qué resultado buscamos.",
+    title: "COMPRENDER",
+    body: "Empiezo por entender qué está pasando, para quién y qué necesitamos resolver.",
   },
   {
-    title: "Investigar",
-    body: "Busco evidencia, referencias y contexto para reducir incertidumbre antes de tomar decisiones.",
+    title: "INVESTIGAR",
+    body: "Busco contexto, referencias y señales que me ayuden a decidir mejor.",
   },
   {
-    title: "Organizar",
-    body: "Defino prioridades, relaciones, información, recorridos y qué necesita contemplar la solución.",
+    title: "ORGANIZAR",
+    body: "Ordeno prioridades, información y recorridos para darle estructura a la solución.",
   },
   {
-    title: "Diseñar",
-    body: "Llevo esas decisiones a flujos, interacciones, pantallas, componentes o herramientas concretas.",
+    title: "DISEÑAR",
+    body: "Convierto esa estructura en flujos, interacciones e interfaces concretas.",
   },
   {
-    title: "Evolucionar",
-    body: "Observo cómo funciona lo diseñado, incorporo nueva evidencia y vuelvo sobre decisiones cuando hace falta.",
+    title: "EVOLUCIONAR",
+    body: "Veo cómo funciona en la práctica y ajusto lo necesario a medida que aprendo.",
   },
 ];
 
@@ -34,7 +34,7 @@ export function HomeMethodSection() {
       style={{
         backgroundColor: "var(--arena-clara)",
         paddingTop: isMobile ? "86px" : "112px",
-        paddingBottom: isMobile ? "86px" : "116px",
+        paddingBottom: isMobile ? "68px" : "116px",
         paddingLeft: isMobile ? "24px" : "80px",
         paddingRight: isMobile ? "24px" : "80px",
         position: "relative",
@@ -48,7 +48,7 @@ export function HomeMethodSection() {
             gridTemplateColumns: "1fr",
             gap: isMobile ? "28px" : "54px",
             alignItems: "end",
-            marginBottom: isMobile ? "36px" : "54px",
+            marginBottom: isMobile ? "28px" : "54px",
           }}
         >
           <div>
@@ -82,7 +82,7 @@ export function HomeMethodSection() {
             <article
               key={step.title}
               style={{
-                padding: isMobile ? "20px 18px" : isTablet ? "26px 14px 28px" : "30px 22px 32px",
+                padding: isMobile ? "14px 16px 16px" : isTablet ? "26px 14px 28px" : "30px 22px 32px",
                 border: isMobile ? "1px solid rgba(23, 59, 68, 0.14)" : "none",
                 borderLeft: !isMobile && index > 0 ? "1px solid rgba(23, 59, 68, 0.2)" : "none",
                 borderRadius: isMobile ? "8px" : 0,
@@ -96,7 +96,7 @@ export function HomeMethodSection() {
                   color: "var(--mar-profundo)",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  margin: "0 0 16px",
+                  margin: "0 0 10px",
                   fontWeight: 700,
                 }}
               >
@@ -109,7 +109,7 @@ export function HomeMethodSection() {
                   fontSize: isMobile ? "23px" : isTablet ? "21px" : "24px",
                   color: "var(--mar-profundo)",
                   lineHeight: 1.12,
-                  margin: "0 0 12px",
+                  margin: "0 0 7px",
                 }}
               >
                 {step.title}
@@ -118,7 +118,7 @@ export function HomeMethodSection() {
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
                   fontSize: isTablet ? "14px" : "15px",
-                  lineHeight: isMobile ? 1.58 : 1.55,
+                  lineHeight: isMobile ? 1.35 : 1.55,
                   color: "rgba(23, 59, 68, 0.84)",
                   margin: 0,
                 }}

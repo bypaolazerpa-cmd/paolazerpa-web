@@ -4,10 +4,16 @@ import type { PortfolioProject } from "../data/portfolioProjects";
 
 type PortfolioProjectCardProps = {
   project: PortfolioProject;
-  variant?: "home" | "home-selected" | "portfolio";
+  variant?: "home" | "home-selected" | "portfolio" | "portfolio-v2";
+  portfolioContent?: {
+    eyebrow: string;
+    change: string;
+    description: string;
+    participation: string;
+  };
 };
 
-function ProjectPreview({
+export function ProjectPreview({
   project,
   compact,
   emphasis = false,
@@ -92,7 +98,40 @@ function ProjectPreview({
   );
 }
 
-export function PortfolioProjectCard({ project, variant = "portfolio" }: PortfolioProjectCardProps) {
+function PortfolioIndexCard({
+  project,
+  content,
+}: {
+  project: PortfolioProject;
+  content: NonNullable<PortfolioProjectCardProps["portfolioContent"]>;
+}) {
+  return (
+    <article id={project.slug} className="portfolio-v2-card">
+      <div className="portfolio-v2-card__preview">
+        <ProjectPreview project={project} compact={false} emphasis />
+      </div>
+      <div className="portfolio-v2-card__content">
+        <p className="portfolio-v2-card__eyebrow">{content.eyebrow}</p>
+        <h3 className="portfolio-v2-card__title">{project.title}</h3>
+        <p className="portfolio-v2-card__change">{content.change}</p>
+        <p className="portfolio-v2-card__description">{content.description}</p>
+        <div className="portfolio-v2-card__participation">
+          <p className="portfolio-v2-card__participation-label">Mi participación</p>
+          <p className="portfolio-v2-card__participation-copy">{content.participation}</p>
+        </div>
+        <AppLink to={`/portfolio#${project.slug}`} className="portfolio-v2-card__link">
+          Ver caso ↗
+        </AppLink>
+      </div>
+    </article>
+  );
+}
+
+export function PortfolioProjectCard({ project, variant = "portfolio", portfolioContent }: PortfolioProjectCardProps) {
+  if (variant === "portfolio-v2" && portfolioContent) {
+    return <PortfolioIndexCard project={project} content={portfolioContent} />;
+  }
+
   const selectedHome = variant === "home-selected";
   const compact = variant === "home";
 

@@ -105,7 +105,7 @@ Conversión:
 - El hero usa `paola-problema-scene.jpg` como foto provisional.
 - La sección 02 usa un fondo de identidad sin fotografía, con textura de grilla y recursos de papel rasgado.
 - La sección 03 usa `public/paola-hero-video.mov` como video provisional y quedó reducida a una sola idea principal.
-- Servicios ahora usa tres cards de una sola estructura semántica, con imágenes, descripción principal, bloque `Para qué` y CTA de cierre hacia contacto.
+- Servicios usa tres cards de una sola estructura semántica, con imágenes y una única descripción breve por servicio; la división interna `Para qué` fue retirada del Home.
 - Portfolio quedó convertido en archivo/carrusel con cuatro casos reales: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda.
 - `npm run lint` y `npm run build` pasan después de esta reestructura; persisten warnings conocidos de prerender por `useLayoutEffect`.
 - `/mi-historia` V3 reemplazó la V2 por una versión más compacta, con cinco bloques editoriales y placeholders preparados para futuras imágenes.
@@ -130,10 +130,11 @@ Conversión:
 ## 6.0.1. Pasada de contenido, estructura e interacción — 2026-08-10
 
 - El hero explicita `Paola Zerpa · Product Designer` y usa el copy definitivo de productos digitales, manteniendo un único H1, bajada y CTA por breakpoint.
+- El Home mantiene su arquitectura aprobada y presenta las secciones 03–06 con copy comprimido: áreas con una frase, método con metadata, servicios sin `Para qué` y cierre `Hablemos` sin bloques de proceso.
 - La sección de problema ahora presenta tres problemas observables de operación, producto y crecimiento/estructura, con una explicación breve por card.
 - Mi enfoque usa el headline `Primero entiendo cómo funciona. Después diseño cómo mejorarlo.` y un único bloque de copy sobre el video.
 - Servicios muestra únicamente `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; sistemas personales ya no aparece en Servicios de Home.
-- Método y Cómo empezamos fueron ajustados al copy definitivo del brief.
+- Método usa metadata compacta (`Problema · personas · resultado`, etc.) y el cierre reemplaza `Cómo empezamos` por `Hablemos`, con CTA breve hacia `/contacto`.
 - Home muestra únicamente GeStock, NODUX y Sistemas de operación de tienda; sus cards son clickeables hacia anchors estables de `/portfolio` y tienen hover/focus sutil con soporte para `prefers-reduced-motion`.
 - Navbar desktop y mobile comparten labels y destinos; `INICIO` y `PORTFOLIO` son los únicos estados activos de ruta.
 - Se validaron previews, overflow y anchors en 390px y 1440px, además de Home en 430, 768, 1024 y 1280px.
@@ -154,6 +155,14 @@ Conversión:
 - Se retiraron los estados visibles de las cards sin modificar datos, tags, previews ni anchors.
 - Forma de trabajar y Capacidades redujeron moderadamente su padding vertical para conservar el protagonismo de los proyectos.
 - Se validó `/portfolio` en 390, 430, 768, 1024, 1280 y 1440px, sin overflow y con contenido consistente.
+
+## 6.0.4. Portfolio V2 — 2026-08-26
+
+- `/portfolio` quedó reducido a cuatro bloques: `01 — Portfolio`, `02 — Trabajo seleccionado`, `03 — Otros proyectos` y `04 — Hablemos`.
+- Se eliminaron de esta página las secciones `Forma de trabajar` y `Capacidades`; Home conserva sus propios bloques sin cambios.
+- Trabajo seleccionado ordena NODUX, GeStock y Sistemas de operación de tienda con una única estructura responsive; Cosmic Studio queda como proyecto secundario.
+- Las cards usan la variante `portfolio-v2`, previews provisionales y anchors existentes; no se agregaron rutas de case study.
+- Se validó en 1440, 1024, 430 y 390px sin overflow horizontal.
 
 ## 6.1. Bloque responsive mobile iniciado — 2026-08-04
 

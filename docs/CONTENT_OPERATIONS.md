@@ -30,10 +30,10 @@ Portfolio profesional:
 - `/portfolio` es la página de presentación profesional de Paola como Product Designer.
 - el home usa `SelectedWorkSection` inmediatamente después del hero y deriva a `/portfolio`.
 - `AreasOfWorkSection` ocupa la sección 03 del home y presenta cuatro áreas de intervención de Product Design con imágenes editoriales compartidas.
-- `/portfolio` prioriza el recorrido `01 — Portfolio profesional`, `02 — Selected work`, `Otros proyectos`, `03 — Forma de trabajar`, `04 — Capacidades` y `05 — Hablemos`.
-- La introducción independiente fue eliminada; el mensaje profesional vive en el hero y Selected Work conserva los anchors `gestock`, `nodux` y `operacion-de-tienda`.
-- Selected Work muestra únicamente preview, identificación, transformación y descripción secundaria breve por proyecto.
-- GeStock, NODUX y Sistemas de operación de tienda son los proyectos destacados iniciales.
+- `/portfolio` prioriza el recorrido `01 — Portfolio`, `02 — Trabajo seleccionado`, `03 — Otros proyectos` y `04 — Hablemos`.
+- El hero funciona como entrada compacta de escaneo y su CTA principal lleva a `#selected-work`.
+- Trabajo seleccionado muestra preview, tipo, transformación principal, descripción breve, participación y CTA por proyecto.
+- El orden editorial es NODUX, GeStock y Sistemas de operación de tienda; Cosmic Studio queda como proyecto secundario.
 - Cosmic Studio aparece como trabajo secundario.
 - los previews visuales actuales son placeholders intencionales y deben reemplazarse por screenshots reales antes de presentar casos completos.
 
@@ -99,11 +99,11 @@ Estado actual del home:
 - enfoque:
   bloque con `public/paola-hero-video.mov` como video provisional. El bloque sobre video contiene únicamente `No diseño piezas sueltas.` y `Ordeno procesos, información y decisiones para mejorar la experiencia.`
 - servicios:
-  tres servicios principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; no se muestran sistemas personales en el Home V2
+  tres servicios principales: `Producto digital`, `Sistema de trabajo` y `Web o tienda online`; cada uno se presenta con una única descripción breve, sin la división interna `Para qué`
 - método:
-  recorrido `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`
-- cómo empezamos:
-  recorrido `Me cuentas tu caso`, `Nos encontramos`, `Definimos el camino`, `Lo construimos`
+  recorrido compacto `Comprender`, `Investigar`, `Organizar`, `Diseñar`, `Evolucionar`, con microcopy de metadata
+- cierre:
+  sección `Hablemos` con una bajada breve y CTA hacia `/contacto`; no incluye el recorrido anterior de cuatro pasos
 - portfolio:
   teaser Home con tres proyectos destacados y cards clickeables hacia `/portfolio#gestock`, `/portfolio#nodux` y `/portfolio#operacion-de-tienda`; `/portfolio` conserva la evidencia profesional completa
 - footer:

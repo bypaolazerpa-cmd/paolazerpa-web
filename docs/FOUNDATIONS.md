@@ -32,7 +32,7 @@ Snapshot de estructura visible en home:
 - servicios segmentados en cuatro ofertas y presentados como cards reversibles con imágenes generadas
 - método Paola con cinco pasos
 - cómo empezamos con cuatro pasos
-- portfolio como archivo/carrusel con cuatro casos: Control de vencimientos, Nodux, Cosmic Studio y Operación de tienda
+- portfolio como índice de escaneo con trabajo seleccionado y proyectos secundarios; los case studies individuales quedan fuera de esta fase
 - footer mínimo
 
 Evolución aprobada de portfolio:
