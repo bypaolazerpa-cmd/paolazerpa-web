@@ -219,6 +219,7 @@ export function HeroSection() {
                   letterSpacing: 0,
                   maxWidth: isMobile ? "100%" : isTablet ? "500px" : "860px",
                   textAlign: "left",
+                  textWrap: isMobile ? "balance" : undefined,
                   textShadow: "0 12px 32px rgba(12,16,14,0.3)",
                 }}
               >
@@ -228,11 +229,11 @@ export function HeroSection() {
                   "la información que necesitan,",
                   "entiendan cómo funciona el proceso",
                   "y sepan cómo avanzar.",
-                ].map((phrase) => (
+                ].map((phrase, index) => (
                   <span
                     key={phrase}
                     style={{
-                      display: isMobile || isTablet ? "inline-block" : "block",
+                      display: isMobile ? "inline" : isTablet ? "inline-block" : "block",
                       fontSize: "inherit",
                       fontWeight: "inherit",
                       lineHeight: "inherit",
@@ -240,6 +241,7 @@ export function HeroSection() {
                     }}
                   >
                     {phrase}
+                    {index < 4 ? " " : ""}
                   </span>
                 ))}
               </h1>
