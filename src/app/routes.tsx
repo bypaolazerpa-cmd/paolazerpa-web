@@ -20,6 +20,8 @@ import { BlogPage } from "./components/BlogPage";
 import { BlogNotePage } from "./components/BlogNotePage";
 import { ContactoPage } from "./components/ContactoPage";
 import { MiHistoriaPage } from "./components/MiHistoriaPage";
+import { PortfolioPage } from "./components/PortfolioPage";
+import { CaseStudyRoute } from "./components/CaseStudyPage";
 
 function Home() {
   return (
@@ -56,6 +58,11 @@ export const routeConfig: RouteObject[] = [
     Component: RootLayout,
     children: [
       { index: true, Component: Home },
+      { path: "portfolio", Component: PortfolioPage },
+      { path: "portfolio/nodux", element: <CaseStudyRoute slug="nodux" /> },
+      { path: "portfolio/gestock", element: <CaseStudyRoute slug="gestock" /> },
+      { path: "portfolio/operacion-de-tienda", element: <CaseStudyRoute slug="operacion-de-tienda" /> },
+      { path: "portfolio/cosmic-studio", element: <CaseStudyRoute slug="cosmic-studio" /> },
       { path: "guia", Component: GuiaPage },
       { path: "programa", Component: ProgramaPage },
       { path: "notas", Component: BlogPage },

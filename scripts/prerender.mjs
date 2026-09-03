@@ -7,14 +7,18 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const distDir = path.join(projectRoot, "dist");
 const ssrEntryPath = path.join(projectRoot, ".prerender", "entry-prerender.js");
-const { prerenderRoutes, renderRoute } = await import(pathToFileURL(ssrEntryPath).href);
+const { prerenderRoutes, renderRoute, getPageMetadata } = await import(pathToFileURL(ssrEntryPath).href);
 
 const templatePath = path.join(distDir, "index.html");
 const template = await fs.readFile(templatePath, "utf8");
 
 for (const route of prerenderRoutes) {
   const appHtml = renderRoute(route);
-  const html = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  const metadata = getPageMetadata(route);
+  const html = template
+    .replace(/<title>[^<]*<\/title>/, `<title>${metadata.title}</title>`)
+    .replace(/<meta name="description" content="[^"]*"\s*\/>/, `<meta name="description" content="${metadata.description}" />`)
+    .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
   const outputPath =
     route === "/" ? templatePath : path.join(distDir, route.replace(/^\//, ""), "index.html");
 
