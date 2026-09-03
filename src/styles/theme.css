@@ -168,12 +168,17 @@ a:focus-visible {
   box-shadow: var(--cta-glass-shadow);
 }
 
+.hero-cta-buttons .pz-button {
+  background: linear-gradient(#ffcbe0 0%, #f07fa8 100%);
+  color: #0a2026;
+}
+
 @media (max-width: 768px) {
   .hero-cta-buttons .pz-button {
     min-height: 42px;
     padding: 0 14px;
     gap: 6px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.06em;
   }
 }

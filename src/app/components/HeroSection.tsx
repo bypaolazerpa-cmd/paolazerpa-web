@@ -57,9 +57,9 @@ export function HeroSection() {
             height: "100%",
             objectFit: "cover",
             objectPosition: isMobile ? "16% top" : "center center",
-            filter: "blur(18px) saturate(0.88) contrast(0.86) brightness(1.08)",
-            transform: "scale(1.08)",
-            opacity: 0.9,
+            filter: "blur(18px) saturate(0.82) contrast(0.9) brightness(0.92)",
+            transform: "scaleX(-1) scale(1.08)",
+            opacity: 0.48,
           }}
         />
 
@@ -71,12 +71,14 @@ export function HeroSection() {
             position: "absolute",
             top: 0,
             bottom: isMobile ? "auto" : 0,
-            left: 0,
-            width: isMobile || isTablet ? "100%" : "75%",
+            left: isMobile || isTablet ? 0 : "auto",
+            right: isMobile || isTablet ? "auto" : 0,
+            width: "100%",
             height: isMobile ? "58%" : "100%",
             objectFit: isMobile ? "cover" : "contain",
             objectPosition: isMobile ? "16% center" : "left center",
             filter: "saturate(0.94) contrast(0.94) brightness(1.02)",
+            transform: "scaleX(-1)",
             WebkitMaskImage: isMobile
               ? "linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%)"
               : "linear-gradient(90deg, #000 0%, #000 44%, rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.16) 76%, transparent 88%)",
@@ -117,8 +119,10 @@ export function HeroSection() {
             position: "absolute",
             inset: 0,
             background: isMobile
-              ? "linear-gradient(90deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.08) 42%, rgba(12,16,14,0.6) 100%), linear-gradient(180deg, rgba(12,16,14,0.02) 0%, rgba(12,16,14,0.1) 24%, rgba(12,16,14,0.42) 40%, rgba(12,16,14,0.84) 68%, rgba(12,16,14,0.96) 100%)"
-              : "linear-gradient(90deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.18) 28%, rgba(12,16,14,0.16) 46%, rgba(12,16,14,0.42) 65%, rgba(12,16,14,0.72) 100%)",
+              ? "linear-gradient(90deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.34) 42%, rgba(12,16,14,0.68) 100%), linear-gradient(180deg, rgba(12,16,14,0.06) 0%, rgba(12,16,14,0.22) 24%, rgba(12,16,14,0.68) 40%, rgba(12,16,14,0.9) 68%, rgba(12,16,14,0.97) 100%)"
+              : isTablet
+                ? "linear-gradient(90deg, rgba(12,16,14,0.9) 0%, rgba(12,16,14,0.82) 35%, rgba(12,16,14,0.58) 62%, rgba(12,16,14,0.12) 100%), linear-gradient(180deg, rgba(12,16,14,0.05) 0%, rgba(12,16,14,0.22) 100%)"
+                : "linear-gradient(90deg, rgba(12,16,14,0.82) 0%, rgba(12,16,14,0.68) 35%, rgba(12,16,14,0.34) 62%, rgba(12,16,14,0.07) 100%), linear-gradient(180deg, rgba(12,16,14,0.04) 0%, rgba(12,16,14,0.18) 100%)",
           }}
         />
 
@@ -126,7 +130,7 @@ export function HeroSection() {
           aria-hidden="true"
           style={{
             position: "absolute",
-            right: isMobile ? "18px" : "16%",
+            right: isMobile ? "18px" : "3%",
             top: isMobile ? "92px" : "132px",
             width: isMobile ? "92px" : "170px",
             height: isMobile ? "92px" : "170px",
@@ -137,9 +141,9 @@ export function HeroSection() {
         />
 
         {[
-          { top: isMobile ? "15%" : "21%", right: isMobile ? "16%" : "22%", size: isMobile ? 5 : 7 },
-          { top: isMobile ? "31%" : "33%", right: isMobile ? "8%" : "12%", size: isMobile ? 4 : 5 },
-          { top: isMobile ? "58%" : "18%", right: isMobile ? "20%" : "35%", size: isMobile ? 3 : 4 },
+          { top: isMobile ? "15%" : "21%", right: isMobile ? "16%" : "5%", size: isMobile ? 5 : 7 },
+          { top: isMobile ? "31%" : "33%", right: isMobile ? "8%" : "9%", size: isMobile ? 4 : 5 },
+          { top: isMobile ? "58%" : "18%", right: isMobile ? "20%" : "14%", size: isMobile ? 3 : 4 },
         ].map((sparkle, index) => (
           <span
             key={index}
@@ -176,10 +180,10 @@ export function HeroSection() {
               display: "grid",
               gap: isMobile ? "24px" : "42px",
               width: "100%",
-              maxWidth: isMobile ? "100%" : isTablet ? "500px" : "760px",
-              justifySelf: isMobile ? "start" : "end",
+              maxWidth: isMobile ? "100%" : isTablet ? "500px" : "820px",
+              justifySelf: isMobile ? "start" : isTablet ? "end" : "start",
               marginTop: isMobile ? "40svh" : "-34px",
-              marginRight: isMobile ? "0" : isTablet ? "3%" : "6%",
+              marginRight: isMobile ? "0" : isTablet ? "3%" : "0",
               marginBottom: isMobile ? "24px" : "0",
             }}
           >
@@ -207,69 +211,56 @@ export function HeroSection() {
               <h1
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? (isCompactMobile ? "21px" : "24px") : isTablet ? "32px" : "50px",
-                  fontWeight: 600,
-                  lineHeight: isMobile ? 1.08 : 1.02,
+                  fontSize: isMobile ? (isCompactMobile ? "22px" : "24px") : isTablet ? "33px" : "42px",
+                  fontWeight: 700,
+                  lineHeight: isMobile ? 1.08 : 1.05,
                   color: "var(--arena-clara)",
                   margin: 0,
                   letterSpacing: 0,
-                  maxWidth: isMobile ? "100%" : isTablet ? "500px" : "760px",
+                  maxWidth: isMobile ? "100%" : isTablet ? "500px" : "860px",
                   textAlign: "left",
                   textShadow: "0 12px 32px rgba(12,16,14,0.3)",
                 }}
               >
-                <span
-                  style={{
-                    display: "block",
-                    whiteSpace: isMobile ? "normal" : "nowrap",
-                    fontSize: "inherit",
-                    fontWeight: "inherit",
-                    lineHeight: "inherit",
-                  }}
-                >
-                  Diseño experiencias digitales
-                </span>
-                <span
-                  style={{
-                    display: "block",
-                    marginTop: isMobile ? "4px" : "8px",
-                    fontSize: "inherit",
-                    fontWeight: "inherit",
-                    lineHeight: "inherit",
-                  }}
-                >
-                  que acompañan procesos
-                </span>
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: "inherit",
-                    fontWeight: "inherit",
-                    lineHeight: "inherit",
-                  }}
-                >
-                  y permiten tomar decisiones.
-                </span>
+                {[
+                  "Diseño productos digitales",
+                  "para que las personas encuentren",
+                  "la información que necesitan,",
+                  "entiendan cómo funciona el proceso",
+                  "y sepan cómo avanzar.",
+                ].map((phrase) => (
+                  <span
+                    key={phrase}
+                    style={{
+                      display: isMobile || isTablet ? "inline-block" : "block",
+                      fontSize: "inherit",
+                      fontWeight: "inherit",
+                      lineHeight: "inherit",
+                      marginRight: isMobile || isTablet ? "0.25em" : 0,
+                    }}
+                  >
+                    {phrase}
+                  </span>
+                ))}
               </h1>
 
               <p
                 style={{
                   fontFamily: "Space Grotesk, sans-serif",
-                  fontSize: isMobile ? "15px" : "17px",
+                  fontSize: isMobile ? "16px" : "18px",
                   fontWeight: 400,
-                  lineHeight: isMobile ? 1.48 : 1.56,
+                  lineHeight: isMobile ? 1.45 : 1.5,
                   color: "rgba(250, 248, 244, 0.96)",
                   margin: 0,
-                  maxWidth: isMobile ? "100%" : isTablet ? "430px" : "620px",
+                  maxWidth: isMobile ? "100%" : isTablet ? "440px" : "590px",
                   textAlign: "left",
                   textShadow: "0 2px 18px rgba(12,16,14,0.72)",
                   background: "transparent",
                   padding: 0,
                 }}
               >
-                Trabajo el producto como un todo: quién lo usa, qué necesita lograr con él, qué
-                información necesita para avanzar y cómo todo eso define el recorrido, las
-                interacciones y la interfaz.
+                Trabajo sobre la estrategia, la lógica, la información y la experiencia que hacen
+                que un producto funcione bien más allá de la pantalla.
               </p>
             </div>
 
