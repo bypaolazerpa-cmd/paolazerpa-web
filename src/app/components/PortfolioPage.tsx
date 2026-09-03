@@ -1,5 +1,6 @@
 import { useIsMobile } from "../hooks/useIsMobile";
 import { portfolioProjects } from "../data/portfolioProjects";
+import { AppLink } from "./AppLink";
 import { BrandButton } from "./brand/BrandButton";
 import { SectionLabel } from "./brand/SectionLabel";
 import { FooterSection } from "./FooterSection";
@@ -99,7 +100,7 @@ export function PortfolioPage() {
             <SectionLabel number="03">Otros proyectos</SectionLabel>
             <div className="portfolio-secondary-card">
               <div style={{ opacity: .82 }}><ProjectPreview project={cosmicStudio} compact={false} /></div>
-              <div><p className="portfolio-secondary-card__eyebrow">Cosmic Studio</p><h3>Cosmic Studio</h3><p className="portfolio-secondary-card__change">Un sistema de marca para comunicar una propuesta digital con claridad.</p><p className="portfolio-secondary-card__description">Estrategia, identidad y arquitectura web reunidas en una experiencia más consistente.</p><a className="portfolio-secondary-card__link" href="#cosmic-studio">Ver caso ↗</a></div>
+              <div><p className="portfolio-secondary-card__eyebrow">Cosmic Studio</p><h3>Cosmic Studio</h3><p className="portfolio-secondary-card__change">Un sistema de marca para comunicar una propuesta digital con claridad.</p><p className="portfolio-secondary-card__description">Estrategia, identidad y arquitectura web reunidas en una experiencia más consistente.</p><AppLink className="portfolio-secondary-card__link" to="/portfolio/cosmic-studio">Ver caso ↗</AppLink></div>
             </div>
           </div>
         </section>

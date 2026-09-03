@@ -119,7 +119,7 @@ function PortfolioIndexCard({
           <p className="portfolio-v2-card__participation-label">Mi participación</p>
           <p className="portfolio-v2-card__participation-copy">{content.participation}</p>
         </div>
-        <AppLink to={`/portfolio#${project.slug}`} className="portfolio-v2-card__link">
+        <AppLink to={`/portfolio/${project.slug}`} className="portfolio-v2-card__link">
           Ver caso ↗
         </AppLink>
       </div>
