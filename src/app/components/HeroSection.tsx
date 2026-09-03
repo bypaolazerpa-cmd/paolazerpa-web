@@ -119,7 +119,7 @@ export function HeroSection() {
             position: "absolute",
             inset: 0,
             background: isMobile
-              ? "linear-gradient(90deg, rgba(12,16,14,0.28) 0%, rgba(12,16,14,0.34) 42%, rgba(12,16,14,0.68) 100%), linear-gradient(180deg, rgba(12,16,14,0.06) 0%, rgba(12,16,14,0.22) 24%, rgba(12,16,14,0.68) 40%, rgba(12,16,14,0.9) 68%, rgba(12,16,14,0.97) 100%)"
+              ? "linear-gradient(90deg, rgba(12,16,14,0.35) 0%, rgba(12,16,14,0.4) 42%, rgba(12,16,14,0.68) 100%), linear-gradient(180deg, rgba(12,16,14,0.12) 0%, rgba(12,16,14,0.36) 24%, rgba(12,16,14,0.82) 40%, rgba(12,16,14,0.93) 68%, rgba(12,16,14,0.98) 100%)"
               : isTablet
                 ? "linear-gradient(90deg, rgba(12,16,14,0.9) 0%, rgba(12,16,14,0.82) 35%, rgba(12,16,14,0.58) 62%, rgba(12,16,14,0.12) 100%), linear-gradient(180deg, rgba(12,16,14,0.05) 0%, rgba(12,16,14,0.22) 100%)"
                 : "linear-gradient(90deg, rgba(12,16,14,0.82) 0%, rgba(12,16,14,0.68) 35%, rgba(12,16,14,0.34) 62%, rgba(12,16,14,0.07) 100%), linear-gradient(180deg, rgba(12,16,14,0.04) 0%, rgba(12,16,14,0.18) 100%)",
@@ -171,7 +171,7 @@ export function HeroSection() {
             display: isMobile ? "flex" : "grid",
             flexDirection: isMobile ? "column" : undefined,
             gridTemplateRows: isMobile ? undefined : "1fr auto",
-              padding: isMobile ? "0 24px 24px" : "56px 72px 44px",
+              padding: isMobile ? "0 24px 16px" : "56px 72px 44px",
           }}
         >
           <div
@@ -182,7 +182,7 @@ export function HeroSection() {
               width: "100%",
               maxWidth: isMobile ? "100%" : isTablet ? "500px" : "820px",
               justifySelf: isMobile ? "start" : isTablet ? "end" : "start",
-              marginTop: isMobile ? "40svh" : "-34px",
+              marginTop: isMobile ? "34svh" : "-34px",
               marginRight: isMobile ? "0" : isTablet ? "3%" : "0",
               marginBottom: isMobile ? "24px" : "0",
             }}
@@ -292,6 +292,7 @@ export function HeroSection() {
               position: isMobile ? "relative" : "absolute",
               left: isMobile ? "auto" : "50%",
               bottom: isMobile ? "auto" : "32px",
+              marginTop: isMobile ? "12px" : 0,
               transform: isMobile ? "none" : "translateX(-50%)",
               display: "flex",
               alignItems: "center",
