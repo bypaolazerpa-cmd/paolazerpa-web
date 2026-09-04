@@ -205,7 +205,7 @@ export function HeroSection() {
                   textUnderlineOffset: "6px",
                 }}
               >
-                Paola Zerpa · Product Designer
+                Hola, soy Paola · Product Designer
               </p>
 
               <h1

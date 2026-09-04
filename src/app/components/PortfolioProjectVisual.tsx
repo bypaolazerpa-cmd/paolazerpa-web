@@ -11,22 +11,26 @@ const projectVisuals = {
 export function PortfolioProjectVisual({
   project,
   emphasis = false,
+  mode = "index",
 }: {
   project: PortfolioProject;
   emphasis?: boolean;
+  mode?: "index" | "home";
 }) {
   const config = projectVisuals[project.slug] ?? { eyebrow: project.category, variant: "system" as const, theme: "teal" as const };
+  const variant: PortfolioVisualVariant = mode === "home" && project.slug === "gestock" ? "dashboard-compact" : config.variant;
 
   return (
     <PortfolioVisualPlaceholder
       eyebrow={config.eyebrow}
       title={project.title}
-      variant={config.variant}
+      variant={variant}
       theme={config.theme}
       density="compact"
       aspectRatio={emphasis ? "15 / 10" : "16 / 10"}
       showCaption={false}
       marginTop={0}
+      compactVisual={mode === "home"}
     />
   );
 }

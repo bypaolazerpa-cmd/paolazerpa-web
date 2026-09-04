@@ -1,10 +1,12 @@
 import type { CSSProperties, ReactNode } from "react";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 export type PortfolioVisualVariant =
   | "nodux-ecosystem"
   | "map"
   | "flow"
   | "dashboard"
+  | "dashboard-compact"
   | "wireframe"
   | "store-config"
   | "management-storefront"
@@ -29,6 +31,7 @@ export type PortfolioVisualPlaceholderProps = {
   showCaption?: boolean;
   visualLabel?: string;
   marginTop?: CSSProperties["marginTop"];
+  compactVisual?: boolean;
 };
 
 type Palette = {
@@ -149,12 +152,14 @@ function MapVisual({ palette }: { palette: Palette }) {
   );
 }
 
-function NoduxEcosystemVisual({ palette }: { palette: Palette }) {
+function NoduxEcosystemVisual({ palette, compactVisual }: { palette: Palette; compactVisual: boolean }) {
+  const isSmallViewport = useIsMobile(520);
+  const isSmall = compactVisual || isSmallViewport;
   const modules = ["catálogo", "tienda", "pedidos", "operación"];
   return (
     <div style={{ display: "grid", gap: 9, minHeight: 190, minWidth: 0 }}>
       <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, .8fr)", gap: 9, minWidth: 0 }}>
-        <Panel palette={palette} style={{ padding: 12, display: "grid", gap: 9 }}>
+        <Panel palette={palette} style={{ padding: isSmall ? 9 : 12, display: "grid", gap: isSmall ? 6 : 9 }}>
           <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center" }}>
             <span style={{ ...textStyle, color: palette.accent, fontSize: 10 }}>gestión</span>
             <span style={{ ...textStyle, color: palette.muted, fontSize: 10 }}>NODUX</span>
@@ -166,24 +171,24 @@ function NoduxEcosystemVisual({ palette }: { palette: Palette }) {
             </div>
           ))}
         </Panel>
-        <Panel palette={palette} style={{ padding: 12, display: "grid", alignContent: "space-between", gap: 10, background: palette.accentSoft }}>
+        <Panel palette={palette} style={{ padding: isSmall ? 9 : 12, display: "grid", alignContent: "space-between", gap: isSmall ? 7 : 10, background: palette.accentSoft }}>
           <span style={{ ...textStyle, fontSize: 10 }}>tienda online</span>
           <div style={{ display: "grid", gap: 7 }}>
-            <span style={{ height: 28, borderRadius: 4, background: palette.panel }} />
+            <span style={{ height: isSmall ? 24 : 28, borderRadius: 4, background: palette.panel }} />
             <span style={{ height: 7, width: "78%", background: palette.ink, opacity: .7, borderRadius: 4 }} />
             <span style={{ height: 7, width: "54%", background: palette.ink, opacity: .4, borderRadius: 4 }} />
           </div>
           <span style={{ ...textStyle, fontSize: 9 }}>experiencia final</span>
         </Panel>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, minmax(0, 1fr))", gap: 5, alignItems: "center", minWidth: 0 }}>
+      <div style={{ display: "grid", gridTemplateColumns: isSmall ? "repeat(2, minmax(0, 1fr))" : "repeat(7, minmax(0, 1fr))", gap: isSmall ? 6 : 5, alignItems: "center", minWidth: 0 }}>
         {modules.map((module, index) => (
-          <div key={module} style={{ display: "contents" }}>
-            <Panel palette={palette} style={{ padding: "8px 6px", minHeight: 34, display: "grid", alignContent: "center", gap: 5, background: index === 2 ? palette.accentSoft : palette.panel }}>
+          <div key={module} style={{ display: isSmall ? "block" : "contents" }}>
+            <Panel palette={palette} style={{ padding: isSmall ? "6px 5px" : "8px 6px", minHeight: isSmall ? 30 : 34, display: "grid", alignContent: "center", gap: isSmall ? 4 : 5, background: index === 2 ? palette.accentSoft : palette.panel }}>
               <Dot color={index === 2 ? palette.accent : palette.ink} />
-              <span style={{ ...textStyle, fontSize: 8 }}>{module}</span>
+              <span style={{ ...textStyle, fontSize: isSmall ? 9 : 8, lineHeight: 1.15, textAlign: isSmall ? "center" : undefined }}>{module}</span>
             </Panel>
-            {index < modules.length - 1 && <span aria-hidden="true" style={{ textAlign: "center", color: palette.accent, fontSize: 16 }}>→</span>}
+            {!isSmall && index < modules.length - 1 && <span aria-hidden="true" style={{ textAlign: "center", color: palette.accent, fontSize: 16 }}>→</span>}
           </div>
         ))}
       </div>
@@ -213,31 +218,58 @@ function FlowVisual({ palette }: { palette: Palette }) {
 }
 
 function DashboardVisual({ palette }: { palette: Palette }) {
+  const isSmallViewport = useIsMobile(520);
+
   return (
     <div style={{ display: "grid", gridTemplateColumns: "minmax(64px, 82px) minmax(0, 1fr)", gap: 10, height: "100%", minHeight: 180, minWidth: 0 }}>
       <Panel palette={palette} style={{ padding: 10, display: "grid", alignContent: "start", gap: 11 }}>
         <Dot color={palette.accent} />
         {[0, 1, 2, 3].map((item) => <span key={item} style={{ height: 6, width: `${48 + item * 8}%`, background: palette.line, borderRadius: 4 }} />)}
       </Panel>
-      <div style={{ display: "grid", gap: 10, alignContent: "start" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 8, minWidth: 0 }}>
+      <div style={{ display: "grid", gridTemplateRows: isSmallViewport ? "auto auto" : "auto minmax(0, 1fr)", gap: 10, height: isSmallViewport ? "auto" : "100%", minHeight: 0 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isSmallViewport ? "repeat(2, minmax(0, 1fr))" : "repeat(3, minmax(0, 1fr))", gap: 8, minWidth: 0 }}>
           {[['productos', 'listado'], ['pedidos', 'en curso'], ['proveedores', 'orden']].map(([label, value]) => (
-            <Panel key={label} palette={palette} style={{ padding: 11, display: "grid", gap: 8 }}>
+            <Panel key={label} palette={palette} style={{ padding: isSmallViewport ? 9 : 11, display: "grid", gap: isSmallViewport ? 6 : 8 }}>
               <span style={{ ...textStyle, color: palette.muted, fontSize: 10 }}>{label}</span>
               <strong style={{ minWidth: 0, maxWidth: "100%", overflowWrap: "anywhere", wordBreak: "break-word", fontSize: 13, lineHeight: 1.1 }}>{value}</strong>
             </Panel>
           ))}
         </div>
-        <Panel palette={palette} style={{ padding: 13, display: "grid", gap: 12 }}>
+        <Panel palette={palette} style={{ padding: 10, display: "grid", alignContent: isSmallViewport ? "start" : "space-between", gap: 8, minHeight: isSmallViewport ? 108 : 0 }}>
           <span style={{ ...textStyle, color: palette.muted, fontSize: 10 }}>actividad</span>
           {[68, 44, 84, 56].map((width, index) => (
             <div key={width} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ ...textStyle, width: 18, fontSize: 10 }}>{String(index + 1).padStart(2, "0")}</span>
+              <span style={{ ...textStyle, width: 16, fontSize: 8, lineHeight: 1 }}>{String(index + 1).padStart(2, "0")}</span>
               <span style={{ height: 8, width: `${width}%`, background: index === 2 ? palette.accent : palette.accentSoft, borderRadius: 3 }} />
             </div>
           ))}
         </Panel>
       </div>
+    </div>
+  );
+}
+
+function DashboardCompactVisual({ palette }: { palette: Palette }) {
+  const modules = ["productos", "stock", "vencimientos", "proveedores"];
+
+  return (
+    <div style={{ display: "grid", gap: 9, alignContent: "center", minHeight: 180, minWidth: 0 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, minWidth: 0 }}>
+        <span style={{ ...textStyle, color: palette.accent, fontSize: 10 }}>gestión operativa</span>
+        <span style={{ ...textStyle, color: palette.muted, fontSize: 9 }}>sistema centralizado</span>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 7, minWidth: 0 }}>
+        {modules.map((module, index) => (
+          <Panel key={module} palette={palette} style={{ padding: "10px 9px", minHeight: 46, display: "grid", gap: 7, alignContent: "center", background: index === 1 ? palette.accentSoft : palette.panel }}>
+            <span style={{ ...textStyle, color: index === 1 ? palette.accent : palette.muted, fontSize: 9, lineHeight: 1.15 }}>{module}</span>
+            <span style={{ height: 6, width: `${62 + index * 8}%`, background: index === 1 ? palette.accent : palette.line, borderRadius: 4 }} />
+          </Panel>
+        ))}
+      </div>
+      <Panel palette={palette} style={{ padding: "9px 10px", display: "flex", alignItems: "center", gap: 8, minWidth: 0, background: palette.panel }}>
+        <Dot color={palette.accent} />
+        <span style={{ ...textStyle, color: palette.muted, fontSize: 9 }}>información conectada</span>
+      </Panel>
     </div>
   );
 }
@@ -499,12 +531,13 @@ function SystemVisual({ palette }: { palette: Palette }) {
   );
 }
 
-function VisualContent({ variant, palette }: { variant: PortfolioVisualVariant; palette: Palette }) {
+function VisualContent({ variant, palette, compactVisual }: { variant: PortfolioVisualVariant; palette: Palette; compactVisual: boolean }) {
   switch (variant) {
-    case "nodux-ecosystem": return <NoduxEcosystemVisual palette={palette} />;
+    case "nodux-ecosystem": return <NoduxEcosystemVisual palette={palette} compactVisual={compactVisual} />;
     case "map": return <MapVisual palette={palette} />;
     case "flow": return <FlowVisual palette={palette} />;
     case "dashboard": return <DashboardVisual palette={palette} />;
+    case "dashboard-compact": return <DashboardCompactVisual palette={palette} />;
     case "wireframe": return <WireframeVisual palette={palette} />;
     case "store-config": return <StoreConfigVisual palette={palette} />;
     case "management-storefront": return <ManagementStorefrontVisual palette={palette} />;
@@ -529,9 +562,11 @@ export function PortfolioVisualPlaceholder({
   showCaption = true,
   visualLabel,
   marginTop = 30,
+  compactVisual = false,
 }: PortfolioVisualPlaceholderProps) {
   const palette = palettes[theme];
   const compact = density === "compact";
+  const isSmallViewport = useIsMobile(767);
 
   return (
     <figure
@@ -542,7 +577,7 @@ export function PortfolioVisualPlaceholder({
         flexDirection: "column",
         gap: compact ? 14 : 20,
         aspectRatio,
-        minHeight: compact ? 250 : 320,
+        minHeight: showCaption ? (isSmallViewport ? 420 : 350) : compact ? 270 : 320,
         width: "100%",
         maxWidth: "100%",
         minWidth: 0,
@@ -568,7 +603,7 @@ export function PortfolioVisualPlaceholder({
           )}
         </figcaption>
       )}
-      <div aria-hidden="true" style={{ flex: 1, minHeight: 0, minWidth: 0, width: "100%", maxWidth: "100%" }}>{VisualContent({ variant, palette })}</div>
+      <div aria-hidden="true" style={{ flex: 1, minHeight: 0, minWidth: 0, width: "100%", maxWidth: "100%" }}>{VisualContent({ variant, palette, compactVisual })}</div>
     </figure>
   );
 }

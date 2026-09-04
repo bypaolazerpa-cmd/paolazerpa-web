@@ -49,10 +49,11 @@ export function PortfolioPage() {
   return (
     <div className="pz-page portfolio-page">
       <style>{`
-        .portfolio-v2-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(28px,4vw,52px) 0;border-top:1px solid rgba(230,215,198,.2)}
+        .portfolio-v2-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"preview identity" "preview details";column-gap:clamp(28px,5vw,72px);row-gap:24px;align-items:start;padding:clamp(28px,4vw,52px) 0;border-top:1px solid rgba(230,215,198,.2)}
         .portfolio-v2-card:last-child{border-bottom:1px solid rgba(230,215,198,.2)}
-        .portfolio-v2-card__preview{min-width:0}
-        .portfolio-v2-card__content{min-width:0}
+        .portfolio-v2-card__preview{grid-area:preview;min-width:0;align-self:center}
+        .portfolio-v2-card__identity{grid-area:identity;min-width:0}
+        .portfolio-v2-card__details{grid-area:details;min-width:0}
         .portfolio-v2-card__eyebrow,.portfolio-v2-card__participation-label{font:700 10px/1.3 "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta);margin:0 0 14px}
         .portfolio-v2-card__title{font:600 clamp(34px,4vw,58px)/.98 "Space Grotesk",sans-serif;color:var(--arena-clara);margin:0 0 18px;letter-spacing:-.035em}
         .portfolio-v2-card__change{font:600 clamp(19px,2vw,27px)/1.2 "Space Grotesk",sans-serif;color:var(--arena-clara);margin:0 0 14px;max-width:620px}
@@ -60,16 +61,17 @@ export function PortfolioPage() {
         .portfolio-v2-card__participation{margin-top:26px;padding-top:16px;border-top:1px solid rgba(230,215,198,.2)}
         .portfolio-v2-card__participation-label{color:var(--citron-loto);margin-bottom:8px}
         .portfolio-v2-card__participation-copy{font:11px/1.65 "Space Mono",monospace;color:rgba(230,215,198,.72);margin:0;max-width:600px}
-        .portfolio-v2-card__link{display:inline-flex;margin-top:24px;color:var(--arena-clara);font:700 11px/1 "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(230,215,198,.5);padding-bottom:8px}
-        .portfolio-v2-card__link:hover,.portfolio-v2-card__link:focus-visible{color:var(--magenta);border-color:var(--magenta)}
+        .portfolio-v2-card__link,.portfolio-secondary-card__link{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:max-content;max-width:100%;min-height:44px;padding:13px 18px;border:1px solid var(--magenta);border-radius:999px;background:var(--magenta);color:var(--mar-profundo);font:700 11px/1 "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+        .portfolio-v2-card__link:hover,.portfolio-secondary-card__link:hover,.portfolio-v2-card__link:focus-visible,.portfolio-secondary-card__link:focus-visible{background:var(--arena-clara);border-color:var(--arena-clara);color:var(--mar-profundo)}
+        .portfolio-v2-card__link:focus-visible,.portfolio-secondary-card__link:focus-visible{outline:3px solid var(--citron-loto);outline-offset:3px}
         .portfolio-secondary-card{display:grid;grid-template-columns:minmax(220px,.6fr) minmax(0,1fr);gap:32px;align-items:center;padding:26px 0;border-top:1px solid rgba(23,59,68,.2)}.portfolio-secondary-card>div{min-width:0}
         .portfolio-secondary-card__eyebrow{font:700 10px/1.3 "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--terracota-viva);margin:0 0 10px}
         .portfolio-secondary-card h3{font:600 30px/1 "Space Grotesk",sans-serif;color:var(--mar-profundo);margin:0 0 12px}
         .portfolio-secondary-card__change{font:600 19px/1.25 "Space Grotesk",sans-serif;color:var(--mar-profundo);margin:0 0 8px}
         .portfolio-secondary-card__description{font:15px/1.5 "Space Grotesk",sans-serif;color:rgba(23,59,68,.78);margin:0}
-        .portfolio-secondary-card__link{display:inline-flex;margin-top:18px;color:var(--mar-profundo);font:700 11px/1 "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(23,59,68,.45);padding-bottom:8px}
-        @media(max-width:1099px){.portfolio-v2-card{gap:34px}.portfolio-v2-card__change{font-size:23px}}
-        @media(max-width:767px){.portfolio-v2-card{grid-template-columns:1fr;gap:24px;padding:28px 0}.portfolio-v2-card__title{font-size:38px}.portfolio-v2-card__change{font-size:21px}.portfolio-v2-card__description{font-size:15px}.portfolio-v2-card__participation{margin-top:22px}.portfolio-v2-card__link{margin-top:20px}.portfolio-secondary-card{grid-template-columns:1fr;gap:22px;padding:24px 0}.portfolio-secondary-card h3{font-size:28px}}
+        .portfolio-secondary-card__link{margin-top:18px}
+        @media(max-width:1099px){.portfolio-v2-card{column-gap:34px}.portfolio-v2-card__change{font-size:23px}}
+        @media(max-width:767px){.portfolio-v2-card{grid-template-columns:1fr;grid-template-areas:"identity" "preview" "details";gap:24px;padding:28px 0}.portfolio-v2-card__title{font-size:38px}.portfolio-v2-card__change{font-size:21px}.portfolio-v2-card__description{font-size:15px}.portfolio-v2-card__participation{margin-top:22px}.portfolio-v2-card__link{margin-top:20px}.portfolio-secondary-card{grid-template-columns:1fr;gap:22px;padding:24px 0}.portfolio-secondary-card h3{font-size:28px}}
         @media(prefers-reduced-motion:reduce){.portfolio-page *{scroll-behavior:auto}}
       `}</style>
 
@@ -101,7 +103,7 @@ export function PortfolioPage() {
             <SectionLabel number="03">Otros proyectos</SectionLabel>
             <div className="portfolio-secondary-card">
               <div style={{ opacity: .82 }}><PortfolioProjectVisual project={cosmicStudio} /></div>
-              <div><p className="portfolio-secondary-card__eyebrow">Cosmic Studio</p><h3>Cosmic Studio</h3><p className="portfolio-secondary-card__change">Un sistema de marca para comunicar una propuesta digital con claridad.</p><p className="portfolio-secondary-card__description">Estrategia, identidad y arquitectura web reunidas en una experiencia más consistente.</p><AppLink className="portfolio-secondary-card__link" to="/portfolio/cosmic-studio">Ver caso ↗</AppLink></div>
+              <div><p className="portfolio-secondary-card__eyebrow">Cosmic Studio</p><h3>Cosmic Studio</h3><p className="portfolio-secondary-card__change">Un sistema de marca para comunicar una propuesta digital con claridad.</p><p className="portfolio-secondary-card__description">Estrategia, identidad y arquitectura web reunidas en una experiencia más consistente.</p><AppLink className="portfolio-secondary-card__link" to="/portfolio/cosmic-studio">VER CASO ↗</AppLink></div>
             </div>
           </div>
         </section>
