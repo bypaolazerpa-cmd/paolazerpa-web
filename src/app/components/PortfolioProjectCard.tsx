@@ -1,6 +1,7 @@
 import { BrandButton } from "./brand/BrandButton";
 import { AppLink } from "./AppLink";
 import type { PortfolioProject } from "../data/portfolioProjects";
+import { PortfolioProjectVisual } from "./PortfolioProjectVisual";
 
 type PortfolioProjectCardProps = {
   project: PortfolioProject;
@@ -108,7 +109,7 @@ function PortfolioIndexCard({
   return (
     <article id={project.slug} className="portfolio-v2-card">
       <div className="portfolio-v2-card__preview">
-        <ProjectPreview project={project} compact={false} emphasis />
+        <PortfolioProjectVisual project={project} emphasis />
       </div>
       <div className="portfolio-v2-card__content">
         <p className="portfolio-v2-card__eyebrow">{content.eyebrow}</p>
@@ -256,16 +257,16 @@ export function PortfolioProjectCard({ project, variant = "portfolio", portfolio
         {compact && <span className="portfolio-home-card-action">Ver en portfolio ↗</span>}
       </div>
       {selectedHome && <ProjectPreview project={project} compact={false} emphasis />}
-      {selectedHome && <span className="portfolio-home-card-action">Ver en portfolio ↗</span>}
+      {selectedHome && <span className="portfolio-home-card-action">Ver caso ↗</span>}
     </article>
   );
 
   if (compact || selectedHome) {
     return (
       <AppLink
-        to={`/portfolio#${project.slug}`}
+        to={selectedHome ? `/portfolio/${project.slug}` : `/portfolio#${project.slug}`}
         className="portfolio-home-card-link"
-        aria-label={`Ver ${project.title} en portfolio`}
+        aria-label={selectedHome ? `Ver caso de ${project.title}` : `Ver ${project.title} en portfolio`}
       >
         {card}
       </AppLink>

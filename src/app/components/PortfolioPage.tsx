@@ -5,7 +5,8 @@ import { BrandButton } from "./brand/BrandButton";
 import { SectionLabel } from "./brand/SectionLabel";
 import { FooterSection } from "./FooterSection";
 import { NavBar } from "./NavBar";
-import { PortfolioProjectCard, ProjectPreview } from "./PortfolioProjectCard";
+import { PortfolioProjectCard } from "./PortfolioProjectCard";
+import { PortfolioProjectVisual } from "./PortfolioProjectVisual";
 
 const selectedProjectContent = {
   nodux: {
@@ -61,7 +62,7 @@ export function PortfolioPage() {
         .portfolio-v2-card__participation-copy{font:11px/1.65 "Space Mono",monospace;color:rgba(230,215,198,.72);margin:0;max-width:600px}
         .portfolio-v2-card__link{display:inline-flex;margin-top:24px;color:var(--arena-clara);font:700 11px/1 "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(230,215,198,.5);padding-bottom:8px}
         .portfolio-v2-card__link:hover,.portfolio-v2-card__link:focus-visible{color:var(--magenta);border-color:var(--magenta)}
-        .portfolio-secondary-card{display:grid;grid-template-columns:minmax(220px,.6fr) minmax(0,1fr);gap:32px;align-items:center;padding:26px 0;border-top:1px solid rgba(23,59,68,.2)}
+        .portfolio-secondary-card{display:grid;grid-template-columns:minmax(220px,.6fr) minmax(0,1fr);gap:32px;align-items:center;padding:26px 0;border-top:1px solid rgba(23,59,68,.2)}.portfolio-secondary-card>div{min-width:0}
         .portfolio-secondary-card__eyebrow{font:700 10px/1.3 "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--terracota-viva);margin:0 0 10px}
         .portfolio-secondary-card h3{font:600 30px/1 "Space Grotesk",sans-serif;color:var(--mar-profundo);margin:0 0 12px}
         .portfolio-secondary-card__change{font:600 19px/1.25 "Space Grotesk",sans-serif;color:var(--mar-profundo);margin:0 0 8px}
@@ -99,7 +100,7 @@ export function PortfolioPage() {
           <div style={{ maxWidth: 1160, margin: "0 auto" }}>
             <SectionLabel number="03">Otros proyectos</SectionLabel>
             <div className="portfolio-secondary-card">
-              <div style={{ opacity: .82 }}><ProjectPreview project={cosmicStudio} compact={false} /></div>
+              <div style={{ opacity: .82 }}><PortfolioProjectVisual project={cosmicStudio} /></div>
               <div><p className="portfolio-secondary-card__eyebrow">Cosmic Studio</p><h3>Cosmic Studio</h3><p className="portfolio-secondary-card__change">Un sistema de marca para comunicar una propuesta digital con claridad.</p><p className="portfolio-secondary-card__description">Estrategia, identidad y arquitectura web reunidas en una experiencia más consistente.</p><AppLink className="portfolio-secondary-card__link" to="/portfolio/cosmic-studio">Ver caso ↗</AppLink></div>
             </div>
           </div>
