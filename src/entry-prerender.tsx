@@ -7,6 +7,10 @@ import { createPrerenderRouter } from "./app/routes";
 export const prerenderRoutes = [
   "/",
   "/portfolio",
+  "/portfolio/nodux",
+  "/portfolio/gestock",
+  "/portfolio/operacion-de-tienda",
+  "/portfolio/cosmic-studio",
   "/guia",
   "/notas",
   "/contacto",
